@@ -29,28 +29,7 @@ namespace Parcial1_Labo_2
         {
             Aerolina.aviones= Inicializador.InicializarAviones();
             Aerolina.vuelos= Inicializador.InicializarVuelos();
-            dataGridView1.DataSource = null;
-            for(int i=0;i<Aerolina.vuelos.Count;i++)
-            {
-                DataGridViewRow filas= new DataGridViewRow();
-                filas.CreateCells(dataGridView1);
-                //DateTime ahora = DateTime.Now;
-                //DateTime test = new DateTime(2022,9,13, 22,0,0);
-                //int x = ahora.Hour-3;
-               
-                filas.Cells[0].Value = Aerolina.vuelos[i].Codigo;
-                filas.Cells[1].Value = Aerolina.vuelos[i].Avion.Matricula;
-                filas.Cells[2].Value = Aerolina.vuelos[i].Duracion;
-                filas.Cells[3].Value = Aerolina.vuelos[i].CalcularCosto();
-                filas.Cells[4].Value = Aerolina.vuelos[i].Origen;
-                filas.Cells[5].Value = Aerolina.vuelos[i].Destino;
-                filas.Cells[6].Value = Aerolina.vuelos[i].Salida; //new DateTime(ahora.Year,ahora.Month,ahora.Day,x,ahora.Minute,ahora.Second);
-                filas.Cells[7].Value = Aerolina.vuelos[i].Estado;
-                filas.Cells[8].Value = Aerolina.vuelos[i].AsientosLibres;
-
-                dataGridView1.Rows.Add(filas);
-
-            }
+            CargarDatagrid();
            // dataGridView1.DataSource = Inicializador.vuelos;
         }
 
@@ -86,6 +65,43 @@ namespace Parcial1_Labo_2
         {
             frm_pasajeros pj = new frm_pasajeros(Index);
             pj.ShowDialog();
+        }
+
+        private void CargarDatagrid()
+        {
+            dataGridView1.DataSource = null;
+            dataGridView1.Rows.Clear();
+            for (int i = 0; i < Aerolina.vuelos.Count; i++)
+            {
+                DataGridViewRow filas = new DataGridViewRow();
+                filas.CreateCells(dataGridView1);
+                //DateTime ahora = DateTime.Now;
+                //DateTime test = new DateTime(2022,9,13, 22,0,0);
+                //int x = ahora.Hour-3;
+
+                filas.Cells[0].Value = Aerolina.vuelos[i].Codigo;
+                filas.Cells[1].Value = Aerolina.vuelos[i].Avion.Matricula;
+                filas.Cells[2].Value = Aerolina.vuelos[i].Duracion;
+                filas.Cells[3].Value = "22";//Aerolina.vuelos[i].CalcularCosto();
+                filas.Cells[4].Value = Aerolina.vuelos[i].Origen;
+                filas.Cells[5].Value = Aerolina.vuelos[i].Destino;
+                filas.Cells[6].Value = Aerolina.vuelos[i].Salida; //new DateTime(ahora.Year,ahora.Month,ahora.Day,x,ahora.Minute,ahora.Second);
+                filas.Cells[7].Value = Aerolina.vuelos[i].Estado;
+                filas.Cells[8].Value = Aerolina.vuelos[i].AsientosLibres;
+
+                dataGridView1.Rows.Add(filas);
+
+            }
+        }
+
+        private void btn_AgregarVuelo_Click(object sender, EventArgs e)
+        {
+            frm_AgregarVuelo vuelo = new frm_AgregarVuelo();
+         //   vuelo.ShowDialog(); 
+            if(vuelo.ShowDialog() == DialogResult.OK)
+            {
+                CargarDatagrid();
+            }
         }
     }
 }

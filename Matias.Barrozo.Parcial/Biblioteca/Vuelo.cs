@@ -62,7 +62,7 @@ namespace Biblioteca
             this.salida = salida;
             this.origen = origen;
             this.pasajeros = pasajeros;
-            this.codigo = codigo;
+            this.codigo = codigo.ToUpper();
             this.asientosLibres = this.avion.CantidadAsientos - pasajeros.Count;
         }
 
@@ -103,7 +103,7 @@ namespace Biblioteca
             get { return estado; }  
         }
 
-        public float CalcularCosto()
+        public static float CalcularCosto(Destino destino, int duracion)
         {
             if (((int)destino) > 14)
             {
@@ -123,7 +123,6 @@ namespace Biblioteca
 
         public int Duracion
         {
-            set {duracion = CalcularDuracion();}
             get { return duracion; }
         }
 
@@ -133,7 +132,7 @@ namespace Biblioteca
         }
         
 
-        public int CalcularDuracion()
+        public static int CalcularDuracion(Destino destino)
         {
             Random rnd = new Random();
 

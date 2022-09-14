@@ -32,8 +32,6 @@
             this.lbl_Bienvenido = new System.Windows.Forms.Label();
             this.btn_Salir = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btn_Pasajeros = new System.Windows.Forms.Button();
-            this.btn_Vender = new System.Windows.Forms.Button();
             this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Avion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Duracion = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,13 +41,16 @@
             this.Hora = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Asientos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btn_Pasajeros = new System.Windows.Forms.Button();
+            this.btn_Vender = new System.Windows.Forms.Button();
+            this.btn_AgregarVuelo = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_Bienvenido
             // 
             this.lbl_Bienvenido.AutoSize = true;
-            this.lbl_Bienvenido.Location = new System.Drawing.Point(196, 46);
+            this.lbl_Bienvenido.Location = new System.Drawing.Point(90, 9);
             this.lbl_Bienvenido.Name = "lbl_Bienvenido";
             this.lbl_Bienvenido.Size = new System.Drawing.Size(0, 15);
             this.lbl_Bienvenido.TabIndex = 0;
@@ -67,6 +68,7 @@
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Codigo,
@@ -78,12 +80,70 @@
             this.Hora,
             this.Estado,
             this.Asientos});
-            this.dataGridView1.Location = new System.Drawing.Point(90, 46);
+            this.dataGridView1.Location = new System.Drawing.Point(90, 55);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 25;
             this.dataGridView1.Size = new System.Drawing.Size(975, 419);
             this.dataGridView1.TabIndex = 2;
             this.dataGridView1.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseClick);
+            // 
+            // Codigo
+            // 
+            this.Codigo.HeaderText = "Codigo Vuelo";
+            this.Codigo.Name = "Codigo";
+            this.Codigo.ReadOnly = true;
+            // 
+            // Avion
+            // 
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(95)))), ((int)(((byte)(100)))));
+            this.Avion.DefaultCellStyle = dataGridViewCellStyle1;
+            this.Avion.HeaderText = "Avion";
+            this.Avion.Name = "Avion";
+            this.Avion.ReadOnly = true;
+            // 
+            // Duracion
+            // 
+            this.Duracion.HeaderText = "Duracion";
+            this.Duracion.Name = "Duracion";
+            this.Duracion.ReadOnly = true;
+            // 
+            // Costo
+            // 
+            this.Costo.HeaderText = "Costo Turista";
+            this.Costo.Name = "Costo";
+            this.Costo.ReadOnly = true;
+            // 
+            // Origen
+            // 
+            this.Origen.HeaderText = "Origen";
+            this.Origen.Name = "Origen";
+            this.Origen.ReadOnly = true;
+            // 
+            // Destino
+            // 
+            this.Destino.HeaderText = "Destino";
+            this.Destino.Name = "Destino";
+            this.Destino.ReadOnly = true;
+            // 
+            // Hora
+            // 
+            this.Hora.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Hora.HeaderText = "Salida";
+            this.Hora.Name = "Hora";
+            this.Hora.ReadOnly = true;
+            // 
+            // Estado
+            // 
+            this.Estado.HeaderText = "Estado";
+            this.Estado.Name = "Estado";
+            this.Estado.ReadOnly = true;
+            // 
+            // Asientos
+            // 
+            this.Asientos.HeaderText = "Asientos";
+            this.Asientos.Name = "Asientos";
+            this.Asientos.ReadOnly = true;
             // 
             // btn_Pasajeros
             // 
@@ -106,59 +166,22 @@
             this.btn_Vender.Text = "Vender";
             this.btn_Vender.UseVisualStyleBackColor = true;
             // 
-            // Codigo
+            // btn_AgregarVuelo
             // 
-            this.Codigo.HeaderText = "Codigo Vuelo";
-            this.Codigo.Name = "Codigo";
-            // 
-            // Avion
-            // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(95)))), ((int)(((byte)(100)))));
-            this.Avion.DefaultCellStyle = dataGridViewCellStyle1;
-            this.Avion.HeaderText = "Avion";
-            this.Avion.Name = "Avion";
-            // 
-            // Duracion
-            // 
-            this.Duracion.HeaderText = "Duracion";
-            this.Duracion.Name = "Duracion";
-            // 
-            // Costo
-            // 
-            this.Costo.HeaderText = "Costo Turista";
-            this.Costo.Name = "Costo";
-            // 
-            // Origen
-            // 
-            this.Origen.HeaderText = "Origen";
-            this.Origen.Name = "Origen";
-            // 
-            // Destino
-            // 
-            this.Destino.HeaderText = "Destino";
-            this.Destino.Name = "Destino";
-            // 
-            // Hora
-            // 
-            this.Hora.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Hora.HeaderText = "Salida";
-            this.Hora.Name = "Hora";
-            // 
-            // Estado
-            // 
-            this.Estado.HeaderText = "Estado";
-            this.Estado.Name = "Estado";
-            // 
-            // Asientos
-            // 
-            this.Asientos.HeaderText = "Asientos";
-            this.Asientos.Name = "Asientos";
+            this.btn_AgregarVuelo.Location = new System.Drawing.Point(768, 500);
+            this.btn_AgregarVuelo.Name = "btn_AgregarVuelo";
+            this.btn_AgregarVuelo.Size = new System.Drawing.Size(112, 23);
+            this.btn_AgregarVuelo.TabIndex = 5;
+            this.btn_AgregarVuelo.Text = "Agregar Vuelo";
+            this.btn_AgregarVuelo.UseVisualStyleBackColor = true;
+            this.btn_AgregarVuelo.Click += new System.EventHandler(this.btn_AgregarVuelo_Click);
             // 
             // frm_MenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1152, 545);
+            this.Controls.Add(this.btn_AgregarVuelo);
             this.Controls.Add(this.btn_Vender);
             this.Controls.Add(this.btn_Pasajeros);
             this.Controls.Add(this.dataGridView1);
@@ -189,5 +212,6 @@
         private DataGridViewTextBoxColumn Hora;
         private DataGridViewTextBoxColumn Estado;
         private DataGridViewTextBoxColumn Asientos;
+        private Button btn_AgregarVuelo;
     }
 }

@@ -66,5 +66,7 @@ namespace Biblioteca
             get { return estado; }
             set { estado = value; }
         }
+
+       
     }
 }
