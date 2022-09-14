@@ -19,3 +19,26 @@ C:\Users\Mati\source\repos\Matias.Barrozo.Parcial\Parcial1_Labo_2\bin\Debug\net6
 C:\Users\Mati\source\repos\Matias.Barrozo.Parcial\Parcial1_Labo_2\obj\Debug\net6.0-windows\Parcial1_Labo_2.csproj.CopyComplete
 C:\Users\Mati\source\repos\Matias.Barrozo.Parcial\Parcial1_Labo_2\obj\Debug\net6.0-windows\Parcial1_Labo_2.frm_Login.resources
 C:\Users\Mati\source\repos\Matias.Barrozo.Parcial\Parcial1_Labo_2\obj\Debug\net6.0-windows\Parcial1_Labo_2.frm_MenuPrincipal.resources
+C:\Users\Mati\Desktop\Escritorio\facultad owo\Barrozo.Matias.Parcial\Matias.Barrozo.Parcial\Parcial1_Labo_2\bin\Debug\net6.0-windows\Parcial1_Labo_2.exe
+C:\Users\Mati\Desktop\Escritorio\facultad owo\Barrozo.Matias.Parcial\Matias.Barrozo.Parcial\Parcial1_Labo_2\bin\Debug\net6.0-windows\Parcial1_Labo_2.deps.json
+C:\Users\Mati\Desktop\Escritorio\facultad owo\Barrozo.Matias.Parcial\Matias.Barrozo.Parcial\Parcial1_Labo_2\bin\Debug\net6.0-windows\Parcial1_Labo_2.runtimeconfig.json
+C:\Users\Mati\Desktop\Escritorio\facultad owo\Barrozo.Matias.Parcial\Matias.Barrozo.Parcial\Parcial1_Labo_2\bin\Debug\net6.0-windows\Parcial1_Labo_2.dll
+C:\Users\Mati\Desktop\Escritorio\facultad owo\Barrozo.Matias.Parcial\Matias.Barrozo.Parcial\Parcial1_Labo_2\bin\Debug\net6.0-windows\Parcial1_Labo_2.pdb
+C:\Users\Mati\Desktop\Escritorio\facultad owo\Barrozo.Matias.Parcial\Matias.Barrozo.Parcial\Parcial1_Labo_2\bin\Debug\net6.0-windows\Biblioteca.dll
+C:\Users\Mati\Desktop\Escritorio\facultad owo\Barrozo.Matias.Parcial\Matias.Barrozo.Parcial\Parcial1_Labo_2\bin\Debug\net6.0-windows\Biblioteca.pdb
+C:\Users\Mati\Desktop\Escritorio\facultad owo\Barrozo.Matias.Parcial\Matias.Barrozo.Parcial\Parcial1_Labo_2\obj\Debug\net6.0-windows\Parcial1_Labo_2.csproj.AssemblyReference.cache
+C:\Users\Mati\Desktop\Escritorio\facultad owo\Barrozo.Matias.Parcial\Matias.Barrozo.Parcial\Parcial1_Labo_2\obj\Debug\net6.0-windows\Parcial1_Labo_2.frm_Login.resources
+C:\Users\Mati\Desktop\Escritorio\facultad owo\Barrozo.Matias.Parcial\Matias.Barrozo.Parcial\Parcial1_Labo_2\obj\Debug\net6.0-windows\Parcial1_Labo_2.frm_MenuPrincipal.resources
+C:\Users\Mati\Desktop\Escritorio\facultad owo\Barrozo.Matias.Parcial\Matias.Barrozo.Parcial\Parcial1_Labo_2\obj\Debug\net6.0-windows\Parcial1_Labo_2.csproj.GenerateResource.cache
+C:\Users\Mati\Desktop\Escritorio\facultad owo\Barrozo.Matias.Parcial\Matias.Barrozo.Parcial\Parcial1_Labo_2\obj\Debug\net6.0-windows\Parcial1_Labo_2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Mati\Desktop\Escritorio\facultad owo\Barrozo.Matias.Parcial\Matias.Barrozo.Parcial\Parcial1_Labo_2\obj\Debug\net6.0-windows\Parcial1_Labo_2.AssemblyInfoInputs.cache
+C:\Users\Mati\Desktop\Escritorio\facultad owo\Barrozo.Matias.Parcial\Matias.Barrozo.Parcial\Parcial1_Labo_2\obj\Debug\net6.0-windows\Parcial1_Labo_2.AssemblyInfo.cs
+C:\Users\Mati\Desktop\Escritorio\facultad owo\Barrozo.Matias.Parcial\Matias.Barrozo.Parcial\Parcial1_Labo_2\obj\Debug\net6.0-windows\Parcial1_Labo_2.csproj.CoreCompileInputs.cache
+C:\Users\Mati\Desktop\Escritorio\facultad owo\Barrozo.Matias.Parcial\Matias.Barrozo.Parcial\Parcial1_Labo_2\obj\Debug\net6.0-windows\Parcial1_Labo_2.csproj.CopyComplete
+C:\Users\Mati\Desktop\Escritorio\facultad owo\Barrozo.Matias.Parcial\Matias.Barrozo.Parcial\Parcial1_Labo_2\obj\Debug\net6.0-windows\Parcial1_Labo_2.dll
+C:\Users\Mati\Desktop\Escritorio\facultad owo\Barrozo.Matias.Parcial\Matias.Barrozo.Parcial\Parcial1_Labo_2\obj\Debug\net6.0-windows\refint\Parcial1_Labo_2.dll
+C:\Users\Mati\Desktop\Escritorio\facultad owo\Barrozo.Matias.Parcial\Matias.Barrozo.Parcial\Parcial1_Labo_2\obj\Debug\net6.0-windows\Parcial1_Labo_2.pdb
+C:\Users\Mati\Desktop\Escritorio\facultad owo\Barrozo.Matias.Parcial\Matias.Barrozo.Parcial\Parcial1_Labo_2\obj\Debug\net6.0-windows\Parcial1_Labo_2.genruntimeconfig.cache
+C:\Users\Mati\Desktop\Escritorio\facultad owo\Barrozo.Matias.Parcial\Matias.Barrozo.Parcial\Parcial1_Labo_2\obj\Debug\net6.0-windows\ref\Parcial1_Labo_2.dll
+C:\Users\Mati\Desktop\Escritorio\facultad owo\Barrozo.Matias.Parcial\Matias.Barrozo.Parcial\Parcial1_Labo_2\obj\Debug\net6.0-windows\Parcial1_Labo_2.frm_pasajeros.resources
+C:\Users\Mati\Desktop\Escritorio\facultad owo\Barrozo.Matias.Parcial\Matias.Barrozo.Parcial\Parcial1_Labo_2\obj\Debug\net6.0-windows\Parcial1_Labo_2.frm_Venta.resources

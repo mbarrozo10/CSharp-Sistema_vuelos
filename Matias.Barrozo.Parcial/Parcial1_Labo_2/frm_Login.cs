@@ -43,7 +43,7 @@ namespace Parcial1_Labo_2
         private void btn_Autocompletar_Click(object sender, EventArgs e)
         {
             Random rnd = new Random();
-            int i = rnd.Next(1, 4);
+            int i = rnd.Next(0, 5);
             txt_Usuario.Text = Aerolina.Vendedores[i].Usuario;
             txt_Contraseña.Text = Aerolina.Vendedores[i].Contraseña;
         }

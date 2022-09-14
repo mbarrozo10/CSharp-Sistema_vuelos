@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -48,8 +49,10 @@ namespace Biblioteca
         private DateTime salida;
         private string origen;
         private List<Pasajero> pasajeros;
+        private string codigo;
+        private int asientosLibres;
 
-        public Vuelo(Avion avion, int duracion, float costoDePasaje, Destino destino, Estado estado, string origen, DateTime salida, List<Pasajero> pasajeros)
+        public Vuelo(Avion avion, int duracion, float costoDePasaje, Destino destino, Estado estado, string origen, DateTime salida, List<Pasajero> pasajeros, string codigo)
         {
             this.avion = avion;
             this.duracion = duracion;
@@ -58,16 +61,37 @@ namespace Biblioteca
             this.estado = estado;
             this.salida = salida;
             this.origen = origen;
-            this.pasajeros = new List<Pasajero>();
-
+            this.pasajeros = pasajeros;
+            this.codigo = codigo;
+            this.asientosLibres = this.avion.CantidadAsientos - pasajeros.Count;
         }
 
+        public int AsientosLibres
+        {
+            get { return asientosLibres; }
+        }
+
+        public List<Pasajero> Pasajeros
+        {
+            get { return pasajeros; }
+        }
+            
+        
+        public string Codigo
+        {
+            get { return codigo; }
+        }
         public Avion Avion
         {
             get { return avion; }
         }
 
-        
+        public DateTime Salida
+        {
+            get { return salida; }
+        }
+
+  
 
         public float CostoDePasaje
         {
@@ -81,7 +105,7 @@ namespace Biblioteca
 
         public float CalcularCosto()
         {
-            if (CheckDestino())
+            if (((int)destino) > 14)
             {
                 return (float)(100 * duracion);
             }
@@ -102,13 +126,18 @@ namespace Biblioteca
             set {duracion = CalcularDuracion();}
             get { return duracion; }
         }
+
+        public string Origen
+        {
+            get { return origen; }
+        }
         
 
         public int CalcularDuracion()
         {
             Random rnd = new Random();
 
-            if (CheckDestino())
+            if (((int)destino)>14)
             {
                 return rnd.Next(8, 12);
             }
@@ -118,23 +147,7 @@ namespace Biblioteca
             }
            
         }
-        private bool CheckDestino()
-        {
-            switch (Destino)
-            {
-                case Destino.Recife:
-                    return true;
-                case Destino.Roma:
-                    return true;
-                case Destino.Acapulco:
-                    return true;
-                case Destino.Miami:
-                    return true;
-                default:
-                    return false;
-
-            }
-        }
+        
     }
 
    
