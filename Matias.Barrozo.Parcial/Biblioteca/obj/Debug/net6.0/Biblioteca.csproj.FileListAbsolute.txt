@@ -1,0 +1,12 @@
+C:\Users\Mati\source\repos\Matias.Barrozo.Parcial\Biblioteca\bin\Debug\net6.0\Biblioteca.deps.json
+C:\Users\Mati\source\repos\Matias.Barrozo.Parcial\Biblioteca\bin\Debug\net6.0\Biblioteca.dll
+C:\Users\Mati\source\repos\Matias.Barrozo.Parcial\Biblioteca\bin\Debug\net6.0\Biblioteca.pdb
+C:\Users\Mati\source\repos\Matias.Barrozo.Parcial\Biblioteca\obj\Debug\net6.0\Biblioteca.csproj.AssemblyReference.cache
+C:\Users\Mati\source\repos\Matias.Barrozo.Parcial\Biblioteca\obj\Debug\net6.0\Biblioteca.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Mati\source\repos\Matias.Barrozo.Parcial\Biblioteca\obj\Debug\net6.0\Biblioteca.AssemblyInfoInputs.cache
+C:\Users\Mati\source\repos\Matias.Barrozo.Parcial\Biblioteca\obj\Debug\net6.0\Biblioteca.AssemblyInfo.cs
+C:\Users\Mati\source\repos\Matias.Barrozo.Parcial\Biblioteca\obj\Debug\net6.0\Biblioteca.csproj.CoreCompileInputs.cache
+C:\Users\Mati\source\repos\Matias.Barrozo.Parcial\Biblioteca\obj\Debug\net6.0\Biblioteca.dll
+C:\Users\Mati\source\repos\Matias.Barrozo.Parcial\Biblioteca\obj\Debug\net6.0\refint\Biblioteca.dll
+C:\Users\Mati\source\repos\Matias.Barrozo.Parcial\Biblioteca\obj\Debug\net6.0\Biblioteca.pdb
+C:\Users\Mati\source\repos\Matias.Barrozo.Parcial\Biblioteca\obj\Debug\net6.0\ref\Biblioteca.dll
