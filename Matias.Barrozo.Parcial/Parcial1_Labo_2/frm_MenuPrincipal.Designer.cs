@@ -32,18 +32,20 @@
             this.lbl_Bienvenido = new System.Windows.Forms.Label();
             this.btn_Salir = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btn_Pasajeros = new System.Windows.Forms.Button();
+            this.btn_Vender = new System.Windows.Forms.Button();
+            this.btn_AgregarVuelo = new System.Windows.Forms.Button();
             this.Avion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Duracion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Costo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Origen = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Destino = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Hora = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Llegada = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Asientos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btn_Pasajeros = new System.Windows.Forms.Button();
-            this.btn_Vender = new System.Windows.Forms.Button();
-            this.btn_AgregarVuelo = new System.Windows.Forms.Button();
+            this.Wifi = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Comida = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -71,79 +73,24 @@
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Codigo,
             this.Avion,
             this.Duracion,
             this.Costo,
             this.Origen,
             this.Destino,
             this.Hora,
+            this.Llegada,
             this.Estado,
-            this.Asientos});
+            this.Asientos,
+            this.Wifi,
+            this.Comida});
             this.dataGridView1.Location = new System.Drawing.Point(90, 55);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(975, 419);
+            this.dataGridView1.Size = new System.Drawing.Size(1070, 426);
             this.dataGridView1.TabIndex = 2;
             this.dataGridView1.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseClick);
-            // 
-            // Codigo
-            // 
-            this.Codigo.HeaderText = "Codigo Vuelo";
-            this.Codigo.Name = "Codigo";
-            this.Codigo.ReadOnly = true;
-            // 
-            // Avion
-            // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(95)))), ((int)(((byte)(100)))));
-            this.Avion.DefaultCellStyle = dataGridViewCellStyle1;
-            this.Avion.HeaderText = "Avion";
-            this.Avion.Name = "Avion";
-            this.Avion.ReadOnly = true;
-            // 
-            // Duracion
-            // 
-            this.Duracion.HeaderText = "Duracion";
-            this.Duracion.Name = "Duracion";
-            this.Duracion.ReadOnly = true;
-            // 
-            // Costo
-            // 
-            this.Costo.HeaderText = "Costo Turista";
-            this.Costo.Name = "Costo";
-            this.Costo.ReadOnly = true;
-            // 
-            // Origen
-            // 
-            this.Origen.HeaderText = "Origen";
-            this.Origen.Name = "Origen";
-            this.Origen.ReadOnly = true;
-            // 
-            // Destino
-            // 
-            this.Destino.HeaderText = "Destino";
-            this.Destino.Name = "Destino";
-            this.Destino.ReadOnly = true;
-            // 
-            // Hora
-            // 
-            this.Hora.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Hora.HeaderText = "Salida";
-            this.Hora.Name = "Hora";
-            this.Hora.ReadOnly = true;
-            // 
-            // Estado
-            // 
-            this.Estado.HeaderText = "Estado";
-            this.Estado.Name = "Estado";
-            this.Estado.ReadOnly = true;
-            // 
-            // Asientos
-            // 
-            this.Asientos.HeaderText = "Asientos";
-            this.Asientos.Name = "Asientos";
-            this.Asientos.ReadOnly = true;
             // 
             // btn_Pasajeros
             // 
@@ -176,11 +123,103 @@
             this.btn_AgregarVuelo.UseVisualStyleBackColor = true;
             this.btn_AgregarVuelo.Click += new System.EventHandler(this.btn_AgregarVuelo_Click);
             // 
+            // Avion
+            // 
+            this.Avion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(95)))), ((int)(((byte)(100)))));
+            this.Avion.DefaultCellStyle = dataGridViewCellStyle1;
+            this.Avion.HeaderText = "Avion";
+            this.Avion.Name = "Avion";
+            this.Avion.ReadOnly = true;
+            this.Avion.Width = 63;
+            // 
+            // Duracion
+            // 
+            this.Duracion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Duracion.HeaderText = "Duracion";
+            this.Duracion.Name = "Duracion";
+            this.Duracion.ReadOnly = true;
+            this.Duracion.Width = 80;
+            // 
+            // Costo
+            // 
+            this.Costo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Costo.HeaderText = "Costo Turista";
+            this.Costo.Name = "Costo";
+            this.Costo.ReadOnly = true;
+            this.Costo.Width = 101;
+            // 
+            // Origen
+            // 
+            this.Origen.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Origen.HeaderText = "Origen";
+            this.Origen.Name = "Origen";
+            this.Origen.ReadOnly = true;
+            this.Origen.Width = 68;
+            // 
+            // Destino
+            // 
+            this.Destino.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Destino.HeaderText = "Destino";
+            this.Destino.Name = "Destino";
+            this.Destino.ReadOnly = true;
+            this.Destino.Width = 72;
+            // 
+            // Hora
+            // 
+            this.Hora.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Hora.HeaderText = "Salida";
+            this.Hora.Name = "Hora";
+            this.Hora.ReadOnly = true;
+            // 
+            // Llegada
+            // 
+            this.Llegada.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Llegada.HeaderText = "Llegada";
+            this.Llegada.Name = "Llegada";
+            this.Llegada.ReadOnly = true;
+            // 
+            // Estado
+            // 
+            this.Estado.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Estado.HeaderText = "Estado";
+            this.Estado.Name = "Estado";
+            this.Estado.ReadOnly = true;
+            this.Estado.Width = 67;
+            // 
+            // Asientos
+            // 
+            this.Asientos.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Asientos.HeaderText = "Asientos Restantes";
+            this.Asientos.Name = "Asientos";
+            this.Asientos.ReadOnly = true;
+            this.Asientos.Width = 119;
+            // 
+            // Wifi
+            // 
+            this.Wifi.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Wifi.HeaderText = "Wifi";
+            this.Wifi.Name = "Wifi";
+            this.Wifi.ReadOnly = true;
+            this.Wifi.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Wifi.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Wifi.Width = 53;
+            // 
+            // Comida
+            // 
+            this.Comida.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Comida.HeaderText = "Comida";
+            this.Comida.Name = "Comida";
+            this.Comida.ReadOnly = true;
+            this.Comida.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Comida.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Comida.Width = 74;
+            // 
             // frm_MenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1152, 545);
+            this.ClientSize = new System.Drawing.Size(1207, 600);
             this.Controls.Add(this.btn_AgregarVuelo);
             this.Controls.Add(this.btn_Vender);
             this.Controls.Add(this.btn_Pasajeros);
@@ -203,15 +242,17 @@
         private DataGridView dataGridView1;
         private Button btn_Pasajeros;
         private Button btn_Vender;
-        private DataGridViewTextBoxColumn Codigo;
+        private Button btn_AgregarVuelo;
         private DataGridViewTextBoxColumn Avion;
         private DataGridViewTextBoxColumn Duracion;
         private DataGridViewTextBoxColumn Costo;
         private DataGridViewTextBoxColumn Origen;
         private DataGridViewTextBoxColumn Destino;
         private DataGridViewTextBoxColumn Hora;
+        private DataGridViewTextBoxColumn Llegada;
         private DataGridViewTextBoxColumn Estado;
         private DataGridViewTextBoxColumn Asientos;
-        private Button btn_AgregarVuelo;
+        private DataGridViewCheckBoxColumn Wifi;
+        private DataGridViewCheckBoxColumn Comida;
     }
 }

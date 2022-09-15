@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Biblioteca
 {
-    public static class Aerolina
+    public static class Aerolinea
     {
         public static List<Vendedor> Vendedores = new List<Vendedor>();
         public static List<Avion> aviones = new List<Avion>();

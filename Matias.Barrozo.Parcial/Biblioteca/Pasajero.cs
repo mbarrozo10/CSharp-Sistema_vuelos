@@ -12,6 +12,7 @@ namespace Biblioteca
         private int edad;
         private int equipaje;
         private string clase;
+        
 
         public Pasajero(string nombre, string apellido,int dni, int edad, int equipaje, string clase): base(nombre,apellido)
         {

@@ -11,7 +11,7 @@ namespace Parcial1_Labo_2
 
         private void Form1_Load(object sender, EventArgs e)
         {
-           Aerolina.Vendedores= Inicializador.InicializarVendedores();
+           Aerolinea.Vendedores= Inicializador.InicializarVendedores();
            // timer1.Start();
         }
 
@@ -19,7 +19,7 @@ namespace Parcial1_Labo_2
         {
             try
             {
-                Vendedor vendedor = Vendedor.VerificarLogin(txt_Usuario.Text, txt_Contraseña.Text, Aerolina.Vendedores);
+                Vendedor vendedor = Vendedor.VerificarLogin(txt_Usuario.Text, txt_Contraseña.Text, Aerolinea.Vendedores);
                 this.Hide();
                 frm_MenuPrincipal menu = new frm_MenuPrincipal(vendedor);
                 menu.ShowDialog();
@@ -44,8 +44,8 @@ namespace Parcial1_Labo_2
         {
             Random rnd = new Random();
             int i = rnd.Next(0, 5);
-            txt_Usuario.Text = Aerolina.Vendedores[i].Usuario;
-            txt_Contraseña.Text = Aerolina.Vendedores[i].Contraseña;
+            txt_Usuario.Text = Aerolinea.Vendedores[i].Usuario;
+            txt_Contraseña.Text = Aerolinea.Vendedores[i].Contraseña;
         }
 
         //private void timer1_Tick(object sender, EventArgs e)

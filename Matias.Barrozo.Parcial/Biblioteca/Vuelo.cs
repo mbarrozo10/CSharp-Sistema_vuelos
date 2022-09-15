@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 namespace Biblioteca
 {
     public enum Destino{
+        Buenos_Aires,
         Santa_Rosa,
         Bariloche,
         Corrientes,
@@ -51,8 +52,10 @@ namespace Biblioteca
         private List<Pasajero> pasajeros;
         private string codigo;
         private int asientosLibres;
+        private DateTime llegada;
+        private float reccuadacion;
 
-        public Vuelo(Avion avion, int duracion, float costoDePasaje, Destino destino, Estado estado, string origen, DateTime salida, List<Pasajero> pasajeros, string codigo)
+        public Vuelo(Avion avion, int duracion, float costoDePasaje, Destino destino, Estado estado, string origen, DateTime salida, List<Pasajero> pasajeros, string codigo, DateTime llegada)
         {
             this.avion = avion;
             this.duracion = duracion;
@@ -64,6 +67,12 @@ namespace Biblioteca
             this.pasajeros = pasajeros;
             this.codigo = codigo.ToUpper();
             this.asientosLibres = this.avion.CantidadAsientos - pasajeros.Count;
+            this.llegada = llegada;
+        }
+
+        public DateTime Llegada
+        {
+            get { return llegada; }
         }
 
         public int AsientosLibres

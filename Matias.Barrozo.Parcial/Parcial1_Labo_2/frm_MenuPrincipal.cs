@@ -27,8 +27,8 @@ namespace Parcial1_Labo_2
 
         private void MenuPrincipal_Load(object sender, EventArgs e)
         {
-            Aerolina.aviones= Inicializador.InicializarAviones();
-            Aerolina.vuelos= Inicializador.InicializarVuelos();
+            Aerolinea.aviones= Inicializador.InicializarAviones();
+            Aerolinea.vuelos= Inicializador.InicializarVuelos();
             CargarDatagrid();
            // dataGridView1.DataSource = Inicializador.vuelos;
         }
@@ -41,12 +41,12 @@ namespace Parcial1_Labo_2
         private void dataGridView1_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             Index = e.RowIndex;
-            if (Aerolina.vuelos[Index].Estado == Biblioteca.Estado.Disponible)
+            if (Aerolinea.vuelos[Index].Estado == Biblioteca.Estado.Disponible)
             {
                 btn_Vender.Enabled = true;
                 btn_Pasajeros.Enabled = true;
             }
-            else if (Aerolina.vuelos[Index].Estado== Biblioteca.Estado.EnVuelo || Aerolina.vuelos[Index].Estado ==Biblioteca.Estado.Lleno)
+            else if (Aerolinea.vuelos[Index].Estado== Biblioteca.Estado.EnVuelo || Aerolinea.vuelos[Index].Estado ==Biblioteca.Estado.Lleno)
             {
                 btn_Pasajeros.Enabled = true;
                 btn_Vender.Enabled = false;
@@ -55,10 +55,8 @@ namespace Parcial1_Labo_2
             {
                 btn_Vender.Enabled = false;
                 btn_Pasajeros.Enabled=false;
-
             }
             
-
         }
 
         private void btn_Pasajeros_Click(object sender, EventArgs e)
@@ -71,7 +69,7 @@ namespace Parcial1_Labo_2
         {
             dataGridView1.DataSource = null;
             dataGridView1.Rows.Clear();
-            for (int i = 0; i < Aerolina.vuelos.Count; i++)
+            for (int i = 0; i < Aerolinea.vuelos.Count; i++)
             {
                 DataGridViewRow filas = new DataGridViewRow();
                 filas.CreateCells(dataGridView1);
@@ -79,15 +77,17 @@ namespace Parcial1_Labo_2
                 //DateTime test = new DateTime(2022,9,13, 22,0,0);
                 //int x = ahora.Hour-3;
 
-                filas.Cells[0].Value = Aerolina.vuelos[i].Codigo;
-                filas.Cells[1].Value = Aerolina.vuelos[i].Avion.Matricula;
-                filas.Cells[2].Value = Aerolina.vuelos[i].Duracion;
-                filas.Cells[3].Value = "22";//Aerolina.vuelos[i].CalcularCosto();
-                filas.Cells[4].Value = Aerolina.vuelos[i].Origen;
-                filas.Cells[5].Value = Aerolina.vuelos[i].Destino;
-                filas.Cells[6].Value = Aerolina.vuelos[i].Salida; //new DateTime(ahora.Year,ahora.Month,ahora.Day,x,ahora.Minute,ahora.Second);
-                filas.Cells[7].Value = Aerolina.vuelos[i].Estado;
-                filas.Cells[8].Value = Aerolina.vuelos[i].AsientosLibres;
+                filas.Cells[0].Value = Aerolinea.vuelos[i].Avion.Matricula;
+                filas.Cells[1].Value = Aerolinea.vuelos[i].Duracion;
+                filas.Cells[2].Value = Vuelo.CalcularCosto(Aerolinea.vuelos[i].Destino, Aerolinea.vuelos[i].Duracion);
+                filas.Cells[3].Value = Aerolinea.vuelos[i].Origen;
+                filas.Cells[4].Value = Aerolinea.vuelos[i].Destino;
+                filas.Cells[5].Value = Aerolinea.vuelos[i].Salida;
+                filas.Cells[6].Value = Aerolinea.vuelos[i].Llegada; //new DateTime(ahora.Year,ahora.Month,ahora.Day,x,ahora.Minute,ahora.Second);
+                filas.Cells[7].Value = Aerolinea.vuelos[i].Estado;
+                filas.Cells[8].Value = Aerolinea.vuelos[i].AsientosLibres;
+                filas.Cells[9].Value = Aerolinea.vuelos[i].Avion.Wifi;
+                filas.Cells[10].Value = Aerolinea.vuelos[i].Avion.Comida;
 
                 dataGridView1.Rows.Add(filas);
 

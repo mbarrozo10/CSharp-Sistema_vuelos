@@ -29,7 +29,7 @@ namespace Parcial1_Labo_2
         {
            
             dataGridView1.DataSource = null;
-            dataGridView1.DataSource = Aerolina.vuelos[Index].Pasajeros;
+            dataGridView1.DataSource = Aerolinea.vuelos[Index].Pasajeros;
 
         }
 
