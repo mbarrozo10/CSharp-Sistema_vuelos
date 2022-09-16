@@ -73,9 +73,29 @@ namespace Parcial1_Labo_2.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap agregar_blanco_84x24 {
+            get {
+                object obj = ResourceManager.GetObject("agregar blanco 84x24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap agregar_negro {
             get {
                 object obj = ResourceManager.GetObject("agregar negro", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap agregar_negro_84x24 {
+            get {
+                object obj = ResourceManager.GetObject("agregar negro 84x24", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -96,6 +116,26 @@ namespace Parcial1_Labo_2.Properties {
         internal static System.Drawing.Bitmap button__1_ {
             get {
                 object obj = ResourceManager.GetObject("button (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap cancelar_blanco_84x24 {
+            get {
+                object obj = ResourceManager.GetObject("cancelar blanco 84x24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap cancelar_negro_84x24 {
+            get {
+                object obj = ResourceManager.GetObject("cancelar negro 84x24", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

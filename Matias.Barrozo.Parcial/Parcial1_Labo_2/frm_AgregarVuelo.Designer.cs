@@ -211,8 +211,11 @@
             this.Controls.Add(this.lbl_Salida);
             this.Controls.Add(this.lbl_destino);
             this.Controls.Add(this.lbl_Avion);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
             this.Name = "frm_AgregarVuelo";
             this.Text = "frm_AgregarVuelo";
+            this.TransparencyKey = System.Drawing.Color.Black;
             this.Load += new System.EventHandler(this.frm_AgregarVuelo_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

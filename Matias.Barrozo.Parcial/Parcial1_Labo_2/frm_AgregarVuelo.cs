@@ -84,9 +84,8 @@ namespace Parcial1_Labo_2
                     llegada = salida.AddDays(1);
                 }
                 llegada = salida.AddHours(duracion);
-                List<Pasajero> pasajeros= new List<Pasajero>();
                 float costo = Vuelo.CalcularCosto(Enum.Parse<Destino>(cmb_Destino.Text), duracion);
-                vuelo=  new Vuelo (Aerolinea.aviones[i], duracion,costo, Enum.Parse<Destino>(cmb_Destino.Text), Estado.Disponible,cmb_Origen.Text, salida,pasajeros,txt_Codigo.Text,llegada);
+                vuelo=  new Vuelo (Aerolinea.aviones[i], duracion,costo, Enum.Parse<Destino>(cmb_Destino.Text), Estado.Disponible,cmb_Origen.Text, salida, new List<Pasajero>(), txt_Codigo.Text,llegada);
                 Aerolinea.vuelos.Add(vuelo);
             }
             else
@@ -108,9 +107,12 @@ namespace Parcial1_Labo_2
             if (cmb_Origen.Text == "Buenos_Aires")
             {
                 x = 20;
+            }else
+            {
+                cmb_Destino.Text = "";
             }
             for (int i = 0; i < x; i++)
-            {
+            {   
                 string? s = Enum.GetName(typeof(Destino), i);
                 if (cmb_Origen.Text != s)
                 {

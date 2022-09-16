@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btn_Agregar = new System.Windows.Forms.Button();
-            this.btn_Cancelar = new System.Windows.Forms.Button();
             this.lbl_PrecioFinal = new System.Windows.Forms.Label();
             this.lbl_Edad = new System.Windows.Forms.Label();
             this.lbl_Dni = new System.Windows.Forms.Label();
@@ -53,29 +51,13 @@
             this.txt_Kg = new System.Windows.Forms.TextBox();
             this.nud_CantEquipaje = new System.Windows.Forms.NumericUpDown();
             this.lbl_Error = new System.Windows.Forms.Label();
+            this.pic_Agregar = new System.Windows.Forms.PictureBox();
+            this.pic_Cancelar = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.nud_Cantidad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_CantEquipaje)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_Agregar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_Cancelar)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btn_Agregar
-            // 
-            this.btn_Agregar.Location = new System.Drawing.Point(988, 485);
-            this.btn_Agregar.Name = "btn_Agregar";
-            this.btn_Agregar.Size = new System.Drawing.Size(75, 23);
-            this.btn_Agregar.TabIndex = 0;
-            this.btn_Agregar.Text = "Agregar";
-            this.btn_Agregar.UseVisualStyleBackColor = true;
-            this.btn_Agregar.Click += new System.EventHandler(this.btn_Agregar_Click);
-            // 
-            // btn_Cancelar
-            // 
-            this.btn_Cancelar.Location = new System.Drawing.Point(883, 485);
-            this.btn_Cancelar.Name = "btn_Cancelar";
-            this.btn_Cancelar.Size = new System.Drawing.Size(75, 23);
-            this.btn_Cancelar.TabIndex = 1;
-            this.btn_Cancelar.Text = "Cancelar";
-            this.btn_Cancelar.UseVisualStyleBackColor = true;
-            this.btn_Cancelar.Click += new System.EventHandler(this.btn_Cancelar_Click);
             // 
             // lbl_PrecioFinal
             // 
@@ -295,11 +277,37 @@
             this.lbl_Error.Size = new System.Drawing.Size(0, 15);
             this.lbl_Error.TabIndex = 26;
             // 
+            // pic_Agregar
+            // 
+            this.pic_Agregar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pic_Agregar.Enabled = false;
+            this.pic_Agregar.Image = global::Parcial1_Labo_2.Properties.Resources.agregar_negro_84x24;
+            this.pic_Agregar.Location = new System.Drawing.Point(993, 491);
+            this.pic_Agregar.Name = "pic_Agregar";
+            this.pic_Agregar.Size = new System.Drawing.Size(87, 27);
+            this.pic_Agregar.TabIndex = 27;
+            this.pic_Agregar.TabStop = false;
+            this.pic_Agregar.Click += new System.EventHandler(this.btn_Agregar_Click);
+            // 
+            // pic_Cancelar
+            // 
+            this.pic_Cancelar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pic_Cancelar.Image = global::Parcial1_Labo_2.Properties.Resources.cancelar_negro_84x24;
+            this.pic_Cancelar.Location = new System.Drawing.Point(883, 491);
+            this.pic_Cancelar.Name = "pic_Cancelar";
+            this.pic_Cancelar.Size = new System.Drawing.Size(87, 27);
+            this.pic_Cancelar.TabIndex = 28;
+            this.pic_Cancelar.TabStop = false;
+            this.pic_Cancelar.Click += new System.EventHandler(this.btn_Cancelar_Click);
+            // 
             // frm_Venta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1150, 562);
+            this.Controls.Add(this.pic_Cancelar);
+            this.Controls.Add(this.pic_Agregar);
             this.Controls.Add(this.lbl_Error);
             this.Controls.Add(this.nud_CantEquipaje);
             this.Controls.Add(this.txt_Kg);
@@ -323,22 +331,20 @@
             this.Controls.Add(this.lbl_Dni);
             this.Controls.Add(this.lbl_Edad);
             this.Controls.Add(this.lbl_PrecioFinal);
-            this.Controls.Add(this.btn_Cancelar);
-            this.Controls.Add(this.btn_Agregar);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "frm_Venta";
             this.Text = "frm_Venta";
             this.Load += new System.EventHandler(this.frm_Venta_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nud_Cantidad)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_CantEquipaje)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_Agregar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_Cancelar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private Button btn_Agregar;
-        private Button btn_Cancelar;
         private Label lbl_PrecioFinal;
         private Label lbl_Edad;
         private Label lbl_Dni;
@@ -362,5 +368,7 @@
         private TextBox txt_Kg;
         private NumericUpDown nud_CantEquipaje;
         private Label lbl_Error;
+        private PictureBox pic_Agregar;
+        private PictureBox pic_Cancelar;
     }
 }

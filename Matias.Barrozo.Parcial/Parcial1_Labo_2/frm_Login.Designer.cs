@@ -93,7 +93,7 @@
             // 
             this.lbl_Error.AutoSize = true;
             this.lbl_Error.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.lbl_Error.Location = new System.Drawing.Point(134, 154);
+            this.lbl_Error.Location = new System.Drawing.Point(137, 73);
             this.lbl_Error.Name = "lbl_Error";
             this.lbl_Error.Size = new System.Drawing.Size(0, 15);
             this.lbl_Error.TabIndex = 7;
@@ -102,8 +102,9 @@
             // pic_Modo
             // 
             this.pic_Modo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pic_Modo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pic_Modo.Image = global::Parcial1_Labo_2.Properties.Resources.night_mode1;
-            this.pic_Modo.Location = new System.Drawing.Point(381, 30);
+            this.pic_Modo.Location = new System.Drawing.Point(428, 28);
             this.pic_Modo.Name = "pic_Modo";
             this.pic_Modo.Size = new System.Drawing.Size(33, 33);
             this.pic_Modo.TabIndex = 8;
@@ -148,7 +149,6 @@
             this.Controls.Add(this.btn_Autocompletar);
             this.Controls.Add(this.lbl_Contraseña);
             this.Controls.Add(this.lbl_Usuario);
-            this.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.MaximizeBox = false;
             this.Name = "frm_Login";
             this.Text = "Login";

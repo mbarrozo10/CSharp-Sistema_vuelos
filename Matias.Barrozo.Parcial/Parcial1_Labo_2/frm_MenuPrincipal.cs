@@ -45,18 +45,18 @@ namespace Parcial1_Labo_2
             Index = e.RowIndex;
             if (Aerolinea.vuelos[Index].Estado == Biblioteca.Estado.Disponible)
             {
-               pic_Vender.Enabled = true;
-               pic_Pasajeros.Enabled = true;
+               pic_Vender.Visible = true;
+               pic_Pasajeros.Visible = true;
             }
             else if (Aerolinea.vuelos[Index].Estado == Biblioteca.Estado.EnVuelo || Aerolinea.vuelos[Index].Estado == Biblioteca.Estado.Lleno)
             {
-                pic_Pasajeros.Enabled = true;
-                pic_Vender.Enabled = false;
+                pic_Pasajeros.Visible = true;
+                pic_Vender.Visible = false;
             }
             else
             {
-                pic_Vender.Enabled = false;
-                pic_Pasajeros.Enabled = false;
+                pic_Vender.Visible = false;
+                pic_Pasajeros.Visible = false;
             }
 
         }
@@ -133,9 +133,20 @@ namespace Parcial1_Labo_2
                 pic_Agregar.Image = Resources.agregar_blanco;
                 pic_Vender.Image= Resources.vender_blanco_84x24;    
                 lbl_Bienvenido.ForeColor= Color.White;
+                dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(34, 34, 34);
+                dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+                dataGridView1.RowHeadersDefaultCellStyle.BackColor = Color.FromArgb(34, 34, 34);
+                dataGridView1.RowHeadersDefaultCellStyle.ForeColor = Color.White;
+                dataGridView1.RowsDefaultCellStyle.BackColor= Color.FromArgb(34, 34, 34);
+                dataGridView1.RowsDefaultCellStyle.ForeColor = Color.White;
+
             }
             else
             {
+                dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.White;
+                dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
+                dataGridView1.RowHeadersDefaultCellStyle.BackColor = Color.White;
+                dataGridView1.RowHeadersDefaultCellStyle.ForeColor = Color.Black;
                 pic_Modo.Image = Resources.night_mode1;
                 this.BackColor = Color.White;
                 Aerolinea.modoOscuro = true;
@@ -144,6 +155,9 @@ namespace Parcial1_Labo_2
                 pic_Salir.Image = Resources.salir_negro_84x24;
                 pic_Agregar.Image = Resources.agregar_negro;
                 pic_Vender.Image = Resources.vender_negro_84x24;
+                dataGridView1.RowsDefaultCellStyle.BackColor = Color.White;
+                dataGridView1.RowsDefaultCellStyle.ForeColor = Color.Black;
+
             }
         }
 
