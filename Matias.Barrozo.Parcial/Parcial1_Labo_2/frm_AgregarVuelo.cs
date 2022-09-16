@@ -39,7 +39,7 @@ namespace Parcial1_Labo_2
             }
             for(int i = 0; i < 48; i++)
             {
-                cmb_Salida.Items.Add(salida.ToString("hh:mm tt"));
+                cmb_Salida.Items.Add(salida.ToString("HH:mm"));
                 salida=salida.AddHours(0.5);
             }
 
@@ -72,9 +72,17 @@ namespace Parcial1_Labo_2
                 int duracion = Vuelo.CalcularDuracion(Enum.Parse<Destino>(cmb_Destino.Text));
                 int i = Aerolinea.ConseguirIndex(cmb_Avion.Text);
                 DateTime salida = new DateTime();
-                int horaElegida = int.Parse(DateTime.Parse(cmb_Salida.Text).ToString("hh"));
+                float horaElegida = float.Parse(DateTime.Parse(cmb_Salida.Text).ToString("HH,mm"));
+                if (cmb_Salida.SelectedIndex % 2 == 1)
+                {
+                    horaElegida += 0.2f;
+                }
                 salida = DateTime.Parse(dtp_Salida.Text);
                 salida = salida.AddHours(horaElegida);
+                if (duracion + horaElegida >= 24)
+                {
+                    llegada = salida.AddDays(1);
+                }
                 llegada = salida.AddHours(duracion);
                 List<Pasajero> pasajeros= new List<Pasajero>();
                 float costo = Vuelo.CalcularCosto(Enum.Parse<Destino>(cmb_Destino.Text), duracion);

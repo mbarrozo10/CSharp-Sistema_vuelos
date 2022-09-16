@@ -11,15 +11,15 @@ namespace Biblioteca
         private int dni;
         private int edad;
         private int equipaje;
-        private string clase;
+        private bool premium;
         
 
-        public Pasajero(string nombre, string apellido,int dni, int edad, int equipaje, string clase): base(nombre,apellido)
+        public Pasajero(string nombre, string apellido,int dni, int edad, int equipaje, bool clase): base(nombre,apellido)
         {
             this.dni = dni;
             this.edad = edad;
             this.equipaje = equipaje;
-            this.clase = clase;
+            this.premium = clase;
         }
 
         public int Dni
@@ -32,9 +32,9 @@ namespace Biblioteca
             get { return edad; }
         }
 
-        public string Clase
+        public bool Premium
         {
-            get { return clase; }
+            get { return premium; }
         }
         
         public int Equipaje

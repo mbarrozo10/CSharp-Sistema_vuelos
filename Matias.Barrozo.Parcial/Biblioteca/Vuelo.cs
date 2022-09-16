@@ -53,7 +53,8 @@ namespace Biblioteca
         private string codigo;
         private int asientosLibres;
         private DateTime llegada;
-        private float reccuadacion;
+        private float recuadacion;
+        // agregar discriminacion de asientos premium
 
         public Vuelo(Avion avion, int duracion, float costoDePasaje, Destino destino, Estado estado, string origen, DateTime salida, List<Pasajero> pasajeros, string codigo, DateTime llegada)
         {
@@ -66,8 +67,9 @@ namespace Biblioteca
             this.origen = origen;
             this.pasajeros = pasajeros;
             this.codigo = codigo.ToUpper();
-            this.asientosLibres = this.avion.CantidadAsientos - pasajeros.Count;
+            this.asientosLibres = this.avion.CantidadAsientos;
             this.llegada = llegada;
+            this.recuadacion = 0;
         }
 
         public DateTime Llegada
@@ -75,9 +77,16 @@ namespace Biblioteca
             get { return llegada; }
         }
 
+        public float Recaudacion
+        {
+            get { return recuadacion; }
+            set { recuadacion = value; }
+        }
+
         public int AsientosLibres
         {
             get { return asientosLibres; }
+            set { asientosLibres = value; }
         }
 
         public List<Pasajero> Pasajeros

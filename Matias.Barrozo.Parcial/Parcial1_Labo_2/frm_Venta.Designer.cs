@@ -28,166 +28,308 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
+            this.btn_Agregar = new System.Windows.Forms.Button();
+            this.btn_Cancelar = new System.Windows.Forms.Button();
+            this.lbl_PrecioFinal = new System.Windows.Forms.Label();
+            this.lbl_Edad = new System.Windows.Forms.Label();
+            this.lbl_Dni = new System.Windows.Forms.Label();
+            this.lbl_Apellido = new System.Windows.Forms.Label();
+            this.lbl_Nombre = new System.Windows.Forms.Label();
+            this.prg_CantidadRestante = new System.Windows.Forms.ProgressBar();
+            this.lbl_Codigo = new System.Windows.Forms.Label();
+            this.lbl_Origen = new System.Windows.Forms.Label();
+            this.lbl_Duracion = new System.Windows.Forms.Label();
+            this.lbl_Destino = new System.Windows.Forms.Label();
+            this.nud_Cantidad = new System.Windows.Forms.NumericUpDown();
+            this.lbl_Cantidad = new System.Windows.Forms.Label();
+            this.lbl_PrecioSub = new System.Windows.Forms.Label();
+            this.chk_Premium = new System.Windows.Forms.CheckBox();
+            this.txt_Nombre = new System.Windows.Forms.TextBox();
+            this.txt_Apellido = new System.Windows.Forms.TextBox();
+            this.txt_Dni = new System.Windows.Forms.TextBox();
+            this.txt_Edad = new System.Windows.Forms.TextBox();
+            this.lbl_Equipaje = new System.Windows.Forms.Label();
+            this.lbl_Kg = new System.Windows.Forms.Label();
+            this.txt_Kg = new System.Windows.Forms.TextBox();
+            this.nud_CantEquipaje = new System.Windows.Forms.NumericUpDown();
+            this.lbl_Error = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_Cantidad)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_CantEquipaje)).BeginInit();
             this.SuspendLayout();
             // 
-            // button1
+            // btn_Agregar
             // 
-            this.button1.Location = new System.Drawing.Point(988, 485);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btn_Agregar.Location = new System.Drawing.Point(988, 485);
+            this.btn_Agregar.Name = "btn_Agregar";
+            this.btn_Agregar.Size = new System.Drawing.Size(75, 23);
+            this.btn_Agregar.TabIndex = 0;
+            this.btn_Agregar.Text = "Agregar";
+            this.btn_Agregar.UseVisualStyleBackColor = true;
+            this.btn_Agregar.Click += new System.EventHandler(this.btn_Agregar_Click);
             // 
-            // button2
+            // btn_Cancelar
             // 
-            this.button2.Location = new System.Drawing.Point(883, 485);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btn_Cancelar.Location = new System.Drawing.Point(883, 485);
+            this.btn_Cancelar.Name = "btn_Cancelar";
+            this.btn_Cancelar.Size = new System.Drawing.Size(75, 23);
+            this.btn_Cancelar.TabIndex = 1;
+            this.btn_Cancelar.Text = "Cancelar";
+            this.btn_Cancelar.UseVisualStyleBackColor = true;
+            this.btn_Cancelar.Click += new System.EventHandler(this.btn_Cancelar_Click);
             // 
-            // label1
+            // lbl_PrecioFinal
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(663, 358);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 15);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "label1";
+            this.lbl_PrecioFinal.AutoSize = true;
+            this.lbl_PrecioFinal.Location = new System.Drawing.Point(883, 428);
+            this.lbl_PrecioFinal.Name = "lbl_PrecioFinal";
+            this.lbl_PrecioFinal.Size = new System.Drawing.Size(71, 15);
+            this.lbl_PrecioFinal.TabIndex = 2;
+            this.lbl_PrecioFinal.Text = "Precio Final:";
             // 
-            // label2
+            // lbl_Edad
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(663, 289);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(38, 15);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "label2";
+            this.lbl_Edad.AutoSize = true;
+            this.lbl_Edad.Location = new System.Drawing.Point(663, 289);
+            this.lbl_Edad.Name = "lbl_Edad";
+            this.lbl_Edad.Size = new System.Drawing.Size(33, 15);
+            this.lbl_Edad.TabIndex = 4;
+            this.lbl_Edad.Text = "Edad";
             // 
-            // label3
+            // lbl_Dni
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(663, 224);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(38, 15);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "label3";
+            this.lbl_Dni.AutoSize = true;
+            this.lbl_Dni.Location = new System.Drawing.Point(663, 204);
+            this.lbl_Dni.Name = "lbl_Dni";
+            this.lbl_Dni.Size = new System.Drawing.Size(27, 15);
+            this.lbl_Dni.TabIndex = 5;
+            this.lbl_Dni.Text = "DNI";
             // 
-            // label4
+            // lbl_Apellido
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(663, 166);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(38, 15);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "label4";
+            this.lbl_Apellido.AutoSize = true;
+            this.lbl_Apellido.Location = new System.Drawing.Point(663, 131);
+            this.lbl_Apellido.Name = "lbl_Apellido";
+            this.lbl_Apellido.Size = new System.Drawing.Size(51, 15);
+            this.lbl_Apellido.TabIndex = 6;
+            this.lbl_Apellido.Text = "Apellido";
             // 
-            // label5
+            // lbl_Nombre
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(663, 106);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(38, 15);
-            this.label5.TabIndex = 6;
-            this.label5.Text = "label5";
+            this.lbl_Nombre.AutoSize = true;
+            this.lbl_Nombre.Location = new System.Drawing.Point(663, 56);
+            this.lbl_Nombre.Name = "lbl_Nombre";
+            this.lbl_Nombre.Size = new System.Drawing.Size(54, 15);
+            this.lbl_Nombre.TabIndex = 7;
+            this.lbl_Nombre.Text = "Nombre:";
             // 
-            // label6
+            // prg_CantidadRestante
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(663, 56);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(38, 15);
-            this.label6.TabIndex = 7;
-            this.label6.Text = "label6";
+            this.prg_CantidadRestante.Location = new System.Drawing.Point(83, 495);
+            this.prg_CantidadRestante.Maximum = 4;
+            this.prg_CantidadRestante.Name = "prg_CantidadRestante";
+            this.prg_CantidadRestante.Size = new System.Drawing.Size(670, 23);
+            this.prg_CantidadRestante.TabIndex = 8;
             // 
-            // progressBar1
+            // lbl_Codigo
             // 
-            this.progressBar1.Location = new System.Drawing.Point(449, 434);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(670, 23);
-            this.progressBar1.TabIndex = 8;
+            this.lbl_Codigo.AutoSize = true;
+            this.lbl_Codigo.Location = new System.Drawing.Point(83, 56);
+            this.lbl_Codigo.Name = "lbl_Codigo";
+            this.lbl_Codigo.Size = new System.Drawing.Size(100, 15);
+            this.lbl_Codigo.TabIndex = 13;
+            this.lbl_Codigo.Text = "Codigo de vuelo: ";
             // 
-            // comboBox1
+            // lbl_Origen
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(83, 358);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(29, 23);
-            this.comboBox1.TabIndex = 9;
+            this.lbl_Origen.AutoSize = true;
+            this.lbl_Origen.Location = new System.Drawing.Point(83, 131);
+            this.lbl_Origen.Name = "lbl_Origen";
+            this.lbl_Origen.Size = new System.Drawing.Size(49, 15);
+            this.lbl_Origen.TabIndex = 12;
+            this.lbl_Origen.Text = "Origen: ";
             // 
-            // label7
+            // lbl_Duracion
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(83, 56);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(38, 15);
-            this.label7.TabIndex = 13;
-            this.label7.Text = "label7";
+            this.lbl_Duracion.AutoSize = true;
+            this.lbl_Duracion.Location = new System.Drawing.Point(83, 204);
+            this.lbl_Duracion.Name = "lbl_Duracion";
+            this.lbl_Duracion.Size = new System.Drawing.Size(112, 15);
+            this.lbl_Duracion.TabIndex = 11;
+            this.lbl_Duracion.Text = "Duracion del vuelo: ";
             // 
-            // label8
+            // lbl_Destino
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(83, 106);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(38, 15);
-            this.label8.TabIndex = 12;
-            this.label8.Text = "label8";
+            this.lbl_Destino.AutoSize = true;
+            this.lbl_Destino.Location = new System.Drawing.Point(83, 289);
+            this.lbl_Destino.Name = "lbl_Destino";
+            this.lbl_Destino.Size = new System.Drawing.Size(53, 15);
+            this.lbl_Destino.TabIndex = 10;
+            this.lbl_Destino.Text = "Destino: ";
             // 
-            // label9
+            // nud_Cantidad
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(83, 166);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(38, 15);
-            this.label9.TabIndex = 11;
-            this.label9.Text = "label9";
+            this.nud_Cantidad.Location = new System.Drawing.Point(212, 355);
+            this.nud_Cantidad.Maximum = new decimal(new int[] {
+            4,
+            0,
+            0,
+            0});
+            this.nud_Cantidad.Name = "nud_Cantidad";
+            this.nud_Cantidad.Size = new System.Drawing.Size(38, 23);
+            this.nud_Cantidad.TabIndex = 14;
+            this.nud_Cantidad.ValueChanged += new System.EventHandler(this.nud_Cantidad_ValueChanged);
             // 
-            // label10
+            // lbl_Cantidad
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(83, 224);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(44, 15);
-            this.label10.TabIndex = 10;
-            this.label10.Text = "label10";
+            this.lbl_Cantidad.AutoSize = true;
+            this.lbl_Cantidad.Location = new System.Drawing.Point(83, 357);
+            this.lbl_Cantidad.Name = "lbl_Cantidad";
+            this.lbl_Cantidad.Size = new System.Drawing.Size(126, 15);
+            this.lbl_Cantidad.TabIndex = 15;
+            this.lbl_Cantidad.Text = "Cantidad de pasajeros:";
+            // 
+            // lbl_PrecioSub
+            // 
+            this.lbl_PrecioSub.AutoSize = true;
+            this.lbl_PrecioSub.Location = new System.Drawing.Point(883, 394);
+            this.lbl_PrecioSub.Name = "lbl_PrecioSub";
+            this.lbl_PrecioSub.Size = new System.Drawing.Size(90, 15);
+            this.lbl_PrecioSub.TabIndex = 16;
+            this.lbl_PrecioSub.Text = "Precio Subtotal:";
+            // 
+            // chk_Premium
+            // 
+            this.chk_Premium.AutoSize = true;
+            this.chk_Premium.Enabled = false;
+            this.chk_Premium.Location = new System.Drawing.Point(860, 78);
+            this.chk_Premium.Name = "chk_Premium";
+            this.chk_Premium.Size = new System.Drawing.Size(75, 19);
+            this.chk_Premium.TabIndex = 17;
+            this.chk_Premium.Text = "Premium";
+            this.chk_Premium.UseVisualStyleBackColor = true;
+            this.chk_Premium.CheckedChanged += new System.EventHandler(this.chk_Premium_CheckedChanged);
+            // 
+            // txt_Nombre
+            // 
+            this.txt_Nombre.Enabled = false;
+            this.txt_Nombre.Location = new System.Drawing.Point(663, 74);
+            this.txt_Nombre.Name = "txt_Nombre";
+            this.txt_Nombre.Size = new System.Drawing.Size(100, 23);
+            this.txt_Nombre.TabIndex = 18;
+            this.txt_Nombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Nombre_KeyPress);
+            // 
+            // txt_Apellido
+            // 
+            this.txt_Apellido.Enabled = false;
+            this.txt_Apellido.Location = new System.Drawing.Point(663, 158);
+            this.txt_Apellido.Name = "txt_Apellido";
+            this.txt_Apellido.Size = new System.Drawing.Size(100, 23);
+            this.txt_Apellido.TabIndex = 19;
+            this.txt_Apellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Apellido_KeyPress);
+            // 
+            // txt_Dni
+            // 
+            this.txt_Dni.Enabled = false;
+            this.txt_Dni.Location = new System.Drawing.Point(663, 235);
+            this.txt_Dni.Name = "txt_Dni";
+            this.txt_Dni.Size = new System.Drawing.Size(100, 23);
+            this.txt_Dni.TabIndex = 20;
+            this.txt_Dni.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Dni_KeyPress);
+            // 
+            // txt_Edad
+            // 
+            this.txt_Edad.Enabled = false;
+            this.txt_Edad.Location = new System.Drawing.Point(663, 321);
+            this.txt_Edad.Name = "txt_Edad";
+            this.txt_Edad.Size = new System.Drawing.Size(100, 23);
+            this.txt_Edad.TabIndex = 21;
+            this.txt_Edad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Edad_KeyPress);
+            // 
+            // lbl_Equipaje
+            // 
+            this.lbl_Equipaje.AutoSize = true;
+            this.lbl_Equipaje.Location = new System.Drawing.Point(860, 131);
+            this.lbl_Equipaje.Name = "lbl_Equipaje";
+            this.lbl_Equipaje.Size = new System.Drawing.Size(52, 15);
+            this.lbl_Equipaje.TabIndex = 22;
+            this.lbl_Equipaje.Text = "Equipaje";
+            // 
+            // lbl_Kg
+            // 
+            this.lbl_Kg.AutoSize = true;
+            this.lbl_Kg.Location = new System.Drawing.Point(955, 131);
+            this.lbl_Kg.Name = "lbl_Kg";
+            this.lbl_Kg.Size = new System.Drawing.Size(21, 15);
+            this.lbl_Kg.TabIndex = 23;
+            this.lbl_Kg.Text = "Kg";
+            // 
+            // txt_Kg
+            // 
+            this.txt_Kg.Enabled = false;
+            this.txt_Kg.Location = new System.Drawing.Point(955, 158);
+            this.txt_Kg.Name = "txt_Kg";
+            this.txt_Kg.Size = new System.Drawing.Size(34, 23);
+            this.txt_Kg.TabIndex = 24;
+            this.txt_Kg.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Kg_KeyPress);
+            // 
+            // nud_CantEquipaje
+            // 
+            this.nud_CantEquipaje.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.nud_CantEquipaje.Enabled = false;
+            this.nud_CantEquipaje.Location = new System.Drawing.Point(874, 158);
+            this.nud_CantEquipaje.Maximum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nud_CantEquipaje.Name = "nud_CantEquipaje";
+            this.nud_CantEquipaje.Size = new System.Drawing.Size(38, 23);
+            this.nud_CantEquipaje.TabIndex = 25;
+            this.nud_CantEquipaje.ValueChanged += new System.EventHandler(this.nud_CantEquipaje_ValueChanged);
+            // 
+            // lbl_Error
+            // 
+            this.lbl_Error.AutoSize = true;
+            this.lbl_Error.Location = new System.Drawing.Point(663, 20);
+            this.lbl_Error.Name = "lbl_Error";
+            this.lbl_Error.Size = new System.Drawing.Size(0, 15);
+            this.lbl_Error.TabIndex = 26;
             // 
             // frm_Venta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1150, 562);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.progressBar1);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.lbl_Error);
+            this.Controls.Add(this.nud_CantEquipaje);
+            this.Controls.Add(this.txt_Kg);
+            this.Controls.Add(this.lbl_Kg);
+            this.Controls.Add(this.lbl_Equipaje);
+            this.Controls.Add(this.txt_Edad);
+            this.Controls.Add(this.txt_Dni);
+            this.Controls.Add(this.txt_Apellido);
+            this.Controls.Add(this.txt_Nombre);
+            this.Controls.Add(this.chk_Premium);
+            this.Controls.Add(this.lbl_PrecioSub);
+            this.Controls.Add(this.lbl_Cantidad);
+            this.Controls.Add(this.nud_Cantidad);
+            this.Controls.Add(this.lbl_Codigo);
+            this.Controls.Add(this.lbl_Origen);
+            this.Controls.Add(this.lbl_Duracion);
+            this.Controls.Add(this.lbl_Destino);
+            this.Controls.Add(this.prg_CantidadRestante);
+            this.Controls.Add(this.lbl_Nombre);
+            this.Controls.Add(this.lbl_Apellido);
+            this.Controls.Add(this.lbl_Dni);
+            this.Controls.Add(this.lbl_Edad);
+            this.Controls.Add(this.lbl_PrecioFinal);
+            this.Controls.Add(this.btn_Cancelar);
+            this.Controls.Add(this.btn_Agregar);
             this.Name = "frm_Venta";
             this.Text = "frm_Venta";
+            this.Load += new System.EventHandler(this.frm_Venta_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.nud_Cantidad)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_CantEquipaje)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -195,19 +337,30 @@
 
         #endregion
 
-        private Button button1;
-        private Button button2;
-        private Label label1;
-        private Label label2;
-        private Label label3;
-        private Label label4;
-        private Label label5;
-        private Label label6;
-        private ProgressBar progressBar1;
-        private ComboBox comboBox1;
-        private Label label7;
-        private Label label8;
-        private Label label9;
-        private Label label10;
+        private Button btn_Agregar;
+        private Button btn_Cancelar;
+        private Label lbl_PrecioFinal;
+        private Label lbl_Edad;
+        private Label lbl_Dni;
+        private Label lbl_Apellido;
+        private Label lbl_Nombre;
+        private ProgressBar prg_CantidadRestante;
+        private Label lbl_Codigo;
+        private Label lbl_Origen;
+        private Label lbl_Duracion;
+        private Label lbl_Destino;
+        private NumericUpDown nud_Cantidad;
+        private Label lbl_Cantidad;
+        private Label lbl_PrecioSub;
+        private CheckBox chk_Premium;
+        private TextBox txt_Nombre;
+        private TextBox txt_Apellido;
+        private TextBox txt_Dni;
+        private TextBox txt_Edad;
+        private Label lbl_Equipaje;
+        private Label lbl_Kg;
+        private TextBox txt_Kg;
+        private NumericUpDown nud_CantEquipaje;
+        private Label lbl_Error;
     }
 }

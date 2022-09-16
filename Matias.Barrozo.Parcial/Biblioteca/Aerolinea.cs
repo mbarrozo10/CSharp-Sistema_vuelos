@@ -11,7 +11,7 @@ namespace Biblioteca
         public static List<Vendedor> Vendedores = new List<Vendedor>();
         public static List<Avion> aviones = new List<Avion>();
         public static List<Vuelo> vuelos = new List<Vuelo>();
-
+        public static bool modoOscuro = false;
         public static int ConseguirIndex(string matricula)
         {
             for (int i = 0; i < aviones.Count; i++)
