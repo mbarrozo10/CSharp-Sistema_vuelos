@@ -60,6 +60,7 @@
             this.Controls.Add(this.btn_Salir);
             this.Controls.Add(this.dataGridView1);
             this.Name = "frm_pasajeros";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "frm_pasajeros";
             this.Load += new System.EventHandler(this.frm_pasajeros_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

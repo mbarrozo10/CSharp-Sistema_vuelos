@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Login));
             this.lbl_Usuario = new System.Windows.Forms.Label();
             this.lbl_Contraseña = new System.Windows.Forms.Label();
@@ -36,7 +35,6 @@
             this.txt_Contraseña = new System.Windows.Forms.TextBox();
             this.txt_Usuario = new System.Windows.Forms.TextBox();
             this.lbl_Error = new System.Windows.Forms.Label();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.pic_Modo = new System.Windows.Forms.PictureBox();
             this.pic_Ingresar = new System.Windows.Forms.PictureBox();
             this.pic_Salir = new System.Windows.Forms.PictureBox();
@@ -151,6 +149,7 @@
             this.Controls.Add(this.lbl_Usuario);
             this.MaximizeBox = false;
             this.Name = "frm_Login";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pic_Modo)).EndInit();
@@ -169,7 +168,6 @@
         private TextBox txt_Contraseña;
         private TextBox txt_Usuario;
         private Label lbl_Error;
-        private System.Windows.Forms.Timer timer1;
         private PictureBox pic_Modo;
         private PictureBox pic_Ingresar;
         private PictureBox pic_Salir;

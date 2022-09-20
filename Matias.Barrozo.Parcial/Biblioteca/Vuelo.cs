@@ -35,7 +35,9 @@ namespace Biblioteca
         Lleno,
         Disponible,
         EnVuelo,
-        Finalizado
+        Finalizado,
+        Cancelado
+
     }
 
 
@@ -51,12 +53,33 @@ namespace Biblioteca
         private string origen;
         private List<Pasajero> pasajeros;
         private string codigo;
-        private int asientosLibres;
+        private int asientosOcupadoTurista;
+        private int asientosOcupadoPremium;
         private DateTime llegada;
         private float recuadacion;
+        private int bodegaRestante;
         // agregar discriminacion de asientos premium
 
-        public Vuelo(Avion avion, int duracion, float costoDePasaje, Destino destino, Estado estado, string origen, DateTime salida, List<Pasajero> pasajeros, string codigo, DateTime llegada)
+        //public Vuelo(Avion avion, int duracion, float costoDePasaje, Destino destino, Estado estado, string origen, DateTime salida, List<Pasajero> pasajeros, string codigo, DateTime llegada, int asientosPremium, int asientosTurista)
+        //{
+        //    this.avion = avion;
+        //    this.duracion = duracion;
+        //    this.costoDePasaje = costoDePasaje;
+        //    this.destino = destino;
+        //    this.estado = estado;
+        //    this.salida = salida;
+        //    this.origen = origen;
+        //    this.pasajeros = pasajeros;
+        //    this.codigo = codigo.ToUpper();
+        //    this.asientosLibreTurista = CalcularAsientos(this.avion.CantidadAsientos, 0.80f); 
+        //    this.llegada = llegada;
+        //    this.recuadacion = 0;
+        //    this.bodegaRestante = this.avion.Bodega;
+        //    this.asientosLibrePremium = CalcularAsientos(this.avion.CantidadAsientos, 0.20f);
+        //}
+
+     
+        public Vuelo(Avion avion, int duracion, float costoDePasaje, Destino destino, Estado estado, string origen, DateTime salida, List<Pasajero> pasajeros, string codigo, DateTime llegada, int bodega, float recaudacion, int asientosPremium, int asientosTurista)//:this(avion,duracion,costoDePasaje,destino,estado,origen,salida,pasajeros,codigo,llegada,asientosPremium,asientosTurista)
         {
             this.avion = avion;
             this.duracion = duracion;
@@ -67,9 +90,17 @@ namespace Biblioteca
             this.origen = origen;
             this.pasajeros = pasajeros;
             this.codigo = codigo.ToUpper();
-            this.asientosLibres = this.avion.CantidadAsientos;
+            this.asientosOcupadoTurista = asientosTurista;
             this.llegada = llegada;
-            this.recuadacion = 0;
+            this.recuadacion = recaudacion ;
+            this.bodegaRestante = bodega;
+            this.asientosOcupadoPremium =asientosPremium;
+        }
+
+        public int BodegaRestante
+        {
+            get { return bodegaRestante; }
+            set { this.recuadacion = value; }
         }
 
         public DateTime Llegada
@@ -83,10 +114,18 @@ namespace Biblioteca
             set { recuadacion = value; }
         }
 
-        public int AsientosLibres
+        public int AsientosLibresTurista
         {
-            get { return asientosLibres; }
-            set { asientosLibres = value; }
+            get { return asientosOcupadoTurista; }
+            set { asientosOcupadoTurista = value; }
+        }
+
+
+
+        public int AsientosLibresPremium
+        {
+            get { return asientosOcupadoPremium; }
+            set { asientosOcupadoPremium = value; }
         }
 
         public List<Pasajero> Pasajeros
@@ -119,6 +158,7 @@ namespace Biblioteca
         public Estado Estado
         {
             get { return estado; }  
+            set { estado = value; }
         }
 
         public static float CalcularCosto(Destino destino, int duracion)
@@ -156,14 +196,21 @@ namespace Biblioteca
 
             if (((int)destino)>14)
             {
-                return rnd.Next(8, 12);
+                return rnd.Next(8, 13);
             }
             else
             {
-                return rnd.Next(2, 4);
+                return rnd.Next(2, 5);
             }
            
         }
+
+        public static int CalcularAsientos(int asientos, float porcentaje)
+        {
+            return (int)(asientos * porcentaje);
+        }
+
+        
         
     }
 

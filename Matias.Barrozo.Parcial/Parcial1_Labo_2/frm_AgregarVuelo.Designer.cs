@@ -37,13 +37,15 @@
             this.cmb_Avion = new System.Windows.Forms.ComboBox();
             this.cmb_Destino = new System.Windows.Forms.ComboBox();
             this.txt_Codigo = new System.Windows.Forms.TextBox();
-            this.btn_Salir = new System.Windows.Forms.Button();
-            this.btn_Agregar = new System.Windows.Forms.Button();
             this.lbl_error = new System.Windows.Forms.Label();
             this.dtp_Salida = new System.Windows.Forms.DateTimePicker();
             this.cmb_Origen = new System.Windows.Forms.ComboBox();
             this.cmb_Salida = new System.Windows.Forms.ComboBox();
             this.lbl_HoraSalida = new System.Windows.Forms.Label();
+            this.pic_Agregar = new System.Windows.Forms.PictureBox();
+            this.pic_Salir = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_Agregar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_Salir)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_Avion
@@ -123,26 +125,6 @@
             this.txt_Codigo.Size = new System.Drawing.Size(100, 23);
             this.txt_Codigo.TabIndex = 13;
             // 
-            // btn_Salir
-            // 
-            this.btn_Salir.Location = new System.Drawing.Point(887, 346);
-            this.btn_Salir.Name = "btn_Salir";
-            this.btn_Salir.Size = new System.Drawing.Size(75, 23);
-            this.btn_Salir.TabIndex = 15;
-            this.btn_Salir.Text = "Salir";
-            this.btn_Salir.UseVisualStyleBackColor = true;
-            this.btn_Salir.Click += new System.EventHandler(this.btn_Salir_Click);
-            // 
-            // btn_Agregar
-            // 
-            this.btn_Agregar.Location = new System.Drawing.Point(788, 346);
-            this.btn_Agregar.Name = "btn_Agregar";
-            this.btn_Agregar.Size = new System.Drawing.Size(75, 23);
-            this.btn_Agregar.TabIndex = 16;
-            this.btn_Agregar.Text = "Agregar";
-            this.btn_Agregar.UseVisualStyleBackColor = true;
-            this.btn_Agregar.Click += new System.EventHandler(this.btn_Agregar_Click);
-            // 
             // lbl_error
             // 
             this.lbl_error.AutoSize = true;
@@ -190,18 +172,42 @@
             this.lbl_HoraSalida.TabIndex = 22;
             this.lbl_HoraSalida.Text = "Horario de salida";
             // 
+            // pic_Agregar
+            // 
+            this.pic_Agregar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pic_Agregar.Image = global::Parcial1_Labo_2.Properties.Resources.agregar_negro_84x24;
+            this.pic_Agregar.Location = new System.Drawing.Point(793, 346);
+            this.pic_Agregar.Name = "pic_Agregar";
+            this.pic_Agregar.Size = new System.Drawing.Size(88, 28);
+            this.pic_Agregar.TabIndex = 23;
+            this.pic_Agregar.TabStop = false;
+            this.pic_Agregar.Click += new System.EventHandler(this.btn_Agregar_Click);
+            // 
+            // pic_Salir
+            // 
+            this.pic_Salir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pic_Salir.Image = global::Parcial1_Labo_2.Properties.Resources.salir_negro_84x24;
+            this.pic_Salir.InitialImage = global::Parcial1_Labo_2.Properties.Resources.salir_negro_84x24;
+            this.pic_Salir.Location = new System.Drawing.Point(888, 346);
+            this.pic_Salir.Name = "pic_Salir";
+            this.pic_Salir.Size = new System.Drawing.Size(88, 28);
+            this.pic_Salir.TabIndex = 24;
+            this.pic_Salir.TabStop = false;
+            this.pic_Salir.Click += new System.EventHandler(this.btn_Salir_Click);
+            // 
             // frm_AgregarVuelo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(988, 387);
+            this.ControlBox = false;
+            this.Controls.Add(this.pic_Salir);
+            this.Controls.Add(this.pic_Agregar);
             this.Controls.Add(this.lbl_HoraSalida);
             this.Controls.Add(this.cmb_Salida);
             this.Controls.Add(this.cmb_Origen);
             this.Controls.Add(this.dtp_Salida);
             this.Controls.Add(this.lbl_error);
-            this.Controls.Add(this.btn_Agregar);
-            this.Controls.Add(this.btn_Salir);
             this.Controls.Add(this.txt_Codigo);
             this.Controls.Add(this.cmb_Destino);
             this.Controls.Add(this.cmb_Avion);
@@ -214,9 +220,12 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.Name = "frm_AgregarVuelo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frm_AgregarVuelo";
             this.TransparencyKey = System.Drawing.Color.Black;
             this.Load += new System.EventHandler(this.frm_AgregarVuelo_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pic_Agregar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_Salir)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -233,12 +242,12 @@
         private ComboBox cmb_Avion;
         private ComboBox cmb_Destino;
         private TextBox txt_Codigo;
-        private Button btn_Salir;
-        private Button btn_Agregar;
         private Label lbl_error;
         private DateTimePicker dtp_Salida;
         private ComboBox cmb_Origen;
         private ComboBox cmb_Salida;
         private Label lbl_HoraSalida;
+        private PictureBox pic_Agregar;
+        private PictureBox pic_Salir;
     }
 }

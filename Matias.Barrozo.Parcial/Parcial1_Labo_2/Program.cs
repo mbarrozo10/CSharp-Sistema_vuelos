@@ -4,6 +4,11 @@ namespace Parcial1_Labo_2
     {
         /// <summary>
         ///  The main entry point for the application.
+        /// Borrar fotos extras
+        /// podemos usar sets?
+        /// 
+        /// 
+        /// 
         /// </summary>
         [STAThread]
         static void Main()

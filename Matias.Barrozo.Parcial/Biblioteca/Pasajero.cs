@@ -6,31 +6,22 @@ using System.Threading.Tasks;
 
 namespace Biblioteca
 {
-    public class Pasajero : Persona
+    public class Pasajero : Cliente
     {
-        private int dni;
-        private int edad;
+       
         private int equipaje;
         private bool premium;
+        private bool bolsoMano;
         
-
-        public Pasajero(string nombre, string apellido,int dni, int edad, int equipaje, bool clase): base(nombre,apellido)
+        public Pasajero(string nombre, string apellido,int dni, int edad, int equipaje, bool clase, bool bolsoMano): base(nombre,apellido,dni,edad)
         {
-            this.dni = dni;
-            this.edad = edad;
+            
             this.equipaje = equipaje;
             this.premium = clase;
+            this.bolsoMano = bolsoMano;
         }
 
-        public int Dni
-        {
-            get { return dni; }
-        }
-
-        public int Edad
-        {
-            get { return edad; }
-        }
+        
 
         public bool Premium
         {
@@ -41,5 +32,7 @@ namespace Biblioteca
         {
             get { return equipaje; }
         }
+
+        
     }
 }

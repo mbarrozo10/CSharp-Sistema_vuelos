@@ -56,10 +56,6 @@ namespace Biblioteca
             get { return wifi; }
         }
 
-        public int CalcularAsientosPremium()
-        {
-            return (int)(this.cantidadAsientos * 0.20);
-        }
 
         public bool Estado
         {

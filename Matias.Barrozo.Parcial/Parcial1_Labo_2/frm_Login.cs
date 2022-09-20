@@ -14,7 +14,10 @@ namespace Parcial1_Labo_2
         private void Form1_Load(object sender, EventArgs e)
         {
            Aerolinea.Vendedores= Inicializador.InicializarVendedores();
-           // timer1.Start();
+            Aerolinea.clientes = Inicializador.InicializarClientes();
+            Aerolinea.aviones = Inicializador.InicializarAviones();
+            Aerolinea.vuelos = Inicializador.InicializarVuelos();
+            // timer1.Start();
         }
 
         private void btn_Ingresar_Click(object sender, EventArgs e)

@@ -42,5 +42,10 @@ namespace Biblioteca
             }
             throw new Exception("Error, usuario o contraseña incorrecta");
         }
+
+        public override string ToString()
+        {
+            return this.Nombre + " "+ this.Apellido ;
+        }
     }
 }

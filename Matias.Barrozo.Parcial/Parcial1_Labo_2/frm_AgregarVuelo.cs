@@ -1,4 +1,5 @@
 ﻿using Biblioteca;
+using Parcial1_Labo_2.Properties;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,7 +23,7 @@ namespace Parcial1_Labo_2
         private void frm_AgregarVuelo_Load(object sender, EventArgs e)
         {
             //cambiar por filtro de fecha
-            dtp_Salida.MinDate = DateTime.Now;
+            dtp_Salida.MinDate = DateTime.Now.AddDays(1);
             DateTime salida = new DateTime();
             foreach (Avion avion in Aerolinea.aviones) { 
                 cmb_Avion.Items.Add(avion.Matricula);
@@ -42,7 +43,7 @@ namespace Parcial1_Labo_2
                 cmb_Salida.Items.Add(salida.ToString("HH:mm"));
                 salida=salida.AddHours(0.5);
             }
-
+            ModoOscuro();
 
         }
 
@@ -85,7 +86,9 @@ namespace Parcial1_Labo_2
                 }
                 llegada = salida.AddHours(duracion);
                 float costo = Vuelo.CalcularCosto(Enum.Parse<Destino>(cmb_Destino.Text), duracion);
-                vuelo=  new Vuelo (Aerolinea.aviones[i], duracion,costo, Enum.Parse<Destino>(cmb_Destino.Text), Estado.Disponible,cmb_Origen.Text, salida, new List<Pasajero>(), txt_Codigo.Text,llegada);
+                vuelo=  new Vuelo (Aerolinea.aviones[i], duracion,costo, Enum.Parse<Destino>(cmb_Destino.Text), Estado.Disponible
+                                    ,cmb_Origen.Text, salida, new List<Pasajero>(), txt_Codigo.Text, llegada, 
+                                    Aerolinea.aviones[i].Bodega, 0, 0, 0);
                 Aerolinea.vuelos.Add(vuelo);
             }
             else
@@ -134,6 +137,24 @@ namespace Parcial1_Labo_2
         private void cmb_Salida_SelectedValueChanged(object sender, EventArgs e)
         {
             ActualizaSalida();
+        }
+
+
+
+        private void ModoOscuro()
+        {
+            if (!Aerolinea.modoOscuro)
+            {
+                this.BackColor = Color.FromArgb(34, 34, 34);
+                pic_Agregar.Image = Resources.agregar_blanco_84x24;
+                pic_Salir.Image = Resources.salir_blanco_84x24;
+            }
+            else
+            {
+                this.BackColor = Color.White;
+                pic_Agregar.Image = Resources.agregar_negro_84x24;
+                pic_Salir.Image = Resources.salir_negro_84x24;
+            }
         }
     }
 }
