@@ -44,3 +44,4 @@ C:\Users\Mati\Desktop\Escritorio\facultad owo\Barrozo.Matias.Parcial\Matias.Barr
 C:\Users\Mati\Desktop\Escritorio\facultad owo\Barrozo.Matias.Parcial\Matias.Barrozo.Parcial\Parcial1_Labo_2\obj\Debug\net6.0-windows\Parcial1_Labo_2.frm_Venta.resources
 C:\Users\Mati\Desktop\Escritorio\facultad owo\Barrozo.Matias.Parcial\Matias.Barrozo.Parcial\Parcial1_Labo_2\obj\Debug\net6.0-windows\Parcial1_Labo_2.frm_AgregarVuelo.resources
 C:\Users\Mati\Desktop\Escritorio\facultad owo\Barrozo.Matias.Parcial\Matias.Barrozo.Parcial\Parcial1_Labo_2\obj\Debug\net6.0-windows\Parcial1_Labo_2.Properties.Resources.resources
+C:\Users\Mati\Desktop\Escritorio\facultad owo\Barrozo.Matias.Parcial\Matias.Barrozo.Parcial\Parcial1_Labo_2\obj\Debug\net6.0-windows\Parcial1_Labo_2.frm_AgregarCliente.resources

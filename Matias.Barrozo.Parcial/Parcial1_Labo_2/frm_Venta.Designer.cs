@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lbl_PrecioFinal = new System.Windows.Forms.Label();
             this.lbl_Edad = new System.Windows.Forms.Label();
             this.lbl_Dni = new System.Windows.Forms.Label();
@@ -62,11 +63,18 @@
             this.btn_AceptarCliente = new System.Windows.Forms.Button();
             this.btn_Agregar = new System.Windows.Forms.Button();
             this.lbl_ErrorBusqueda = new System.Windows.Forms.Label();
+            this.clienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.apellidoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dniDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.edadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantPasajesCompradosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.nud_Cantidad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_CantEquipaje)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Agregar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Cancelar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Clientes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_PrecioFinal
@@ -352,7 +360,15 @@
             // 
             // dgv_Clientes
             // 
+            this.dgv_Clientes.AutoGenerateColumns = false;
             this.dgv_Clientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_Clientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.nombreDataGridViewTextBoxColumn,
+            this.apellidoDataGridViewTextBoxColumn,
+            this.dniDataGridViewTextBoxColumn,
+            this.edadDataGridViewTextBoxColumn,
+            this.cantPasajesCompradosDataGridViewTextBoxColumn});
+            this.dgv_Clientes.DataSource = this.clienteBindingSource;
             this.dgv_Clientes.Location = new System.Drawing.Point(32, 56);
             this.dgv_Clientes.Name = "dgv_Clientes";
             this.dgv_Clientes.RowTemplate.Height = 25;
@@ -408,6 +424,7 @@
             this.btn_Agregar.TabIndex = 36;
             this.btn_Agregar.Text = "Agregar";
             this.btn_Agregar.UseVisualStyleBackColor = true;
+            this.btn_Agregar.Click += new System.EventHandler(this.btn_Agregar_Click_1);
             // 
             // lbl_ErrorBusqueda
             // 
@@ -416,6 +433,44 @@
             this.lbl_ErrorBusqueda.Name = "lbl_ErrorBusqueda";
             this.lbl_ErrorBusqueda.Size = new System.Drawing.Size(0, 15);
             this.lbl_ErrorBusqueda.TabIndex = 37;
+            // 
+            // clienteBindingSource
+            // 
+            this.clienteBindingSource.DataSource = typeof(Biblioteca.Cliente);
+            // 
+            // nombreDataGridViewTextBoxColumn
+            // 
+            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // apellidoDataGridViewTextBoxColumn
+            // 
+            this.apellidoDataGridViewTextBoxColumn.DataPropertyName = "Apellido";
+            this.apellidoDataGridViewTextBoxColumn.HeaderText = "Apellido";
+            this.apellidoDataGridViewTextBoxColumn.Name = "apellidoDataGridViewTextBoxColumn";
+            this.apellidoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dniDataGridViewTextBoxColumn
+            // 
+            this.dniDataGridViewTextBoxColumn.DataPropertyName = "Dni";
+            this.dniDataGridViewTextBoxColumn.HeaderText = "Dni";
+            this.dniDataGridViewTextBoxColumn.Name = "dniDataGridViewTextBoxColumn";
+            this.dniDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // edadDataGridViewTextBoxColumn
+            // 
+            this.edadDataGridViewTextBoxColumn.DataPropertyName = "Edad";
+            this.edadDataGridViewTextBoxColumn.HeaderText = "Edad";
+            this.edadDataGridViewTextBoxColumn.Name = "edadDataGridViewTextBoxColumn";
+            this.edadDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // cantPasajesCompradosDataGridViewTextBoxColumn
+            // 
+            this.cantPasajesCompradosDataGridViewTextBoxColumn.DataPropertyName = "CantPasajesComprados";
+            this.cantPasajesCompradosDataGridViewTextBoxColumn.HeaderText = "CantPasajesComprados";
+            this.cantPasajesCompradosDataGridViewTextBoxColumn.Name = "cantPasajesCompradosDataGridViewTextBoxColumn";
             // 
             // frm_Venta
             // 
@@ -469,6 +524,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pic_Agregar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Cancelar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Clientes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -509,5 +565,11 @@
         private Button btn_AceptarCliente;
         private Button btn_Agregar;
         private Label lbl_ErrorBusqueda;
+        private DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn apellidoDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn dniDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn edadDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn cantPasajesCompradosDataGridViewTextBoxColumn;
+        private BindingSource clienteBindingSource;
     }
 }

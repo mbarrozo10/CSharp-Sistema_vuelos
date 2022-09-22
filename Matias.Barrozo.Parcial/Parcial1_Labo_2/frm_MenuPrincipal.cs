@@ -31,6 +31,12 @@ namespace Parcial1_Labo_2
             
             CargarDatagrid();
             modoOscuroClaro();
+            cmb_FiltroHistorico.Items.Add("Destinos");
+            cmb_FiltroHistorico.Items.Add("Pasajeros Frecuentes");
+            cmb_FiltroHistorico.Items.Add("Ganancias totales");
+            cmb_FiltroHistorico.Items.Add("Vuelos finalizados");
+            cmb_FiltroHistorico.Items.Add("Aviones");
+            lbl_Fecha.Text = DateTime.Now.ToString("dd/MM/yyyy");
             // dataGridView1.DataSource = Inicializador.vuelos;
         }
 
@@ -142,6 +148,12 @@ namespace Parcial1_Labo_2
                 dgv_VuelosActivos.RowHeadersDefaultCellStyle.ForeColor = Color.White;
                 dgv_VuelosActivos.RowsDefaultCellStyle.BackColor= Color.FromArgb(34, 34, 34);
                 dgv_VuelosActivos.RowsDefaultCellStyle.ForeColor = Color.White;
+                lbl_Fecha.ForeColor= Color.White;
+                pic_SalirHistorico.Image = Resources.salir_blanco_84x24;
+                pic_Cancelar.Image = Resources.cancelar_blanco_84x24;
+                rtx_InfoVuelo.ForeColor= Color.White;
+                rtx_InfoVuelo.BackColor = Color.FromArgb(34, 34, 34);
+                pic_SalirHistorico.Image= Resources.salir_blanco_84x24;
 
             }
             else
@@ -160,6 +172,12 @@ namespace Parcial1_Labo_2
                 pic_Vender.Image = Resources.vender_negro_84x24;
                 dgv_VuelosActivos.RowsDefaultCellStyle.BackColor = Color.White;
                 dgv_VuelosActivos.RowsDefaultCellStyle.ForeColor = Color.Black;
+                lbl_Fecha.ForeColor = Color.Black;  
+                pic_SalirHistorico.Image = Resources.salir_negro_84x24;
+                pic_Cancelar.Image = Resources.cancelar_negro_84x24;
+                rtx_InfoVuelo.ForeColor = Color.Black;
+                rtx_InfoVuelo.BackColor = Color.White;
+                pic_SalirHistorico.Image= Resources.salir_negro_84x24;
 
             }
         }
@@ -182,19 +200,8 @@ namespace Parcial1_Labo_2
             pic_Modo.Enabled = false;
 
             dgv_VuelosActivos.Enabled = false;
-            lbl_Avion.Text = "Avion: " + Aerolinea.vuelos[Index].Avion.Matricula;
-            lbl_Duracion.Text = "Duracion: " + Aerolinea.vuelos[Index].Duracion;
-            lbl_CostoTurista.Text = "Precio turisa: " + Aerolinea.vuelos[Index].CostoDePasaje;
-            lbl_CostoPremium.Text = "Precio premium: " + Aerolinea.vuelos[Index].CostoDePasaje* 1.15f;
-            lbl_Recaudacion.Text = "Recaudacion: " + Aerolinea.vuelos[Index].Recaudacion;
-            lbl_Origen.Text = "Origen: " + Aerolinea.vuelos[Index].Origen;
-            lbl_Salida.Text = "Salida: " + Aerolinea.vuelos[Index].Salida;
-            lbl_Llegada.Text = "Llegada: " + Aerolinea.vuelos[Index].Llegada;
-            lbl_Destino.Text = "Destino: " + Aerolinea.vuelos[Index].Destino;
-            lbl_BodegaLibre.Text = "Espacio de bodega libre: " + Aerolinea.vuelos[Index].BodegaRestante;
-            lbl_AsientosPremium.Text = "Asientos libres Premium: " + Aerolinea.vuelos[Index].AsientosLibresPremium;
-            lbl_AsientosTurista.Text = "Asientos libres Turista: " + Aerolinea.vuelos[Index].AsientosLibresTurista;
-            lbl_Codigo.Text = "Codigo de Vuelo: " + Aerolinea.vuelos[Index].Codigo;
+
+            rtx_InfoVuelo.Text = Aerolinea.vuelos[Index].ToString();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -207,7 +214,7 @@ namespace Parcial1_Labo_2
             btn_MasInfo.Enabled = true;
             btn_Historico.Enabled = true;
             pic_Modo.Enabled = true;
-
+            dgv_VuelosActivos.Enabled = true;
         }
 
         private void pic_Cancelar_Click(object sender, EventArgs e)
@@ -224,7 +231,9 @@ namespace Parcial1_Labo_2
             btn_MasInfo.Enabled = true;
             btn_Historico.Enabled = true;
             pic_Modo.Enabled = true;
+            dgv_VuelosActivos.Enabled = true;
             CargarDatagrid();
+            Index = 0;
 
         }
 
@@ -237,6 +246,14 @@ namespace Parcial1_Labo_2
             btn_MasInfo.Enabled = true;
             btn_Historico.Enabled = true;
             pic_Modo.Enabled = true;
+            cmb_FiltroHistorico.Text = String.Empty;
+            dgv_Historico.DataSource = null;
+            pic_Salir.Visible = true;
+            btn_MasInfo.Visible = true;
+            btn_Historico.Visible = true;
+            pic_Modo.Visible = true;
+            pic_Agregar.Visible = true;
+            btn_AgregarCliente.Visible = true;
         }
 
         private void btn_Historico_Click(object sender, EventArgs e)
@@ -248,14 +265,18 @@ namespace Parcial1_Labo_2
             btn_MasInfo.Enabled = false;
             btn_Historico.Enabled = false;
             pic_Modo.Enabled = false;
+            pic_Agregar.Visible = false;
+            pic_Vender.Visible = false;
+            pic_Salir.Visible = false;
+            btn_MasInfo.Visible = false;
+            btn_Historico.Visible = false;
+            pic_Modo.Visible = false;
             lbl_RecaudacionTotal.Text ="Recaudacion total: " +  Aerolinea.CalcularRecaudacionTotal().ToString();
-            cmb_FiltroHistorico.Items.Add("Destinos");
-            cmb_FiltroHistorico.Items.Add("Pasajeros Frecuentes");
-            cmb_FiltroHistorico.Items.Add("Ganancias totales");
-            cmb_FiltroHistorico.Items.Add("Vuelos finalizados");
-            
+            btn_AgregarCliente.Visible = false;
+            pic_Pasajeros.Visible = false;
+
             //  dgv_Historico.Columns.Add("test", "test");
-           // dgv_Historico.Columns.Add("test2", "test2");
+            // dgv_Historico.Columns.Add("test2", "test2");
         }
 
         private void cmb_FiltroHistorico_SelectedValueChanged(object sender, EventArgs e)
@@ -267,10 +288,36 @@ namespace Parcial1_Labo_2
                     dgv_Historico.DataSource = null;
                     dgv_Historico.Columns.Add("Destino", "Destino");
                     dgv_Historico.Columns.Add("CantidadViajes", "Cantidad de viajes");
+                    dgv_Historico.Columns.Add("TotalRecaudado", "TotalRecaudado");
+                    int count = Enum.GetValues(typeof(Destino)).Length;
+                    for (int i=0; i< count ;i++){
+                        int contador=0;
+                        float recaudacion=0;
+                        for(int j = 0; j < Aerolinea.vuelos.Count; j++)
+                        {
+                            string? s = Enum.GetName(typeof(Destino),i);
+                            if (Aerolinea.vuelos[j].Destino.ToString().Contains(s))
+                            {
+                                contador++;
+                                recaudacion += Aerolinea.vuelos[j].Recaudacion;
+                            }
+                        }
+                        DataGridViewRow filas = new DataGridViewRow();
+
+                        filas.CreateCells(dgv_Historico);
+
+                        filas.Cells[0].Value = Enum.GetName(typeof(Destino), i);
+                        filas.Cells[1].Value = contador;
+                        filas.Cells[2].Value = recaudacion;
+
+                        dgv_Historico.Rows.Add(filas);
+
+                    }
                     break;
                 case "Pasajeros Frecuentes":
                     dgv_Historico.Columns.Clear();
                     dgv_Historico.DataSource = null;
+                    dgv_Historico.DataSource = Aerolinea.clientes;
                     break;
                 case "Ganancias totales":
                     dgv_Historico.Columns.Clear();
@@ -279,15 +326,64 @@ namespace Parcial1_Labo_2
                     dgv_Historico.Columns.Add("Destino", "Destino");
                     dgv_Historico.Columns.Add("Ganancia", "Ganancia del vuelo");
                     dgv_Historico.Columns.Add("TipoServicio", "Tipo de servicio");
+                    Recorrervuelos(Aerolinea.vuelos);
+                    Recorrervuelos(Aerolinea.vuelosFinalizados);                 
                     break;
                 case "Vuelos finalizados":
                     dgv_Historico.DataSource = null;
+                    dgv_Historico.Columns.Clear();
                     dgv_Historico.DataSource = Aerolinea.vuelosFinalizados;
+                    break;
+                case "Aviones":
+                    dgv_Historico.DataSource = null;
+                    dgv_Historico.DataSource = Aerolinea.aviones;
                     break;
                 default:
                     dgv_Historico.DataSource = null;
                     break;
             }
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btn_AgregarCliente_Click(object sender, EventArgs e)
+        {
+            frm_AgregarCliente frm = new frm_AgregarCliente();
+            frm.ShowDialog();
+        }
+
+
+        private void Recorrervuelos(List<Vuelo> vuelos)
+        {
+            for (int i = 0; i < vuelos.Count; i++)
+            {
+
+                DataGridViewRow filas = new DataGridViewRow();
+
+                filas.CreateCells(dgv_Historico);
+
+                filas.Cells[0].Value = vuelos[i].Codigo;
+                filas.Cells[1].Value = vuelos[i].Destino;
+                filas.Cells[2].Value = vuelos[i].Recaudacion;
+
+
+                if (vuelos[i].Destino.ToString() == "Recife" || vuelos[i].Destino.ToString() == "Roma"
+                    || vuelos[i].Destino.ToString() == "Acapulco" || vuelos[i].Destino.ToString() == "Miami")
+                {
+                    filas.Cells[3].Value = "Internacional";
+                }
+                else
+                {
+                    filas.Cells[3].Value = "Cabotaje";
+                }
+
+                dgv_Historico.Rows.Add(filas);
+
+            }
+
         }
     }
 }

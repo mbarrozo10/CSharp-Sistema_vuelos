@@ -46,6 +46,8 @@ namespace Biblioteca
         public override string ToString()
         {
             return this.Nombre + " "+ this.Apellido ;
+
+            
         }
     }
 }

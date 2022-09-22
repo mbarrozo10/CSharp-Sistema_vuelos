@@ -113,6 +113,7 @@ namespace Parcial1_Labo_2
                 }
                 else
                 {
+
                     lbl_PrecioSub.Text = "Precio subtotal: " + precioTurista.ToString("N2");
                     lbl_PrecioFinal.Text = "Precio Final: " + (precioTurista *1.21f).ToString("N2");
                     nud_CantEquipaje.Maximum = 1;
@@ -244,6 +245,9 @@ namespace Parcial1_Labo_2
                 txt_Kg.ForeColor = Color.White;
                 pic_Agregar.Image= Resources.agregar_blanco_84x24;
                 pic_Cancelar.Image = Resources.cancelar_blanco_84x24;
+                lbl_KgMax.ForeColor= Color.White;
+                chk_BolsoMano.ForeColor = Color.White;
+                lbl_Destino.ForeColor = Color.White;
 
             }
             else
@@ -276,6 +280,9 @@ namespace Parcial1_Labo_2
                 txt_Kg.ForeColor = Color.Black;
                 pic_Agregar.Image = Resources.agregar_negro_84x24;
                 pic_Cancelar.Image = Resources.cancelar_negro_84x24;
+                lbl_KgMax.ForeColor = Color.Black;
+                chk_BolsoMano.ForeColor = Color.Black;
+                lbl_Destino.ForeColor = Color.Black;
             }
         }
 
@@ -314,9 +321,11 @@ namespace Parcial1_Labo_2
             List<Cliente> filtrada = new List<Cliente>();
             for(int i = 0; i < Aerolinea.clientes.Count; i++)
             {
-                Cliente cliente = new Cliente("","",int.Parse(txt_Buscador.Text),22);
+            
 
-               if (Aerolinea.clientes[i].Equals(cliente))
+               if (Aerolinea.clientes[i].Nombre.Contains(txt_Buscador.Text) ||
+                    Aerolinea.clientes[i].Apellido.Contains(txt_Buscador.Text)||
+                    Aerolinea.clientes[i].Dni.ToString().Contains(txt_Buscador.Text))
                 {
                     
                     filtrada.Add(Aerolinea.clientes[i]);
@@ -363,6 +372,16 @@ namespace Parcial1_Labo_2
         private void btn_AceptarCliente_Click(object sender, EventArgs e)
         {
             nud_Cantidad.Enabled = true;
+        }
+
+        private void btn_Agregar_Click_1(object sender, EventArgs e)
+        {
+            frm_AgregarCliente frm = new frm_AgregarCliente();
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                dgv_Clientes.DataSource = null;
+                dgv_Clientes.DataSource = Aerolinea.clientes;
+            }
         }
     }
 }

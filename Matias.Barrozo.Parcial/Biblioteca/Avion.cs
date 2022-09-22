@@ -15,22 +15,33 @@ namespace Biblioteca
         private bool comida;
         private bool wifi;
         private bool estado;
+        private int horasVuelo;
 
-        public Avion(string matricula, int cantidadAsientos, int cantidadBaños, int bodega, bool comida, bool wifi)
-        {
+        
+        public Avion(string matricula, int cantidadAsientos, int cantidadBaños, int bodega, bool comida, bool wifi, bool estado) { 
+
             this.matricula = matricula;
             this.cantidadAsientos = cantidadAsientos;
             this.cantidadBaños = cantidadBaños;
             this.bodega = bodega;
             this.comida = comida;
             this.wifi = wifi;
+            this.estado = estado;
+            this.horasVuelo = 0;
         }
+
+        
 
         public string Matricula
         {
             get { return matricula; }
         }
 
+        public int HorasVuelo
+        {
+            get { return horasVuelo; }
+            set { horasVuelo = value; }
+        }
         public int CantidadAsientos
         {
             get { return cantidadAsientos; }

@@ -58,6 +58,16 @@ namespace Biblioteca
         private DateTime llegada;
         private float recuadacion;
         private int bodegaRestante;
+
+        public override string ToString()
+        {
+            string retorno = "Avion: " + this.avion.Matricula + "\nDuracion del vuelo: " + duracion + "\nCosto de pasaje: " + costoDePasaje +
+                "\nDestino: " + destino + "\nEstado: " + estado + "\nFecha de salida: " + salida + "\nOrigen: " + origen +
+                "\nCodigo de vuelo: " + codigo + "\nAsientos ocupados turista: " + asientosOcupadoTurista + " de: " + CalcularAsientos(this.avion.CantidadAsientos, 0.80f) +
+                "\nAsientos ocupados premium: " + asientosOcupadoPremium + " de: " + CalcularAsientos(this.avion.CantidadAsientos, 0.20f) + "\nFecha de llegada" +
+                llegada + "\nRecaudacion: " + Recaudacion + "\nBodega restante: " + bodegaRestante;
+            return retorno;
+        }
         // agregar discriminacion de asientos premium
 
         //public Vuelo(Avion avion, int duracion, float costoDePasaje, Destino destino, Estado estado, string origen, DateTime salida, List<Pasajero> pasajeros, string codigo, DateTime llegada, int asientosPremium, int asientosTurista)
@@ -78,7 +88,7 @@ namespace Biblioteca
         //    this.asientosLibrePremium = CalcularAsientos(this.avion.CantidadAsientos, 0.20f);
         //}
 
-     
+
         public Vuelo(Avion avion, int duracion, float costoDePasaje, Destino destino, Estado estado, string origen, DateTime salida, List<Pasajero> pasajeros, string codigo, DateTime llegada, int bodega, float recaudacion, int asientosPremium, int asientosTurista)//:this(avion,duracion,costoDePasaje,destino,estado,origen,salida,pasajeros,codigo,llegada,asientosPremium,asientosTurista)
         {
             this.avion = avion;

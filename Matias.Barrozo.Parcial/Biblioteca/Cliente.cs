@@ -53,8 +53,6 @@ namespace Biblioteca
                 return this.dni == pasajero.Dni;
             else
                 return false;
-
-
         }
     }
 }

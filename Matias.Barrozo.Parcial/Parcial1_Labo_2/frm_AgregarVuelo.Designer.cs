@@ -109,6 +109,7 @@
             this.cmb_Avion.Name = "cmb_Avion";
             this.cmb_Avion.Size = new System.Drawing.Size(121, 23);
             this.cmb_Avion.TabIndex = 10;
+            this.cmb_Avion.SelectedValueChanged += new System.EventHandler(this.cmb_Avion_SelectedValueChanged);
             // 
             // cmb_Destino
             // 

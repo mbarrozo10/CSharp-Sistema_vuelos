@@ -63,20 +63,8 @@
             this.pic_Salir = new System.Windows.Forms.PictureBox();
             this.btn_MasInfo = new System.Windows.Forms.Button();
             this.pnl_Informacion = new System.Windows.Forms.Panel();
+            this.rtx_InfoVuelo = new System.Windows.Forms.RichTextBox();
             this.pic_Cancelar = new System.Windows.Forms.PictureBox();
-            this.lbl_BodegaLibre = new System.Windows.Forms.Label();
-            this.lbl_Salida = new System.Windows.Forms.Label();
-            this.lbl_Llegada = new System.Windows.Forms.Label();
-            this.lbl_AsientosTurista = new System.Windows.Forms.Label();
-            this.lbl_Codigo = new System.Windows.Forms.Label();
-            this.lbl_Recaudacion = new System.Windows.Forms.Label();
-            this.lbl_AsientosPremium = new System.Windows.Forms.Label();
-            this.lbl_Origen = new System.Windows.Forms.Label();
-            this.lbl_Destino = new System.Windows.Forms.Label();
-            this.lbl_CostoPremium = new System.Windows.Forms.Label();
-            this.lbl_CostoTurista = new System.Windows.Forms.Label();
-            this.lbl_Duracion = new System.Windows.Forms.Label();
-            this.lbl_Avion = new System.Windows.Forms.Label();
             this.pic_SalirPanel = new System.Windows.Forms.PictureBox();
             this.btn_Historico = new System.Windows.Forms.Button();
             this.pnl_Historico = new System.Windows.Forms.Panel();
@@ -84,6 +72,8 @@
             this.pic_SalirHistorico = new System.Windows.Forms.PictureBox();
             this.lbl_RecaudacionTotal = new System.Windows.Forms.Label();
             this.dgv_Historico = new System.Windows.Forms.DataGridView();
+            this.btn_AgregarCliente = new System.Windows.Forms.Button();
+            this.lbl_Fecha = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_VuelosActivos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Modo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Vender)).BeginInit();
@@ -381,160 +371,40 @@
             // 
             // pnl_Informacion
             // 
+            this.pnl_Informacion.Controls.Add(this.rtx_InfoVuelo);
             this.pnl_Informacion.Controls.Add(this.pic_Cancelar);
-            this.pnl_Informacion.Controls.Add(this.lbl_BodegaLibre);
-            this.pnl_Informacion.Controls.Add(this.lbl_Salida);
-            this.pnl_Informacion.Controls.Add(this.lbl_Llegada);
-            this.pnl_Informacion.Controls.Add(this.lbl_AsientosTurista);
-            this.pnl_Informacion.Controls.Add(this.lbl_Codigo);
-            this.pnl_Informacion.Controls.Add(this.lbl_Recaudacion);
-            this.pnl_Informacion.Controls.Add(this.lbl_AsientosPremium);
-            this.pnl_Informacion.Controls.Add(this.lbl_Origen);
-            this.pnl_Informacion.Controls.Add(this.lbl_Destino);
-            this.pnl_Informacion.Controls.Add(this.lbl_CostoPremium);
-            this.pnl_Informacion.Controls.Add(this.lbl_CostoTurista);
-            this.pnl_Informacion.Controls.Add(this.lbl_Duracion);
-            this.pnl_Informacion.Controls.Add(this.lbl_Avion);
             this.pnl_Informacion.Controls.Add(this.pic_SalirPanel);
-            this.pnl_Informacion.Location = new System.Drawing.Point(185, 142);
+            this.pnl_Informacion.Location = new System.Drawing.Point(200, 140);
             this.pnl_Informacion.Name = "pnl_Informacion";
             this.pnl_Informacion.Size = new System.Drawing.Size(772, 288);
             this.pnl_Informacion.TabIndex = 15;
             this.pnl_Informacion.Visible = false;
             // 
+            // rtx_InfoVuelo
+            // 
+            this.rtx_InfoVuelo.Location = new System.Drawing.Point(52, 35);
+            this.rtx_InfoVuelo.Name = "rtx_InfoVuelo";
+            this.rtx_InfoVuelo.ReadOnly = true;
+            this.rtx_InfoVuelo.Size = new System.Drawing.Size(485, 230);
+            this.rtx_InfoVuelo.TabIndex = 16;
+            this.rtx_InfoVuelo.Text = "";
+            // 
             // pic_Cancelar
             // 
             this.pic_Cancelar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pic_Cancelar.Image = global::Parcial1_Labo_2.Properties.Resources.cancelar_negro_84x24;
-            this.pic_Cancelar.Location = new System.Drawing.Point(558, 239);
+            this.pic_Cancelar.Location = new System.Drawing.Point(607, 61);
             this.pic_Cancelar.Name = "pic_Cancelar";
             this.pic_Cancelar.Size = new System.Drawing.Size(85, 28);
             this.pic_Cancelar.TabIndex = 15;
             this.pic_Cancelar.TabStop = false;
             this.pic_Cancelar.Click += new System.EventHandler(this.pic_Cancelar_Click);
             // 
-            // lbl_BodegaLibre
-            // 
-            this.lbl_BodegaLibre.AutoSize = true;
-            this.lbl_BodegaLibre.Location = new System.Drawing.Point(67, 136);
-            this.lbl_BodegaLibre.Name = "lbl_BodegaLibre";
-            this.lbl_BodegaLibre.Size = new System.Drawing.Size(119, 15);
-            this.lbl_BodegaLibre.TabIndex = 14;
-            this.lbl_BodegaLibre.Text = "Espacio bodega libre:";
-            // 
-            // lbl_Salida
-            // 
-            this.lbl_Salida.AutoSize = true;
-            this.lbl_Salida.Location = new System.Drawing.Point(455, 47);
-            this.lbl_Salida.Name = "lbl_Salida";
-            this.lbl_Salida.Size = new System.Drawing.Size(38, 15);
-            this.lbl_Salida.TabIndex = 13;
-            this.lbl_Salida.Text = "Salida";
-            // 
-            // lbl_Llegada
-            // 
-            this.lbl_Llegada.AutoSize = true;
-            this.lbl_Llegada.Location = new System.Drawing.Point(455, 93);
-            this.lbl_Llegada.Name = "lbl_Llegada";
-            this.lbl_Llegada.Size = new System.Drawing.Size(48, 15);
-            this.lbl_Llegada.TabIndex = 12;
-            this.lbl_Llegada.Text = "Llegada";
-            // 
-            // lbl_AsientosTurista
-            // 
-            this.lbl_AsientosTurista.AutoSize = true;
-            this.lbl_AsientosTurista.Location = new System.Drawing.Point(67, 230);
-            this.lbl_AsientosTurista.Name = "lbl_AsientosTurista";
-            this.lbl_AsientosTurista.Size = new System.Drawing.Size(90, 15);
-            this.lbl_AsientosTurista.TabIndex = 11;
-            this.lbl_AsientosTurista.Text = "Asientos Turista";
-            // 
-            // lbl_Codigo
-            // 
-            this.lbl_Codigo.AutoSize = true;
-            this.lbl_Codigo.Location = new System.Drawing.Point(67, 93);
-            this.lbl_Codigo.Name = "lbl_Codigo";
-            this.lbl_Codigo.Size = new System.Drawing.Size(46, 15);
-            this.lbl_Codigo.TabIndex = 10;
-            this.lbl_Codigo.Text = "Codigo";
-            // 
-            // lbl_Recaudacion
-            // 
-            this.lbl_Recaudacion.AutoSize = true;
-            this.lbl_Recaudacion.Location = new System.Drawing.Point(291, 136);
-            this.lbl_Recaudacion.Name = "lbl_Recaudacion";
-            this.lbl_Recaudacion.Size = new System.Drawing.Size(78, 15);
-            this.lbl_Recaudacion.TabIndex = 9;
-            this.lbl_Recaudacion.Text = "Recaudacion:";
-            // 
-            // lbl_AsientosPremium
-            // 
-            this.lbl_AsientosPremium.AutoSize = true;
-            this.lbl_AsientosPremium.Location = new System.Drawing.Point(67, 180);
-            this.lbl_AsientosPremium.Name = "lbl_AsientosPremium";
-            this.lbl_AsientosPremium.Size = new System.Drawing.Size(107, 15);
-            this.lbl_AsientosPremium.TabIndex = 8;
-            this.lbl_AsientosPremium.Text = "Asientos Premium:";
-            // 
-            // lbl_Origen
-            // 
-            this.lbl_Origen.AutoSize = true;
-            this.lbl_Origen.Location = new System.Drawing.Point(606, 47);
-            this.lbl_Origen.Name = "lbl_Origen";
-            this.lbl_Origen.Size = new System.Drawing.Size(46, 15);
-            this.lbl_Origen.TabIndex = 7;
-            this.lbl_Origen.Text = "Origen:";
-            // 
-            // lbl_Destino
-            // 
-            this.lbl_Destino.AutoSize = true;
-            this.lbl_Destino.Location = new System.Drawing.Point(606, 93);
-            this.lbl_Destino.Name = "lbl_Destino";
-            this.lbl_Destino.Size = new System.Drawing.Size(47, 15);
-            this.lbl_Destino.TabIndex = 6;
-            this.lbl_Destino.Text = "Destino";
-            // 
-            // lbl_CostoPremium
-            // 
-            this.lbl_CostoPremium.AutoSize = true;
-            this.lbl_CostoPremium.Location = new System.Drawing.Point(291, 93);
-            this.lbl_CostoPremium.Name = "lbl_CostoPremium";
-            this.lbl_CostoPremium.Size = new System.Drawing.Size(92, 15);
-            this.lbl_CostoPremium.TabIndex = 5;
-            this.lbl_CostoPremium.Text = "Precio Premium";
-            // 
-            // lbl_CostoTurista
-            // 
-            this.lbl_CostoTurista.AutoSize = true;
-            this.lbl_CostoTurista.Location = new System.Drawing.Point(291, 47);
-            this.lbl_CostoTurista.Name = "lbl_CostoTurista";
-            this.lbl_CostoTurista.Size = new System.Drawing.Size(79, 15);
-            this.lbl_CostoTurista.TabIndex = 4;
-            this.lbl_CostoTurista.Text = "Precio turista:";
-            // 
-            // lbl_Duracion
-            // 
-            this.lbl_Duracion.AutoSize = true;
-            this.lbl_Duracion.Location = new System.Drawing.Point(186, 47);
-            this.lbl_Duracion.Name = "lbl_Duracion";
-            this.lbl_Duracion.Size = new System.Drawing.Size(55, 15);
-            this.lbl_Duracion.TabIndex = 3;
-            this.lbl_Duracion.Text = "Duracion";
-            // 
-            // lbl_Avion
-            // 
-            this.lbl_Avion.AutoSize = true;
-            this.lbl_Avion.Location = new System.Drawing.Point(67, 47);
-            this.lbl_Avion.Name = "lbl_Avion";
-            this.lbl_Avion.Size = new System.Drawing.Size(41, 15);
-            this.lbl_Avion.TabIndex = 2;
-            this.lbl_Avion.Text = "Avion:";
-            // 
             // pic_SalirPanel
             // 
             this.pic_SalirPanel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pic_SalirPanel.Image = global::Parcial1_Labo_2.Properties.Resources.salir_negro_84x24;
-            this.pic_SalirPanel.Location = new System.Drawing.Point(659, 240);
+            this.pic_SalirPanel.Location = new System.Drawing.Point(607, 114);
             this.pic_SalirPanel.Name = "pic_SalirPanel";
             this.pic_SalirPanel.Size = new System.Drawing.Size(84, 27);
             this.pic_SalirPanel.TabIndex = 1;
@@ -594,12 +464,33 @@
             // 
             // dgv_Historico
             // 
+            this.dgv_Historico.AllowUserToAddRows = false;
+            this.dgv_Historico.AllowUserToDeleteRows = false;
             this.dgv_Historico.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Historico.Location = new System.Drawing.Point(62, 93);
             this.dgv_Historico.Name = "dgv_Historico";
+            this.dgv_Historico.ReadOnly = true;
             this.dgv_Historico.RowTemplate.Height = 25;
             this.dgv_Historico.Size = new System.Drawing.Size(945, 277);
             this.dgv_Historico.TabIndex = 0;
+            // 
+            // btn_AgregarCliente
+            // 
+            this.btn_AgregarCliente.Location = new System.Drawing.Point(555, 537);
+            this.btn_AgregarCliente.Name = "btn_AgregarCliente";
+            this.btn_AgregarCliente.Size = new System.Drawing.Size(99, 23);
+            this.btn_AgregarCliente.TabIndex = 18;
+            this.btn_AgregarCliente.Text = "Agregar Cliente";
+            this.btn_AgregarCliente.UseVisualStyleBackColor = true;
+            this.btn_AgregarCliente.Click += new System.EventHandler(this.btn_AgregarCliente_Click);
+            // 
+            // lbl_Fecha
+            // 
+            this.lbl_Fecha.AutoSize = true;
+            this.lbl_Fecha.Location = new System.Drawing.Point(616, 21);
+            this.lbl_Fecha.Name = "lbl_Fecha";
+            this.lbl_Fecha.Size = new System.Drawing.Size(0, 15);
+            this.lbl_Fecha.TabIndex = 19;
             // 
             // frm_MenuPrincipal
             // 
@@ -608,6 +499,8 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1207, 600);
             this.ControlBox = false;
+            this.Controls.Add(this.lbl_Fecha);
+            this.Controls.Add(this.btn_AgregarCliente);
             this.Controls.Add(this.pnl_Informacion);
             this.Controls.Add(this.pnl_Historico);
             this.Controls.Add(this.btn_Historico);
@@ -630,7 +523,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pic_Agregar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Salir)).EndInit();
             this.pnl_Informacion.ResumeLayout(false);
-            this.pnl_Informacion.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Cancelar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_SalirPanel)).EndInit();
             this.pnl_Historico.ResumeLayout(false);
@@ -651,6 +543,18 @@
         private PictureBox pic_Pasajeros;
         private PictureBox pic_Agregar;
         private PictureBox pic_Salir;
+        private Button btn_MasInfo;
+        private Panel pnl_Informacion;
+        private PictureBox pic_SalirPanel;
+        private PictureBox pic_Cancelar;
+        private Button btn_Historico;
+        private Panel pnl_Historico;
+        private PictureBox pic_SalirHistorico;
+        private Label lbl_RecaudacionTotal;
+        private DataGridView dgv_Historico;
+        private ComboBox cmb_FiltroHistorico;
+        private RichTextBox rtx_InfoVuelo;
+        private Button btn_AgregarCliente;
         private DataGridViewTextBoxColumn Avion;
         private DataGridViewTextBoxColumn Duracion;
         private DataGridViewTextBoxColumn Origen;
@@ -661,28 +565,6 @@
         private DataGridViewTextBoxColumn Asientos;
         private DataGridViewCheckBoxColumn Wifi;
         private DataGridViewCheckBoxColumn Comida;
-        private Button btn_MasInfo;
-        private Panel pnl_Informacion;
-        private PictureBox pic_SalirPanel;
-        private Label lbl_Avion;
-        private Label lbl_Salida;
-        private Label lbl_Llegada;
-        private Label lbl_AsientosTurista;
-        private Label lbl_Codigo;
-        private Label lbl_Recaudacion;
-        private Label lbl_AsientosPremium;
-        private Label lbl_Origen;
-        private Label lbl_Destino;
-        private Label lbl_CostoPremium;
-        private Label lbl_CostoTurista;
-        private Label lbl_Duracion;
-        private Label lbl_BodegaLibre;
-        private PictureBox pic_Cancelar;
-        private Button btn_Historico;
-        private Panel pnl_Historico;
-        private PictureBox pic_SalirHistorico;
-        private Label lbl_RecaudacionTotal;
-        private DataGridView dgv_Historico;
-        private ComboBox cmb_FiltroHistorico;
+        private Label lbl_Fecha;
     }
 }
