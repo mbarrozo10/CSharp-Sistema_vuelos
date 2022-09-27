@@ -131,7 +131,8 @@ namespace Parcial1_Labo_2
             nud_Cantidad.Enabled = false;
             if(txt_Apellido.Text!=String.Empty&& txt_Nombre.Text!= String.Empty && txt_Dni.Text!=String.Empty&& txt_Edad.Text!=String.Empty) 
             {
-                Aerolinea.vuelos[index].Pasajeros.Add(new Pasajero(txt_Nombre.Text, txt_Apellido.Text, int.Parse(txt_Dni.Text),int.Parse(txt_Edad.Text), (int)(nud_CantEquipaje.Value),chk_Premium.Checked,chk_BolsoMano.Checked));
+                Aerolinea.vuelos[index].UltimoAsiento++;
+                Aerolinea.vuelos[index].Pasajeros.Add(Aerolinea.vuelos[index].UltimoAsiento, new Pasajero(txt_Nombre.Text, txt_Apellido.Text, int.Parse(txt_Dni.Text),int.Parse(txt_Edad.Text), (int)(nud_CantEquipaje.Value),chk_Premium.Checked,chk_BolsoMano.Checked));
                 if(nud_CantEquipaje.Value>0 && txt_Kg.Text!= String.Empty)
                 {
                     Aerolinea.vuelos[index].BodegaRestante -= int.Parse(txt_Kg.Text) * (int)nud_CantEquipaje.Value;
@@ -179,6 +180,7 @@ namespace Parcial1_Labo_2
             }
 
             Aerolinea.clientes[indexClientes].CantPasajesComprados += 1;
+            
 
         }
 
@@ -315,39 +317,7 @@ namespace Parcial1_Labo_2
             }
         }
 
-        private void btn_Buscar_Click(object sender, EventArgs e)
-        {
-            bool Encontro = false;
-            List<Cliente> filtrada = new List<Cliente>();
-            for(int i = 0; i < Aerolinea.clientes.Count; i++)
-            {
-            
-
-               if (Aerolinea.clientes[i].Nombre.Contains(txt_Buscador.Text) ||
-                    Aerolinea.clientes[i].Apellido.Contains(txt_Buscador.Text)||
-                    Aerolinea.clientes[i].Dni.ToString().Contains(txt_Buscador.Text))
-                {
-                    
-                    filtrada.Add(Aerolinea.clientes[i]);
-                    Encontro = true;
-                    
-                }
-                
-            }
-            if (Encontro)
-            {
-            dgv_Clientes.DataSource = null;
-            dgv_Clientes.DataSource = filtrada;
-
-            }
-            else
-            {
-                lbl_ErrorBusqueda.Text = "No se encontro ningun pasajero, quiere agregarlo?";
-               
-            }
-
-            
-        }
+       
 
         private void dgv_Clientes_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
@@ -356,14 +326,8 @@ namespace Parcial1_Labo_2
 
         private void txt_Buscador_TextChanged(object sender, EventArgs e)
         {
-            if (txt_Buscador.Text != String.Empty)
+            if (txt_Buscador.Text == String.Empty)
             {
-                btn_Buscar.Enabled = true;
-
-            }
-            else
-            {
-                btn_Buscar.Enabled = false;
                 dgv_Clientes.DataSource = null;
                 dgv_Clientes.DataSource = Aerolinea.clientes;
             }
@@ -381,6 +345,39 @@ namespace Parcial1_Labo_2
             {
                 dgv_Clientes.DataSource = null;
                 dgv_Clientes.DataSource = Aerolinea.clientes;
+            }
+        }
+
+        private void txt_Buscador_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            bool Encontro = false;
+            List<Cliente> filtrada = new List<Cliente>();
+            for (int i = 0; i < Aerolinea.clientes.Count; i++)
+            {
+
+
+                if (Aerolinea.clientes[i].Nombre.ToLower().Contains(txt_Buscador.Text.ToLower()) ||
+                     Aerolinea.clientes[i].Apellido.ToLower().Contains(txt_Buscador.Text.ToLower()) ||
+                     Aerolinea.clientes[i].Dni.ToString().Contains(txt_Buscador.Text))
+                {
+
+                    filtrada.Add(Aerolinea.clientes[i]);
+                    Encontro = true;
+
+                }
+
+            }
+            if (Encontro)
+            {
+                dgv_Clientes.DataSource = null;
+                dgv_Clientes.DataSource = filtrada;
+                lbl_ErrorBusqueda.Text = String.Empty;
+
+            }
+            else
+            {
+                lbl_ErrorBusqueda.Text = "No se encontro ningun pasajero, quiere agregarlo?";
+
             }
         }
     }

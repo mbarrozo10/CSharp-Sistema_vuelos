@@ -18,32 +18,59 @@ namespace Biblioteca
 
         public Cliente( string nombre, string apellido,int dni, int edad): base(nombre,apellido)
         {
-            this.dni = dni;
-            this.edad = edad;
-            this.cantPasajesComprados = 0;
+            this.Dni = dni;
+            this.Edad = edad;
+            this.CantPasajesComprados = 0;
         }
 
         public Cliente(string nombre, string apellido, int dni, int edad,int cantPasajesComprados) : this(nombre,apellido,dni,edad)
         {
-            this.dni = dni;
-            this.edad = edad;
-            this.cantPasajesComprados = cantPasajesComprados;
+            this.Dni = dni;
+            this.Edad = edad;
+            this.CantPasajesComprados = cantPasajesComprados;
         }
 
         public int Dni
         {
             get { return dni; }
+            set
+            {
+                if (Validador.ValidarNumeroEnRango(value.ToString(), 10000000, 100000000))
+                {
+                    dni = value;
+                }
+                //else
+                //{
+                //    throw new Exception("Valor no correcto");
+                //}
+            }
         }
 
         public int CantPasajesComprados
         {
             get { return cantPasajesComprados; }
-            set { cantPasajesComprados = value; }
+            set { 
+                if(Validador.ValidarNumeroEnRango(value.ToString(),-1,100))
+                    cantPasajesComprados = value; 
+                //else
+                //    throw new Exception("Valor no correcto");
+            }
         }
 
         public int Edad
         {
             get { return edad; }
+            set
+            {
+                if (Validador.ValidarNumeroEnRango(value.ToString(), 0, 100))
+                {
+                    edad = value;   
+                }
+                //else
+                //{
+                //    throw new Exception("Valor no correcto");
+                //}
+            }
         }
         public override bool Equals(object? obj)
         {
@@ -53,6 +80,11 @@ namespace Biblioteca
                 return this.dni == pasajero.Dni;
             else
                 return false;
+        }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
         }
     }
 }

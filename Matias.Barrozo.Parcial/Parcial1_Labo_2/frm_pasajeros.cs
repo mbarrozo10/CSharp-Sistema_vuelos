@@ -27,15 +27,42 @@ namespace Parcial1_Labo_2
 
           private void frm_pasajeros_Load(object sender, EventArgs e)
         {
-           
-            dataGridView1.DataSource = null;
-            dataGridView1.DataSource = Aerolinea.vuelos[Index].Pasajeros;
+            ModoOscuro();
+            dgv_Pasajeros.DataSource = null;
+            dgv_Pasajeros.DataSource = Aerolinea.vuelos[Index].Pasajeros.Values.ToList();
 
         }
 
         private void btn_Salir_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.OK;
+        }
+
+
+        private  void ModoOscuro()
+        {
+            if (!Aerolinea.modoOscuro)
+            {
+                dgv_Pasajeros.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(34, 34, 34);
+                dgv_Pasajeros.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+                dgv_Pasajeros.RowHeadersDefaultCellStyle.BackColor = Color.FromArgb(34, 34, 34);
+                dgv_Pasajeros.RowHeadersDefaultCellStyle.ForeColor = Color.White;
+                dgv_Pasajeros.RowsDefaultCellStyle.BackColor = Color.FromArgb(34, 34, 34);
+                dgv_Pasajeros.RowsDefaultCellStyle.ForeColor = Color.White;
+                
+                this.BackColor = Color.FromArgb(34, 34, 34);
+
+            }
+            else
+            {
+                dgv_Pasajeros.ColumnHeadersDefaultCellStyle.BackColor = Color.White;
+                dgv_Pasajeros.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
+                dgv_Pasajeros.RowHeadersDefaultCellStyle.BackColor = Color.White;
+                dgv_Pasajeros.RowHeadersDefaultCellStyle.ForeColor = Color.Black;
+                dgv_Pasajeros.RowsDefaultCellStyle.BackColor = Color.White;
+                dgv_Pasajeros.RowsDefaultCellStyle.ForeColor = Color.Black;
+                this.BackColor = Color.White;
+            }
         }
     }
 }

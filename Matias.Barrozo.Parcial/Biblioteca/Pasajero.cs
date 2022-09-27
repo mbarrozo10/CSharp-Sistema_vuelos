@@ -16,7 +16,7 @@ namespace Biblioteca
         public Pasajero(string nombre, string apellido,int dni, int edad, int equipaje, bool clase, bool bolsoMano): base(nombre,apellido,dni,edad)
         {
             
-            this.equipaje = equipaje;
+            this.Equipaje = equipaje;
             this.premium = clase;
             this.bolsoMano = bolsoMano;
         }
@@ -26,11 +26,19 @@ namespace Biblioteca
         public bool Premium
         {
             get { return premium; }
+
         }
         
         public int Equipaje
         {
             get { return equipaje; }
+            set
+            {
+                if (Validador.ValidarNumeroEnRango(value.ToString(), -1, 3))
+                    this.equipaje = value;
+                //else
+                //    throw new Exception("Valor no correcto");
+            }
         }
 
         

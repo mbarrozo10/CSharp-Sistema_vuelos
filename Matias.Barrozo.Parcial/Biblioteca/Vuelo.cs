@@ -50,14 +50,15 @@ namespace Biblioteca
         private Destino destino;
         private Estado estado;
         private DateTime salida;
-        private string origen;
-        private List<Pasajero> pasajeros;
+        private Destino origen;
+        private Dictionary<int,Pasajero> pasajeros;
         private string codigo;
         private int asientosOcupadoTurista;
         private int asientosOcupadoPremium;
         private DateTime llegada;
         private float recuadacion;
         private int bodegaRestante;
+        private int ultimoAsiento;
 
         public override string ToString()
         {
@@ -68,31 +69,12 @@ namespace Biblioteca
                 llegada + "\nRecaudacion: " + Recaudacion + "\nBodega restante: " + bodegaRestante;
             return retorno;
         }
-        // agregar discriminacion de asientos premium
-
-        //public Vuelo(Avion avion, int duracion, float costoDePasaje, Destino destino, Estado estado, string origen, DateTime salida, List<Pasajero> pasajeros, string codigo, DateTime llegada, int asientosPremium, int asientosTurista)
-        //{
-        //    this.avion = avion;
-        //    this.duracion = duracion;
-        //    this.costoDePasaje = costoDePasaje;
-        //    this.destino = destino;
-        //    this.estado = estado;
-        //    this.salida = salida;
-        //    this.origen = origen;
-        //    this.pasajeros = pasajeros;
-        //    this.codigo = codigo.ToUpper();
-        //    this.asientosLibreTurista = CalcularAsientos(this.avion.CantidadAsientos, 0.80f); 
-        //    this.llegada = llegada;
-        //    this.recuadacion = 0;
-        //    this.bodegaRestante = this.avion.Bodega;
-        //    this.asientosLibrePremium = CalcularAsientos(this.avion.CantidadAsientos, 0.20f);
-        //}
 
 
-        public Vuelo(Avion avion, int duracion, float costoDePasaje, Destino destino, Estado estado, string origen, DateTime salida, List<Pasajero> pasajeros, string codigo, DateTime llegada, int bodega, float recaudacion, int asientosPremium, int asientosTurista)//:this(avion,duracion,costoDePasaje,destino,estado,origen,salida,pasajeros,codigo,llegada,asientosPremium,asientosTurista)
+        public Vuelo(Avion avion, int duracion, float costoDePasaje, Destino destino, Estado estado, Destino origen, DateTime salida, Dictionary<int,Pasajero> pasajeros, string codigo, DateTime llegada, int bodega, float recaudacion, int asientosPremium, int asientosTurista)//:this(avion,duracion,costoDePasaje,destino,estado,origen,salida,pasajeros,codigo,llegada,asientosPremium,asientosTurista)
         {
             this.avion = avion;
-            this.duracion = duracion;
+            this.Duracion = duracion;
             this.costoDePasaje = costoDePasaje;
             this.destino = destino;
             this.estado = estado;
@@ -100,11 +82,17 @@ namespace Biblioteca
             this.origen = origen;
             this.pasajeros = pasajeros;
             this.codigo = codigo.ToUpper();
-            this.asientosOcupadoTurista = asientosTurista;
+            this.AsientosLibresTurista = asientosTurista;
             this.llegada = llegada;
-            this.recuadacion = recaudacion ;
+            this.Recaudacion = recaudacion ;
             this.bodegaRestante = bodega;
-            this.asientosOcupadoPremium =asientosPremium;
+            this.AsientosLibresPremium =asientosPremium;
+            this.ultimoAsiento = 1;
+        }
+        
+        public Vuelo(Avion avion, int duracion, float costoDePasaje, Destino destino, Estado estado, Destino origen, DateTime salida, Dictionary<int,Pasajero> pasajeros, string codigo, DateTime llegada, int bodega, float recaudacion, int asientosPremium, int asientosTurista, int ultimoAsiento):this(avion,duracion,costoDePasaje,destino,estado,origen,salida,pasajeros,codigo,llegada,bodega,recaudacion,asientosPremium,asientosTurista)
+        {
+            this.ultimoAsiento = ultimoAsiento;
         }
 
         public int BodegaRestante
@@ -121,13 +109,24 @@ namespace Biblioteca
         public float Recaudacion
         {
             get { return recuadacion; }
-            set { recuadacion = value; }
+            set {
+                if(Validador.ValidarNumeroEnRango(value.ToString(),0,int.MaxValue))
+                    recuadacion = value; 
+                //else
+                //    throw new Exception("Valor no correcto");
+            }
         }
 
         public int AsientosLibresTurista
         {
             get { return asientosOcupadoTurista; }
-            set { asientosOcupadoTurista = value; }
+            set { 
+                if(Validador.ValidarNumeroEnRango(value.ToString(),-1,int.MaxValue))
+                    asientosOcupadoTurista = value; 
+                //else
+                //    throw new Exception("Valor no correcto");
+            }
+
         }
 
 
@@ -135,10 +134,14 @@ namespace Biblioteca
         public int AsientosLibresPremium
         {
             get { return asientosOcupadoPremium; }
-            set { asientosOcupadoPremium = value; }
+            set { 
+                if(Validador.ValidarNumeroEnRango(value.ToString(),-1,int.MaxValue))
+                    asientosOcupadoPremium = value; 
+  
+            }
         }
 
-        public List<Pasajero> Pasajeros
+        public Dictionary<int,Pasajero> Pasajeros
         {
             get { return pasajeros; }
         }
@@ -163,6 +166,7 @@ namespace Biblioteca
         public float CostoDePasaje
         {
             get { return costoDePasaje; }
+            
         }
 
         public Estado Estado
@@ -192,11 +196,22 @@ namespace Biblioteca
         public int Duracion
         {
             get { return duracion; }
+            set
+            {
+                if (Validador.ValidarNumeroEnRango(value.ToString(), -1, 14))
+                    duracion = value;
+            }
         }
 
-        public string Origen
+        public Destino Origen
         {
             get { return origen; }
+        }
+
+        public int UltimoAsiento
+        {
+            get { return ultimoAsiento; }
+            set { ultimoAsiento = value; }
         }
         
 

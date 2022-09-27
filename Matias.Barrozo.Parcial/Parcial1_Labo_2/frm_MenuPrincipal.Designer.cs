@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -74,6 +75,7 @@
             this.dgv_Historico = new System.Windows.Forms.DataGridView();
             this.btn_AgregarCliente = new System.Windows.Forms.Button();
             this.lbl_Fecha = new System.Windows.Forms.Label();
+            this.tmr_Hora = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_VuelosActivos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Modo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Vender)).BeginInit();
@@ -91,7 +93,7 @@
             // lbl_Bienvenido
             // 
             this.lbl_Bienvenido.AutoSize = true;
-            this.lbl_Bienvenido.Location = new System.Drawing.Point(90, 9);
+            this.lbl_Bienvenido.Location = new System.Drawing.Point(96, 12);
             this.lbl_Bienvenido.Name = "lbl_Bienvenido";
             this.lbl_Bienvenido.Size = new System.Drawing.Size(0, 15);
             this.lbl_Bienvenido.TabIndex = 0;
@@ -487,10 +489,15 @@
             // lbl_Fecha
             // 
             this.lbl_Fecha.AutoSize = true;
-            this.lbl_Fecha.Location = new System.Drawing.Point(616, 21);
+            this.lbl_Fecha.Location = new System.Drawing.Point(616, 12);
             this.lbl_Fecha.Name = "lbl_Fecha";
             this.lbl_Fecha.Size = new System.Drawing.Size(0, 15);
             this.lbl_Fecha.TabIndex = 19;
+            // 
+            // tmr_Hora
+            // 
+            this.tmr_Hora.Interval = 1000;
+            this.tmr_Hora.Tick += new System.EventHandler(this.tmr_Hora_Tick);
             // 
             // frm_MenuPrincipal
             // 
@@ -566,5 +573,6 @@
         private DataGridViewCheckBoxColumn Wifi;
         private DataGridViewCheckBoxColumn Comida;
         private Label lbl_Fecha;
+        private System.Windows.Forms.Timer tmr_Hora;
     }
 }

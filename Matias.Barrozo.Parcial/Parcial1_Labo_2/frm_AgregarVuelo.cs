@@ -90,23 +90,19 @@ namespace Parcial1_Labo_2
                 llegada = salida.AddHours(duracion);
                 float costo = Vuelo.CalcularCosto(Enum.Parse<Destino>(cmb_Destino.Text), duracion);
                 vuelo=  new Vuelo (Aerolinea.aviones[i], duracion,costo, Enum.Parse<Destino>(cmb_Destino.Text), Estado.Disponible
-                                    ,cmb_Origen.Text, salida, new List<Pasajero>(), txt_Codigo.Text, llegada, 
+                                    ,Enum.Parse<Destino>(cmb_Origen.Text), salida, new Dictionary<int,Pasajero>(), txt_Codigo.Text, llegada, 
                                     Aerolinea.aviones[i].Bodega, 0, 0, 0);
                 Aerolinea.vuelos.Add(vuelo);
-                Aerolinea.vuelos[i].Avion.HorasVuelo += duracion;
-                Aerolinea.vuelos[i].Avion.Estado = false;
+                Aerolinea.aviones[i].HorasVuelo += duracion;
+                Aerolinea.aviones[i].Estado = false;
             }
             else
             {
-                throw new Exception("Algun campo esta vacio owo");
+                throw new Exception("Algun campo esta vacio");
             }
         }
 
-        private void dtp_Salida_ValueChanged(object sender, EventArgs e)
-        {
-            
-        }
-
+      
         private void cmb_Origen_SelectedValueChanged(object sender, EventArgs e)
         {
             cmb_Destino.Items.Clear();
@@ -129,9 +125,6 @@ namespace Parcial1_Labo_2
         }
 
         
-        private void cmb_Salida_SelectedValueChanged(object sender, EventArgs e)
-        {
-        }
 
 
 

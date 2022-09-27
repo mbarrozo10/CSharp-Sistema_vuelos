@@ -144,7 +144,6 @@
             this.dtp_Salida.Size = new System.Drawing.Size(200, 23);
             this.dtp_Salida.TabIndex = 18;
             this.dtp_Salida.Value = new System.DateTime(2022, 9, 15, 0, 0, 0, 0);
-            this.dtp_Salida.ValueChanged += new System.EventHandler(this.dtp_Salida_ValueChanged);
             // 
             // cmb_Origen
             // 
@@ -162,7 +161,6 @@
             this.cmb_Salida.Name = "cmb_Salida";
             this.cmb_Salida.Size = new System.Drawing.Size(121, 23);
             this.cmb_Salida.TabIndex = 21;
-            this.cmb_Salida.SelectedValueChanged += new System.EventHandler(this.cmb_Salida_SelectedValueChanged);
             // 
             // lbl_HoraSalida
             // 

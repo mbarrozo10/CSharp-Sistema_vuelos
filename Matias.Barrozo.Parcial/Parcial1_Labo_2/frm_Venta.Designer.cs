@@ -57,18 +57,17 @@
             this.btn_Aceptar = new System.Windows.Forms.Button();
             this.lbl_KgMax = new System.Windows.Forms.Label();
             this.dgv_Clientes = new System.Windows.Forms.DataGridView();
-            this.chk_BolsoMano = new System.Windows.Forms.CheckBox();
-            this.txt_Buscador = new System.Windows.Forms.TextBox();
-            this.btn_Buscar = new System.Windows.Forms.Button();
-            this.btn_AceptarCliente = new System.Windows.Forms.Button();
-            this.btn_Agregar = new System.Windows.Forms.Button();
-            this.lbl_ErrorBusqueda = new System.Windows.Forms.Label();
-            this.clienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.apellidoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dniDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.edadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cantPasajesCompradosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.chk_BolsoMano = new System.Windows.Forms.CheckBox();
+            this.txt_Buscador = new System.Windows.Forms.TextBox();
+            this.btn_AceptarCliente = new System.Windows.Forms.Button();
+            this.btn_Agregar = new System.Windows.Forms.Button();
+            this.lbl_ErrorBusqueda = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.nud_Cantidad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_CantEquipaje)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Agregar)).BeginInit();
@@ -376,68 +375,6 @@
             this.dgv_Clientes.TabIndex = 31;
             this.dgv_Clientes.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgv_Clientes_RowHeaderMouseClick);
             // 
-            // chk_BolsoMano
-            // 
-            this.chk_BolsoMano.AutoSize = true;
-            this.chk_BolsoMano.Enabled = false;
-            this.chk_BolsoMano.Location = new System.Drawing.Point(1000, 239);
-            this.chk_BolsoMano.Name = "chk_BolsoMano";
-            this.chk_BolsoMano.Size = new System.Drawing.Size(105, 19);
-            this.chk_BolsoMano.TabIndex = 32;
-            this.chk_BolsoMano.Text = "Bolso de mano";
-            this.chk_BolsoMano.UseVisualStyleBackColor = true;
-            // 
-            // txt_Buscador
-            // 
-            this.txt_Buscador.Location = new System.Drawing.Point(32, 20);
-            this.txt_Buscador.Name = "txt_Buscador";
-            this.txt_Buscador.Size = new System.Drawing.Size(100, 23);
-            this.txt_Buscador.TabIndex = 33;
-            this.txt_Buscador.TextChanged += new System.EventHandler(this.txt_Buscador_TextChanged);
-            // 
-            // btn_Buscar
-            // 
-            this.btn_Buscar.Enabled = false;
-            this.btn_Buscar.Location = new System.Drawing.Point(161, 20);
-            this.btn_Buscar.Name = "btn_Buscar";
-            this.btn_Buscar.Size = new System.Drawing.Size(75, 23);
-            this.btn_Buscar.TabIndex = 34;
-            this.btn_Buscar.Text = "Buscar";
-            this.btn_Buscar.UseVisualStyleBackColor = true;
-            this.btn_Buscar.Click += new System.EventHandler(this.btn_Buscar_Click);
-            // 
-            // btn_AceptarCliente
-            // 
-            this.btn_AceptarCliente.Location = new System.Drawing.Point(342, 423);
-            this.btn_AceptarCliente.Name = "btn_AceptarCliente";
-            this.btn_AceptarCliente.Size = new System.Drawing.Size(75, 23);
-            this.btn_AceptarCliente.TabIndex = 35;
-            this.btn_AceptarCliente.Text = "Aceptar";
-            this.btn_AceptarCliente.UseVisualStyleBackColor = true;
-            this.btn_AceptarCliente.Click += new System.EventHandler(this.btn_AceptarCliente_Click);
-            // 
-            // btn_Agregar
-            // 
-            this.btn_Agregar.Location = new System.Drawing.Point(32, 423);
-            this.btn_Agregar.Name = "btn_Agregar";
-            this.btn_Agregar.Size = new System.Drawing.Size(75, 23);
-            this.btn_Agregar.TabIndex = 36;
-            this.btn_Agregar.Text = "Agregar";
-            this.btn_Agregar.UseVisualStyleBackColor = true;
-            this.btn_Agregar.Click += new System.EventHandler(this.btn_Agregar_Click_1);
-            // 
-            // lbl_ErrorBusqueda
-            // 
-            this.lbl_ErrorBusqueda.AutoSize = true;
-            this.lbl_ErrorBusqueda.Location = new System.Drawing.Point(261, 24);
-            this.lbl_ErrorBusqueda.Name = "lbl_ErrorBusqueda";
-            this.lbl_ErrorBusqueda.Size = new System.Drawing.Size(0, 15);
-            this.lbl_ErrorBusqueda.TabIndex = 37;
-            // 
-            // clienteBindingSource
-            // 
-            this.clienteBindingSource.DataSource = typeof(Biblioteca.Cliente);
-            // 
             // nombreDataGridViewTextBoxColumn
             // 
             this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
@@ -472,6 +409,58 @@
             this.cantPasajesCompradosDataGridViewTextBoxColumn.HeaderText = "CantPasajesComprados";
             this.cantPasajesCompradosDataGridViewTextBoxColumn.Name = "cantPasajesCompradosDataGridViewTextBoxColumn";
             // 
+            // clienteBindingSource
+            // 
+            this.clienteBindingSource.DataSource = typeof(Biblioteca.Cliente);
+            // 
+            // chk_BolsoMano
+            // 
+            this.chk_BolsoMano.AutoSize = true;
+            this.chk_BolsoMano.Enabled = false;
+            this.chk_BolsoMano.Location = new System.Drawing.Point(1000, 239);
+            this.chk_BolsoMano.Name = "chk_BolsoMano";
+            this.chk_BolsoMano.Size = new System.Drawing.Size(105, 19);
+            this.chk_BolsoMano.TabIndex = 32;
+            this.chk_BolsoMano.Text = "Bolso de mano";
+            this.chk_BolsoMano.UseVisualStyleBackColor = true;
+            // 
+            // txt_Buscador
+            // 
+            this.txt_Buscador.Location = new System.Drawing.Point(32, 20);
+            this.txt_Buscador.Name = "txt_Buscador";
+            this.txt_Buscador.Size = new System.Drawing.Size(100, 23);
+            this.txt_Buscador.TabIndex = 33;
+            this.txt_Buscador.TextChanged += new System.EventHandler(this.txt_Buscador_TextChanged);
+            this.txt_Buscador.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Buscador_KeyPress);
+            // 
+            // btn_AceptarCliente
+            // 
+            this.btn_AceptarCliente.Location = new System.Drawing.Point(342, 423);
+            this.btn_AceptarCliente.Name = "btn_AceptarCliente";
+            this.btn_AceptarCliente.Size = new System.Drawing.Size(75, 23);
+            this.btn_AceptarCliente.TabIndex = 35;
+            this.btn_AceptarCliente.Text = "Aceptar";
+            this.btn_AceptarCliente.UseVisualStyleBackColor = true;
+            this.btn_AceptarCliente.Click += new System.EventHandler(this.btn_AceptarCliente_Click);
+            // 
+            // btn_Agregar
+            // 
+            this.btn_Agregar.Location = new System.Drawing.Point(32, 423);
+            this.btn_Agregar.Name = "btn_Agregar";
+            this.btn_Agregar.Size = new System.Drawing.Size(75, 23);
+            this.btn_Agregar.TabIndex = 36;
+            this.btn_Agregar.Text = "Agregar";
+            this.btn_Agregar.UseVisualStyleBackColor = true;
+            this.btn_Agregar.Click += new System.EventHandler(this.btn_Agregar_Click_1);
+            // 
+            // lbl_ErrorBusqueda
+            // 
+            this.lbl_ErrorBusqueda.AutoSize = true;
+            this.lbl_ErrorBusqueda.Location = new System.Drawing.Point(158, 23);
+            this.lbl_ErrorBusqueda.Name = "lbl_ErrorBusqueda";
+            this.lbl_ErrorBusqueda.Size = new System.Drawing.Size(0, 15);
+            this.lbl_ErrorBusqueda.TabIndex = 37;
+            // 
             // frm_Venta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -482,7 +471,6 @@
             this.Controls.Add(this.lbl_ErrorBusqueda);
             this.Controls.Add(this.btn_Agregar);
             this.Controls.Add(this.btn_AceptarCliente);
-            this.Controls.Add(this.btn_Buscar);
             this.Controls.Add(this.txt_Buscador);
             this.Controls.Add(this.chk_BolsoMano);
             this.Controls.Add(this.dgv_Clientes);
@@ -561,7 +549,6 @@
         private DataGridView dgv_Clientes;
         private CheckBox chk_BolsoMano;
         private TextBox txt_Buscador;
-        private Button btn_Buscar;
         private Button btn_AceptarCliente;
         private Button btn_Agregar;
         private Label lbl_ErrorBusqueda;

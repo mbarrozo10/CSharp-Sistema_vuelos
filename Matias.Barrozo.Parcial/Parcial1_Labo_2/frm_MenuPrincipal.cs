@@ -16,6 +16,7 @@ namespace Parcial1_Labo_2
     {
 
         private static int Index;
+        private DateTime horaPrincipal;
         public frm_MenuPrincipal()
         {
             InitializeComponent();
@@ -36,7 +37,9 @@ namespace Parcial1_Labo_2
             cmb_FiltroHistorico.Items.Add("Ganancias totales");
             cmb_FiltroHistorico.Items.Add("Vuelos finalizados");
             cmb_FiltroHistorico.Items.Add("Aviones");
-            lbl_Fecha.Text = DateTime.Now.ToString("dd/MM/yyyy");
+            tmr_Hora.Start();
+            horaPrincipal = DateTime.Now;
+
             // dataGridView1.DataSource = Inicializador.vuelos;
         }
 
@@ -384,6 +387,30 @@ namespace Parcial1_Labo_2
 
             }
 
+        }
+
+        private void tmr_Hora_Tick(object sender, EventArgs e)
+        {
+            horaPrincipal = DateTime.Now;
+            //horaPrincipal= horaPrincipal.AddMinutes(30);
+            lbl_Fecha.Text = horaPrincipal.ToString("dd/MM/yyyy HH:mm:ss");
+
+            RevisarVuelo();
+        }
+
+
+        private void RevisarVuelo()
+        {
+            foreach(Vuelo vuelo in Aerolinea.vuelos)
+            {
+               // if (horaPrincipal.CompareTo(vuelo.Salida)<0)
+
+                if(horaPrincipal.ToString()== vuelo.Salida.ToString())
+                {
+                    vuelo.Estado = Biblioteca.Estado.EnVuelo;
+                    CargarDatagrid();
+                }
+            }
         }
     }
 }
