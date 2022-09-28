@@ -98,7 +98,7 @@ namespace Biblioteca
         public int BodegaRestante
         {
             get { return bodegaRestante; }
-            set { this.recuadacion = value; }
+            set { bodegaRestante = value; }
         }
 
         public DateTime Llegada
@@ -110,10 +110,10 @@ namespace Biblioteca
         {
             get { return recuadacion; }
             set {
-                if(Validador.ValidarNumeroEnRango(value.ToString(),0,int.MaxValue))
+                if(Validador.ValidarFloatEnRango(value.ToString(),-1,int.MaxValue))
                     recuadacion = value; 
-                //else
-                //    throw new Exception("Valor no correcto");
+                else
+                    throw new Exception("Valor no correcto");
             }
         }
 
@@ -123,8 +123,8 @@ namespace Biblioteca
             set { 
                 if(Validador.ValidarNumeroEnRango(value.ToString(),-1,int.MaxValue))
                     asientosOcupadoTurista = value; 
-                //else
-                //    throw new Exception("Valor no correcto");
+                else
+                    throw new Exception("Valor no correcto");
             }
 
         }

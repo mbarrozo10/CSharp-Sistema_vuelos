@@ -16,6 +16,7 @@ namespace Biblioteca
                 if (!char.IsLetter(cadena[i]))
                 {
                     return false;
+                   
                 }
             }
 
@@ -26,6 +27,18 @@ namespace Biblioteca
         public static bool ValidarNumeroEnRango( string numero , int min, int max)
         {
             if(int.TryParse(numero, out int i))
+            {
+                if(i > min && i < max )
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+        
+        public static bool ValidarFloatEnRango( string numero , int min, int max)
+        {
+            if(float.TryParse(numero, out float i))
             {
                 if(i > min && i < max )
                 {

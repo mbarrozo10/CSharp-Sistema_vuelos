@@ -17,6 +17,7 @@ namespace Biblioteca
             this.Apellido = apellido;
         }
 
+      
         public string Nombre
         {
             get { return nombre; }
@@ -38,5 +39,7 @@ namespace Biblioteca
                 //    throw new Exception("Valor no correcto");
             }
         }
+
+        public abstract string MostrarInformacion();
     }
 }

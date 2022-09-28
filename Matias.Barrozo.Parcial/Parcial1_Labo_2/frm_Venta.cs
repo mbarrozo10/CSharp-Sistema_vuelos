@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,7 +26,7 @@ namespace Parcial1_Labo_2
         float recaudacion;
         int indexClientes;
 
-        int i;
+        int cantidadPasajerosRestantes;
         public frm_Venta( int index) : this()
         {
             this.index = index;
@@ -46,12 +47,13 @@ namespace Parcial1_Labo_2
             lbl_Duracion.Text += Aerolinea.vuelos[index].Duracion;
             lbl_Origen.Text+= Aerolinea.vuelos[index].Origen.ToString();
             precioPremium=(float) (Aerolinea.vuelos[index].CostoDePasaje * 1.15f);
-            precioTurista=(float)(Aerolinea.vuelos[index].CostoDePasaje);
+            precioTurista=(float)(Aerolinea.vuelos[index].CostoDePasaje );
             lbl_PrecioSub.Text += precioTurista.ToString("N2");
-            lbl_PrecioFinal.Text += (precioTurista * 1.21f).ToString("N2");
+            lbl_PrecioFinal.Text += (precioTurista * 1.21f * 1.90f).ToString("N2");
             modoOscuroClaro();
             recaudacion= Aerolinea.vuelos[index].Recaudacion;
-            i = 0;
+            cantidadPasajerosRestantes = 0;
+            rtx_PasajerosAgregados.Text = String.Empty;
         }
 
         private void txt_Dni_KeyPress(object sender, KeyPressEventArgs e)
@@ -59,7 +61,7 @@ namespace Parcial1_Labo_2
             e.Handled = CheckNumeros(e);
         }
 
-        private bool CheckNumeros(KeyPressEventArgs e)
+        public static bool CheckNumeros(KeyPressEventArgs e)
         {
 
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
@@ -70,7 +72,7 @@ namespace Parcial1_Labo_2
             return false;
         }
 
-        private bool CheckLetras(KeyPressEventArgs e)
+        public static bool CheckLetras(KeyPressEventArgs e)
         {
 
             if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar))
@@ -108,14 +110,14 @@ namespace Parcial1_Labo_2
                 {
                     nud_CantEquipaje.Maximum = 2;
                     lbl_PrecioSub.Text = "Precio subtotal: " + precioPremium.ToString("N2");
-                    lbl_PrecioFinal.Text = "Precio Final: " + (precioPremium * 1.21f).ToString("N2");
+                    lbl_PrecioFinal.Text = "Precio Final: " + (precioPremium * 1.21f * 1.90f).ToString("N2");
                     lbl_KgMax.Text = "/21 kg";
                 }
                 else
                 {
 
                     lbl_PrecioSub.Text = "Precio subtotal: " + precioTurista.ToString("N2");
-                    lbl_PrecioFinal.Text = "Precio Final: " + (precioTurista *1.21f).ToString("N2");
+                    lbl_PrecioFinal.Text = "Precio Final: " + (precioTurista *1.21f * 1.90f).ToString("N2");
                     nud_CantEquipaje.Maximum = 1;
                     lbl_KgMax.Text = "/25 kg";
 
@@ -126,59 +128,68 @@ namespace Parcial1_Labo_2
         private void btn_Agregar_Click(object sender, EventArgs e)
         {
             bool salir = false;
-            //    for(int i = 0; i < nud_Cantidad.Value; i++)
-            //   {
-            nud_Cantidad.Enabled = false;
-            if(txt_Apellido.Text!=String.Empty&& txt_Nombre.Text!= String.Empty && txt_Dni.Text!=String.Empty&& txt_Edad.Text!=String.Empty) 
+
+            if (txt_Apellido.Text != String.Empty && txt_Nombre.Text != String.Empty && txt_Dni.Text != String.Empty && txt_Edad.Text != String.Empty && 
+                ((chk_Premium.Checked && int.Parse(txt_Kg.Text)<=42) || (!chk_Premium.Checked && int.Parse(txt_Kg.Text) <= 25)))
             {
-                Aerolinea.vuelos[index].UltimoAsiento++;
-                Aerolinea.vuelos[index].Pasajeros.Add(Aerolinea.vuelos[index].UltimoAsiento, new Pasajero(txt_Nombre.Text, txt_Apellido.Text, int.Parse(txt_Dni.Text),int.Parse(txt_Edad.Text), (int)(nud_CantEquipaje.Value),chk_Premium.Checked,chk_BolsoMano.Checked));
-                if(nud_CantEquipaje.Value>0 && txt_Kg.Text!= String.Empty)
+                try
                 {
-                    Aerolinea.vuelos[index].BodegaRestante -= int.Parse(txt_Kg.Text) * (int)nud_CantEquipaje.Value;
-                }
-                
-                if (chk_Premium.Checked)
-                {
-                   // Aerolinea.vuelos[index].Recaudacion += precioPremium* 1.21f;
-                    recaudacion += precioPremium* 1.21f;
-                    Aerolinea.vuelos[index].AsientosLibresPremium += 1;
-                }
-                else
-                {
-                    Aerolinea.vuelos[index].AsientosLibresTurista += 1;
-                   // Aerolinea.vuelos[index].Recaudacion += precioTurista * 1.21f;
-                   recaudacion += precioTurista * 1.21f;
-                }
-                //vueloActual.AsientosLibres -= (int)nud_Cantidad.Value-1; +
-                
+                    if (txt_Kg.Text != String.Empty && (Aerolinea.vuelos[index].BodegaRestante - int.Parse(txt_Kg.Text)) < 0)
+                    {
+                        throw new Exception("No hay mas espacio en cabina");
+                    }
+                    Aerolinea.vuelos[index].UltimoAsiento++;
+                    Pasajero pasajero = new Pasajero(txt_Nombre.Text, txt_Apellido.Text, int.Parse(txt_Dni.Text), int.Parse(txt_Edad.Text), (int)(nud_CantEquipaje.Value), chk_Premium.Checked, chk_BolsoMano.Checked);
+                    Aerolinea.vuelos[index].Pasajeros.Add(Aerolinea.vuelos[index].UltimoAsiento, pasajero);
+                    rtx_PasajerosAgregados.Text += pasajero.ToString() + "\n";
+                    if (nud_CantEquipaje.Value > 0 && txt_Kg.Text != String.Empty)
+                    {
+                        Aerolinea.vuelos[index].BodegaRestante -= int.Parse(txt_Kg.Text);
+                    }
 
-                i++;
-                prg_CantidadRestante.Value = i;
+                    if (chk_Premium.Checked)
+                    {
+                        recaudacion += precioPremium * 1.21f;
+                        Aerolinea.vuelos[index].AsientosLibresPremium += 1;
+                    }
+                    else
+                    {
+                        Aerolinea.vuelos[index].AsientosLibresTurista += 1;
+                        recaudacion += precioTurista * 1.21f;
+                    }
 
-                chk_Premium.CheckState = CheckState.Unchecked;
-                txt_Apellido.Clear();
-                txt_Nombre.Clear();
-                txt_Dni.Clear();
-                txt_Edad.Clear();
-                nud_CantEquipaje.Value = 0;
-                txt_Kg.Clear();
 
-                if (i == nud_Cantidad.Value)
+                    cantidadPasajerosRestantes++;
+                    prg_CantidadRestante.Value = cantidadPasajerosRestantes;
+
+                    chk_Premium.CheckState = CheckState.Unchecked;
+                    txt_Apellido.Clear();
+                    txt_Nombre.Clear();
+                    txt_Dni.Clear();
+                    txt_Edad.Clear();
+                    nud_CantEquipaje.Value = 0;
+                    txt_Kg.Clear();
+
+                    if (cantidadPasajerosRestantes == nud_Cantidad.Value)
+                    {
+                        salir = true;
+                    }
+                    if (salir)
+                    {
+                        Aerolinea.vuelos[index].Recaudacion = recaudacion;
+                        DialogResult = DialogResult.OK;
+                    }
+                   
+
+                }catch(Exception ex)
                 {
-                    salir = true;
+                    lbl_Error.Text=ex.Message;
                 }
-                if (salir)
-                {
-                    Aerolinea.vuelos[index].Recaudacion = recaudacion;
-                    DialogResult = DialogResult.OK;
-                }
-            }   
+            }
             else
             {
-                lbl_Error.Text = "Falta algun dato";
+                lbl_Error.Text = "Falta algun dato o algun dato es incorrecto";
             }
-
             Aerolinea.clientes[indexClientes].CantPasajesComprados += 1;
             
 
@@ -200,7 +211,8 @@ namespace Parcial1_Labo_2
         private void txt_Kg_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = CheckNumeros(e);
-           
+            
+
         }
 
         private void nud_CantEquipaje_ValueChanged(object sender, EventArgs e)
@@ -358,7 +370,7 @@ namespace Parcial1_Labo_2
 
                 if (Aerolinea.clientes[i].Nombre.ToLower().Contains(txt_Buscador.Text.ToLower()) ||
                      Aerolinea.clientes[i].Apellido.ToLower().Contains(txt_Buscador.Text.ToLower()) ||
-                     Aerolinea.clientes[i].Dni.ToString().Contains(txt_Buscador.Text))
+                     Aerolinea.clientes[i].GetHashCode().ToString().Contains(txt_Buscador.Text))
                 {
 
                     filtrada.Add(Aerolinea.clientes[i]);

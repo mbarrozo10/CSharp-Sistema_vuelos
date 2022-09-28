@@ -38,7 +38,6 @@
             this.edadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.premiumDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.equipajeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cantPasajesCompradosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Pasajeros)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pasajeroBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -53,8 +52,7 @@
             this.dniDataGridViewTextBoxColumn,
             this.edadDataGridViewTextBoxColumn,
             this.premiumDataGridViewCheckBoxColumn,
-            this.equipajeDataGridViewTextBoxColumn,
-            this.cantPasajesCompradosDataGridViewTextBoxColumn});
+            this.equipajeDataGridViewTextBoxColumn});
             this.dgv_Pasajeros.DataSource = this.pasajeroBindingSource;
             this.dgv_Pasajeros.Location = new System.Drawing.Point(83, 26);
             this.dgv_Pasajeros.Name = "dgv_Pasajeros";
@@ -118,12 +116,6 @@
             this.equipajeDataGridViewTextBoxColumn.Name = "equipajeDataGridViewTextBoxColumn";
             this.equipajeDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // cantPasajesCompradosDataGridViewTextBoxColumn
-            // 
-            this.cantPasajesCompradosDataGridViewTextBoxColumn.DataPropertyName = "CantPasajesComprados";
-            this.cantPasajesCompradosDataGridViewTextBoxColumn.HeaderText = "CantPasajesComprados";
-            this.cantPasajesCompradosDataGridViewTextBoxColumn.Name = "cantPasajesCompradosDataGridViewTextBoxColumn";
-            // 
             // frm_pasajeros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -152,6 +144,5 @@
         private DataGridViewTextBoxColumn edadDataGridViewTextBoxColumn;
         private DataGridViewCheckBoxColumn premiumDataGridViewCheckBoxColumn;
         private DataGridViewTextBoxColumn equipajeDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn cantPasajesCompradosDataGridViewTextBoxColumn;
     }
 }

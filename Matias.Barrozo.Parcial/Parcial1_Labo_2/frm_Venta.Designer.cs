@@ -68,6 +68,8 @@
             this.btn_AceptarCliente = new System.Windows.Forms.Button();
             this.btn_Agregar = new System.Windows.Forms.Button();
             this.lbl_ErrorBusqueda = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.rtx_PasajerosAgregados = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.nud_Cantidad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_CantEquipaje)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Agregar)).BeginInit();
@@ -198,7 +200,7 @@
             // 
             this.lbl_PrecioSub.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_PrecioSub.AutoSize = true;
-            this.lbl_PrecioSub.Location = new System.Drawing.Point(1023, 487);
+            this.lbl_PrecioSub.Location = new System.Drawing.Point(1023, 444);
             this.lbl_PrecioSub.Name = "lbl_PrecioSub";
             this.lbl_PrecioSub.Size = new System.Drawing.Size(90, 15);
             this.lbl_PrecioSub.TabIndex = 16;
@@ -461,6 +463,24 @@
             this.lbl_ErrorBusqueda.Size = new System.Drawing.Size(0, 15);
             this.lbl_ErrorBusqueda.TabIndex = 37;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(1023, 481);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(124, 15);
+            this.label1.TabIndex = 38;
+            this.label1.Text = "Impuestos: 90%  + IVA";
+            // 
+            // rtx_PasajerosAgregados
+            // 
+            this.rtx_PasajerosAgregados.Location = new System.Drawing.Point(522, 161);
+            this.rtx_PasajerosAgregados.Name = "rtx_PasajerosAgregados";
+            this.rtx_PasajerosAgregados.ReadOnly = true;
+            this.rtx_PasajerosAgregados.Size = new System.Drawing.Size(168, 192);
+            this.rtx_PasajerosAgregados.TabIndex = 39;
+            this.rtx_PasajerosAgregados.Text = "";
+            // 
             // frm_Venta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -468,6 +488,8 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1290, 655);
             this.ControlBox = false;
+            this.Controls.Add(this.rtx_PasajerosAgregados);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.lbl_ErrorBusqueda);
             this.Controls.Add(this.btn_Agregar);
             this.Controls.Add(this.btn_AceptarCliente);
@@ -558,5 +580,7 @@
         private DataGridViewTextBoxColumn edadDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn cantPasajesCompradosDataGridViewTextBoxColumn;
         private BindingSource clienteBindingSource;
+        private Label label1;
+        private RichTextBox rtx_PasajerosAgregados;
     }
 }

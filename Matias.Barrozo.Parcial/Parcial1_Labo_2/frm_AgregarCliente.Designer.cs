@@ -39,6 +39,8 @@
             this.lbl_Edad = new System.Windows.Forms.Label();
             this.lbl_Apellido = new System.Windows.Forms.Label();
             this.lbl_Dni = new System.Windows.Forms.Label();
+            this.lbl_Info = new System.Windows.Forms.Label();
+            this.btn_Aceptar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Agregar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Cancelar)).BeginInit();
             this.SuspendLayout();
@@ -52,6 +54,7 @@
             this.pic_Agregar.Size = new System.Drawing.Size(86, 25);
             this.pic_Agregar.TabIndex = 0;
             this.pic_Agregar.TabStop = false;
+            this.pic_Agregar.Visible = false;
             this.pic_Agregar.Click += new System.EventHandler(this.pic_Agregar_Click);
             // 
             // pic_Cancelar
@@ -71,6 +74,7 @@
             this.txt_Edad.Name = "txt_Edad";
             this.txt_Edad.Size = new System.Drawing.Size(100, 23);
             this.txt_Edad.TabIndex = 2;
+            this.txt_Edad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Edad_KeyPress);
             // 
             // txt_Apellido
             // 
@@ -78,6 +82,7 @@
             this.txt_Apellido.Name = "txt_Apellido";
             this.txt_Apellido.Size = new System.Drawing.Size(100, 23);
             this.txt_Apellido.TabIndex = 3;
+            this.txt_Apellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Apellido_KeyPress);
             // 
             // txt_Dni
             // 
@@ -85,6 +90,7 @@
             this.txt_Dni.Name = "txt_Dni";
             this.txt_Dni.Size = new System.Drawing.Size(100, 23);
             this.txt_Dni.TabIndex = 4;
+            this.txt_Dni.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Dni_KeyPress);
             // 
             // txt_Nombre
             // 
@@ -92,6 +98,7 @@
             this.txt_Nombre.Name = "txt_Nombre";
             this.txt_Nombre.Size = new System.Drawing.Size(100, 23);
             this.txt_Nombre.TabIndex = 5;
+            this.txt_Nombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Nombre_KeyPress);
             // 
             // lbl_Nombre
             // 
@@ -137,12 +144,32 @@
             this.lbl_Dni.TabIndex = 10;
             this.lbl_Dni.Text = "Dni";
             // 
+            // lbl_Info
+            // 
+            this.lbl_Info.AutoSize = true;
+            this.lbl_Info.Location = new System.Drawing.Point(505, 47);
+            this.lbl_Info.Name = "lbl_Info";
+            this.lbl_Info.Size = new System.Drawing.Size(0, 15);
+            this.lbl_Info.TabIndex = 11;
+            // 
+            // btn_Aceptar
+            // 
+            this.btn_Aceptar.Location = new System.Drawing.Point(318, 242);
+            this.btn_Aceptar.Name = "btn_Aceptar";
+            this.btn_Aceptar.Size = new System.Drawing.Size(75, 23);
+            this.btn_Aceptar.TabIndex = 12;
+            this.btn_Aceptar.Text = "Aceptar";
+            this.btn_Aceptar.UseVisualStyleBackColor = true;
+            this.btn_Aceptar.Click += new System.EventHandler(this.btn_Aceptar_Click);
+            // 
             // frm_AgregarCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(754, 279);
             this.ControlBox = false;
+            this.Controls.Add(this.btn_Aceptar);
+            this.Controls.Add(this.lbl_Info);
             this.Controls.Add(this.lbl_Dni);
             this.Controls.Add(this.lbl_Apellido);
             this.Controls.Add(this.lbl_Edad);
@@ -158,6 +185,7 @@
             this.Name = "frm_AgregarCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "  ";
+            this.Load += new System.EventHandler(this.frm_AgregarCliente_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pic_Agregar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Cancelar)).EndInit();
             this.ResumeLayout(false);
@@ -178,5 +206,7 @@
         private Label lbl_Edad;
         private Label lbl_Apellido;
         private Label lbl_Dni;
+        private Label lbl_Info;
+        private Button btn_Aceptar;
     }
 }

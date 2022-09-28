@@ -36,11 +36,16 @@ namespace Biblioteca
             {
                 if (Validador.ValidarNumeroEnRango(value.ToString(), -1, 3))
                     this.equipaje = value;
-                //else
-                //    throw new Exception("Valor no correcto");
+                else
+                    throw new Exception("Numero incorrecto");
             }
         }
 
-        
+        public override string ToString()
+        {
+            return Nombre + " " + Apellido;
+        }
+
+
     }
 }

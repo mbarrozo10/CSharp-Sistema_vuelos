@@ -17,6 +17,7 @@ namespace Parcial1_Labo_2
 
         private static int Index;
         private DateTime horaPrincipal;
+        
         public frm_MenuPrincipal()
         {
             InitializeComponent();
@@ -37,10 +38,9 @@ namespace Parcial1_Labo_2
             cmb_FiltroHistorico.Items.Add("Ganancias totales");
             cmb_FiltroHistorico.Items.Add("Vuelos finalizados");
             cmb_FiltroHistorico.Items.Add("Aviones");
+            cmb_FiltroHistorico.Items.Add("Vendedores");
             tmr_Hora.Start();
             horaPrincipal = DateTime.Now;
-
-            // dataGridView1.DataSource = Inicializador.vuelos;
         }
 
         private void btn_Salir_Click(object sender, EventArgs e)
@@ -51,12 +51,12 @@ namespace Parcial1_Labo_2
         private void dataGridView1_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             Index = e.RowIndex;
-            if (Aerolinea.vuelos[Index].Estado == Biblioteca.Estado.Disponible || Aerolinea.vuelos[Index].Pasajeros.Count < Aerolinea.vuelos[Index].Avion.CantidadAsientos)
+            if (Aerolinea.vuelos[Index].Estado == Biblioteca.Estado.Disponible && Aerolinea.vuelos[Index].Pasajeros.Count < Aerolinea.vuelos[Index].Avion.CantidadAsientos)
             {
                pic_Vender.Visible = true;
                pic_Pasajeros.Visible = true;
             }
-            else if (Aerolinea.vuelos[Index].Estado == Biblioteca.Estado.EnVuelo || Aerolinea.vuelos[Index].Estado == Biblioteca.Estado.Lleno)
+            else if (Aerolinea.vuelos[Index].Estado == Biblioteca.Estado.EnVuelo || (Aerolinea.vuelos[Index].Estado == Biblioteca.Estado.Lleno || Aerolinea.vuelos[Index].Estado== Biblioteca.Estado.EnVuelo))
             {
                 pic_Pasajeros.Visible = true;
                 pic_Vender.Visible = false;
@@ -86,17 +86,13 @@ namespace Parcial1_Labo_2
                 DataGridViewRow filas = new DataGridViewRow();
                
                 filas.CreateCells(dgv_VuelosActivos);
-                //DateTime ahora = DateTime.Now;
-                //DateTime test = new DateTime(2022,9,13, 22,0,0);
-                //int x = ahora.Hour-3;
-
+              
                 filas.Cells[0].Value = Aerolinea.vuelos[i].Avion.Matricula;
                 filas.Cells[1].Value = Aerolinea.vuelos[i].Duracion;
-                //  filas.Cells[2].Value = Vuelo.CalcularCosto(Aerolinea.vuelos[i].Destino, Aerolinea.vuelos[i].Duracion);
                 filas.Cells[2].Value = Aerolinea.vuelos[i].Origen;
                 filas.Cells[3].Value = Aerolinea.vuelos[i].Destino;
                 filas.Cells[4].Value = Aerolinea.vuelos[i].Salida;
-                filas.Cells[5].Value = Aerolinea.vuelos[i].Llegada; //new DateTime(ahora.Year,ahora.Month,ahora.Day,x,ahora.Minute,ahora.Second);
+                filas.Cells[5].Value = Aerolinea.vuelos[i].Llegada; 
                 filas.Cells[6].Value = Aerolinea.vuelos[i].Estado;
                 filas.Cells[7].Value = Aerolinea.vuelos[i].Avion.CantidadAsientos - Aerolinea.vuelos[i].Pasajeros.Count;
                 filas.Cells[8].Value = Aerolinea.vuelos[i].Avion.Wifi;
@@ -110,7 +106,6 @@ namespace Parcial1_Labo_2
         private void btn_AgregarVuelo_Click(object sender, EventArgs e)
         {
             frm_AgregarVuelo vuelo = new frm_AgregarVuelo();
-            //   vuelo.ShowDialog(); 
             if (vuelo.ShowDialog() == DialogResult.OK)
             {
                 CargarDatagrid();
@@ -194,7 +189,6 @@ namespace Parcial1_Labo_2
         {
             pnl_Informacion.Visible = true;
             pnl_Informacion.Enabled = true;
-           // this.SendToBack();
             pic_Agregar.Enabled = false;
             pic_Vender.Enabled = false;
             pic_Salir.Enabled = false;
@@ -224,8 +218,7 @@ namespace Parcial1_Labo_2
         {
             Aerolinea.vuelos[Index].Estado = Biblioteca.Estado.Cancelado;
             Vuelo vueloaux = Aerolinea.vuelos[Index];
-            Aerolinea.vuelosFinalizados.Add(vueloaux);
-            Aerolinea.vuelos.Remove(vueloaux);
+            BorrarVuelo(vueloaux);
 
             pnl_Informacion.Visible = false;
             pic_Agregar.Enabled = true;
@@ -278,12 +271,12 @@ namespace Parcial1_Labo_2
             btn_AgregarCliente.Visible = false;
             pic_Pasajeros.Visible = false;
 
-            //  dgv_Historico.Columns.Add("test", "test");
-            // dgv_Historico.Columns.Add("test2", "test2");
-        }
+           }
 
         private void cmb_FiltroHistorico_SelectedValueChanged(object sender, EventArgs e)
         {
+            lbl_Vendedores.Visible = false;
+            dgv_Historico.Visible = true;
             switch (cmb_FiltroHistorico.Text)
             {
                 case "Destinos":
@@ -292,30 +285,8 @@ namespace Parcial1_Labo_2
                     dgv_Historico.Columns.Add("Destino", "Destino");
                     dgv_Historico.Columns.Add("CantidadViajes", "Cantidad de viajes");
                     dgv_Historico.Columns.Add("TotalRecaudado", "TotalRecaudado");
-                    int count = Enum.GetValues(typeof(Destino)).Length;
-                    for (int i=0; i< count ;i++){
-                        int contador=0;
-                        float recaudacion=0;
-                        for(int j = 0; j < Aerolinea.vuelos.Count; j++)
-                        {
-                            string? s = Enum.GetName(typeof(Destino),i);
-                            if (Aerolinea.vuelos[j].Destino.ToString().Contains(s))
-                            {
-                                contador++;
-                                recaudacion += Aerolinea.vuelos[j].Recaudacion;
-                            }
-                        }
-                        DataGridViewRow filas = new DataGridViewRow();
-
-                        filas.CreateCells(dgv_Historico);
-
-                        filas.Cells[0].Value = Enum.GetName(typeof(Destino), i);
-                        filas.Cells[1].Value = contador;
-                        filas.Cells[2].Value = recaudacion;
-
-                        dgv_Historico.Rows.Add(filas);
-
-                    }
+                    RecorrerVuelos();
+                    dgv_Historico.Sort(dgv_Historico.Columns[2], ListSortDirection.Descending);
                     break;
                 case "Pasajeros Frecuentes":
                     dgv_Historico.Columns.Clear();
@@ -329,8 +300,8 @@ namespace Parcial1_Labo_2
                     dgv_Historico.Columns.Add("Destino", "Destino");
                     dgv_Historico.Columns.Add("Ganancia", "Ganancia del vuelo");
                     dgv_Historico.Columns.Add("TipoServicio", "Tipo de servicio");
-                    Recorrervuelos(Aerolinea.vuelos);
-                    Recorrervuelos(Aerolinea.vuelosFinalizados);                 
+                    RecorrerVuelos(Aerolinea.vuelos);
+                    RecorrerVuelos(Aerolinea.vuelosFinalizados);                 
                     break;
                 case "Vuelos finalizados":
                     dgv_Historico.DataSource = null;
@@ -341,6 +312,17 @@ namespace Parcial1_Labo_2
                     dgv_Historico.DataSource = null;
                     dgv_Historico.DataSource = Aerolinea.aviones;
                     break;
+                case "Vendedores":
+                    dgv_Historico.Visible = false;
+                    lbl_Vendedores.Visible = true;
+                    string texto="";
+                    foreach(Vendedor ven in Aerolinea.Vendedores)
+                    {
+                        texto += ven.MostrarInformacion() + "\n\n";
+                    }
+                    lbl_Vendedores.Text = texto;
+                    break;
+
                 default:
                     dgv_Historico.DataSource = null;
                     break;
@@ -359,7 +341,7 @@ namespace Parcial1_Labo_2
         }
 
 
-        private void Recorrervuelos(List<Vuelo> vuelos)
+        private void RecorrerVuelos(List<Vuelo> vuelos)
         {
             for (int i = 0; i < vuelos.Count; i++)
             {
@@ -389,10 +371,47 @@ namespace Parcial1_Labo_2
 
         }
 
+        private void RecorrerVuelos()
+        {
+            int count = Enum.GetValues(typeof(Destino)).Length;
+            for (int i = 0; i < count; i++)
+            {
+                int contador = 0;
+                float recaudacion = 0;
+                for (int j = 0; j < Aerolinea.vuelos.Count; j++)
+                {
+                    string? s = Enum.GetName(typeof(Destino), i);
+                    if (Aerolinea.vuelos[j].Destino.ToString().Contains(s))
+                    {
+                        contador++;
+                        recaudacion += Aerolinea.vuelos[j].Recaudacion;
+                    }
+                }
+                for (int j = 0; j < Aerolinea.vuelosFinalizados.Count; j++)
+                {
+                    string? s = Enum.GetName(typeof(Destino), i);
+                    if (Aerolinea.vuelos[j].Destino.ToString().Contains(s))
+                    {
+                        contador++;
+                        recaudacion += Aerolinea.vuelos[j].Recaudacion;
+                    }
+                }
+                DataGridViewRow filas = new DataGridViewRow();
+
+                filas.CreateCells(dgv_Historico);
+
+                filas.Cells[0].Value = Enum.GetName(typeof(Destino), i);
+                filas.Cells[1].Value = contador;
+                filas.Cells[2].Value = recaudacion;
+
+                dgv_Historico.Rows.Add(filas);
+
+            }
+        }
+
         private void tmr_Hora_Tick(object sender, EventArgs e)
         {
             horaPrincipal = DateTime.Now;
-            //horaPrincipal= horaPrincipal.AddMinutes(30);
             lbl_Fecha.Text = horaPrincipal.ToString("dd/MM/yyyy HH:mm:ss");
 
             RevisarVuelo();
@@ -403,14 +422,28 @@ namespace Parcial1_Labo_2
         {
             foreach(Vuelo vuelo in Aerolinea.vuelos)
             {
-               // if (horaPrincipal.CompareTo(vuelo.Salida)<0)
+                if (horaPrincipal.CompareTo(vuelo.Salida) > 0 && (vuelo.Estado== Biblioteca.Estado.Disponible || vuelo.Estado==Biblioteca.Estado.Lleno))
 
-                if(horaPrincipal.ToString()== vuelo.Salida.ToString())
                 {
                     vuelo.Estado = Biblioteca.Estado.EnVuelo;
                     CargarDatagrid();
                 }
+                 if(horaPrincipal.CompareTo(vuelo.Llegada) > 0 && vuelo.Estado== Biblioteca.Estado.EnVuelo)
+                {
+                    vuelo.Estado = Biblioteca.Estado.Finalizado;
+                    BorrarVuelo(vuelo);
+                    CargarDatagrid();
+                    break;
+                }
             }
+            
+        }
+
+        private void BorrarVuelo(Vuelo vuelo)
+        {
+            
+            Aerolinea.vuelosFinalizados.Add(vuelo);
+            Aerolinea.vuelos.Remove(vuelo);
         }
     }
 }

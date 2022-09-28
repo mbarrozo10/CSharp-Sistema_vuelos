@@ -15,7 +15,7 @@ namespace Biblioteca
         private int edad;
         private int cantPasajesComprados;
 
-
+    
         public Cliente( string nombre, string apellido,int dni, int edad): base(nombre,apellido)
         {
             this.Dni = dni;
@@ -32,28 +32,28 @@ namespace Biblioteca
 
         public int Dni
         {
-            get { return dni; }
+            get { return this.GetHashCode(); }
             set
             {
                 if (Validador.ValidarNumeroEnRango(value.ToString(), 10000000, 100000000))
                 {
                     dni = value;
                 }
-                //else
-                //{
-                //    throw new Exception("Valor no correcto");
-                //}
+                else
+                {
+                    throw new Exception("Dni incorrecto");
+                }
             }
         }
 
         public int CantPasajesComprados
         {
             get { return cantPasajesComprados; }
-            set { 
-                if(Validador.ValidarNumeroEnRango(value.ToString(),-1,100))
-                    cantPasajesComprados = value; 
-                //else
-                //    throw new Exception("Valor no correcto");
+            set {
+                if (Validador.ValidarNumeroEnRango(value.ToString(), -1, 100))
+                    cantPasajesComprados = value;
+                else
+                    throw new Exception("Valor erroneo");
             }
         }
 
@@ -64,12 +64,13 @@ namespace Biblioteca
             {
                 if (Validador.ValidarNumeroEnRango(value.ToString(), 0, 100))
                 {
-                    edad = value;   
+                    edad = value;
                 }
-                //else
-                //{
-                //    throw new Exception("Valor no correcto");
-                //}
+
+                else
+                {
+                    throw new Exception("Edad incorrecta");
+                }
             }
         }
         public override bool Equals(object? obj)
@@ -84,7 +85,14 @@ namespace Biblioteca
 
         public override int GetHashCode()
         {
-            return base.GetHashCode();
+            return dni;
         }
+
+        public override string MostrarInformacion()
+        {
+            return "Nombre: " + Nombre + "\nApellido: " + Apellido + "\nDni: " + Dni + "\nEdad: " + Edad;
+        }
+
+
     }
 }

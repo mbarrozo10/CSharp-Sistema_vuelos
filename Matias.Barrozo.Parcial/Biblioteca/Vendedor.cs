@@ -49,5 +49,10 @@ namespace Biblioteca
 
             
         }
+
+        public override string MostrarInformacion()
+        {
+            return this.ToString() + "\nUsuario: " + Usuario + "\nContraseña: " + Contraseña;
+        }
     }
 }

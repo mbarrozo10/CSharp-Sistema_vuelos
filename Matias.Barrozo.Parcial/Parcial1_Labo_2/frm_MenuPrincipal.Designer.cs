@@ -69,6 +69,7 @@
             this.pic_SalirPanel = new System.Windows.Forms.PictureBox();
             this.btn_Historico = new System.Windows.Forms.Button();
             this.pnl_Historico = new System.Windows.Forms.Panel();
+            this.lbl_Vendedores = new System.Windows.Forms.Label();
             this.cmb_FiltroHistorico = new System.Windows.Forms.ComboBox();
             this.pic_SalirHistorico = new System.Windows.Forms.PictureBox();
             this.lbl_RecaudacionTotal = new System.Windows.Forms.Label();
@@ -76,6 +77,7 @@
             this.btn_AgregarCliente = new System.Windows.Forms.Button();
             this.lbl_Fecha = new System.Windows.Forms.Label();
             this.tmr_Hora = new System.Windows.Forms.Timer(this.components);
+            this.hlp_Test = new System.Windows.Forms.HelpProvider();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_VuelosActivos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Modo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Vender)).BeginInit();
@@ -302,9 +304,11 @@
             this.pic_Modo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pic_Modo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pic_Modo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.hlp_Test.SetHelpString(this.pic_Modo, "Modo oscuro owo");
             this.pic_Modo.Image = global::Parcial1_Labo_2.Properties.Resources.night_mode1;
             this.pic_Modo.Location = new System.Drawing.Point(1105, 12);
             this.pic_Modo.Name = "pic_Modo";
+            this.hlp_Test.SetShowHelp(this.pic_Modo, true);
             this.pic_Modo.Size = new System.Drawing.Size(33, 33);
             this.pic_Modo.TabIndex = 9;
             this.pic_Modo.TabStop = false;
@@ -376,7 +380,7 @@
             this.pnl_Informacion.Controls.Add(this.rtx_InfoVuelo);
             this.pnl_Informacion.Controls.Add(this.pic_Cancelar);
             this.pnl_Informacion.Controls.Add(this.pic_SalirPanel);
-            this.pnl_Informacion.Location = new System.Drawing.Point(200, 140);
+            this.pnl_Informacion.Location = new System.Drawing.Point(207, 183);
             this.pnl_Informacion.Name = "pnl_Informacion";
             this.pnl_Informacion.Size = new System.Drawing.Size(772, 288);
             this.pnl_Informacion.TabIndex = 15;
@@ -425,15 +429,24 @@
             // 
             // pnl_Historico
             // 
+            this.pnl_Historico.Controls.Add(this.lbl_Vendedores);
             this.pnl_Historico.Controls.Add(this.cmb_FiltroHistorico);
             this.pnl_Historico.Controls.Add(this.pic_SalirHistorico);
             this.pnl_Historico.Controls.Add(this.lbl_RecaudacionTotal);
             this.pnl_Historico.Controls.Add(this.dgv_Historico);
-            this.pnl_Historico.Location = new System.Drawing.Point(68, 49);
+            this.pnl_Historico.Location = new System.Drawing.Point(68, 30);
             this.pnl_Historico.Name = "pnl_Historico";
             this.pnl_Historico.Size = new System.Drawing.Size(1070, 478);
             this.pnl_Historico.TabIndex = 17;
             this.pnl_Historico.Visible = false;
+            // 
+            // lbl_Vendedores
+            // 
+            this.lbl_Vendedores.AutoSize = true;
+            this.lbl_Vendedores.Location = new System.Drawing.Point(56, 91);
+            this.lbl_Vendedores.Name = "lbl_Vendedores";
+            this.lbl_Vendedores.Size = new System.Drawing.Size(0, 15);
+            this.lbl_Vendedores.TabIndex = 4;
             // 
             // cmb_FiltroHistorico
             // 
@@ -469,7 +482,7 @@
             this.dgv_Historico.AllowUserToAddRows = false;
             this.dgv_Historico.AllowUserToDeleteRows = false;
             this.dgv_Historico.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_Historico.Location = new System.Drawing.Point(62, 93);
+            this.dgv_Historico.Location = new System.Drawing.Point(56, 91);
             this.dgv_Historico.Name = "dgv_Historico";
             this.dgv_Historico.ReadOnly = true;
             this.dgv_Historico.RowTemplate.Height = 25;
@@ -505,7 +518,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1207, 600);
-            this.ControlBox = false;
             this.Controls.Add(this.lbl_Fecha);
             this.Controls.Add(this.btn_AgregarCliente);
             this.Controls.Add(this.pnl_Informacion);
@@ -519,6 +531,10 @@
             this.Controls.Add(this.pic_Modo);
             this.Controls.Add(this.dgv_VuelosActivos);
             this.Controls.Add(this.lbl_Bienvenido);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.HelpButton = true;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frm_MenuPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MenuPrincipal";
@@ -574,5 +590,7 @@
         private DataGridViewCheckBoxColumn Comida;
         private Label lbl_Fecha;
         private System.Windows.Forms.Timer tmr_Hora;
+        private Label lbl_Vendedores;
+        private HelpProvider hlp_Test;
     }
 }
