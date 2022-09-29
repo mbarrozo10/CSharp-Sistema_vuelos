@@ -25,8 +25,6 @@ namespace Biblioteca
 
         public Cliente(string nombre, string apellido, int dni, int edad,int cantPasajesComprados) : this(nombre,apellido,dni,edad)
         {
-            this.Dni = dni;
-            this.Edad = edad;
             this.CantPasajesComprados = cantPasajesComprados;
         }
 
@@ -88,6 +86,10 @@ namespace Biblioteca
             return dni;
         }
 
+        public override string ToString()
+        {
+            return Nombre +" "+ Apellido;
+        }
         public override string MostrarInformacion()
         {
             return "Nombre: " + Nombre + "\nApellido: " + Apellido + "\nDni: " + Dni + "\nEdad: " + Edad;

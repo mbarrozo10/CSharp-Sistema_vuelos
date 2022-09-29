@@ -19,15 +19,19 @@ namespace Parcial1_Labo_2
         private DateTime horaPrincipal;
         private float recaudacionCabotaje = 0;
         private float recaudacionInternacional = 0;
+        private int indiceVendedor;
+        private Vendedor vendedorActivo = new Vendedor();
 
         public frm_MenuPrincipal()
         {
             InitializeComponent();
+
         }
 
         public frm_MenuPrincipal(Vendedor vendedor) : this()
         {
             lbl_Bienvenido.Text = "Bienvenidx " + vendedor.ToString() ;
+            vendedorActivo = vendedor;
         }
 
         private void MenuPrincipal_Load(object sender, EventArgs e)
@@ -43,6 +47,11 @@ namespace Parcial1_Labo_2
             cmb_FiltroHistorico.Items.Add("Vendedores");
             tmr_Hora.Start();
             horaPrincipal = DateTime.Now;
+            if(vendedorActivo.Tipo!= "administrador")
+            {
+                pic_Agregar.Visible = false;
+                
+            }
         }
 
         private void btn_Salir_Click(object sender, EventArgs e)
@@ -50,7 +59,7 @@ namespace Parcial1_Labo_2
             this.DialogResult = DialogResult.OK;
         }
 
-        private void dataGridView1_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        private void dgv_VuelosActivos_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             Index = e.RowIndex;
             if (Aerolinea.vuelos[Index].Estado == Biblioteca.Estado.Disponible && Aerolinea.vuelos[Index].Pasajeros.Count < Aerolinea.vuelos[Index].Avion.CantidadAsientos)
@@ -69,7 +78,7 @@ namespace Parcial1_Labo_2
                 pic_Pasajeros.Visible = false;
             }
 
-            btn_MasInfo.Enabled = true;
+            pic_MasInfo.Enabled = true;
 
         }
 
@@ -127,72 +136,6 @@ namespace Parcial1_Labo_2
             }
         }
 
-        
-
-        //botones de 84x24
-        private void modoOscuroClaro()
-        {
-            if (Aerolinea.modoOscuro)
-            {
-                pic_Modo.Image = Resources.dia;
-                this.BackColor = Color.FromArgb(34, 34, 34);
-                Aerolinea.modoOscuro = false;
-                pic_Pasajeros.Image = Resources.pasajeros_blanco_84x24;
-                pic_Salir.Image = Resources.salir_blanco_84x24;
-                pic_Agregar.Image = Resources.agregar_blanco;
-                pic_Vender.Image= Resources.vender_blanco_84x24;    
-                lbl_Bienvenido.ForeColor= Color.White;
-                dgv_VuelosActivos.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(34, 34, 34);
-                dgv_VuelosActivos.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-                dgv_VuelosActivos.RowHeadersDefaultCellStyle.BackColor = Color.FromArgb(34, 34, 34);
-                dgv_VuelosActivos.RowHeadersDefaultCellStyle.ForeColor = Color.White;
-                dgv_VuelosActivos.RowsDefaultCellStyle.BackColor= Color.FromArgb(34, 34, 34);
-                dgv_VuelosActivos.RowsDefaultCellStyle.ForeColor = Color.White;
-                lbl_Fecha.ForeColor= Color.White;
-                pic_SalirHistorico.Image = Resources.salir_blanco_84x24;
-                pic_Cancelar.Image = Resources.cancelar_blanco_84x24;
-                rtx_InfoVuelo.ForeColor= Color.White;
-                rtx_InfoVuelo.BackColor = Color.FromArgb(34, 34, 34);
-                pic_SalirHistorico.Image= Resources.salir_blanco_84x24;
-                cmb_FiltroHistorico.ForeColor= Color.White;
-                cmb_FiltroHistorico.BackColor = Color.FromArgb(34, 34, 34);
-                lbl_RecaudacionCabotaje.ForeColor = Color.White;
-                lbl_RecaudacionInternacional.ForeColor= Color.White;
-                lbl_RecaudacionTotal.ForeColor= Color.White;
-                pic_SalirPanel.Image= Resources.salir_blanco_84x24;
-
-            }
-            else
-            {
-                dgv_VuelosActivos.ColumnHeadersDefaultCellStyle.BackColor = Color.White;
-                dgv_VuelosActivos.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
-                dgv_VuelosActivos.RowHeadersDefaultCellStyle.BackColor = Color.White;
-                dgv_VuelosActivos.RowHeadersDefaultCellStyle.ForeColor = Color.Black;
-                pic_Modo.Image = Resources.night_mode1;
-                this.BackColor = Color.White;
-                Aerolinea.modoOscuro = true;
-                lbl_Bienvenido.ForeColor = Color.Black;
-                pic_Pasajeros.Image = Resources.pasajeros_negro_84x24;
-                pic_Salir.Image = Resources.salir_negro_84x24;
-                pic_Agregar.Image = Resources.agregar_negro;
-                pic_Vender.Image = Resources.vender_negro_84x24;
-                dgv_VuelosActivos.RowsDefaultCellStyle.BackColor = Color.White;
-                dgv_VuelosActivos.RowsDefaultCellStyle.ForeColor = Color.Black;
-                lbl_Fecha.ForeColor = Color.Black;  
-                pic_SalirHistorico.Image = Resources.salir_negro_84x24;
-                pic_Cancelar.Image = Resources.cancelar_negro_84x24;
-                rtx_InfoVuelo.ForeColor = Color.Black;
-                rtx_InfoVuelo.BackColor = Color.White;
-                pic_SalirHistorico.Image= Resources.salir_negro_84x24;
-                cmb_FiltroHistorico.ForeColor = Color.Black;
-                cmb_FiltroHistorico.BackColor = Color.White;
-                lbl_RecaudacionCabotaje.ForeColor = Color.Black;
-                lbl_RecaudacionInternacional.ForeColor = Color.Black;
-                lbl_RecaudacionTotal.ForeColor = Color.Black;
-                pic_SalirPanel.Image= Resources.salir_negro_84x24;
-            }
-        }
-
         private void pic_Modo_Click(object sender, EventArgs e)
         {
             modoOscuroClaro();
@@ -205,8 +148,8 @@ namespace Parcial1_Labo_2
             pic_Agregar.Enabled = false;
             pic_Vender.Enabled = false;
             pic_Salir.Enabled = false;
-            btn_MasInfo.Enabled = false;
-            btn_Historico.Enabled = false;
+            pic_MasInfo.Enabled = false;
+            pic_Historico.Enabled = false;
             pic_Modo.Enabled = false;
 
             dgv_VuelosActivos.Enabled = false;
@@ -221,8 +164,8 @@ namespace Parcial1_Labo_2
             pic_Agregar.Enabled = true;
             pic_Vender.Enabled = true;
             pic_Salir.Enabled = true;
-            btn_MasInfo.Enabled = true;
-            btn_Historico.Enabled = true;
+            pic_MasInfo.Enabled = true;
+            pic_Historico.Enabled = true;
             pic_Modo.Enabled = true;
             dgv_VuelosActivos.Enabled = true;
         }
@@ -237,8 +180,8 @@ namespace Parcial1_Labo_2
             pic_Agregar.Enabled = true;
             pic_Vender.Enabled = true;
             pic_Salir.Enabled = true;
-            btn_MasInfo.Enabled = true;
-            btn_Historico.Enabled = true;
+            pic_MasInfo.Enabled = true;
+            pic_Historico.Enabled = true;
             pic_Modo.Enabled = true;
             dgv_VuelosActivos.Enabled = true;
             CargarDatagrid();
@@ -252,17 +195,19 @@ namespace Parcial1_Labo_2
             pic_Agregar.Enabled = true;
             pic_Vender.Enabled = true;
             pic_Salir.Enabled = true;
-            btn_MasInfo.Enabled = true;
-            btn_Historico.Enabled = true;
+            pic_MasInfo.Enabled = true;
+            pic_Historico.Enabled = true;
             pic_Modo.Enabled = true;
             cmb_FiltroHistorico.Text = String.Empty;
             dgv_Historico.DataSource = null;
             pic_Salir.Visible = true;
-            btn_MasInfo.Visible = true;
-            btn_Historico.Visible = true;
+            pic_MasInfo.Visible = true;
+            pic_Historico.Visible = true;
             pic_Modo.Visible = true;
             pic_Agregar.Visible = true;
-            btn_AgregarCliente.Visible = true;
+            pic_AgregarCliente.Visible = true;
+            dgv_Vendedores.Visible = false;
+            pic_Borrar.Visible = false;
         }
 
         private void btn_Historico_Click(object sender, EventArgs e)
@@ -271,27 +216,35 @@ namespace Parcial1_Labo_2
             pic_Agregar.Enabled = false;
             pic_Vender.Enabled = false;
             pic_Salir.Enabled = false;
-            btn_MasInfo.Enabled = false;
-            btn_Historico.Enabled = false;
+            pic_MasInfo.Enabled = false;
+            pic_Historico.Enabled = false;
             pic_Modo.Enabled = false;
             pic_Agregar.Visible = false;
             pic_Vender.Visible = false;
             pic_Salir.Visible = false;
-            btn_MasInfo.Visible = false;
-            btn_Historico.Visible = false;
+            pic_MasInfo.Visible = false;
+            pic_Historico.Visible = false;
             pic_Modo.Visible = false;
             lbl_RecaudacionTotal.Text ="Recaudacion total: " +  Aerolinea.CalcularRecaudacionTotal().ToString();
-            btn_AgregarCliente.Visible = false;
+            pic_AgregarCliente.Visible = false;
             pic_Pasajeros.Visible = false;
+            rtx_InfoAvion.Visible = false;
 
            }
 
         private void cmb_FiltroHistorico_SelectedValueChanged(object sender, EventArgs e)
         {
+            rtx_InfoAvion.Text = String.Empty;
+            rtx_InfoAvion.Visible = false;
             lbl_RecaudacionInternacional.Text=String.Empty;
             lbl_RecaudacionCabotaje.Text = String.Empty;
-            lbl_Vendedores.Visible = false;
             dgv_Historico.Visible = true;
+            lbl_ErrorBorrar.Text = String.Empty;
+            txt_ApellidoVendedor.Visible = false;
+            txt_ContraseñaVendedor.Visible = false;
+            txt_NombreVendedor.Visible = false;
+            txt_UsuarioVendedor.Visible = false;
+            chk_Admin.Visible = false;
             switch (cmb_FiltroHistorico.Text)
             {
                 case "Destinos":
@@ -352,20 +305,42 @@ namespace Parcial1_Labo_2
                     }
                     break;
                 case "Aviones":
-
-                    // cambiar por label y modificar tostring
                     dgv_Historico.DataSource = null;
-                    dgv_Historico.DataSource = Aerolinea.aviones;
+                    dgv_Historico.Visible = false;
+                    rtx_InfoAvion.Visible = true;
+                    foreach (Avion aviones in Aerolinea.aviones)
+                    {
+                        rtx_InfoAvion.Text+= aviones.ToString() + "\n";
+                    }
                     break;
                 case "Vendedores":
-                    dgv_Historico.Visible = false;
-                    lbl_Vendedores.Visible = true;
-                    string texto="";
-                    foreach(Vendedor ven in Aerolinea.Vendedores)
+                    if (vendedorActivo.Tipo == "usuario")
                     {
-                        texto += ven.MostrarInformacion() + "\n\n";
+                        dgv_Historico.Visible = false;
+                        rtx_InfoAvion.Visible = true;
+       
+                        string texto="";
+                        foreach(Vendedor ven in Aerolinea.Vendedores)
+                        {
+                            texto += ven.MostrarInformacion() + "\n\n";
+                        }
+                        rtx_InfoAvion.Text = texto;
                     }
-                    lbl_Vendedores.Text = texto;
+                    else
+                    {
+                        dgv_Vendedores.Visible = true;
+                        pic_Borrar.Visible = true;
+                        dgv_Historico.Visible = false;
+                        dgv_Vendedores.DataSource = Aerolinea.Vendedores;
+                        lbl_ErrorBorrar.Visible = true;
+                        pic_AgregarVendedor.Visible = true;
+                        txt_ApellidoVendedor.Visible = true;
+                        txt_ContraseñaVendedor.Visible = true;
+                        txt_NombreVendedor.Visible = true;
+                        txt_UsuarioVendedor.Visible = true;
+                        chk_Admin.Visible = true;
+
+                    }
                     break;
 
                 default:
@@ -498,5 +473,125 @@ namespace Parcial1_Labo_2
             Aerolinea.vuelos.Remove(vuelo);
         }
 
+
+        //Modo oscuro
+
+        private void modoOscuroClaro()
+        {
+            if (Aerolinea.modoOscuro)
+            {
+                pic_Modo.Image = Resources.dia;
+                this.BackColor = Color.FromArgb(34, 34, 34);
+                Aerolinea.modoOscuro = false;
+                pic_Pasajeros.Image = Resources.pasajeros_blanco_84x24;
+                pic_Salir.Image = Resources.salir_blanco_84x24;
+                pic_Agregar.Image = Resources.agregar_blanco;
+                pic_Vender.Image = Resources.vender_blanco_84x24;
+                lbl_Bienvenido.ForeColor = Color.White;
+                dgv_VuelosActivos.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(34, 34, 34);
+                dgv_VuelosActivos.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+                dgv_VuelosActivos.RowHeadersDefaultCellStyle.BackColor = Color.FromArgb(34, 34, 34);
+                dgv_VuelosActivos.RowHeadersDefaultCellStyle.ForeColor = Color.White;
+                dgv_VuelosActivos.RowsDefaultCellStyle.BackColor = Color.FromArgb(34, 34, 34);
+                dgv_VuelosActivos.RowsDefaultCellStyle.ForeColor = Color.White;
+                lbl_Fecha.ForeColor = Color.White;
+                pic_SalirHistorico.Image = Resources.salir_blanco_84x24;
+                pic_Cancelar.Image = Resources.cancelar_blanco_84x24;
+                rtx_InfoVuelo.ForeColor = Color.White;
+                rtx_InfoVuelo.BackColor = Color.FromArgb(34, 34, 34);
+                pic_SalirHistorico.Image = Resources.salir_blanco_84x24;
+                cmb_FiltroHistorico.ForeColor = Color.White;
+                cmb_FiltroHistorico.BackColor = Color.FromArgb(34, 34, 34);
+                lbl_RecaudacionCabotaje.ForeColor = Color.White;
+                lbl_RecaudacionInternacional.ForeColor = Color.White;
+                lbl_RecaudacionTotal.ForeColor = Color.White;
+                pic_SalirPanel.Image = Resources.salir_blanco_84x24;
+                pic_AgregarCliente.Image = Resources.Agregar_cliente_blanco;
+                pic_MasInfo.Image = Resources.info_blanco;
+                pic_Historico.Image = Resources.historico_84x24_blanco;
+                pic_Borrar.Image = Resources.borrar_blanco;
+                lbl_ErrorBorrar.ForeColor = Color.White;
+
+            }
+            else
+            {
+                dgv_VuelosActivos.ColumnHeadersDefaultCellStyle.BackColor = Color.White;
+                dgv_VuelosActivos.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
+                dgv_VuelosActivos.RowHeadersDefaultCellStyle.BackColor = Color.White;
+                dgv_VuelosActivos.RowHeadersDefaultCellStyle.ForeColor = Color.Black;
+                pic_Modo.Image = Resources.night_mode1;
+                this.BackColor = Color.White;
+                Aerolinea.modoOscuro = true;
+                lbl_Bienvenido.ForeColor = Color.Black;
+                pic_Pasajeros.Image = Resources.pasajeros_negro_84x24;
+                pic_Salir.Image = Resources.salir_negro_84x24;
+                pic_Agregar.Image = Resources.agregar_negro;
+                pic_Vender.Image = Resources.vender_negro_84x24;
+                dgv_VuelosActivos.RowsDefaultCellStyle.BackColor = Color.White;
+                dgv_VuelosActivos.RowsDefaultCellStyle.ForeColor = Color.Black;
+                lbl_Fecha.ForeColor = Color.Black;
+                pic_SalirHistorico.Image = Resources.salir_negro_84x24;
+                pic_Cancelar.Image = Resources.cancelar_negro_84x24;
+                rtx_InfoVuelo.ForeColor = Color.Black;
+                rtx_InfoVuelo.BackColor = Color.White;
+                pic_SalirHistorico.Image = Resources.salir_negro_84x24;
+                cmb_FiltroHistorico.ForeColor = Color.Black;
+                cmb_FiltroHistorico.BackColor = Color.White;
+                lbl_RecaudacionCabotaje.ForeColor = Color.Black;
+                lbl_RecaudacionInternacional.ForeColor = Color.Black;
+                lbl_RecaudacionTotal.ForeColor = Color.Black;
+                pic_SalirPanel.Image = Resources.salir_negro_84x24;
+                pic_AgregarCliente.Image = Resources.agregar_cliente_negro;
+                pic_MasInfo.Image = Resources.info_negro;
+                pic_Historico.Image = Resources.historico_84x24_negro;
+                pic_Borrar.Image = Resources.borrar_negro;
+                lbl_ErrorBorrar.ForeColor = Color.Black;
+
+            }
+        }
+
+        private void dgv_Vendedores_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            indiceVendedor= e.RowIndex;
+            
+        }
+
+        private void pic_Borrar_Click(object sender, EventArgs e)
+        {
+            if(vendedorActivo!= Aerolinea.Vendedores[indiceVendedor])
+            {
+                Aerolinea.Vendedores.Remove(Aerolinea.Vendedores[indiceVendedor]);
+                dgv_Vendedores.DataSource = null;
+                dgv_Vendedores.DataSource = Aerolinea.Vendedores;
+                indiceVendedor = 0;
+            }
+            else
+            {
+                lbl_ErrorBorrar.Text = "Error, no puede borrar su usuario";
+            }
+        }
+
+        private void pic_AgregarVendedor_Click(object sender, EventArgs e)
+        {
+            string admin;
+            if(txt_ApellidoVendedor.Text!=String.Empty && txt_ContraseñaVendedor.Text!=String.Empty
+                &&txt_NombreVendedor.Text!= String.Empty && txt_UsuarioVendedor.Text!= String.Empty)
+            {
+                if (chk_Admin.Checked)
+                    admin = "administrador";
+                else
+                    admin = "usuario";
+
+                Aerolinea.Vendedores.Add(new Vendedor(txt_NombreVendedor.Text,txt_ApellidoVendedor.Text,txt_UsuarioVendedor.Text,txt_ContraseñaVendedor.Text,admin));
+                dgv_Vendedores.DataSource = null;
+                dgv_Vendedores.DataSource = Aerolinea.Vendedores;
+            }
+            else
+            {
+                lbl_ErrorBorrar.Text = "Falta algun dato";
+            }
+
+            
+        }
     }
 }

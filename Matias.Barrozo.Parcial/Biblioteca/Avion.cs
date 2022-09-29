@@ -73,6 +73,12 @@ namespace Biblioteca
             set { disponible = value; }
         }
 
-       
+        public override string ToString()
+        {
+            return "Matricula: " + Matricula + "\nCantidad de asientos: " + cantidadAsientos 
+                + "\nCantidad de Baños: " + CantidadBaños + "\nHoras de vuelo: " + HorasVuelo + "\nDisponible? " + Disponible + 
+                 "\nWifi? " + Wifi +  "\nBodega: " + Bodega + "\nTiene comida? " + Comida+ "\n";
+        }
+
     }
 }

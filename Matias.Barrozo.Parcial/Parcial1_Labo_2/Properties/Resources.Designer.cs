@@ -63,6 +63,26 @@ namespace Parcial1_Labo_2.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Aceptar_84x24_blanco {
+            get {
+                object obj = ResourceManager.GetObject("Aceptar 84x24 blanco", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Aceptar_84x24_negro {
+            get {
+                object obj = ResourceManager.GetObject("Aceptar 84x24 negro", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap agregar_blanco {
             get {
                 object obj = ResourceManager.GetObject("agregar blanco", resourceCulture);
@@ -83,6 +103,26 @@ namespace Parcial1_Labo_2.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Agregar_cliente_blanco {
+            get {
+                object obj = ResourceManager.GetObject("Agregar cliente blanco", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap agregar_cliente_negro {
+            get {
+                object obj = ResourceManager.GetObject("agregar cliente negro", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap agregar_negro {
             get {
                 object obj = ResourceManager.GetObject("agregar negro", resourceCulture);
@@ -96,6 +136,46 @@ namespace Parcial1_Labo_2.Properties {
         internal static System.Drawing.Bitmap agregar_negro_84x24 {
             get {
                 object obj = ResourceManager.GetObject("agregar negro 84x24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap alta_y_baja_blanco {
+            get {
+                object obj = ResourceManager.GetObject("alta y baja blanco", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap alta_y_baja_negro {
+            get {
+                object obj = ResourceManager.GetObject("alta y baja negro", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap borrar_blanco {
+            get {
+                object obj = ResourceManager.GetObject("borrar blanco", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap borrar_negro {
+            get {
+                object obj = ResourceManager.GetObject("borrar negro", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -146,6 +226,46 @@ namespace Parcial1_Labo_2.Properties {
         internal static System.Drawing.Bitmap dia {
             get {
                 object obj = ResourceManager.GetObject("dia", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap historico_84x24_blanco {
+            get {
+                object obj = ResourceManager.GetObject("historico 84x24 blanco", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap historico_84x24_negro {
+            get {
+                object obj = ResourceManager.GetObject("historico 84x24 negro", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap info_blanco {
+            get {
+                object obj = ResourceManager.GetObject("info blanco", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap info_negro {
+            get {
+                object obj = ResourceManager.GetObject("info negro", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -14,7 +14,7 @@ namespace Parcial1_Labo_2
 {
     public partial class frm_AgregarCliente : Form
     {
-        private Cliente nuevo;
+        private Cliente? nuevo;
         public frm_AgregarCliente()
         {
             InitializeComponent();

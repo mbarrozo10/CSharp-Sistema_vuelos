@@ -54,7 +54,6 @@
             this.lbl_Error = new System.Windows.Forms.Label();
             this.pic_Agregar = new System.Windows.Forms.PictureBox();
             this.pic_Cancelar = new System.Windows.Forms.PictureBox();
-            this.btn_Aceptar = new System.Windows.Forms.Button();
             this.lbl_KgMax = new System.Windows.Forms.Label();
             this.dgv_Clientes = new System.Windows.Forms.DataGridView();
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -65,18 +64,23 @@
             this.clienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.chk_BolsoMano = new System.Windows.Forms.CheckBox();
             this.txt_Buscador = new System.Windows.Forms.TextBox();
-            this.btn_AceptarCliente = new System.Windows.Forms.Button();
-            this.btn_Agregar = new System.Windows.Forms.Button();
             this.lbl_ErrorBusqueda = new System.Windows.Forms.Label();
             this.lbl_Impuestos = new System.Windows.Forms.Label();
             this.rtx_PasajerosAgregados = new System.Windows.Forms.RichTextBox();
             this.tip_Ayuda = new System.Windows.Forms.ToolTip(this.components);
+            this.pic_AgregarCliente = new System.Windows.Forms.PictureBox();
+            this.pic_AceptarCliente = new System.Windows.Forms.PictureBox();
+            this.pic_Aceptar = new System.Windows.Forms.PictureBox();
+            this.lbl_ClienteComprador = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.nud_Cantidad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_CantEquipaje)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Agregar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Cancelar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Clientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_AgregarCliente)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_AceptarCliente)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_Aceptar)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_PrecioFinal
@@ -300,7 +304,9 @@
             this.txt_Kg.Name = "txt_Kg";
             this.txt_Kg.Size = new System.Drawing.Size(34, 23);
             this.txt_Kg.TabIndex = 24;
-            this.tip_Ayuda.SetToolTip(this.txt_Kg, "Ingreso del peso del equipaje, si es premium llega hasta 42, sino hasta 25");
+            this.txt_Kg.Text = "0";
+            this.tip_Ayuda.SetToolTip(this.txt_Kg, "Ingreso del peso del equipaje, si es premium llega hasta 42, sino hasta 25\r\nSi no" +
+        " hay espacio en bodega lo notifica");
             this.txt_Kg.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Kg_KeyPress);
             // 
             // nud_CantEquipaje
@@ -340,7 +346,8 @@
             this.pic_Agregar.TabIndex = 27;
             this.pic_Agregar.TabStop = false;
             this.tip_Ayuda.SetToolTip(this.pic_Agregar, "Agrega el pasajero, si faltan mas por agregar limpia la informacion, si es el ult" +
-        "imo vuelve al menu anterior");
+        "imo vuelve al menu anterior\r\nSi hay algun error en algun dato lo notifica y no a" +
+        "grega el pasajero");
             this.pic_Agregar.Click += new System.EventHandler(this.btn_Agregar_Click);
             // 
             // pic_Cancelar
@@ -355,18 +362,6 @@
             this.pic_Cancelar.TabStop = false;
             this.tip_Ayuda.SetToolTip(this.pic_Cancelar, "Vuelve al menu anterior");
             this.pic_Cancelar.Click += new System.EventHandler(this.btn_Cancelar_Click);
-            // 
-            // btn_Aceptar
-            // 
-            this.btn_Aceptar.Enabled = false;
-            this.btn_Aceptar.Location = new System.Drawing.Point(663, 42);
-            this.btn_Aceptar.Name = "btn_Aceptar";
-            this.btn_Aceptar.Size = new System.Drawing.Size(75, 23);
-            this.btn_Aceptar.TabIndex = 29;
-            this.btn_Aceptar.Text = "Aceptar";
-            this.tip_Ayuda.SetToolTip(this.btn_Aceptar, "Confirma la cantidad de pasajeros, si no hay espacio lo notifica");
-            this.btn_Aceptar.UseVisualStyleBackColor = true;
-            this.btn_Aceptar.Click += new System.EventHandler(this.button1_Click);
             // 
             // lbl_KgMax
             // 
@@ -456,29 +451,6 @@
             this.txt_Buscador.TextChanged += new System.EventHandler(this.txt_Buscador_TextChanged);
             this.txt_Buscador.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Buscador_KeyPress);
             // 
-            // btn_AceptarCliente
-            // 
-            this.btn_AceptarCliente.Location = new System.Drawing.Point(342, 423);
-            this.btn_AceptarCliente.Name = "btn_AceptarCliente";
-            this.btn_AceptarCliente.Size = new System.Drawing.Size(75, 23);
-            this.btn_AceptarCliente.TabIndex = 35;
-            this.btn_AceptarCliente.Text = "Aceptar";
-            this.tip_Ayuda.SetToolTip(this.btn_AceptarCliente, "Una vez seleccionado el cliente se habilita, activa la cantidad de pasajeros a co" +
-        "mprar");
-            this.btn_AceptarCliente.UseVisualStyleBackColor = true;
-            this.btn_AceptarCliente.Click += new System.EventHandler(this.btn_AceptarCliente_Click);
-            // 
-            // btn_Agregar
-            // 
-            this.btn_Agregar.Location = new System.Drawing.Point(32, 423);
-            this.btn_Agregar.Name = "btn_Agregar";
-            this.btn_Agregar.Size = new System.Drawing.Size(75, 23);
-            this.btn_Agregar.TabIndex = 36;
-            this.btn_Agregar.Text = "Agregar";
-            this.tip_Ayuda.SetToolTip(this.btn_Agregar, "Agrega un cliente");
-            this.btn_Agregar.UseVisualStyleBackColor = true;
-            this.btn_Agregar.Click += new System.EventHandler(this.btn_Agregar_Click_1);
-            // 
             // lbl_ErrorBusqueda
             // 
             this.lbl_ErrorBusqueda.AutoSize = true;
@@ -506,6 +478,47 @@
             this.rtx_PasajerosAgregados.Text = "";
             this.tip_Ayuda.SetToolTip(this.rtx_PasajerosAgregados, "Muestra el nombre y apellido de los pasajeros agregados");
             // 
+            // pic_AgregarCliente
+            // 
+            this.pic_AgregarCliente.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pic_AgregarCliente.Image = global::Parcial1_Labo_2.Properties.Resources.agregar_negro_84x24;
+            this.pic_AgregarCliente.Location = new System.Drawing.Point(32, 418);
+            this.pic_AgregarCliente.Name = "pic_AgregarCliente";
+            this.pic_AgregarCliente.Size = new System.Drawing.Size(85, 28);
+            this.pic_AgregarCliente.TabIndex = 40;
+            this.pic_AgregarCliente.TabStop = false;
+            this.pic_AgregarCliente.Click += new System.EventHandler(this.btn_Agregar_Click_1);
+            // 
+            // pic_AceptarCliente
+            // 
+            this.pic_AceptarCliente.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pic_AceptarCliente.Image = global::Parcial1_Labo_2.Properties.Resources.Aceptar_84x24_negro;
+            this.pic_AceptarCliente.Location = new System.Drawing.Point(331, 418);
+            this.pic_AceptarCliente.Name = "pic_AceptarCliente";
+            this.pic_AceptarCliente.Size = new System.Drawing.Size(86, 26);
+            this.pic_AceptarCliente.TabIndex = 41;
+            this.pic_AceptarCliente.TabStop = false;
+            this.pic_AceptarCliente.Click += new System.EventHandler(this.btn_AceptarCliente_Click);
+            // 
+            // pic_Aceptar
+            // 
+            this.pic_Aceptar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pic_Aceptar.Image = global::Parcial1_Labo_2.Properties.Resources.Aceptar_84x24_negro;
+            this.pic_Aceptar.Location = new System.Drawing.Point(662, 41);
+            this.pic_Aceptar.Name = "pic_Aceptar";
+            this.pic_Aceptar.Size = new System.Drawing.Size(86, 26);
+            this.pic_Aceptar.TabIndex = 42;
+            this.pic_Aceptar.TabStop = false;
+            this.pic_Aceptar.Click += new System.EventHandler(this.aceptarCantidad_Click);
+            // 
+            // lbl_ClienteComprador
+            // 
+            this.lbl_ClienteComprador.AutoSize = true;
+            this.lbl_ClienteComprador.Location = new System.Drawing.Point(522, 131);
+            this.lbl_ClienteComprador.Name = "lbl_ClienteComprador";
+            this.lbl_ClienteComprador.Size = new System.Drawing.Size(0, 15);
+            this.lbl_ClienteComprador.TabIndex = 43;
+            // 
             // frm_Venta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -513,16 +526,17 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1290, 655);
             this.ControlBox = false;
+            this.Controls.Add(this.lbl_ClienteComprador);
+            this.Controls.Add(this.pic_Aceptar);
+            this.Controls.Add(this.pic_AceptarCliente);
+            this.Controls.Add(this.pic_AgregarCliente);
             this.Controls.Add(this.rtx_PasajerosAgregados);
             this.Controls.Add(this.lbl_Impuestos);
             this.Controls.Add(this.lbl_ErrorBusqueda);
-            this.Controls.Add(this.btn_Agregar);
-            this.Controls.Add(this.btn_AceptarCliente);
             this.Controls.Add(this.txt_Buscador);
             this.Controls.Add(this.chk_BolsoMano);
             this.Controls.Add(this.dgv_Clientes);
             this.Controls.Add(this.lbl_KgMax);
-            this.Controls.Add(this.btn_Aceptar);
             this.Controls.Add(this.pic_Cancelar);
             this.Controls.Add(this.pic_Agregar);
             this.Controls.Add(this.lbl_Error);
@@ -560,6 +574,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pic_Cancelar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Clientes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_AgregarCliente)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_AceptarCliente)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_Aceptar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -591,13 +608,10 @@
         private Label lbl_Error;
         private PictureBox pic_Agregar;
         private PictureBox pic_Cancelar;
-        private Button btn_Aceptar;
         private Label lbl_KgMax;
         private DataGridView dgv_Clientes;
         private CheckBox chk_BolsoMano;
         private TextBox txt_Buscador;
-        private Button btn_AceptarCliente;
-        private Button btn_Agregar;
         private Label lbl_ErrorBusqueda;
         private DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn apellidoDataGridViewTextBoxColumn;
@@ -608,5 +622,9 @@
         private Label lbl_Impuestos;
         private RichTextBox rtx_PasajerosAgregados;
         private ToolTip tip_Ayuda;
+        private PictureBox pic_AgregarCliente;
+        private PictureBox pic_AceptarCliente;
+        private PictureBox pic_Aceptar;
+        private Label lbl_ClienteComprador;
     }
 }

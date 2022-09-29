@@ -54,6 +54,10 @@ namespace Parcial1_Labo_2
             recaudacion= Aerolinea.vuelos[index].Recaudacion;
             cantidadPasajerosRestantes = 0;
             rtx_PasajerosAgregados.Text = String.Empty;
+            dgv_Clientes.Enabled = true;
+            txt_Buscador.Enabled = true;
+            pic_AceptarCliente.Enabled = true;
+            pic_AgregarCliente.Enabled = true;
         }
 
         private void txt_Dni_KeyPress(object sender, KeyPressEventArgs e)
@@ -199,7 +203,7 @@ namespace Parcial1_Labo_2
         {
             if (nud_Cantidad.Value != 0)
             {
-                btn_Aceptar.Enabled = true;
+                pic_Aceptar.Enabled = true;
             }
             else
             {
@@ -211,7 +215,10 @@ namespace Parcial1_Labo_2
         private void txt_Kg_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = CheckNumeros(e);
-            
+            if(txt_Kg.Text== String.Empty)
+            {
+                txt_Kg.Text = "0";
+            }
 
         }
 
@@ -227,117 +234,38 @@ namespace Parcial1_Labo_2
             }
         }
 
-        private void modoOscuroClaro()
-        {
-            if (!Aerolinea.modoOscuro)
-            {
-                this.BackColor = Color.FromArgb(34, 34, 34);
-                lbl_Codigo.ForeColor = Color.White;
-                lbl_Origen.ForeColor = Color.White;
-                lbl_Duracion.ForeColor = Color.White;
-                lbl_Cantidad.ForeColor = Color.White;
-                lbl_Nombre.ForeColor = Color.White;
-                lbl_Apellido.ForeColor = Color.White;
-                lbl_Dni.ForeColor = Color.White;
-                lbl_Edad.ForeColor = Color.White;
-                lbl_Equipaje.ForeColor = Color.White;
-                lbl_Kg.ForeColor = Color.White;
-                lbl_PrecioSub.ForeColor = Color.White;
-                lbl_PrecioFinal.ForeColor = Color.White;
-                chk_Premium.ForeColor= Color.White;
-                txt_Apellido.BackColor = Color.FromArgb(34, 34, 34);
-                txt_Nombre.BackColor = Color.FromArgb(34, 34, 34);
-                txt_Dni.BackColor = Color.FromArgb(34, 34, 34);
-                txt_Edad.BackColor = Color.FromArgb(34, 34, 34);
-                nud_CantEquipaje.BackColor = Color.FromArgb(34, 34, 34);
-                txt_Kg.BackColor = Color.FromArgb(34, 34, 34);
-                txt_Apellido.ForeColor = Color.White;
-                txt_Nombre.ForeColor = Color.White;
-                txt_Dni.ForeColor = Color.White;
-                txt_Edad.ForeColor = Color.White;
-                nud_CantEquipaje.ForeColor = Color.White;
-                txt_Kg.ForeColor = Color.White;
-                pic_Agregar.Image= Resources.agregar_blanco_84x24;
-                pic_Cancelar.Image = Resources.cancelar_blanco_84x24;
-                lbl_KgMax.ForeColor= Color.White;
-                chk_BolsoMano.ForeColor = Color.White;
-                lbl_Destino.ForeColor = Color.White;
-                lbl_Impuestos.ForeColor= Color.White;
-                txt_Buscador.BackColor = Color.FromArgb(34, 34, 34);
-                txt_Buscador.ForeColor = Color.White;
-                lbl_ErrorBusqueda.ForeColor = Color.White;
-                lbl_Error.ForeColor= Color.White;
-               
-
-            }
-            else
-            {
-                this.BackColor = Color.White;
-                lbl_Codigo.ForeColor = Color.Black;
-                lbl_Origen.ForeColor = Color.Black;
-                lbl_Duracion.ForeColor = Color.Black;
-                lbl_Cantidad.ForeColor = Color.Black;
-                lbl_Nombre.ForeColor = Color.Black;
-                lbl_Apellido.ForeColor = Color.Black;
-                lbl_Dni.ForeColor = Color.Black;
-                lbl_Edad.ForeColor = Color.Black;
-                lbl_Equipaje.ForeColor = Color.Black;
-                lbl_Kg.ForeColor = Color.Black;
-                lbl_PrecioSub.ForeColor = Color.Black;
-                lbl_PrecioFinal.ForeColor = Color.Black;
-                chk_Premium.ForeColor = Color.Black;
-                txt_Apellido.BackColor = Color.White;
-                txt_Nombre.BackColor = Color.White;
-                txt_Dni.BackColor = Color.White;
-                txt_Edad.BackColor = Color.White;
-                nud_CantEquipaje.BackColor = Color.White;
-                txt_Kg.BackColor = Color.White;
-                txt_Apellido.ForeColor = Color.Black;
-                txt_Nombre.ForeColor = Color.Black;
-                txt_Dni.ForeColor = Color.Black;
-                txt_Edad.ForeColor = Color.Black;
-                nud_CantEquipaje.ForeColor = Color.Black;
-                txt_Kg.ForeColor = Color.Black;
-                pic_Agregar.Image = Resources.agregar_negro_84x24;
-                pic_Cancelar.Image = Resources.cancelar_negro_84x24;
-                lbl_KgMax.ForeColor = Color.Black;
-                chk_BolsoMano.ForeColor = Color.Black;
-                lbl_Destino.ForeColor = Color.Black;
-                lbl_Impuestos.ForeColor = Color.Black;
-                txt_Buscador.BackColor = Color.White;
-                txt_Buscador.ForeColor = Color.Black;
-                lbl_ErrorBusqueda.ForeColor = Color.Black;
-                lbl_Error.ForeColor = Color.Black;
-            }
-        }
-
-
+       
         private bool VerificarEspacio(int cantidadPedida)
         {
             return (Aerolinea.vuelos[index].Pasajeros.Count+cantidadPedida) > Aerolinea.vuelos[index].Avion.CantidadAsientos;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void aceptarCantidad_Click(object sender, EventArgs e)
         {
-            
-            if (VerificarEspacio((int)nud_Cantidad.Value))
+            if (nud_Cantidad.Value > 0)
             {
-                lbl_Error.Text = "Error, no hay espacio";
+                if (VerificarEspacio((int)nud_Cantidad.Value))
+                {
+                    lbl_Error.Text = "Error, no hay espacio";
+                }
+                else
+                {
+                    nud_Cantidad.Enabled = false;
+                    txt_Apellido.Enabled = true;
+                    txt_Nombre.Enabled = true;
+                    txt_Dni.Enabled = true;
+                    txt_Edad.Enabled = true;
+                    nud_CantEquipaje.Enabled = true;
+                    chk_Premium.Enabled = true;
+                    prg_CantidadRestante.Maximum = (int)nud_Cantidad.Value;
+                    pic_Agregar.Enabled = true;
+                    pic_Aceptar.Enabled = false;
+                    chk_BolsoMano.Enabled = true;
+                }
+
             }
             else
-            {
-                nud_Cantidad.Enabled = false;
-                txt_Apellido.Enabled = true;
-                txt_Nombre.Enabled = true;
-                txt_Dni.Enabled = true;
-                txt_Edad.Enabled = true;
-                nud_CantEquipaje.Enabled = true;
-                chk_Premium.Enabled = true;
-                prg_CantidadRestante.Maximum = (int)nud_Cantidad.Value;
-                pic_Agregar.Enabled = true;
-                btn_Aceptar.Enabled = false;
-                chk_BolsoMano.Enabled = true;
-            }
+                lbl_Error.Text = "Seleccione una cantidad mayor a 0"; 
         }
 
        
@@ -359,6 +287,11 @@ namespace Parcial1_Labo_2
         private void btn_AceptarCliente_Click(object sender, EventArgs e)
         {
             nud_Cantidad.Enabled = true;
+            dgv_Clientes.Enabled = false;
+            txt_Buscador.Enabled = false;
+            pic_AceptarCliente.Enabled = false;
+            pic_AgregarCliente.Enabled = false;
+            lbl_ClienteComprador.Text = "Comprador: " + Aerolinea.clientes[indexClientes].ToString();
         }
 
         private void btn_Agregar_Click_1(object sender, EventArgs e)
@@ -400,6 +333,100 @@ namespace Parcial1_Labo_2
             else
             {
                 lbl_ErrorBusqueda.Text = "No se encontro ningun pasajero, quiere agregarlo?";
+
+            }
+        }
+
+        //Modo oscuro
+        private void modoOscuroClaro()
+        {
+            if (!Aerolinea.modoOscuro)
+            {
+                this.BackColor = Color.FromArgb(34, 34, 34);
+                lbl_Codigo.ForeColor = Color.White;
+                lbl_Origen.ForeColor = Color.White;
+                lbl_Duracion.ForeColor = Color.White;
+                lbl_Cantidad.ForeColor = Color.White;
+                lbl_Nombre.ForeColor = Color.White;
+                lbl_Apellido.ForeColor = Color.White;
+                lbl_Dni.ForeColor = Color.White;
+                lbl_Edad.ForeColor = Color.White;
+                lbl_Equipaje.ForeColor = Color.White;
+                lbl_Kg.ForeColor = Color.White;
+                lbl_PrecioSub.ForeColor = Color.White;
+                lbl_PrecioFinal.ForeColor = Color.White;
+                chk_Premium.ForeColor = Color.White;
+                txt_Apellido.BackColor = Color.FromArgb(34, 34, 34);
+                txt_Nombre.BackColor = Color.FromArgb(34, 34, 34);
+                txt_Dni.BackColor = Color.FromArgb(34, 34, 34);
+                txt_Edad.BackColor = Color.FromArgb(34, 34, 34);
+                nud_CantEquipaje.BackColor = Color.FromArgb(34, 34, 34);
+                txt_Kg.BackColor = Color.FromArgb(34, 34, 34);
+                txt_Apellido.ForeColor = Color.White;
+                txt_Nombre.ForeColor = Color.White;
+                txt_Dni.ForeColor = Color.White;
+                txt_Edad.ForeColor = Color.White;
+                nud_CantEquipaje.ForeColor = Color.White;
+                txt_Kg.ForeColor = Color.White;
+                pic_Agregar.Image = Resources.agregar_blanco_84x24;
+                pic_Cancelar.Image = Resources.cancelar_blanco_84x24;
+                lbl_KgMax.ForeColor = Color.White;
+                chk_BolsoMano.ForeColor = Color.White;
+                lbl_Destino.ForeColor = Color.White;
+                lbl_Impuestos.ForeColor = Color.White;
+                txt_Buscador.BackColor = Color.FromArgb(34, 34, 34);
+                txt_Buscador.ForeColor = Color.White;
+                lbl_ErrorBusqueda.ForeColor = Color.White;
+                lbl_Error.ForeColor = Color.White;
+                lbl_ClienteComprador.ForeColor = Color.White;
+                pic_Aceptar.Image = Resources.Aceptar_84x24_blanco;
+                pic_AgregarCliente.Image = Resources.agregar_blanco_84x24;
+                pic_AceptarCliente.Image = Resources.Aceptar_84x24_blanco;
+
+
+            }
+            else
+            {
+                this.BackColor = Color.White;
+                lbl_Codigo.ForeColor = Color.Black;
+                lbl_Origen.ForeColor = Color.Black;
+                lbl_Duracion.ForeColor = Color.Black;
+                lbl_Cantidad.ForeColor = Color.Black;
+                lbl_Nombre.ForeColor = Color.Black;
+                lbl_Apellido.ForeColor = Color.Black;
+                lbl_Dni.ForeColor = Color.Black;
+                lbl_Edad.ForeColor = Color.Black;
+                lbl_Equipaje.ForeColor = Color.Black;
+                lbl_Kg.ForeColor = Color.Black;
+                lbl_PrecioSub.ForeColor = Color.Black;
+                lbl_PrecioFinal.ForeColor = Color.Black;
+                chk_Premium.ForeColor = Color.Black;
+                txt_Apellido.BackColor = Color.White;
+                txt_Nombre.BackColor = Color.White;
+                txt_Dni.BackColor = Color.White;
+                txt_Edad.BackColor = Color.White;
+                nud_CantEquipaje.BackColor = Color.White;
+                txt_Kg.BackColor = Color.White;
+                txt_Apellido.ForeColor = Color.Black;
+                txt_Nombre.ForeColor = Color.Black;
+                txt_Dni.ForeColor = Color.Black;
+                txt_Edad.ForeColor = Color.Black;
+                nud_CantEquipaje.ForeColor = Color.Black;
+                txt_Kg.ForeColor = Color.Black;
+                pic_Agregar.Image = Resources.agregar_negro_84x24;
+                pic_Cancelar.Image = Resources.cancelar_negro_84x24;
+                lbl_KgMax.ForeColor = Color.Black;
+                chk_BolsoMano.ForeColor = Color.Black;
+                lbl_Destino.ForeColor = Color.Black;
+                lbl_Impuestos.ForeColor = Color.Black;
+                txt_Buscador.BackColor = Color.White;
+                txt_Buscador.ForeColor = Color.Black;
+                lbl_ErrorBusqueda.ForeColor = Color.Black;
+                lbl_Error.ForeColor = Color.Black;
+                lbl_ClienteComprador.ForeColor = Color.Black;
+                pic_Aceptar.Image = Resources.Aceptar_84x24_negro;
+                pic_AgregarCliente.Image = Resources.agregar_negro_84x24;
+                pic_AceptarCliente.Image = Resources.Aceptar_84x24_negro;
 
             }
         }

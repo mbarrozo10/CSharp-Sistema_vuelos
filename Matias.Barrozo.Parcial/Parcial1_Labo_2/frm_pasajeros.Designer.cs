@@ -150,7 +150,6 @@
         private DataGridViewTextBoxColumn edadDataGridViewTextBoxColumn;
         private DataGridViewCheckBoxColumn premiumDataGridViewCheckBoxColumn;
         private DataGridViewTextBoxColumn equipajeDataGridViewTextBoxColumn;
-        private PictureBox pictureBox1;
         private ToolTip tip_Ayuda;
         private PictureBox pic_Salir;
     }

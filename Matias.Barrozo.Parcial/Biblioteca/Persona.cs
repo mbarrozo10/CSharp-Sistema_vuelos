@@ -11,6 +11,10 @@ namespace Biblioteca
         private string? nombre;
         private string? apellido;
 
+        public Persona()
+        {
+
+        }
         public Persona(string nombre, string apellido)
         {
             this.Nombre = nombre;

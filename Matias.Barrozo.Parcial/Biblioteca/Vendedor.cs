@@ -11,14 +11,31 @@ namespace Biblioteca
         
         private string usuario;
         private string contraseña;
+        private string? tipo;
+        
+        
+        public Vendedor():base()
+        {
 
-        public Vendedor(string nombre, string apellido, string usuario, string contraseña):base(nombre,apellido)
+        }
+        public Vendedor(string nombre, string apellido, string usuario, string contraseña, string tipo):base(nombre,apellido)
         {
            
             this.usuario = usuario;
             this.contraseña = contraseña;
+            this.Tipo = tipo;
         }
 
+        public string Tipo
+        {
+            get { return tipo; }
+            set {
+                if (value == "administrador" || value == "usuario")
+                    tipo = value;
+                else
+                    throw new Exception("Tipo de usuario no valido");
+            }
+        }
 
         public string Usuario
         {
@@ -45,7 +62,7 @@ namespace Biblioteca
 
         public override string ToString()
         {
-            return this.Nombre + " "+ this.Apellido ;
+            return this.Nombre + " "+ this.Apellido + "\nTipo de usuario: " + Tipo ;
 
             
         }

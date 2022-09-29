@@ -11,11 +11,11 @@ namespace Biblioteca
         public static List<Vendedor> InicializarVendedores()
         {
             List<Vendedor> Vendedores = new List<Vendedor>();
-            Vendedores.Add(new Vendedor("Matias", "Barrozo", "mbarrozo", "1234"));
-            Vendedores.Add(new Vendedor("Nicolas", "Gil", "lachancha", "1234"));
-            Vendedores.Add(new Vendedor("Morena", "Escudero", "more", "1234"));
-            Vendedores.Add(new Vendedor("Lucas", "Gaggino", "luki", "1234"));
-            Vendedores.Add(new Vendedor("pepe", "pepe", "pepe", "pepe"));
+            Vendedores.Add(new Vendedor("Matias", "Barrozo", "mbarrozo", "1234","usuario"));
+            Vendedores.Add(new Vendedor("Nicolas", "Gil", "lachancha", "1234", "usuario"));
+            Vendedores.Add(new Vendedor("Morena", "Escudero", "more", "1234", "usuario"));
+            Vendedores.Add(new Vendedor("Lucas", "Gaggino", "luki", "1234", "usuario"));
+            Vendedores.Add(new Vendedor("pepe", "pepe", "pepe", "pepe", "administrador"));
 
             return Vendedores;
         }

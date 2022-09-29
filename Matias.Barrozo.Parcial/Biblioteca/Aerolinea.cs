@@ -14,6 +14,14 @@ namespace Biblioteca
         public static bool modoOscuro = false;
         public static List<Vuelo> vuelosFinalizados = new List<Vuelo>();
         public static List<Cliente> clientes = new List<Cliente>();
+
+        public static void CargarDatos()
+        {
+            Aerolinea.Vendedores = Inicializador.InicializarVendedores();
+            Aerolinea.clientes = Inicializador.InicializarClientes();
+            Aerolinea.aviones = Inicializador.InicializarAviones();
+            Aerolinea.vuelos = Inicializador.InicializarVuelos();
+        }
         public static int ConseguirIndex(string matricula)
         {
             for (int i = 0; i < aviones.Count; i++)
