@@ -27,7 +27,7 @@ namespace Parcial1_Labo_2
             dtp_Salida.MinDate = DateTime.Now.AddDays(1);
             DateTime salida = new DateTime();
             foreach (Avion avion in Aerolinea.aviones) { 
-                if(avion.Estado)
+                if(avion.Disponible)
                 cmb_Avion.Items.Add(avion.Matricula);
            }
 
@@ -93,8 +93,8 @@ namespace Parcial1_Labo_2
                                     ,Enum.Parse<Destino>(cmb_Origen.Text), salida, new Dictionary<int,Pasajero>(), txt_Codigo.Text, llegada, 
                                     Aerolinea.aviones[i].Bodega, 0, 0, 0);
                 Aerolinea.vuelos.Add(vuelo);
-                Aerolinea.aviones[i].HorasVuelo += duracion;
-                Aerolinea.aviones[i].Estado = false;
+               // Aerolinea.aviones[i].HorasVuelo += duracion;
+                Aerolinea.aviones[i].Disponible = false;
             }
             else
             {
@@ -143,6 +143,20 @@ namespace Parcial1_Labo_2
                 lbl_HoraSalida.ForeColor = Color.White;
                 lbl_Origen.ForeColor = Color.White;
                 lbl_Salida.ForeColor = Color.White;
+                cmb_Avion.ForeColor = Color.White;
+                cmb_Avion.BackColor = Color.FromArgb(34, 34, 34);
+                txt_Codigo.BackColor = Color.FromArgb(34, 34, 34);
+                txt_Codigo.ForeColor= Color.White;
+                cmb_Destino.ForeColor = Color.White;
+                cmb_Destino.BackColor = Color.FromArgb(34, 34, 34);
+                cmb_Origen.BackColor = Color.FromArgb(34, 34, 34);
+                cmb_Origen.ForeColor = Color.White;
+                cmb_Salida.ForeColor = Color.White;
+                cmb_Salida.BackColor = Color.FromArgb(34, 34, 34);
+                dtp_Salida.CalendarForeColor = Color.White;
+                dtp_Salida.CalendarMonthBackground = Color.FromArgb(34, 34, 34); 
+                dtp_Salida.CalendarTitleBackColor = Color.FromArgb(34, 34, 34);
+                dtp_Salida.CalendarTitleForeColor = Color.White;
             }
             else
             {
@@ -158,6 +172,20 @@ namespace Parcial1_Labo_2
                 lbl_HoraSalida.ForeColor = Color.Black;
                 lbl_Origen.ForeColor = Color.Black;
                 lbl_Salida.ForeColor = Color.Black;
+                cmb_Avion.ForeColor = Color.Black;
+                cmb_Avion.BackColor = Color.White;
+                txt_Codigo.BackColor = Color.White;
+                txt_Codigo.ForeColor = Color.Black;
+                cmb_Destino.ForeColor = Color.Black;
+                cmb_Destino.BackColor = Color.White;
+                cmb_Origen.BackColor = Color.White;
+                cmb_Origen.ForeColor = Color.Black;
+                cmb_Salida.ForeColor = Color.Black;
+                cmb_Salida.BackColor = Color.White;
+                dtp_Salida.CalendarForeColor = Color.Black;
+                dtp_Salida.CalendarMonthBackground = Color.White;
+                dtp_Salida.CalendarTitleBackColor = Color.White;
+                dtp_Salida.CalendarTitleForeColor = Color.Black;
             }
         }
 

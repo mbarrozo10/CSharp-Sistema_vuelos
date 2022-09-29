@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.pic_Agregar = new System.Windows.Forms.PictureBox();
             this.pic_Cancelar = new System.Windows.Forms.PictureBox();
             this.txt_Edad = new System.Windows.Forms.TextBox();
@@ -41,6 +42,7 @@
             this.lbl_Dni = new System.Windows.Forms.Label();
             this.lbl_Info = new System.Windows.Forms.Label();
             this.btn_Aceptar = new System.Windows.Forms.Button();
+            this.tip_Ayuda = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pic_Agregar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Cancelar)).BeginInit();
             this.SuspendLayout();
@@ -54,6 +56,7 @@
             this.pic_Agregar.Size = new System.Drawing.Size(86, 25);
             this.pic_Agregar.TabIndex = 0;
             this.pic_Agregar.TabStop = false;
+            this.tip_Ayuda.SetToolTip(this.pic_Agregar, "Agrega el cliente si los datos les parece correcto");
             this.pic_Agregar.Visible = false;
             this.pic_Agregar.Click += new System.EventHandler(this.pic_Agregar_Click);
             // 
@@ -66,6 +69,7 @@
             this.pic_Cancelar.Size = new System.Drawing.Size(84, 25);
             this.pic_Cancelar.TabIndex = 1;
             this.pic_Cancelar.TabStop = false;
+            this.tip_Ayuda.SetToolTip(this.pic_Cancelar, "Vuelve al menu anterior");
             this.pic_Cancelar.Click += new System.EventHandler(this.pic_Cancelar_Click);
             // 
             // txt_Edad
@@ -74,6 +78,7 @@
             this.txt_Edad.Name = "txt_Edad";
             this.txt_Edad.Size = new System.Drawing.Size(100, 23);
             this.txt_Edad.TabIndex = 2;
+            this.tip_Ayuda.SetToolTip(this.txt_Edad, "Toma el valor para la edad, no acepta letras y acepta el valor en rango");
             this.txt_Edad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Edad_KeyPress);
             // 
             // txt_Apellido
@@ -82,6 +87,7 @@
             this.txt_Apellido.Name = "txt_Apellido";
             this.txt_Apellido.Size = new System.Drawing.Size(100, 23);
             this.txt_Apellido.TabIndex = 3;
+            this.tip_Ayuda.SetToolTip(this.txt_Apellido, "Toma el ingreso para apellido, no acepta numeros");
             this.txt_Apellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Apellido_KeyPress);
             // 
             // txt_Dni
@@ -90,6 +96,7 @@
             this.txt_Dni.Name = "txt_Dni";
             this.txt_Dni.Size = new System.Drawing.Size(100, 23);
             this.txt_Dni.TabIndex = 4;
+            this.tip_Ayuda.SetToolTip(this.txt_Dni, "Toma el valor para dni, no acepta letras y tiene un rango determinado");
             this.txt_Dni.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Dni_KeyPress);
             // 
             // txt_Nombre
@@ -98,6 +105,7 @@
             this.txt_Nombre.Name = "txt_Nombre";
             this.txt_Nombre.Size = new System.Drawing.Size(100, 23);
             this.txt_Nombre.TabIndex = 5;
+            this.tip_Ayuda.SetToolTip(this.txt_Nombre, "Toma el ingreso del nombre, no acepta numeros");
             this.txt_Nombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Nombre_KeyPress);
             // 
             // lbl_Nombre
@@ -151,6 +159,7 @@
             this.lbl_Info.Name = "lbl_Info";
             this.lbl_Info.Size = new System.Drawing.Size(0, 15);
             this.lbl_Info.TabIndex = 11;
+            this.tip_Ayuda.SetToolTip(this.lbl_Info, "Muestra los datos que se van a agregar como cliente");
             // 
             // btn_Aceptar
             // 
@@ -208,5 +217,6 @@
         private Label lbl_Dni;
         private Label lbl_Info;
         private Button btn_Aceptar;
+        private ToolTip tip_Ayuda;
     }
 }

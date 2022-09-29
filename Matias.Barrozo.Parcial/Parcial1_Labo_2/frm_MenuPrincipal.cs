@@ -17,7 +17,9 @@ namespace Parcial1_Labo_2
 
         private static int Index;
         private DateTime horaPrincipal;
-        
+        private float recaudacionCabotaje = 0;
+        private float recaudacionInternacional = 0;
+
         public frm_MenuPrincipal()
         {
             InitializeComponent();
@@ -152,6 +154,12 @@ namespace Parcial1_Labo_2
                 rtx_InfoVuelo.ForeColor= Color.White;
                 rtx_InfoVuelo.BackColor = Color.FromArgb(34, 34, 34);
                 pic_SalirHistorico.Image= Resources.salir_blanco_84x24;
+                cmb_FiltroHistorico.ForeColor= Color.White;
+                cmb_FiltroHistorico.BackColor = Color.FromArgb(34, 34, 34);
+                lbl_RecaudacionCabotaje.ForeColor = Color.White;
+                lbl_RecaudacionInternacional.ForeColor= Color.White;
+                lbl_RecaudacionTotal.ForeColor= Color.White;
+                pic_SalirPanel.Image= Resources.salir_blanco_84x24;
 
             }
             else
@@ -176,7 +184,12 @@ namespace Parcial1_Labo_2
                 rtx_InfoVuelo.ForeColor = Color.Black;
                 rtx_InfoVuelo.BackColor = Color.White;
                 pic_SalirHistorico.Image= Resources.salir_negro_84x24;
-
+                cmb_FiltroHistorico.ForeColor = Color.Black;
+                cmb_FiltroHistorico.BackColor = Color.White;
+                lbl_RecaudacionCabotaje.ForeColor = Color.Black;
+                lbl_RecaudacionInternacional.ForeColor = Color.Black;
+                lbl_RecaudacionTotal.ForeColor = Color.Black;
+                pic_SalirPanel.Image= Resources.salir_negro_84x24;
             }
         }
 
@@ -275,6 +288,8 @@ namespace Parcial1_Labo_2
 
         private void cmb_FiltroHistorico_SelectedValueChanged(object sender, EventArgs e)
         {
+            lbl_RecaudacionInternacional.Text=String.Empty;
+            lbl_RecaudacionCabotaje.Text = String.Empty;
             lbl_Vendedores.Visible = false;
             dgv_Historico.Visible = true;
             switch (cmb_FiltroHistorico.Text)
@@ -285,10 +300,12 @@ namespace Parcial1_Labo_2
                     dgv_Historico.Columns.Add("Destino", "Destino");
                     dgv_Historico.Columns.Add("CantidadViajes", "Cantidad de viajes");
                     dgv_Historico.Columns.Add("TotalRecaudado", "TotalRecaudado");
+                    dgv_Historico.Columns.Add("CantidadPasajeros", "Cantidad de pasajeros");
                     RecorrerVuelos();
                     dgv_Historico.Sort(dgv_Historico.Columns[2], ListSortDirection.Descending);
                     break;
                 case "Pasajeros Frecuentes":
+                    //filtrar por +2 viajes
                     dgv_Historico.Columns.Clear();
                     dgv_Historico.DataSource = null;
                     dgv_Historico.DataSource = Aerolinea.clientes;
@@ -306,9 +323,37 @@ namespace Parcial1_Labo_2
                 case "Vuelos finalizados":
                     dgv_Historico.DataSource = null;
                     dgv_Historico.Columns.Clear();
-                    dgv_Historico.DataSource = Aerolinea.vuelosFinalizados;
+                    dgv_Historico.DataSource = null;
+                    dgv_Historico.Columns.Add("Avion", "Avion");
+                    dgv_Historico.Columns.Add("Codigo", "Codigo");
+                    dgv_Historico.Columns.Add("Duracion", "Duracion");
+                    dgv_Historico.Columns.Add("Origen", "Origen");
+                    dgv_Historico.Columns.Add("Destino", "Destino");
+                    dgv_Historico.Columns.Add("Salida", "Salida");
+                    dgv_Historico.Columns.Add("Llegada", "Llegada");
+                    dgv_Historico.Columns.Add("CantPasajeros", "Pasajeros");
+                    dgv_Historico.Columns.Add("Recaudacion", "Recaudacion");
+                    foreach( Vuelo vuelo in Aerolinea.vuelosFinalizados)
+                    {
+                        DataGridViewRow filas = new DataGridViewRow();
+                        filas.CreateCells(dgv_Historico);
+
+                        filas.Cells[0].Value = vuelo.Avion.Matricula;
+                        filas.Cells[1].Value = vuelo.Codigo;
+                        filas.Cells[2].Value = vuelo.Duracion;
+                        filas.Cells[3].Value = vuelo.Origen;
+                        filas.Cells[4].Value = vuelo.Destino;
+                        filas.Cells[5].Value = vuelo.Salida;
+                        filas.Cells[6].Value = vuelo.Llegada;
+                        filas.Cells[7].Value = vuelo.Pasajeros.Count;
+                        filas.Cells[8].Value = vuelo.Recaudacion;
+
+                        dgv_Historico.Rows.Add(filas);
+                    }
                     break;
                 case "Aviones":
+
+                    // cambiar por label y modificar tostring
                     dgv_Historico.DataSource = null;
                     dgv_Historico.DataSource = Aerolinea.aviones;
                     break;
@@ -329,10 +374,6 @@ namespace Parcial1_Labo_2
             }
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
 
         private void btn_AgregarCliente_Click(object sender, EventArgs e)
         {
@@ -343,6 +384,7 @@ namespace Parcial1_Labo_2
 
         private void RecorrerVuelos(List<Vuelo> vuelos)
         {
+            
             for (int i = 0; i < vuelos.Count; i++)
             {
 
@@ -359,15 +401,19 @@ namespace Parcial1_Labo_2
                     || vuelos[i].Destino.ToString() == "Acapulco" || vuelos[i].Destino.ToString() == "Miami")
                 {
                     filas.Cells[3].Value = "Internacional";
+                    recaudacionInternacional += vuelos[i].Recaudacion;
                 }
                 else
                 {
                     filas.Cells[3].Value = "Cabotaje";
+                    recaudacionCabotaje += vuelos[i].Recaudacion;
                 }
 
                 dgv_Historico.Rows.Add(filas);
 
             }
+            lbl_RecaudacionCabotaje.Text = "Recaudacion cabotaje: " + recaudacionCabotaje;
+            lbl_RecaudacionInternacional.Text = "Recaudacion internacional: " + recaudacionInternacional;
 
         }
 
@@ -378,6 +424,7 @@ namespace Parcial1_Labo_2
             {
                 int contador = 0;
                 float recaudacion = 0;
+                int cantidadPasajeros=0;
                 for (int j = 0; j < Aerolinea.vuelos.Count; j++)
                 {
                     string? s = Enum.GetName(typeof(Destino), i);
@@ -385,15 +432,17 @@ namespace Parcial1_Labo_2
                     {
                         contador++;
                         recaudacion += Aerolinea.vuelos[j].Recaudacion;
+                        cantidadPasajeros+=Aerolinea.vuelos[j].Pasajeros.Count;
                     }
                 }
                 for (int j = 0; j < Aerolinea.vuelosFinalizados.Count; j++)
                 {
                     string? s = Enum.GetName(typeof(Destino), i);
-                    if (Aerolinea.vuelos[j].Destino.ToString().Contains(s))
+                    if (Aerolinea.vuelosFinalizados[j].Destino.ToString().Contains(s))
                     {
                         contador++;
-                        recaudacion += Aerolinea.vuelos[j].Recaudacion;
+                        recaudacion += Aerolinea.vuelosFinalizados[j].Recaudacion;
+                        cantidadPasajeros += Aerolinea.vuelosFinalizados[j].Pasajeros.Count;
                     }
                 }
                 DataGridViewRow filas = new DataGridViewRow();
@@ -403,6 +452,7 @@ namespace Parcial1_Labo_2
                 filas.Cells[0].Value = Enum.GetName(typeof(Destino), i);
                 filas.Cells[1].Value = contador;
                 filas.Cells[2].Value = recaudacion;
+                filas.Cells[3].Value =cantidadPasajeros;
 
                 dgv_Historico.Rows.Add(filas);
 
@@ -431,6 +481,8 @@ namespace Parcial1_Labo_2
                  if(horaPrincipal.CompareTo(vuelo.Llegada) > 0 && vuelo.Estado== Biblioteca.Estado.EnVuelo)
                 {
                     vuelo.Estado = Biblioteca.Estado.Finalizado;
+                    vuelo.Avion.HorasVuelo += vuelo.Duracion;
+                    vuelo.Avion.Disponible = true;
                     BorrarVuelo(vuelo);
                     CargarDatagrid();
                     break;
@@ -445,5 +497,6 @@ namespace Parcial1_Labo_2
             Aerolinea.vuelosFinalizados.Add(vuelo);
             Aerolinea.vuelos.Remove(vuelo);
         }
+
     }
 }

@@ -57,7 +57,7 @@ namespace Biblioteca
         {
             List <Cliente> pasajeros = new List<Cliente>();
 
-            pasajeros.Add(new Cliente("Matias", "Barrozo", 41236275, 23,3));
+            pasajeros.Add(new Cliente("Matias", "Barrozo", 45836275, 23,3));
             pasajeros.Add(new Cliente("Morena", "Escudero", 45666665, 21,6));
             pasajeros.Add(new Cliente("Nicolas", "Gil", 30456984, 32,8));
             pasajeros.Add(new Cliente("Lucas", "Gaggino", 39018697, 25,9));           
@@ -137,14 +137,20 @@ namespace Biblioteca
             vuelos.Add(new Vuelo(Aerolinea.aviones[0], 4, 200, Destino.Mendoza, Estado.Disponible, Destino.Buenos_Aires, DateTime.Parse("2022/11/8 14:30:00"), InicializarPasajeros(),"BMD93", DateTime.Parse("2022/11/8 18:30:00"),1330,17448,14,55,69));
             vuelos.Add(new Vuelo(Aerolinea.aviones[1], 4, 200, Destino.Neuquén, Estado.Disponible, Destino.Buenos_Aires, DateTime.Parse("2022/9/15 18:00:00"), InicializarPasajeros(),"N93J4FG", DateTime.Parse("2022/9/28 22:00:00"),3570,17448,14,55, 69));
             vuelos.Add(new Vuelo(Aerolinea.aviones[1], 4, 200, Destino.Neuquén, Estado.Disponible, Destino.Buenos_Aires, DateTime.Parse("2022/9/15 18:00:00"), InicializarPasajeros(),"INASIN2", DateTime.Parse("2022/9/28 22:00:00"),3570,17448,14,55, 69));
-            Aerolinea.aviones[0].Estado = false;
-            Aerolinea.aviones[1].Estado = false;
-            Aerolinea.aviones[2].Estado = false;
-            Aerolinea.aviones[0].HorasVuelo += 10;
-            Aerolinea.aviones[1].HorasVuelo += 4;
-            Aerolinea.aviones[2].HorasVuelo += 4;
+            Aerolinea.aviones[0].Disponible = false;
+            Aerolinea.aviones[1].Disponible = false;
+            Aerolinea.aviones[2].Disponible = false;
+           
 
-           return vuelos;
+            Aerolinea.vuelosFinalizados.Add(new Vuelo(Aerolinea.aviones[2], 10, 1000, Destino.Miami, Estado.Finalizado, Destino.Buenos_Aires, DateTime.Parse("2022/9/28 19:58:00"), InicializarPasajeros(), "A20394", DateTime.Parse("2022/9/28 20:14:00"), 15, 87241, 14, 55, 69));
+            Aerolinea.vuelosFinalizados.Add(new Vuelo(Aerolinea.aviones[0], 4, 200, Destino.Mendoza, Estado.Finalizado, Destino.Buenos_Aires, DateTime.Parse("2022/11/8 14:30:00"), InicializarPasajeros(), "BMD93", DateTime.Parse("2022/11/8 18:30:00"), 1330, 17448, 14, 55, 69));
+            Aerolinea.vuelosFinalizados.Add(new Vuelo(Aerolinea.aviones[1], 4, 200, Destino.Neuquén, Estado.Finalizado, Destino.Buenos_Aires, DateTime.Parse("2022/9/15 18:00:00"), InicializarPasajeros(), "N93J4FG", DateTime.Parse("2022/9/28 22:00:00"), 3570, 17448, 14, 55, 69));
+            Aerolinea.vuelosFinalizados.Add(new Vuelo(Aerolinea.aviones[1], 4, 200, Destino.Neuquén, Estado.Finalizado, Destino.Buenos_Aires, DateTime.Parse("2022/9/15 18:00:00"), InicializarPasajeros(), "INASIN2", DateTime.Parse("2022/9/28 22:00:00"), 3570, 17448, 14, 55, 69));
+            Aerolinea.aviones[0].HorasVuelo += 4;
+            Aerolinea.aviones[1].HorasVuelo += 8;
+            Aerolinea.aviones[2].HorasVuelo += 10;
+
+            return vuelos;
         }
     
     }

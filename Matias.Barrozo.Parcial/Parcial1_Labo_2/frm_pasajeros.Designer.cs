@@ -30,16 +30,18 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dgv_Pasajeros = new System.Windows.Forms.DataGridView();
-            this.pasajeroBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.btn_Salir = new System.Windows.Forms.Button();
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.apellidoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dniDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.edadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.premiumDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.equipajeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pasajeroBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pic_Salir = new System.Windows.Forms.PictureBox();
+            this.tip_Ayuda = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Pasajeros)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pasajeroBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_Salir)).BeginInit();
             this.SuspendLayout();
             // 
             // dgv_Pasajeros
@@ -59,20 +61,6 @@
             this.dgv_Pasajeros.RowTemplate.Height = 25;
             this.dgv_Pasajeros.Size = new System.Drawing.Size(576, 334);
             this.dgv_Pasajeros.TabIndex = 0;
-            // 
-            // pasajeroBindingSource
-            // 
-            this.pasajeroBindingSource.DataSource = typeof(Biblioteca.Pasajero);
-            // 
-            // btn_Salir
-            // 
-            this.btn_Salir.Location = new System.Drawing.Point(693, 403);
-            this.btn_Salir.Name = "btn_Salir";
-            this.btn_Salir.Size = new System.Drawing.Size(75, 23);
-            this.btn_Salir.TabIndex = 1;
-            this.btn_Salir.Text = "Salir";
-            this.btn_Salir.UseVisualStyleBackColor = true;
-            this.btn_Salir.Click += new System.EventHandler(this.btn_Salir_Click);
             // 
             // nombreDataGridViewTextBoxColumn
             // 
@@ -116,19 +104,38 @@
             this.equipajeDataGridViewTextBoxColumn.Name = "equipajeDataGridViewTextBoxColumn";
             this.equipajeDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // pasajeroBindingSource
+            // 
+            this.pasajeroBindingSource.DataSource = typeof(Biblioteca.Pasajero);
+            // 
+            // pic_Salir
+            // 
+            this.pic_Salir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pic_Salir.Image = global::Parcial1_Labo_2.Properties.Resources.salir_negro_84x24;
+            this.pic_Salir.Location = new System.Drawing.Point(681, 398);
+            this.pic_Salir.Name = "pic_Salir";
+            this.pic_Salir.Size = new System.Drawing.Size(82, 25);
+            this.pic_Salir.TabIndex = 1;
+            this.pic_Salir.TabStop = false;
+            this.tip_Ayuda.SetToolTip(this.pic_Salir, "Vuelve al menu principal");
+            this.pic_Salir.Click += new System.EventHandler(this.btn_Salir_Click);
+            // 
             // frm_pasajeros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btn_Salir);
+            this.ControlBox = false;
+            this.Controls.Add(this.pic_Salir);
             this.Controls.Add(this.dgv_Pasajeros);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "frm_pasajeros";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "frm_pasajeros";
             this.Load += new System.EventHandler(this.frm_pasajeros_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Pasajeros)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pasajeroBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_Salir)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -136,7 +143,6 @@
         #endregion
 
         private DataGridView dgv_Pasajeros;
-        private Button btn_Salir;
         private BindingSource pasajeroBindingSource;
         private DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn apellidoDataGridViewTextBoxColumn;
@@ -144,5 +150,8 @@
         private DataGridViewTextBoxColumn edadDataGridViewTextBoxColumn;
         private DataGridViewCheckBoxColumn premiumDataGridViewCheckBoxColumn;
         private DataGridViewTextBoxColumn equipajeDataGridViewTextBoxColumn;
+        private PictureBox pictureBox1;
+        private ToolTip tip_Ayuda;
+        private PictureBox pic_Salir;
     }
 }

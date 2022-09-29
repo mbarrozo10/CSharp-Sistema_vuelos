@@ -234,9 +234,7 @@ namespace Biblioteca
         {
             return (int)(asientos * porcentaje);
         }
-
-        
-        
+ 
     }
 
    

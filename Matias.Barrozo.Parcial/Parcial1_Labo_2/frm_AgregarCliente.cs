@@ -1,4 +1,5 @@
 ﻿using Biblioteca;
+using Parcial1_Labo_2.Properties;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -88,7 +89,51 @@ namespace Parcial1_Labo_2
 
         private void frm_AgregarCliente_Load(object sender, EventArgs e)
         {
+            ModoOscuro();
+        }
 
+
+        private void ModoOscuro()
+        {
+            if (!Aerolinea.modoOscuro)
+            {
+                this.BackColor = Color.FromArgb(34, 34, 34);
+                txt_Apellido.BackColor= Color.FromArgb(34, 34, 34);
+                txt_Dni.BackColor= Color.FromArgb(34, 34, 34);
+                txt_Nombre.BackColor= Color.FromArgb(34, 34, 34);
+                txt_Edad.BackColor= Color.FromArgb(34, 34, 34);
+                txt_Apellido.ForeColor = Color.White;
+                txt_Nombre.ForeColor= Color.White;
+                txt_Dni.ForeColor= Color.White;
+                txt_Edad.ForeColor= Color.White;
+                pic_Agregar.Image = Resources.agregar_blanco_84x24;
+                pic_Cancelar.Image = Resources.cancelar_blanco_84x24;
+                lbl_Apellido.ForeColor = Color.White;
+                lbl_Dni.ForeColor = Color.White;
+                lbl_Edad.ForeColor = Color.White;
+                lbl_Error.ForeColor = Color.White;
+                lbl_Info.ForeColor = Color.White;  
+                lbl_Nombre.ForeColor = Color.White;
+            }
+            else
+            {
+                this.BackColor = Color.White;
+                txt_Apellido.BackColor = Color.White;
+                txt_Dni.BackColor = Color.White;
+                txt_Nombre.BackColor = Color.White;
+                txt_Edad.BackColor = Color.White;
+                txt_Apellido.ForeColor = Color.Black;
+                txt_Nombre.ForeColor = Color.Black;
+                txt_Dni.ForeColor = Color.Black;
+                txt_Edad.ForeColor = Color.Black;
+                pic_Agregar.Image = Resources.agregar_negro_84x24;
+                pic_Cancelar.Image = Resources.cancelar_negro_84x24;
+                lbl_Dni.ForeColor = Color.Black;
+                lbl_Edad.ForeColor = Color.Black;
+                lbl_Error.ForeColor = Color.Black;
+                lbl_Info.ForeColor = Color.Black;
+                lbl_Nombre.ForeColor = Color.Black;
+            }
         }
     }
 }

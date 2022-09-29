@@ -78,7 +78,7 @@ namespace Biblioteca
 
             Cliente? pasajero = obj as Cliente;
             if(pasajero != null)
-                return this.dni == pasajero.Dni;
+                return this.Dni == pasajero.Dni;
             else
                 return false;
         }

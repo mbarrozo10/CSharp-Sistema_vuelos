@@ -17,7 +17,6 @@ namespace Parcial1_Labo_2
             Aerolinea.clientes = Inicializador.InicializarClientes();
             Aerolinea.aviones = Inicializador.InicializarAviones();
             Aerolinea.vuelos = Inicializador.InicializarVuelos();
-            Aerolinea.vuelosFinalizados = Inicializador.InicializarVuelos();
         }
 
         private void btn_Ingresar_Click(object sender, EventArgs e)

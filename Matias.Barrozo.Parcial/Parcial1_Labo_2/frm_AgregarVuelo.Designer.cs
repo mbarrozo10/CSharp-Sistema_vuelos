@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lbl_Avion = new System.Windows.Forms.Label();
             this.lbl_destino = new System.Windows.Forms.Label();
             this.lbl_Salida = new System.Windows.Forms.Label();
@@ -44,6 +45,7 @@
             this.lbl_HoraSalida = new System.Windows.Forms.Label();
             this.pic_Agregar = new System.Windows.Forms.PictureBox();
             this.pic_Salir = new System.Windows.Forms.PictureBox();
+            this.tip_Ayuda = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pic_Agregar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Salir)).BeginInit();
             this.SuspendLayout();
@@ -109,6 +111,7 @@
             this.cmb_Avion.Name = "cmb_Avion";
             this.cmb_Avion.Size = new System.Drawing.Size(121, 23);
             this.cmb_Avion.TabIndex = 10;
+            this.tip_Ayuda.SetToolTip(this.cmb_Avion, "Selector de aviones, solo aparecen los aviones que no esten en viaje");
             this.cmb_Avion.SelectedValueChanged += new System.EventHandler(this.cmb_Avion_SelectedValueChanged);
             // 
             // cmb_Destino
@@ -118,6 +121,8 @@
             this.cmb_Destino.Name = "cmb_Destino";
             this.cmb_Destino.Size = new System.Drawing.Size(121, 23);
             this.cmb_Destino.TabIndex = 11;
+            this.tip_Ayuda.SetToolTip(this.cmb_Destino, "Selector de destino, solo aparecen los internacionales en caso de que en origen s" +
+        "e elija buenos aires");
             // 
             // txt_Codigo
             // 
@@ -125,6 +130,7 @@
             this.txt_Codigo.Name = "txt_Codigo";
             this.txt_Codigo.Size = new System.Drawing.Size(100, 23);
             this.txt_Codigo.TabIndex = 13;
+            this.tip_Ayuda.SetToolTip(this.txt_Codigo, "Toma el codigo de vuelo, es un valor alfa numerico");
             // 
             // lbl_error
             // 
@@ -136,6 +142,9 @@
             // 
             // dtp_Salida
             // 
+            this.dtp_Salida.CalendarMonthBackground = System.Drawing.SystemColors.InactiveCaptionText;
+            this.dtp_Salida.CalendarTitleBackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.dtp_Salida.CalendarTrailingForeColor = System.Drawing.SystemColors.ControlText;
             this.dtp_Salida.CustomFormat = "hh:mm";
             this.dtp_Salida.Location = new System.Drawing.Point(341, 98);
             this.dtp_Salida.MaxDate = new System.DateTime(2024, 12, 31, 0, 0, 0, 0);
@@ -143,6 +152,7 @@
             this.dtp_Salida.Name = "dtp_Salida";
             this.dtp_Salida.Size = new System.Drawing.Size(200, 23);
             this.dtp_Salida.TabIndex = 18;
+            this.tip_Ayuda.SetToolTip(this.dtp_Salida, "Seleccion de fecha de salida, no acepta fechas anterior al dia de hoy");
             this.dtp_Salida.Value = new System.DateTime(2022, 9, 15, 0, 0, 0, 0);
             // 
             // cmb_Origen
@@ -152,6 +162,8 @@
             this.cmb_Origen.Name = "cmb_Origen";
             this.cmb_Origen.Size = new System.Drawing.Size(121, 23);
             this.cmb_Origen.TabIndex = 19;
+            this.tip_Ayuda.SetToolTip(this.cmb_Origen, "Selector de origen, si se elije buenos aires, muestra los destinos internacionale" +
+        "s");
             this.cmb_Origen.SelectedValueChanged += new System.EventHandler(this.cmb_Origen_SelectedValueChanged);
             // 
             // cmb_Salida
@@ -161,6 +173,7 @@
             this.cmb_Salida.Name = "cmb_Salida";
             this.cmb_Salida.Size = new System.Drawing.Size(121, 23);
             this.cmb_Salida.TabIndex = 21;
+            this.tip_Ayuda.SetToolTip(this.cmb_Salida, "Selector de horario de salida");
             // 
             // lbl_HoraSalida
             // 
@@ -180,6 +193,7 @@
             this.pic_Agregar.Size = new System.Drawing.Size(88, 28);
             this.pic_Agregar.TabIndex = 23;
             this.pic_Agregar.TabStop = false;
+            this.tip_Ayuda.SetToolTip(this.pic_Agregar, "Agrega el vuelo");
             this.pic_Agregar.Click += new System.EventHandler(this.btn_Agregar_Click);
             // 
             // pic_Salir
@@ -192,6 +206,7 @@
             this.pic_Salir.Size = new System.Drawing.Size(88, 28);
             this.pic_Salir.TabIndex = 24;
             this.pic_Salir.TabStop = false;
+            this.tip_Ayuda.SetToolTip(this.pic_Salir, "Vuelve al menu principal");
             this.pic_Salir.Click += new System.EventHandler(this.btn_Salir_Click);
             // 
             // frm_AgregarVuelo
@@ -248,5 +263,6 @@
         private Label lbl_HoraSalida;
         private PictureBox pic_Agregar;
         private PictureBox pic_Salir;
+        private ToolTip tip_Ayuda;
     }
 }

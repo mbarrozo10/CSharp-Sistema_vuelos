@@ -69,6 +69,8 @@
             this.pic_SalirPanel = new System.Windows.Forms.PictureBox();
             this.btn_Historico = new System.Windows.Forms.Button();
             this.pnl_Historico = new System.Windows.Forms.Panel();
+            this.lbl_RecaudacionInternacional = new System.Windows.Forms.Label();
+            this.lbl_RecaudacionCabotaje = new System.Windows.Forms.Label();
             this.lbl_Vendedores = new System.Windows.Forms.Label();
             this.cmb_FiltroHistorico = new System.Windows.Forms.ComboBox();
             this.pic_SalirHistorico = new System.Windows.Forms.PictureBox();
@@ -77,7 +79,7 @@
             this.btn_AgregarCliente = new System.Windows.Forms.Button();
             this.lbl_Fecha = new System.Windows.Forms.Label();
             this.tmr_Hora = new System.Windows.Forms.Timer(this.components);
-            this.hlp_Test = new System.Windows.Forms.HelpProvider();
+            this.tip_Ayuda = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_VuelosActivos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Modo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Vender)).BeginInit();
@@ -304,14 +306,13 @@
             this.pic_Modo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pic_Modo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pic_Modo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.hlp_Test.SetHelpString(this.pic_Modo, "Modo oscuro owo");
             this.pic_Modo.Image = global::Parcial1_Labo_2.Properties.Resources.night_mode1;
             this.pic_Modo.Location = new System.Drawing.Point(1105, 12);
             this.pic_Modo.Name = "pic_Modo";
-            this.hlp_Test.SetShowHelp(this.pic_Modo, true);
             this.pic_Modo.Size = new System.Drawing.Size(33, 33);
             this.pic_Modo.TabIndex = 9;
             this.pic_Modo.TabStop = false;
+            this.tip_Ayuda.SetToolTip(this.pic_Modo, "Activa/desactiva modo oscuro");
             this.pic_Modo.Click += new System.EventHandler(this.pic_Modo_Click);
             // 
             // pic_Vender
@@ -324,6 +325,7 @@
             this.pic_Vender.Size = new System.Drawing.Size(85, 27);
             this.pic_Vender.TabIndex = 10;
             this.pic_Vender.TabStop = false;
+            this.tip_Ayuda.SetToolTip(this.pic_Vender, "Vende un pasaje, se muestra solo si el vuelo esta disponible");
             this.pic_Vender.Visible = false;
             this.pic_Vender.Click += new System.EventHandler(this.btn_Vender_Click);
             // 
@@ -337,6 +339,7 @@
             this.pic_Pasajeros.Size = new System.Drawing.Size(85, 27);
             this.pic_Pasajeros.TabIndex = 11;
             this.pic_Pasajeros.TabStop = false;
+            this.tip_Ayuda.SetToolTip(this.pic_Pasajeros, "Muestra la lista de pasajeros");
             this.pic_Pasajeros.Visible = false;
             this.pic_Pasajeros.Click += new System.EventHandler(this.btn_Pasajeros_Click);
             // 
@@ -350,6 +353,7 @@
             this.pic_Agregar.Size = new System.Drawing.Size(122, 27);
             this.pic_Agregar.TabIndex = 12;
             this.pic_Agregar.TabStop = false;
+            this.tip_Ayuda.SetToolTip(this.pic_Agregar, "Agrega un vuelo");
             this.pic_Agregar.Click += new System.EventHandler(this.btn_AgregarVuelo_Click);
             // 
             // pic_Salir
@@ -362,6 +366,7 @@
             this.pic_Salir.Size = new System.Drawing.Size(84, 27);
             this.pic_Salir.TabIndex = 13;
             this.pic_Salir.TabStop = false;
+            this.tip_Ayuda.SetToolTip(this.pic_Salir, "Vuelve al inicio de sesion");
             this.pic_Salir.Click += new System.EventHandler(this.btn_Salir_Click);
             // 
             // btn_MasInfo
@@ -394,6 +399,7 @@
             this.rtx_InfoVuelo.Size = new System.Drawing.Size(485, 230);
             this.rtx_InfoVuelo.TabIndex = 16;
             this.rtx_InfoVuelo.Text = "";
+            this.tip_Ayuda.SetToolTip(this.rtx_InfoVuelo, "Muestra la informacion del vuelo");
             // 
             // pic_Cancelar
             // 
@@ -404,6 +410,7 @@
             this.pic_Cancelar.Size = new System.Drawing.Size(85, 28);
             this.pic_Cancelar.TabIndex = 15;
             this.pic_Cancelar.TabStop = false;
+            this.tip_Ayuda.SetToolTip(this.pic_Cancelar, "Cancela un vuelo");
             this.pic_Cancelar.Click += new System.EventHandler(this.pic_Cancelar_Click);
             // 
             // pic_SalirPanel
@@ -415,6 +422,7 @@
             this.pic_SalirPanel.Size = new System.Drawing.Size(84, 27);
             this.pic_SalirPanel.TabIndex = 1;
             this.pic_SalirPanel.TabStop = false;
+            this.tip_Ayuda.SetToolTip(this.pic_SalirPanel, "Cierra el panel");
             this.pic_SalirPanel.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // btn_Historico
@@ -429,6 +437,8 @@
             // 
             // pnl_Historico
             // 
+            this.pnl_Historico.Controls.Add(this.lbl_RecaudacionInternacional);
+            this.pnl_Historico.Controls.Add(this.lbl_RecaudacionCabotaje);
             this.pnl_Historico.Controls.Add(this.lbl_Vendedores);
             this.pnl_Historico.Controls.Add(this.cmb_FiltroHistorico);
             this.pnl_Historico.Controls.Add(this.pic_SalirHistorico);
@@ -439,6 +449,22 @@
             this.pnl_Historico.Size = new System.Drawing.Size(1070, 478);
             this.pnl_Historico.TabIndex = 17;
             this.pnl_Historico.Visible = false;
+            // 
+            // lbl_RecaudacionInternacional
+            // 
+            this.lbl_RecaudacionInternacional.AutoSize = true;
+            this.lbl_RecaudacionInternacional.Location = new System.Drawing.Point(62, 391);
+            this.lbl_RecaudacionInternacional.Name = "lbl_RecaudacionInternacional";
+            this.lbl_RecaudacionInternacional.Size = new System.Drawing.Size(0, 15);
+            this.lbl_RecaudacionInternacional.TabIndex = 6;
+            // 
+            // lbl_RecaudacionCabotaje
+            // 
+            this.lbl_RecaudacionCabotaje.AutoSize = true;
+            this.lbl_RecaudacionCabotaje.Location = new System.Drawing.Point(62, 410);
+            this.lbl_RecaudacionCabotaje.Name = "lbl_RecaudacionCabotaje";
+            this.lbl_RecaudacionCabotaje.Size = new System.Drawing.Size(0, 15);
+            this.lbl_RecaudacionCabotaje.TabIndex = 5;
             // 
             // lbl_Vendedores
             // 
@@ -466,6 +492,7 @@
             this.pic_SalirHistorico.Size = new System.Drawing.Size(83, 26);
             this.pic_SalirHistorico.TabIndex = 2;
             this.pic_SalirHistorico.TabStop = false;
+            this.tip_Ayuda.SetToolTip(this.pic_SalirHistorico, "Cierras las estadisticas");
             this.pic_SalirHistorico.Click += new System.EventHandler(this.pictureBox1_Click_1);
             // 
             // lbl_RecaudacionTotal
@@ -518,6 +545,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1207, 600);
+            this.ControlBox = false;
             this.Controls.Add(this.lbl_Fecha);
             this.Controls.Add(this.btn_AgregarCliente);
             this.Controls.Add(this.pnl_Informacion);
@@ -591,6 +619,8 @@
         private Label lbl_Fecha;
         private System.Windows.Forms.Timer tmr_Hora;
         private Label lbl_Vendedores;
-        private HelpProvider hlp_Test;
+        private ToolTip tip_Ayuda;
+        private Label lbl_RecaudacionInternacional;
+        private Label lbl_RecaudacionCabotaje;
     }
 }

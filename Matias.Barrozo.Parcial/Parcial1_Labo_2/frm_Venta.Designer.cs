@@ -68,8 +68,9 @@
             this.btn_AceptarCliente = new System.Windows.Forms.Button();
             this.btn_Agregar = new System.Windows.Forms.Button();
             this.lbl_ErrorBusqueda = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lbl_Impuestos = new System.Windows.Forms.Label();
             this.rtx_PasajerosAgregados = new System.Windows.Forms.RichTextBox();
+            this.tip_Ayuda = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.nud_Cantidad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_CantEquipaje)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Agregar)).BeginInit();
@@ -87,6 +88,7 @@
             this.lbl_PrecioFinal.Size = new System.Drawing.Size(71, 15);
             this.lbl_PrecioFinal.TabIndex = 2;
             this.lbl_PrecioFinal.Text = "Precio Final:";
+            this.tip_Ayuda.SetToolTip(this.lbl_PrecioFinal, "Precio del pasaje con impuestos");
             // 
             // lbl_Edad
             // 
@@ -136,6 +138,7 @@
             this.prg_CantidadRestante.Name = "prg_CantidadRestante";
             this.prg_CantidadRestante.Size = new System.Drawing.Size(670, 23);
             this.prg_CantidadRestante.TabIndex = 8;
+            this.tip_Ayuda.SetToolTip(this.prg_CantidadRestante, "Muestra el progreso segun la cantidad de personas que se van a agregar");
             // 
             // lbl_Codigo
             // 
@@ -185,6 +188,8 @@
             this.nud_Cantidad.Name = "nud_Cantidad";
             this.nud_Cantidad.Size = new System.Drawing.Size(38, 23);
             this.nud_Cantidad.TabIndex = 14;
+            this.tip_Ayuda.SetToolTip(this.nud_Cantidad, "Selector de cantidad de pasajeros, maximo hasta 4, comprueba que haya espacio al " +
+        "momento de aceptar");
             this.nud_Cantidad.ValueChanged += new System.EventHandler(this.nud_Cantidad_ValueChanged);
             // 
             // lbl_Cantidad
@@ -205,6 +210,7 @@
             this.lbl_PrecioSub.Size = new System.Drawing.Size(90, 15);
             this.lbl_PrecioSub.TabIndex = 16;
             this.lbl_PrecioSub.Text = "Precio Subtotal:";
+            this.tip_Ayuda.SetToolTip(this.lbl_PrecioSub, "Precio del pasaje sin impuesto");
             // 
             // chk_Premium
             // 
@@ -216,6 +222,8 @@
             this.chk_Premium.Size = new System.Drawing.Size(75, 19);
             this.chk_Premium.TabIndex = 17;
             this.chk_Premium.Text = "Premium";
+            this.tip_Ayuda.SetToolTip(this.chk_Premium, "Check de premium, si esta activado amplia la cantidad (a 2) de equipaje y su peso" +
+        " total hasta 42");
             this.chk_Premium.UseVisualStyleBackColor = true;
             this.chk_Premium.CheckedChanged += new System.EventHandler(this.chk_Premium_CheckedChanged);
             // 
@@ -227,6 +235,7 @@
             this.txt_Nombre.Name = "txt_Nombre";
             this.txt_Nombre.Size = new System.Drawing.Size(100, 23);
             this.txt_Nombre.TabIndex = 18;
+            this.tip_Ayuda.SetToolTip(this.txt_Nombre, "Ingreso del nombre, solo acepta letras");
             this.txt_Nombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Nombre_KeyPress);
             // 
             // txt_Apellido
@@ -237,6 +246,7 @@
             this.txt_Apellido.Name = "txt_Apellido";
             this.txt_Apellido.Size = new System.Drawing.Size(100, 23);
             this.txt_Apellido.TabIndex = 19;
+            this.tip_Ayuda.SetToolTip(this.txt_Apellido, "Ingreso del apellido, solo acepta letras");
             this.txt_Apellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Apellido_KeyPress);
             // 
             // txt_Dni
@@ -247,6 +257,7 @@
             this.txt_Dni.Name = "txt_Dni";
             this.txt_Dni.Size = new System.Drawing.Size(100, 23);
             this.txt_Dni.TabIndex = 20;
+            this.tip_Ayuda.SetToolTip(this.txt_Dni, "Ingreso de dni, solo acepta numeros en un rango");
             this.txt_Dni.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Dni_KeyPress);
             // 
             // txt_Edad
@@ -257,6 +268,7 @@
             this.txt_Edad.Name = "txt_Edad";
             this.txt_Edad.Size = new System.Drawing.Size(100, 23);
             this.txt_Edad.TabIndex = 21;
+            this.tip_Ayuda.SetToolTip(this.txt_Edad, "Ingreso de edad, solo acepta numeros en un rango");
             this.txt_Edad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Edad_KeyPress);
             // 
             // lbl_Equipaje
@@ -288,6 +300,7 @@
             this.txt_Kg.Name = "txt_Kg";
             this.txt_Kg.Size = new System.Drawing.Size(34, 23);
             this.txt_Kg.TabIndex = 24;
+            this.tip_Ayuda.SetToolTip(this.txt_Kg, "Ingreso del peso del equipaje, si es premium llega hasta 42, sino hasta 25");
             this.txt_Kg.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Kg_KeyPress);
             // 
             // nud_CantEquipaje
@@ -304,6 +317,7 @@
             this.nud_CantEquipaje.Name = "nud_CantEquipaje";
             this.nud_CantEquipaje.Size = new System.Drawing.Size(38, 23);
             this.nud_CantEquipaje.TabIndex = 25;
+            this.tip_Ayuda.SetToolTip(this.nud_CantEquipaje, "Selector de cantidad de equipaje, si no es premium solo es 1");
             this.nud_CantEquipaje.ValueChanged += new System.EventHandler(this.nud_CantEquipaje_ValueChanged);
             // 
             // lbl_Error
@@ -325,6 +339,8 @@
             this.pic_Agregar.Size = new System.Drawing.Size(87, 27);
             this.pic_Agregar.TabIndex = 27;
             this.pic_Agregar.TabStop = false;
+            this.tip_Ayuda.SetToolTip(this.pic_Agregar, "Agrega el pasajero, si faltan mas por agregar limpia la informacion, si es el ult" +
+        "imo vuelve al menu anterior");
             this.pic_Agregar.Click += new System.EventHandler(this.btn_Agregar_Click);
             // 
             // pic_Cancelar
@@ -337,6 +353,7 @@
             this.pic_Cancelar.Size = new System.Drawing.Size(87, 27);
             this.pic_Cancelar.TabIndex = 28;
             this.pic_Cancelar.TabStop = false;
+            this.tip_Ayuda.SetToolTip(this.pic_Cancelar, "Vuelve al menu anterior");
             this.pic_Cancelar.Click += new System.EventHandler(this.btn_Cancelar_Click);
             // 
             // btn_Aceptar
@@ -347,6 +364,7 @@
             this.btn_Aceptar.Size = new System.Drawing.Size(75, 23);
             this.btn_Aceptar.TabIndex = 29;
             this.btn_Aceptar.Text = "Aceptar";
+            this.tip_Ayuda.SetToolTip(this.btn_Aceptar, "Confirma la cantidad de pasajeros, si no hay espacio lo notifica");
             this.btn_Aceptar.UseVisualStyleBackColor = true;
             this.btn_Aceptar.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -424,6 +442,7 @@
             this.chk_BolsoMano.Size = new System.Drawing.Size(105, 19);
             this.chk_BolsoMano.TabIndex = 32;
             this.chk_BolsoMano.Text = "Bolso de mano";
+            this.tip_Ayuda.SetToolTip(this.chk_BolsoMano, "Check de bolso de mano");
             this.chk_BolsoMano.UseVisualStyleBackColor = true;
             // 
             // txt_Buscador
@@ -432,6 +451,8 @@
             this.txt_Buscador.Name = "txt_Buscador";
             this.txt_Buscador.Size = new System.Drawing.Size(100, 23);
             this.txt_Buscador.TabIndex = 33;
+            this.tip_Ayuda.SetToolTip(this.txt_Buscador, "Busca segun nombre,apellido y dni si no lo encuentra se informa y se puede agrega" +
+        "r\r\n\r\n");
             this.txt_Buscador.TextChanged += new System.EventHandler(this.txt_Buscador_TextChanged);
             this.txt_Buscador.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Buscador_KeyPress);
             // 
@@ -442,6 +463,8 @@
             this.btn_AceptarCliente.Size = new System.Drawing.Size(75, 23);
             this.btn_AceptarCliente.TabIndex = 35;
             this.btn_AceptarCliente.Text = "Aceptar";
+            this.tip_Ayuda.SetToolTip(this.btn_AceptarCliente, "Una vez seleccionado el cliente se habilita, activa la cantidad de pasajeros a co" +
+        "mprar");
             this.btn_AceptarCliente.UseVisualStyleBackColor = true;
             this.btn_AceptarCliente.Click += new System.EventHandler(this.btn_AceptarCliente_Click);
             // 
@@ -452,6 +475,7 @@
             this.btn_Agregar.Size = new System.Drawing.Size(75, 23);
             this.btn_Agregar.TabIndex = 36;
             this.btn_Agregar.Text = "Agregar";
+            this.tip_Ayuda.SetToolTip(this.btn_Agregar, "Agrega un cliente");
             this.btn_Agregar.UseVisualStyleBackColor = true;
             this.btn_Agregar.Click += new System.EventHandler(this.btn_Agregar_Click_1);
             // 
@@ -463,14 +487,14 @@
             this.lbl_ErrorBusqueda.Size = new System.Drawing.Size(0, 15);
             this.lbl_ErrorBusqueda.TabIndex = 37;
             // 
-            // label1
+            // lbl_Impuestos
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(1023, 481);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(124, 15);
-            this.label1.TabIndex = 38;
-            this.label1.Text = "Impuestos: 90%  + IVA";
+            this.lbl_Impuestos.AutoSize = true;
+            this.lbl_Impuestos.Location = new System.Drawing.Point(1023, 481);
+            this.lbl_Impuestos.Name = "lbl_Impuestos";
+            this.lbl_Impuestos.Size = new System.Drawing.Size(124, 15);
+            this.lbl_Impuestos.TabIndex = 38;
+            this.lbl_Impuestos.Text = "Impuestos: 90%  + IVA";
             // 
             // rtx_PasajerosAgregados
             // 
@@ -480,6 +504,7 @@
             this.rtx_PasajerosAgregados.Size = new System.Drawing.Size(168, 192);
             this.rtx_PasajerosAgregados.TabIndex = 39;
             this.rtx_PasajerosAgregados.Text = "";
+            this.tip_Ayuda.SetToolTip(this.rtx_PasajerosAgregados, "Muestra el nombre y apellido de los pasajeros agregados");
             // 
             // frm_Venta
             // 
@@ -489,7 +514,7 @@
             this.ClientSize = new System.Drawing.Size(1290, 655);
             this.ControlBox = false;
             this.Controls.Add(this.rtx_PasajerosAgregados);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lbl_Impuestos);
             this.Controls.Add(this.lbl_ErrorBusqueda);
             this.Controls.Add(this.btn_Agregar);
             this.Controls.Add(this.btn_AceptarCliente);
@@ -580,7 +605,8 @@
         private DataGridViewTextBoxColumn edadDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn cantPasajesCompradosDataGridViewTextBoxColumn;
         private BindingSource clienteBindingSource;
-        private Label label1;
+        private Label lbl_Impuestos;
         private RichTextBox rtx_PasajerosAgregados;
+        private ToolTip tip_Ayuda;
     }
 }

@@ -12,7 +12,7 @@ namespace Biblioteca
         public static List<Avion> aviones = new List<Avion>();
         public static List<Vuelo> vuelos = new List<Vuelo>();
         public static bool modoOscuro = false;
-        public static List<Vuelo> vuelosFinalizados=new List<Vuelo>();
+        public static List<Vuelo> vuelosFinalizados = new List<Vuelo>();
         public static List<Cliente> clientes = new List<Cliente>();
         public static int ConseguirIndex(string matricula)
         {

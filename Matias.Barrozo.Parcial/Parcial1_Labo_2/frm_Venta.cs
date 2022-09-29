@@ -262,6 +262,12 @@ namespace Parcial1_Labo_2
                 lbl_KgMax.ForeColor= Color.White;
                 chk_BolsoMano.ForeColor = Color.White;
                 lbl_Destino.ForeColor = Color.White;
+                lbl_Impuestos.ForeColor= Color.White;
+                txt_Buscador.BackColor = Color.FromArgb(34, 34, 34);
+                txt_Buscador.ForeColor = Color.White;
+                lbl_ErrorBusqueda.ForeColor = Color.White;
+                lbl_Error.ForeColor= Color.White;
+               
 
             }
             else
@@ -297,6 +303,11 @@ namespace Parcial1_Labo_2
                 lbl_KgMax.ForeColor = Color.Black;
                 chk_BolsoMano.ForeColor = Color.Black;
                 lbl_Destino.ForeColor = Color.Black;
+                lbl_Impuestos.ForeColor = Color.Black;
+                txt_Buscador.BackColor = Color.White;
+                txt_Buscador.ForeColor = Color.Black;
+                lbl_ErrorBusqueda.ForeColor = Color.Black;
+                lbl_Error.ForeColor = Color.Black;
             }
         }
 

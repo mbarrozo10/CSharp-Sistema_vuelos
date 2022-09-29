@@ -1,4 +1,5 @@
 ﻿using Biblioteca;
+using Parcial1_Labo_2.Properties;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -49,7 +50,7 @@ namespace Parcial1_Labo_2
                 dgv_Pasajeros.RowHeadersDefaultCellStyle.ForeColor = Color.White;
                 dgv_Pasajeros.RowsDefaultCellStyle.BackColor = Color.FromArgb(34, 34, 34);
                 dgv_Pasajeros.RowsDefaultCellStyle.ForeColor = Color.White;
-                
+                pic_Salir.Image = Resources.salir_blanco_84x24;
                 this.BackColor = Color.FromArgb(34, 34, 34);
 
             }
@@ -62,6 +63,7 @@ namespace Parcial1_Labo_2
                 dgv_Pasajeros.RowsDefaultCellStyle.BackColor = Color.White;
                 dgv_Pasajeros.RowsDefaultCellStyle.ForeColor = Color.Black;
                 this.BackColor = Color.White;
+                pic_Salir.Image = Resources.salir_negro_84x24;
             }
         }
     }

@@ -14,7 +14,7 @@ namespace Biblioteca
         private int bodega;
         private bool comida;
         private bool wifi;
-        private bool estado;
+        private bool disponible;
         private int horasVuelo;
 
         
@@ -26,12 +26,11 @@ namespace Biblioteca
             this.bodega = bodega;
             this.comida = comida;
             this.wifi = wifi;
-            this.estado = estado;
+            this.disponible = estado;
             this.horasVuelo = 0;
         }
 
-        
-
+       
         public string Matricula
         {
             get { return matricula; }
@@ -68,10 +67,10 @@ namespace Biblioteca
         }
 
 
-        public bool Estado
+        public bool Disponible
         {
-            get { return estado; }
-            set { estado = value; }
+            get { return disponible; }
+            set { disponible = value; }
         }
 
        
