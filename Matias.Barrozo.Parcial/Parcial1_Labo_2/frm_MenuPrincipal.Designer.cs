@@ -65,8 +65,12 @@
             this.pnl_Informacion = new System.Windows.Forms.Panel();
             this.rtx_InfoVuelo = new System.Windows.Forms.RichTextBox();
             this.pic_Cancelar = new System.Windows.Forms.PictureBox();
-            this.pic_SalirPanel = new System.Windows.Forms.PictureBox();
+            this.pic_SalirPanelInfo = new System.Windows.Forms.PictureBox();
             this.pnl_Historico = new System.Windows.Forms.Panel();
+            this.lbl_InfoVendedor = new System.Windows.Forms.Label();
+            this.lbl_TituloABM = new System.Windows.Forms.Label();
+            this.pic_Modificar = new System.Windows.Forms.PictureBox();
+            this.pic_ModificarAceptar = new System.Windows.Forms.PictureBox();
             this.chk_Admin = new System.Windows.Forms.CheckBox();
             this.pic_AgregarVendedor = new System.Windows.Forms.PictureBox();
             this.txt_ContraseñaVendedor = new System.Windows.Forms.TextBox();
@@ -75,11 +79,11 @@
             this.txt_NombreVendedor = new System.Windows.Forms.TextBox();
             this.lbl_ErrorBorrar = new System.Windows.Forms.Label();
             this.dgv_Vendedores = new System.Windows.Forms.DataGridView();
-            this.tipoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.usuarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.contraseñaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.apellidoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.usuarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contraseñaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vendedorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pic_Borrar = new System.Windows.Forms.PictureBox();
             this.rtx_InfoAvion = new System.Windows.Forms.RichTextBox();
@@ -103,8 +107,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pic_Salir)).BeginInit();
             this.pnl_Informacion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Cancelar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_SalirPanel)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_SalirPanelInfo)).BeginInit();
             this.pnl_Historico.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_Modificar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_ModificarAceptar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_AgregarVendedor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Vendedores)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vendedorBindingSource)).BeginInit();
@@ -385,7 +391,7 @@
             this.pic_Salir.Image = global::Parcial1_Labo_2.Properties.Resources.salir_negro_84x24;
             this.pic_Salir.Location = new System.Drawing.Point(1054, 533);
             this.pic_Salir.Name = "pic_Salir";
-            this.pic_Salir.Size = new System.Drawing.Size(84, 27);
+            this.pic_Salir.Size = new System.Drawing.Size(93, 27);
             this.pic_Salir.TabIndex = 13;
             this.pic_Salir.TabStop = false;
             this.tip_Ayuda.SetToolTip(this.pic_Salir, "Vuelve al inicio de sesion");
@@ -395,8 +401,8 @@
             // 
             this.pnl_Informacion.Controls.Add(this.rtx_InfoVuelo);
             this.pnl_Informacion.Controls.Add(this.pic_Cancelar);
-            this.pnl_Informacion.Controls.Add(this.pic_SalirPanel);
-            this.pnl_Informacion.Location = new System.Drawing.Point(231, 570);
+            this.pnl_Informacion.Controls.Add(this.pic_SalirPanelInfo);
+            this.pnl_Informacion.Location = new System.Drawing.Point(220, 134);
             this.pnl_Informacion.Name = "pnl_Informacion";
             this.pnl_Informacion.Size = new System.Drawing.Size(772, 288);
             this.pnl_Informacion.TabIndex = 15;
@@ -422,22 +428,26 @@
             this.pic_Cancelar.TabIndex = 15;
             this.pic_Cancelar.TabStop = false;
             this.tip_Ayuda.SetToolTip(this.pic_Cancelar, "Cancela un vuelo");
-            this.pic_Cancelar.Click += new System.EventHandler(this.pic_Cancelar_Click);
+            this.pic_Cancelar.Click += new System.EventHandler(this.pic_CancelarVuelo_Click);
             // 
-            // pic_SalirPanel
+            // pic_SalirPanelInfo
             // 
-            this.pic_SalirPanel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pic_SalirPanel.Image = global::Parcial1_Labo_2.Properties.Resources.salir_negro_84x24;
-            this.pic_SalirPanel.Location = new System.Drawing.Point(607, 114);
-            this.pic_SalirPanel.Name = "pic_SalirPanel";
-            this.pic_SalirPanel.Size = new System.Drawing.Size(84, 27);
-            this.pic_SalirPanel.TabIndex = 1;
-            this.pic_SalirPanel.TabStop = false;
-            this.tip_Ayuda.SetToolTip(this.pic_SalirPanel, "Cierra el panel");
-            this.pic_SalirPanel.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.pic_SalirPanelInfo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pic_SalirPanelInfo.Image = global::Parcial1_Labo_2.Properties.Resources.salir_negro_84x24;
+            this.pic_SalirPanelInfo.Location = new System.Drawing.Point(607, 114);
+            this.pic_SalirPanelInfo.Name = "pic_SalirPanelInfo";
+            this.pic_SalirPanelInfo.Size = new System.Drawing.Size(84, 27);
+            this.pic_SalirPanelInfo.TabIndex = 1;
+            this.pic_SalirPanelInfo.TabStop = false;
+            this.tip_Ayuda.SetToolTip(this.pic_SalirPanelInfo, "Cierra el panel");
+            this.pic_SalirPanelInfo.Click += new System.EventHandler(this.pic_SalirPanelInfo_Click);
             // 
             // pnl_Historico
             // 
+            this.pnl_Historico.Controls.Add(this.lbl_InfoVendedor);
+            this.pnl_Historico.Controls.Add(this.lbl_TituloABM);
+            this.pnl_Historico.Controls.Add(this.pic_Modificar);
+            this.pnl_Historico.Controls.Add(this.pic_ModificarAceptar);
             this.pnl_Historico.Controls.Add(this.chk_Admin);
             this.pnl_Historico.Controls.Add(this.pic_AgregarVendedor);
             this.pnl_Historico.Controls.Add(this.txt_ContraseñaVendedor);
@@ -460,14 +470,58 @@
             this.pnl_Historico.TabIndex = 17;
             this.pnl_Historico.Visible = false;
             // 
+            // lbl_InfoVendedor
+            // 
+            this.lbl_InfoVendedor.AutoSize = true;
+            this.lbl_InfoVendedor.Location = new System.Drawing.Point(488, 144);
+            this.lbl_InfoVendedor.Name = "lbl_InfoVendedor";
+            this.lbl_InfoVendedor.Size = new System.Drawing.Size(0, 15);
+            this.lbl_InfoVendedor.TabIndex = 20;
+            this.lbl_InfoVendedor.Visible = false;
+            // 
+            // lbl_TituloABM
+            // 
+            this.lbl_TituloABM.AutoSize = true;
+            this.lbl_TituloABM.Location = new System.Drawing.Point(678, 130);
+            this.lbl_TituloABM.Name = "lbl_TituloABM";
+            this.lbl_TituloABM.Size = new System.Drawing.Size(91, 15);
+            this.lbl_TituloABM.TabIndex = 19;
+            this.lbl_TituloABM.Text = "Agregar usuario";
+            this.lbl_TituloABM.Visible = false;
+            // 
+            // pic_Modificar
+            // 
+            this.pic_Modificar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pic_Modificar.Image = global::Parcial1_Labo_2.Properties.Resources.modificar_negro3;
+            this.pic_Modificar.Location = new System.Drawing.Point(532, 359);
+            this.pic_Modificar.Name = "pic_Modificar";
+            this.pic_Modificar.Size = new System.Drawing.Size(91, 28);
+            this.pic_Modificar.TabIndex = 18;
+            this.pic_Modificar.TabStop = false;
+            this.pic_Modificar.Visible = false;
+            this.pic_Modificar.Click += new System.EventHandler(this.pic_Modificar_Click);
+            // 
+            // pic_ModificarAceptar
+            // 
+            this.pic_ModificarAceptar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pic_ModificarAceptar.Image = global::Parcial1_Labo_2.Properties.Resources.modificar_negro3;
+            this.pic_ModificarAceptar.Location = new System.Drawing.Point(824, 359);
+            this.pic_ModificarAceptar.Name = "pic_ModificarAceptar";
+            this.pic_ModificarAceptar.Size = new System.Drawing.Size(86, 28);
+            this.pic_ModificarAceptar.TabIndex = 17;
+            this.pic_ModificarAceptar.TabStop = false;
+            this.pic_ModificarAceptar.Visible = false;
+            this.pic_ModificarAceptar.Click += new System.EventHandler(this.pic_ModificarAceptar_Click);
+            // 
             // chk_Admin
             // 
             this.chk_Admin.AutoSize = true;
-            this.chk_Admin.Location = new System.Drawing.Point(600, 359);
+            this.chk_Admin.Location = new System.Drawing.Point(678, 354);
             this.chk_Admin.Name = "chk_Admin";
             this.chk_Admin.Size = new System.Drawing.Size(102, 19);
             this.chk_Admin.TabIndex = 16;
             this.chk_Admin.Text = "Administrador";
+            this.tip_Ayuda.SetToolTip(this.chk_Admin, "Check para usuario administrador");
             this.chk_Admin.UseVisualStyleBackColor = true;
             this.chk_Admin.Visible = false;
             // 
@@ -485,38 +539,42 @@
             // 
             // txt_ContraseñaVendedor
             // 
-            this.txt_ContraseñaVendedor.Location = new System.Drawing.Point(742, 281);
+            this.txt_ContraseñaVendedor.Location = new System.Drawing.Point(820, 276);
             this.txt_ContraseñaVendedor.Name = "txt_ContraseñaVendedor";
             this.txt_ContraseñaVendedor.PlaceholderText = "Contraseña";
             this.txt_ContraseñaVendedor.Size = new System.Drawing.Size(100, 23);
             this.txt_ContraseñaVendedor.TabIndex = 14;
+            this.tip_Ayuda.SetToolTip(this.txt_ContraseñaVendedor, "Contraseña del usuario");
             this.txt_ContraseñaVendedor.Visible = false;
             // 
             // txt_UsuarioVendedor
             // 
-            this.txt_UsuarioVendedor.Location = new System.Drawing.Point(600, 281);
+            this.txt_UsuarioVendedor.Location = new System.Drawing.Point(678, 276);
             this.txt_UsuarioVendedor.Name = "txt_UsuarioVendedor";
             this.txt_UsuarioVendedor.PlaceholderText = "Usuario";
             this.txt_UsuarioVendedor.Size = new System.Drawing.Size(100, 23);
             this.txt_UsuarioVendedor.TabIndex = 13;
+            this.tip_Ayuda.SetToolTip(this.txt_UsuarioVendedor, "Nombre de usuario");
             this.txt_UsuarioVendedor.Visible = false;
             // 
             // txt_ApellidoVendedor
             // 
-            this.txt_ApellidoVendedor.Location = new System.Drawing.Point(742, 163);
+            this.txt_ApellidoVendedor.Location = new System.Drawing.Point(820, 158);
             this.txt_ApellidoVendedor.Name = "txt_ApellidoVendedor";
             this.txt_ApellidoVendedor.PlaceholderText = "Apellido";
             this.txt_ApellidoVendedor.Size = new System.Drawing.Size(100, 23);
             this.txt_ApellidoVendedor.TabIndex = 12;
+            this.tip_Ayuda.SetToolTip(this.txt_ApellidoVendedor, "Apellido del usuario");
             this.txt_ApellidoVendedor.Visible = false;
             // 
             // txt_NombreVendedor
             // 
-            this.txt_NombreVendedor.Location = new System.Drawing.Point(600, 163);
+            this.txt_NombreVendedor.Location = new System.Drawing.Point(678, 158);
             this.txt_NombreVendedor.Name = "txt_NombreVendedor";
             this.txt_NombreVendedor.PlaceholderText = "Nombre";
             this.txt_NombreVendedor.Size = new System.Drawing.Size(100, 23);
             this.txt_NombreVendedor.TabIndex = 11;
+            this.tip_Ayuda.SetToolTip(this.txt_NombreVendedor, "Nombre del usuario");
             this.txt_NombreVendedor.Visible = false;
             // 
             // lbl_ErrorBorrar
@@ -534,39 +592,20 @@
             this.dgv_Vendedores.AutoGenerateColumns = false;
             this.dgv_Vendedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Vendedores.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.tipoDataGridViewTextBoxColumn,
-            this.usuarioDataGridViewTextBoxColumn,
-            this.contraseñaDataGridViewTextBoxColumn,
             this.nombreDataGridViewTextBoxColumn,
-            this.apellidoDataGridViewTextBoxColumn});
+            this.apellidoDataGridViewTextBoxColumn,
+            this.usuarioDataGridViewTextBoxColumn,
+            this.tipoDataGridViewTextBoxColumn,
+            this.contraseñaDataGridViewTextBoxColumn});
             this.dgv_Vendedores.DataSource = this.vendedorBindingSource;
             this.dgv_Vendedores.Location = new System.Drawing.Point(62, 111);
             this.dgv_Vendedores.Name = "dgv_Vendedores";
             this.dgv_Vendedores.RowTemplate.Height = 25;
             this.dgv_Vendedores.Size = new System.Drawing.Size(386, 277);
             this.dgv_Vendedores.TabIndex = 9;
+            this.tip_Ayuda.SetToolTip(this.dgv_Vendedores, "Muestra los empleados y permite borrarlos y modificarlos");
             this.dgv_Vendedores.Visible = false;
             this.dgv_Vendedores.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgv_Vendedores_RowHeaderMouseClick);
-            // 
-            // tipoDataGridViewTextBoxColumn
-            // 
-            this.tipoDataGridViewTextBoxColumn.DataPropertyName = "Tipo";
-            this.tipoDataGridViewTextBoxColumn.HeaderText = "Tipo";
-            this.tipoDataGridViewTextBoxColumn.Name = "tipoDataGridViewTextBoxColumn";
-            // 
-            // usuarioDataGridViewTextBoxColumn
-            // 
-            this.usuarioDataGridViewTextBoxColumn.DataPropertyName = "Usuario";
-            this.usuarioDataGridViewTextBoxColumn.HeaderText = "Usuario";
-            this.usuarioDataGridViewTextBoxColumn.Name = "usuarioDataGridViewTextBoxColumn";
-            this.usuarioDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // contraseñaDataGridViewTextBoxColumn
-            // 
-            this.contraseñaDataGridViewTextBoxColumn.DataPropertyName = "Contraseña";
-            this.contraseñaDataGridViewTextBoxColumn.HeaderText = "Contraseña";
-            this.contraseñaDataGridViewTextBoxColumn.Name = "contraseñaDataGridViewTextBoxColumn";
-            this.contraseñaDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // nombreDataGridViewTextBoxColumn
             // 
@@ -580,6 +619,26 @@
             this.apellidoDataGridViewTextBoxColumn.HeaderText = "Apellido";
             this.apellidoDataGridViewTextBoxColumn.Name = "apellidoDataGridViewTextBoxColumn";
             // 
+            // usuarioDataGridViewTextBoxColumn
+            // 
+            this.usuarioDataGridViewTextBoxColumn.DataPropertyName = "Usuario";
+            this.usuarioDataGridViewTextBoxColumn.HeaderText = "Usuario";
+            this.usuarioDataGridViewTextBoxColumn.Name = "usuarioDataGridViewTextBoxColumn";
+            this.usuarioDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // tipoDataGridViewTextBoxColumn
+            // 
+            this.tipoDataGridViewTextBoxColumn.DataPropertyName = "Tipo";
+            this.tipoDataGridViewTextBoxColumn.HeaderText = "Tipo";
+            this.tipoDataGridViewTextBoxColumn.Name = "tipoDataGridViewTextBoxColumn";
+            // 
+            // contraseñaDataGridViewTextBoxColumn
+            // 
+            this.contraseñaDataGridViewTextBoxColumn.DataPropertyName = "Contraseña";
+            this.contraseñaDataGridViewTextBoxColumn.HeaderText = "Contraseña";
+            this.contraseñaDataGridViewTextBoxColumn.Name = "contraseñaDataGridViewTextBoxColumn";
+            this.contraseñaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // vendedorBindingSource
             // 
             this.vendedorBindingSource.DataSource = typeof(Biblioteca.Vendedor);
@@ -590,9 +649,10 @@
             this.pic_Borrar.Image = global::Parcial1_Labo_2.Properties.Resources.borrar_negro;
             this.pic_Borrar.Location = new System.Drawing.Point(454, 359);
             this.pic_Borrar.Name = "pic_Borrar";
-            this.pic_Borrar.Size = new System.Drawing.Size(68, 29);
+            this.pic_Borrar.Size = new System.Drawing.Size(72, 29);
             this.pic_Borrar.TabIndex = 8;
             this.pic_Borrar.TabStop = false;
+            this.tip_Ayuda.SetToolTip(this.pic_Borrar, "Borra el pasajero seleccionado");
             this.pic_Borrar.Visible = false;
             this.pic_Borrar.Click += new System.EventHandler(this.pic_Borrar_Click);
             // 
@@ -648,11 +708,11 @@
             this.pic_SalirHistorico.Image = global::Parcial1_Labo_2.Properties.Resources.salir_negro_84x24;
             this.pic_SalirHistorico.Location = new System.Drawing.Point(957, 431);
             this.pic_SalirHistorico.Name = "pic_SalirHistorico";
-            this.pic_SalirHistorico.Size = new System.Drawing.Size(83, 26);
+            this.pic_SalirHistorico.Size = new System.Drawing.Size(87, 26);
             this.pic_SalirHistorico.TabIndex = 2;
             this.pic_SalirHistorico.TabStop = false;
             this.tip_Ayuda.SetToolTip(this.pic_SalirHistorico, "Cierras las estadisticas");
-            this.pic_SalirHistorico.Click += new System.EventHandler(this.pictureBox1_Click_1);
+            this.pic_SalirHistorico.Click += new System.EventHandler(this.pic_SalirHistorico_Click_1);
             // 
             // lbl_RecaudacionTotal
             // 
@@ -719,12 +779,12 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1207, 600);
             this.ControlBox = false;
+            this.Controls.Add(this.pnl_Historico);
             this.Controls.Add(this.pic_MasInfo);
             this.Controls.Add(this.pic_AgregarCliente);
             this.Controls.Add(this.pic_Historico);
             this.Controls.Add(this.lbl_Fecha);
             this.Controls.Add(this.pnl_Informacion);
-            this.Controls.Add(this.pnl_Historico);
             this.Controls.Add(this.pic_Salir);
             this.Controls.Add(this.pic_Agregar);
             this.Controls.Add(this.pic_Pasajeros);
@@ -748,9 +808,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pic_Salir)).EndInit();
             this.pnl_Informacion.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pic_Cancelar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_SalirPanel)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_SalirPanelInfo)).EndInit();
             this.pnl_Historico.ResumeLayout(false);
             this.pnl_Historico.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_Modificar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_ModificarAceptar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_AgregarVendedor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Vendedores)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vendedorBindingSource)).EndInit();
@@ -775,7 +837,7 @@
         private PictureBox pic_Agregar;
         private PictureBox pic_Salir;
         private Panel pnl_Informacion;
-        private PictureBox pic_SalirPanel;
+        private PictureBox pic_SalirPanelInfo;
         private PictureBox pic_Cancelar;
         private Panel pnl_Historico;
         private PictureBox pic_SalirHistorico;
@@ -803,11 +865,6 @@
         private RichTextBox rtx_InfoAvion;
         private DataGridView dgv_Historico;
         private DataGridView dgv_Vendedores;
-        private DataGridViewTextBoxColumn tipoDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn usuarioDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn contraseñaDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn apellidoDataGridViewTextBoxColumn;
         private BindingSource vendedorBindingSource;
         private PictureBox pic_Borrar;
         private Label lbl_ErrorBorrar;
@@ -817,5 +874,14 @@
         private TextBox txt_ApellidoVendedor;
         private TextBox txt_NombreVendedor;
         private CheckBox chk_Admin;
+        private PictureBox pic_ModificarAceptar;
+        private Label lbl_TituloABM;
+        private PictureBox pic_Modificar;
+        private Label lbl_InfoVendedor;
+        private DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn apellidoDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn usuarioDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn tipoDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn contraseñaDataGridViewTextBoxColumn;
     }
 }

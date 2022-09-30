@@ -57,7 +57,7 @@ namespace Biblioteca
         {
             List <Cliente> pasajeros = new List<Cliente>();
 
-            pasajeros.Add(new Cliente("Matias", "Barrozo", 45836275, 23,3));
+            pasajeros.Add(new Cliente("Matias", "Barrozo", 45836275, 23,1));
             pasajeros.Add(new Cliente("Morena", "Escudero", 45666665, 21,6));
             pasajeros.Add(new Cliente("Nicolas", "Gil", 30456984, 32,8));
             pasajeros.Add(new Cliente("Lucas", "Gaggino", 39018697, 25,9));           

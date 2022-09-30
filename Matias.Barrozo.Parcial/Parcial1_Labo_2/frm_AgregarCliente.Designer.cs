@@ -41,10 +41,11 @@
             this.lbl_Apellido = new System.Windows.Forms.Label();
             this.lbl_Dni = new System.Windows.Forms.Label();
             this.lbl_Info = new System.Windows.Forms.Label();
-            this.btn_Aceptar = new System.Windows.Forms.Button();
             this.tip_Ayuda = new System.Windows.Forms.ToolTip(this.components);
+            this.pic_Aceptar = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Agregar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Cancelar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_Aceptar)).BeginInit();
             this.SuspendLayout();
             // 
             // pic_Agregar
@@ -66,7 +67,7 @@
             this.pic_Cancelar.Image = global::Parcial1_Labo_2.Properties.Resources.cancelar_negro_84x24;
             this.pic_Cancelar.Location = new System.Drawing.Point(641, 242);
             this.pic_Cancelar.Name = "pic_Cancelar";
-            this.pic_Cancelar.Size = new System.Drawing.Size(84, 25);
+            this.pic_Cancelar.Size = new System.Drawing.Size(86, 25);
             this.pic_Cancelar.TabIndex = 1;
             this.pic_Cancelar.TabStop = false;
             this.tip_Ayuda.SetToolTip(this.pic_Cancelar, "Vuelve al menu anterior");
@@ -161,15 +162,15 @@
             this.lbl_Info.TabIndex = 11;
             this.tip_Ayuda.SetToolTip(this.lbl_Info, "Muestra los datos que se van a agregar como cliente");
             // 
-            // btn_Aceptar
+            // pic_Aceptar
             // 
-            this.btn_Aceptar.Location = new System.Drawing.Point(318, 242);
-            this.btn_Aceptar.Name = "btn_Aceptar";
-            this.btn_Aceptar.Size = new System.Drawing.Size(75, 23);
-            this.btn_Aceptar.TabIndex = 12;
-            this.btn_Aceptar.Text = "Aceptar";
-            this.btn_Aceptar.UseVisualStyleBackColor = true;
-            this.btn_Aceptar.Click += new System.EventHandler(this.btn_Aceptar_Click);
+            this.pic_Aceptar.Image = global::Parcial1_Labo_2.Properties.Resources.Aceptar_84x24_negro;
+            this.pic_Aceptar.Location = new System.Drawing.Point(307, 242);
+            this.pic_Aceptar.Name = "pic_Aceptar";
+            this.pic_Aceptar.Size = new System.Drawing.Size(86, 37);
+            this.pic_Aceptar.TabIndex = 12;
+            this.pic_Aceptar.TabStop = false;
+            this.pic_Aceptar.Click += new System.EventHandler(this.btn_Aceptar_Click);
             // 
             // frm_AgregarCliente
             // 
@@ -177,7 +178,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(754, 279);
             this.ControlBox = false;
-            this.Controls.Add(this.btn_Aceptar);
+            this.Controls.Add(this.pic_Aceptar);
             this.Controls.Add(this.lbl_Info);
             this.Controls.Add(this.lbl_Dni);
             this.Controls.Add(this.lbl_Apellido);
@@ -197,6 +198,7 @@
             this.Load += new System.EventHandler(this.frm_AgregarCliente_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pic_Agregar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Cancelar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_Aceptar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -216,7 +218,7 @@
         private Label lbl_Apellido;
         private Label lbl_Dni;
         private Label lbl_Info;
-        private Button btn_Aceptar;
         private ToolTip tip_Ayuda;
+        private PictureBox pic_Aceptar;
     }
 }

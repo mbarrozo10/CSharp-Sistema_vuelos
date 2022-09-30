@@ -114,6 +114,7 @@ namespace Parcial1_Labo_2
                 lbl_Error.ForeColor = Color.White;
                 lbl_Info.ForeColor = Color.White;  
                 lbl_Nombre.ForeColor = Color.White;
+                pic_Aceptar.Image = Resources.Aceptar_84x24_blanco;
             }
             else
             {
@@ -133,6 +134,7 @@ namespace Parcial1_Labo_2
                 lbl_Error.ForeColor = Color.Black;
                 lbl_Info.ForeColor = Color.Black;
                 lbl_Nombre.ForeColor = Color.Black;
+                pic_Aceptar.Image = Resources.Aceptar_84x24_negro;
             }
         }
     }

@@ -9,6 +9,24 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\alta y baja blanco.png" />
+    <None Remove="Resources\alta y baja negro.png" />
+    <None Remove="Resources\button %281%29.png" />
+    <None Remove="Resources\button.png" />
+    <None Remove="Resources\dia.png" />
+    <None Remove="Resources\modificar blanco.png" />
+    <None Remove="Resources\modificar blanco1.png" />
+    <None Remove="Resources\modificar blanco2.png" />
+    <None Remove="Resources\modificar negro.png" />
+    <None Remove="Resources\modificar negro1.png" />
+    <None Remove="Resources\modificar negro2.png" />
+    <None Remove="Resources\night-mode %281%291.png" />
+    <None Remove="Resources\night-mode.png" />
+    <None Remove="Resources\night-mode1.png" />
+    <None Remove="Resources\night1.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Biblioteca\Biblioteca.csproj" />
   </ItemGroup>
 

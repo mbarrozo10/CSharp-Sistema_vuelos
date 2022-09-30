@@ -40,11 +40,13 @@ namespace Biblioteca
         public string Usuario
         {
             get { return usuario; }
+            set { usuario = value; }
         }
 
         public string Contraseña
         {
             get { return contraseña; }
+            set { contraseña = value; }
         }
 
         public static Vendedor VerificarLogin(string usuario, string contraseña, List <Vendedor> vendedores)
@@ -62,14 +64,50 @@ namespace Biblioteca
 
         public override string ToString()
         {
-            return this.Nombre + " "+ this.Apellido + "\nTipo de usuario: " + Tipo ;
+            return this.Nombre + " "+ this.Apellido  ;
 
             
         }
 
         public override string MostrarInformacion()
         {
-            return this.ToString() + "\nUsuario: " + Usuario + "\nContraseña: " + Contraseña;
+            return this.ToString() + "\nUsuario: " + Usuario + "\nTipo de usuario: " + Tipo;
+        }
+
+        public void ModificarVendedor(string nombre, string apellido, string usuario, string contraseña,string tipo)
+        {
+            if(nombre!= String.Empty)
+            {
+                Nombre = nombre;
+            }
+            if(apellido!= String.Empty)
+            {
+                Apellido = apellido;
+            }
+            if(usuario!= String.Empty)
+            {
+                Usuario = usuario;
+            }
+            if(contraseña!= String.Empty)
+            {
+                Contraseña = contraseña;
+            }
+            Tipo = tipo;
+        }
+
+        public static int EncontrarAdmin()
+        {
+            int contador=0;
+            foreach (Vendedor ven in Aerolinea.Vendedores)
+            {
+                if (ven.tipo == "administrador")
+                {
+                     contador++;
+                    
+                }
+            }
+
+            return contador;
         }
     }
 }
