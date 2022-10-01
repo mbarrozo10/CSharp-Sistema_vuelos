@@ -1,5 +1,6 @@
 using Biblioteca;
 using Parcial1_Labo_2.Properties;
+using System.Resources;
 
 namespace Parcial1_Labo_2
 {

@@ -53,7 +53,7 @@
             // lbl_Avion
             // 
             this.lbl_Avion.AutoSize = true;
-            this.lbl_Avion.Location = new System.Drawing.Point(95, 68);
+            this.lbl_Avion.Location = new System.Drawing.Point(353, 68);
             this.lbl_Avion.Name = "lbl_Avion";
             this.lbl_Avion.Size = new System.Drawing.Size(72, 15);
             this.lbl_Avion.TabIndex = 0;
@@ -71,7 +71,7 @@
             // lbl_Salida
             // 
             this.lbl_Salida.AutoSize = true;
-            this.lbl_Salida.Location = new System.Drawing.Point(341, 68);
+            this.lbl_Salida.Location = new System.Drawing.Point(58, 68);
             this.lbl_Salida.Name = "lbl_Salida";
             this.lbl_Salida.Size = new System.Drawing.Size(87, 15);
             this.lbl_Salida.TabIndex = 2;
@@ -80,7 +80,7 @@
             // lbl_Origen
             // 
             this.lbl_Origen.AutoSize = true;
-            this.lbl_Origen.Location = new System.Drawing.Point(341, 275);
+            this.lbl_Origen.Location = new System.Drawing.Point(58, 275);
             this.lbl_Origen.Name = "lbl_Origen";
             this.lbl_Origen.Size = new System.Drawing.Size(43, 15);
             this.lbl_Origen.TabIndex = 4;
@@ -89,7 +89,7 @@
             // lbl_Codigo
             // 
             this.lbl_Codigo.AutoSize = true;
-            this.lbl_Codigo.Location = new System.Drawing.Point(95, 156);
+            this.lbl_Codigo.Location = new System.Drawing.Point(353, 156);
             this.lbl_Codigo.Name = "lbl_Codigo";
             this.lbl_Codigo.Size = new System.Drawing.Size(94, 15);
             this.lbl_Codigo.TabIndex = 5;
@@ -98,7 +98,7 @@
             // lbl_Asientos
             // 
             this.lbl_Asientos.AutoSize = true;
-            this.lbl_Asientos.Location = new System.Drawing.Point(95, 244);
+            this.lbl_Asientos.Location = new System.Drawing.Point(353, 247);
             this.lbl_Asientos.Name = "lbl_Asientos";
             this.lbl_Asientos.Size = new System.Drawing.Size(123, 15);
             this.lbl_Asientos.TabIndex = 6;
@@ -107,7 +107,7 @@
             // cmb_Avion
             // 
             this.cmb_Avion.FormattingEnabled = true;
-            this.cmb_Avion.Location = new System.Drawing.Point(95, 98);
+            this.cmb_Avion.Location = new System.Drawing.Point(353, 98);
             this.cmb_Avion.Name = "cmb_Avion";
             this.cmb_Avion.Size = new System.Drawing.Size(121, 23);
             this.cmb_Avion.TabIndex = 10;
@@ -126,7 +126,7 @@
             // 
             // txt_Codigo
             // 
-            this.txt_Codigo.Location = new System.Drawing.Point(95, 187);
+            this.txt_Codigo.Location = new System.Drawing.Point(353, 187);
             this.txt_Codigo.Name = "txt_Codigo";
             this.txt_Codigo.Size = new System.Drawing.Size(100, 23);
             this.txt_Codigo.TabIndex = 13;
@@ -146,7 +146,7 @@
             this.dtp_Salida.CalendarTitleBackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dtp_Salida.CalendarTrailingForeColor = System.Drawing.SystemColors.ControlText;
             this.dtp_Salida.CustomFormat = "hh:mm";
-            this.dtp_Salida.Location = new System.Drawing.Point(341, 98);
+            this.dtp_Salida.Location = new System.Drawing.Point(58, 98);
             this.dtp_Salida.MaxDate = new System.DateTime(2024, 12, 31, 0, 0, 0, 0);
             this.dtp_Salida.MinDate = new System.DateTime(2022, 9, 15, 0, 0, 0, 0);
             this.dtp_Salida.Name = "dtp_Salida";
@@ -154,11 +154,12 @@
             this.dtp_Salida.TabIndex = 18;
             this.tip_Ayuda.SetToolTip(this.dtp_Salida, "Seleccion de fecha de salida, no acepta fechas anterior al dia de hoy");
             this.dtp_Salida.Value = new System.DateTime(2022, 9, 15, 0, 0, 0, 0);
+            this.dtp_Salida.ValueChanged += new System.EventHandler(this.dtp_Salida_ValueChanged);
             // 
             // cmb_Origen
             // 
             this.cmb_Origen.FormattingEnabled = true;
-            this.cmb_Origen.Location = new System.Drawing.Point(341, 306);
+            this.cmb_Origen.Location = new System.Drawing.Point(58, 306);
             this.cmb_Origen.Name = "cmb_Origen";
             this.cmb_Origen.Size = new System.Drawing.Size(121, 23);
             this.cmb_Origen.TabIndex = 19;
@@ -169,7 +170,7 @@
             // cmb_Salida
             // 
             this.cmb_Salida.FormattingEnabled = true;
-            this.cmb_Salida.Location = new System.Drawing.Point(341, 187);
+            this.cmb_Salida.Location = new System.Drawing.Point(58, 187);
             this.cmb_Salida.Name = "cmb_Salida";
             this.cmb_Salida.Size = new System.Drawing.Size(121, 23);
             this.cmb_Salida.TabIndex = 21;
@@ -178,7 +179,7 @@
             // lbl_HoraSalida
             // 
             this.lbl_HoraSalida.AutoSize = true;
-            this.lbl_HoraSalida.Location = new System.Drawing.Point(341, 156);
+            this.lbl_HoraSalida.Location = new System.Drawing.Point(58, 156);
             this.lbl_HoraSalida.Name = "lbl_HoraSalida";
             this.lbl_HoraSalida.Size = new System.Drawing.Size(96, 15);
             this.lbl_HoraSalida.TabIndex = 22;
@@ -235,7 +236,7 @@
             this.MaximizeBox = false;
             this.Name = "frm_AgregarVuelo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frm_AgregarVuelo";
+            this.Text = " ";
             this.TransparencyKey = System.Drawing.Color.Black;
             this.Load += new System.EventHandler(this.frm_AgregarVuelo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pic_Agregar)).EndInit();

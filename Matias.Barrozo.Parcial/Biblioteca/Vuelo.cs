@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Biblioteca
 {
-    public enum Destino{
+    public enum EDestino{
         Buenos_Aires,
         Santa_Rosa,
         Bariloche,
@@ -30,7 +30,7 @@ namespace Biblioteca
         Miami
     }
 
-    public enum Estado
+    public enum EEstado
     {
         Lleno,
         Disponible,
@@ -47,10 +47,10 @@ namespace Biblioteca
         private Avion avion;
         private int duracion;
         private float costoDePasaje;
-        private Destino destino;
-        private Estado estado;
+        private EDestino destino;
+        private EEstado estado;
         private DateTime salida;
-        private Destino origen;
+        private EDestino origen;
         private Dictionary<int,Pasajero> pasajeros;
         private string codigo;
         private int asientosOcupadoTurista;
@@ -71,7 +71,7 @@ namespace Biblioteca
         }
 
 
-        public Vuelo(Avion avion, int duracion, float costoDePasaje, Destino destino, Estado estado, Destino origen, DateTime salida, Dictionary<int,Pasajero> pasajeros, string codigo, DateTime llegada, int bodega, float recaudacion, int asientosPremium, int asientosTurista)//:this(avion,duracion,costoDePasaje,destino,estado,origen,salida,pasajeros,codigo,llegada,asientosPremium,asientosTurista)
+        public Vuelo(Avion avion, int duracion, float costoDePasaje, EDestino destino, EEstado estado, EDestino origen, DateTime salida, Dictionary<int,Pasajero> pasajeros, string codigo, DateTime llegada, int bodega, float recaudacion, int asientosPremium, int asientosTurista)
         {
             this.avion = avion;
             this.Duracion = duracion;
@@ -90,7 +90,7 @@ namespace Biblioteca
             this.ultimoAsiento = 1;
         }
         
-        public Vuelo(Avion avion, int duracion, float costoDePasaje, Destino destino, Estado estado, Destino origen, DateTime salida, Dictionary<int,Pasajero> pasajeros, string codigo, DateTime llegada, int bodega, float recaudacion, int asientosPremium, int asientosTurista, int ultimoAsiento):this(avion,duracion,costoDePasaje,destino,estado,origen,salida,pasajeros,codigo,llegada,bodega,recaudacion,asientosPremium,asientosTurista)
+        public Vuelo(Avion avion, int duracion, float costoDePasaje, EDestino destino, EEstado estado, EDestino origen, DateTime salida, Dictionary<int,Pasajero> pasajeros, string codigo, DateTime llegada, int bodega, float recaudacion, int asientosPremium, int asientosTurista, int ultimoAsiento):this(avion,duracion,costoDePasaje,destino,estado,origen,salida,pasajeros,codigo,llegada,bodega,recaudacion,asientosPremium,asientosTurista)
         {
             this.ultimoAsiento = ultimoAsiento;
         }
@@ -169,13 +169,13 @@ namespace Biblioteca
             
         }
 
-        public Estado Estado
+        public EEstado Estado
         {
             get { return estado; }  
             set { estado = value; }
         }
 
-        public static float CalcularCosto(Destino destino, int duracion)
+        public static float CalcularCosto(EDestino destino, int duracion)
         {
             if (((int)destino) > 14)
             {
@@ -187,7 +187,7 @@ namespace Biblioteca
             }
         }
 
-        public Destino Destino
+        public EDestino Destino
         {
             get { return destino; }
     
@@ -203,7 +203,7 @@ namespace Biblioteca
             }
         }
 
-        public Destino Origen
+        public EDestino Origen
         {
             get { return origen; }
         }
@@ -215,7 +215,7 @@ namespace Biblioteca
         }
         
 
-        public static int CalcularDuracion(Destino destino)
+        public static int CalcularDuracion(EDestino destino)
         {
             Random rnd = new Random();
 
@@ -234,7 +234,8 @@ namespace Biblioteca
         {
             return (int)(asientos * porcentaje);
         }
- 
+
+        
     }
 
    

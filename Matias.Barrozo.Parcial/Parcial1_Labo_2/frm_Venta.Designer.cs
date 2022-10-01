@@ -566,7 +566,7 @@
             this.MinimizeBox = false;
             this.Name = "frm_Venta";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frm_Venta";
+            this.Text = " ";
             this.Load += new System.EventHandler(this.frm_Venta_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nud_Cantidad)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_CantEquipaje)).EndInit();

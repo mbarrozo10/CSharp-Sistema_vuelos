@@ -498,6 +498,7 @@
             this.pic_Modificar.Size = new System.Drawing.Size(91, 28);
             this.pic_Modificar.TabIndex = 18;
             this.pic_Modificar.TabStop = false;
+            this.tip_Ayuda.SetToolTip(this.pic_Modificar, "Permite modificar el vendedor seleccionado, tambien muestra su informacion");
             this.pic_Modificar.Visible = false;
             this.pic_Modificar.Click += new System.EventHandler(this.pic_Modificar_Click);
             // 
@@ -510,6 +511,8 @@
             this.pic_ModificarAceptar.Size = new System.Drawing.Size(86, 28);
             this.pic_ModificarAceptar.TabIndex = 17;
             this.pic_ModificarAceptar.TabStop = false;
+            this.tip_Ayuda.SetToolTip(this.pic_ModificarAceptar, "Modifica al vendedor seleccionado con los datos de los texbox, si no hay ningun d" +
+        "ato ingresado deja el valor anterior");
             this.pic_ModificarAceptar.Visible = false;
             this.pic_ModificarAceptar.Click += new System.EventHandler(this.pic_ModificarAceptar_Click);
             // 
@@ -534,6 +537,7 @@
             this.pic_AgregarVendedor.Size = new System.Drawing.Size(91, 27);
             this.pic_AgregarVendedor.TabIndex = 15;
             this.pic_AgregarVendedor.TabStop = false;
+            this.tip_Ayuda.SetToolTip(this.pic_AgregarVendedor, "Agrega al vendedor");
             this.pic_AgregarVendedor.Visible = false;
             this.pic_AgregarVendedor.Click += new System.EventHandler(this.pic_AgregarVendedor_Click);
             // 

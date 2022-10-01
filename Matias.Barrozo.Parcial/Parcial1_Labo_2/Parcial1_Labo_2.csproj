@@ -14,6 +14,9 @@
     <None Remove="Resources\button %281%29.png" />
     <None Remove="Resources\button.png" />
     <None Remove="Resources\dia.png" />
+    <None Remove="Resources\icono blanco %281%29.png" />
+    <None Remove="Resources\icono blanco.png" />
+    <None Remove="Resources\icono negro.png" />
     <None Remove="Resources\modificar blanco.png" />
     <None Remove="Resources\modificar blanco1.png" />
     <None Remove="Resources\modificar blanco2.png" />

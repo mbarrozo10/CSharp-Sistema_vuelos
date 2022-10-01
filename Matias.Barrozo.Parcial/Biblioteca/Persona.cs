@@ -27,9 +27,9 @@ namespace Biblioteca
             get { return nombre; }
             set { 
                 if(Validador.ValidarString(value))
-                    nombre = value; 
-                //else
-                //    throw new Exception("Valor no correcto");
+                    nombre = value;
+                else
+                    throw new Exception("El nombre no puede tener numeros");
             }
 
         }
@@ -39,8 +39,8 @@ namespace Biblioteca
             set{
                 if (Validador.ValidarString(value))
                     apellido = value;
-                //else
-                //    throw new Exception("Valor no correcto");
+                else
+                    throw new Exception("El apellido no puede tener numeros");
             }
         }
 

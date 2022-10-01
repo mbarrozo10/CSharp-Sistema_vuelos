@@ -38,15 +38,17 @@
             this.pic_Modo = new System.Windows.Forms.PictureBox();
             this.pic_Ingresar = new System.Windows.Forms.PictureBox();
             this.pic_Salir = new System.Windows.Forms.PictureBox();
+            this.pic_Logo = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Modo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Ingresar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Salir)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_Logo)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_Usuario
             // 
             this.lbl_Usuario.AutoSize = true;
-            this.lbl_Usuario.Location = new System.Drawing.Point(215, 114);
+            this.lbl_Usuario.Location = new System.Drawing.Point(216, 206);
             this.lbl_Usuario.Name = "lbl_Usuario";
             this.lbl_Usuario.Size = new System.Drawing.Size(47, 15);
             this.lbl_Usuario.TabIndex = 0;
@@ -55,7 +57,7 @@
             // lbl_Contraseña
             // 
             this.lbl_Contraseña.AutoSize = true;
-            this.lbl_Contraseña.Location = new System.Drawing.Point(206, 195);
+            this.lbl_Contraseña.Location = new System.Drawing.Point(207, 270);
             this.lbl_Contraseña.Name = "lbl_Contraseña";
             this.lbl_Contraseña.Size = new System.Drawing.Size(67, 15);
             this.lbl_Contraseña.TabIndex = 1;
@@ -64,7 +66,7 @@
             // btn_Autocompletar
             // 
             this.btn_Autocompletar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Autocompletar.Location = new System.Drawing.Point(185, 404);
+            this.btn_Autocompletar.Location = new System.Drawing.Point(182, 444);
             this.btn_Autocompletar.Name = "btn_Autocompletar";
             this.btn_Autocompletar.Size = new System.Drawing.Size(114, 34);
             this.btn_Autocompletar.TabIndex = 2;
@@ -74,7 +76,7 @@
             // 
             // txt_Contraseña
             // 
-            this.txt_Contraseña.Location = new System.Drawing.Point(191, 213);
+            this.txt_Contraseña.Location = new System.Drawing.Point(192, 288);
             this.txt_Contraseña.Name = "txt_Contraseña";
             this.txt_Contraseña.PasswordChar = '*';
             this.txt_Contraseña.Size = new System.Drawing.Size(100, 23);
@@ -82,7 +84,7 @@
             // 
             // txt_Usuario
             // 
-            this.txt_Usuario.Location = new System.Drawing.Point(191, 132);
+            this.txt_Usuario.Location = new System.Drawing.Point(192, 224);
             this.txt_Usuario.Name = "txt_Usuario";
             this.txt_Usuario.Size = new System.Drawing.Size(100, 23);
             this.txt_Usuario.TabIndex = 6;
@@ -102,7 +104,7 @@
             this.pic_Modo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pic_Modo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pic_Modo.Image = global::Parcial1_Labo_2.Properties.Resources.night_mode1;
-            this.pic_Modo.Location = new System.Drawing.Point(428, 28);
+            this.pic_Modo.Location = new System.Drawing.Point(422, 22);
             this.pic_Modo.Name = "pic_Modo";
             this.pic_Modo.Size = new System.Drawing.Size(33, 33);
             this.pic_Modo.TabIndex = 8;
@@ -113,7 +115,7 @@
             // 
             this.pic_Ingresar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pic_Ingresar.Image = ((System.Drawing.Image)(resources.GetObject("pic_Ingresar.Image")));
-            this.pic_Ingresar.Location = new System.Drawing.Point(178, 270);
+            this.pic_Ingresar.Location = new System.Drawing.Point(178, 346);
             this.pic_Ingresar.Name = "pic_Ingresar";
             this.pic_Ingresar.Size = new System.Drawing.Size(125, 42);
             this.pic_Ingresar.TabIndex = 9;
@@ -124,12 +126,21 @@
             // 
             this.pic_Salir.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pic_Salir.Image = global::Parcial1_Labo_2.Properties.Resources.Salir_Negro;
-            this.pic_Salir.Location = new System.Drawing.Point(178, 316);
+            this.pic_Salir.Location = new System.Drawing.Point(178, 392);
             this.pic_Salir.Name = "pic_Salir";
             this.pic_Salir.Size = new System.Drawing.Size(125, 42);
             this.pic_Salir.TabIndex = 10;
             this.pic_Salir.TabStop = false;
             this.pic_Salir.Click += new System.EventHandler(this.btn_Salir_Click);
+            // 
+            // pic_Logo
+            // 
+            this.pic_Logo.Image = global::Parcial1_Labo_2.Properties.Resources.icono_negro;
+            this.pic_Logo.Location = new System.Drawing.Point(179, 22);
+            this.pic_Logo.Name = "pic_Logo";
+            this.pic_Logo.Size = new System.Drawing.Size(125, 131);
+            this.pic_Logo.TabIndex = 11;
+            this.pic_Logo.TabStop = false;
             // 
             // frm_Login
             // 
@@ -137,8 +148,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(473, 450);
+            this.ClientSize = new System.Drawing.Size(482, 490);
             this.ControlBox = false;
+            this.Controls.Add(this.pic_Logo);
             this.Controls.Add(this.pic_Salir);
             this.Controls.Add(this.pic_Ingresar);
             this.Controls.Add(this.pic_Modo);
@@ -148,6 +160,7 @@
             this.Controls.Add(this.btn_Autocompletar);
             this.Controls.Add(this.lbl_Contraseña);
             this.Controls.Add(this.lbl_Usuario);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "frm_Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -156,6 +169,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pic_Modo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Ingresar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Salir)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_Logo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -172,5 +186,6 @@
         private PictureBox pic_Modo;
         private PictureBox pic_Ingresar;
         private PictureBox pic_Salir;
+        private PictureBox pic_Logo;
     }
 }

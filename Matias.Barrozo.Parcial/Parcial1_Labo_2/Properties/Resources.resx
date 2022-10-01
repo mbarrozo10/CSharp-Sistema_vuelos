@@ -118,9 +118,6 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="modificar blanco1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\modificar blanco1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="dia" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\dia.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -184,8 +181,8 @@
   <data name="Ingresar Blanco" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Ingresar Blanco.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="alta y baja blanco" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\alta y baja blanco.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="modificar blanco1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\modificar blanco1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="borrar negro" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\borrar negro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -202,11 +199,20 @@
   <data name="night-mode (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\night-mode (1)1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icono blanco" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icono blanco.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="agregar negro 84x24" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\agregar negro 84x24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="cancelar blanco 84x24" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cancelar blanco 84x24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="modificar blanco3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\modificar blanco3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icono negro" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icono negro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="night1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\night1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -219,6 +225,9 @@
   </data>
   <data name="button (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\button (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="alta y baja blanco" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\alta y baja blanco.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="agregar blanco 84x24" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\agregar blanco 84x24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -235,6 +244,9 @@
   <data name="night-mode" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\night-mode.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="modificar negro3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\modificar negro3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="salir blanco 84x24" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\salir blanco 84x24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -244,10 +256,7 @@
   <data name="modificar negro2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\modificar negro2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="modificar negro3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\modificar negro3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="modificar blanco3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\modificar blanco3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icono blanco (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icono blanco (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

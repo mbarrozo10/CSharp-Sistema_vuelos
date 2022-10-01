@@ -63,12 +63,12 @@ namespace Parcial1_Labo_2
         private void dgv_VuelosActivos_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             Index = e.RowIndex;
-            if (Aerolinea.vuelos[Index].Estado == Biblioteca.Estado.Disponible && Aerolinea.vuelos[Index].Pasajeros.Count < Aerolinea.vuelos[Index].Avion.CantidadAsientos)
+            if (Aerolinea.vuelos[Index].Estado == Biblioteca.EEstado.Disponible && Aerolinea.vuelos[Index].Pasajeros.Count < Aerolinea.vuelos[Index].Avion.CantidadAsientos)
             {
                pic_Vender.Visible = true;
                pic_Pasajeros.Visible = true;
             }
-            else if (Aerolinea.vuelos[Index].Estado == Biblioteca.Estado.EnVuelo || (Aerolinea.vuelos[Index].Estado == Biblioteca.Estado.Lleno || Aerolinea.vuelos[Index].Estado== Biblioteca.Estado.EnVuelo))
+            else if (Aerolinea.vuelos[Index].Estado == Biblioteca.EEstado.EnVuelo || (Aerolinea.vuelos[Index].Estado == Biblioteca.EEstado.Lleno || Aerolinea.vuelos[Index].Estado== Biblioteca.EEstado.EnVuelo))
             {
                 pic_Pasajeros.Visible = true;
                 pic_Vender.Visible = false;
@@ -131,7 +131,7 @@ namespace Parcial1_Labo_2
             {
                 if (Aerolinea.vuelos[Index].Pasajeros.Count == Aerolinea.vuelos[Index].Avion.CantidadAsientos)
                 {
-                    Aerolinea.vuelos[Index].Estado = Biblioteca.Estado.Lleno;
+                    Aerolinea.vuelos[Index].Estado = Biblioteca.EEstado.Lleno;
                 }
                 CargarDatagrid();
             }
@@ -160,7 +160,7 @@ namespace Parcial1_Labo_2
 
         private void pic_CancelarVuelo_Click(object sender, EventArgs e)
         {
-            Aerolinea.vuelos[Index].Estado = Biblioteca.Estado.Cancelado;
+            Aerolinea.vuelos[Index].Estado = Biblioteca.EEstado.Cancelado;
             Aerolinea.vuelos.Remove(Aerolinea.vuelos[Index]);
             CargarCerrarPaneles(true);
             CargarDatagrid();
@@ -354,6 +354,7 @@ namespace Parcial1_Labo_2
 
         private void btn_AgregarCliente_Click(object sender, EventArgs e)
         {
+            
             frm_AgregarCliente frm = new frm_AgregarCliente();
             frm.ShowDialog();
         }
@@ -396,7 +397,7 @@ namespace Parcial1_Labo_2
 
         private void RecorrerVuelos()
         {
-            int count = Enum.GetValues(typeof(Destino)).Length;
+            int count = Enum.GetValues(typeof(EDestino)).Length;
             for (int i = 0; i < count; i++)
             {
                 int contador = 0;
@@ -404,8 +405,8 @@ namespace Parcial1_Labo_2
                 int cantidadPasajeros=0;
                 for (int j = 0; j < Aerolinea.vuelos.Count; j++)
                 {
-                    string? s = Enum.GetName(typeof(Destino), i);
-                    if (Aerolinea.vuelos[j].Destino.ToString().Contains(s))
+                    string? destino = Enum.GetName(typeof(EDestino), i);
+                    if (Aerolinea.vuelos[j].Destino.ToString().Contains(destino))
                     {
                         contador++;
                         recaudacion += Aerolinea.vuelos[j].Recaudacion;
@@ -414,8 +415,8 @@ namespace Parcial1_Labo_2
                 }
                 for (int j = 0; j < Aerolinea.vuelosFinalizados.Count; j++)
                 {
-                    string? s = Enum.GetName(typeof(Destino), i);
-                    if (Aerolinea.vuelosFinalizados[j].Destino.ToString().Contains(s))
+                    string? destino = Enum.GetName(typeof(EDestino), i);
+                    if (Aerolinea.vuelosFinalizados[j].Destino.ToString().Contains(destino))
                     {
                         contador++;
                         recaudacion += Aerolinea.vuelosFinalizados[j].Recaudacion;
@@ -426,7 +427,7 @@ namespace Parcial1_Labo_2
 
                 filas.CreateCells(dgv_Historico);
 
-                filas.Cells[0].Value = Enum.GetName(typeof(Destino), i);
+                filas.Cells[0].Value = Enum.GetName(typeof(EDestino), i);
                 filas.Cells[1].Value = contador;
                 filas.Cells[2].Value = recaudacion;
                 filas.Cells[3].Value =cantidadPasajeros;
@@ -449,17 +450,17 @@ namespace Parcial1_Labo_2
         {
             foreach(Vuelo vuelo in Aerolinea.vuelos)
             {
-                if (horaPrincipal.CompareTo(vuelo.Salida) > 0 && (vuelo.Estado== Biblioteca.Estado.Disponible || vuelo.Estado==Biblioteca.Estado.Lleno))
+                if (horaPrincipal.CompareTo(vuelo.Salida) > 0 && (vuelo.Estado== Biblioteca.EEstado.Disponible || vuelo.Estado==Biblioteca.EEstado.Lleno))
 
                 {
-                    vuelo.Estado = Biblioteca.Estado.EnVuelo;
+                    vuelo.Estado = Biblioteca.EEstado.EnVuelo;
                     CargarDatagrid();
                 }
-                 if(horaPrincipal.CompareTo(vuelo.Llegada) > 0 && vuelo.Estado== Biblioteca.Estado.EnVuelo)
+                 if(horaPrincipal.CompareTo(vuelo.Llegada) > 0 && vuelo.Estado== Biblioteca.EEstado.EnVuelo)
                 {
-                    vuelo.Estado = Biblioteca.Estado.Finalizado;
+                    vuelo.Estado = Biblioteca.EEstado.Finalizado;
                     vuelo.Avion.HorasVuelo += vuelo.Duracion;
-                    vuelo.Avion.Disponible = true;
+                    //vuelo.Avion.Disponible = true;
                     BorrarVuelo(vuelo);
                     CargarDatagrid();
                     break;
@@ -478,7 +479,6 @@ namespace Parcial1_Labo_2
         private void dgv_Vendedores_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             indiceVendedor= e.RowIndex;
-            
         }
 
         private void pic_Borrar_Click(object sender, EventArgs e)
@@ -499,22 +499,36 @@ namespace Parcial1_Labo_2
         private void pic_AgregarVendedor_Click(object sender, EventArgs e)
         {
             string admin;
-            if(txt_ApellidoVendedor.Text!=String.Empty && txt_ContraseñaVendedor.Text!=String.Empty
-                &&txt_NombreVendedor.Text!= String.Empty && txt_UsuarioVendedor.Text!= String.Empty)
+            try
             {
-                if (chk_Admin.Checked)
-                    admin = "administrador";
-                else
-                    admin = "usuario";
+                if(txt_ApellidoVendedor.Text!=String.Empty && txt_ContraseñaVendedor.Text!=String.Empty
+                    &&txt_NombreVendedor.Text!= String.Empty && txt_UsuarioVendedor.Text!= String.Empty)
+                {
+                    if (chk_Admin.Checked)
+                        admin = "administrador";
+                    else
+                        admin = "usuario";
 
-                Aerolinea.Vendedores.Add(new Vendedor(txt_NombreVendedor.Text,txt_ApellidoVendedor.Text,txt_UsuarioVendedor.Text,txt_ContraseñaVendedor.Text,admin));
-                dgv_Vendedores.DataSource = null;
-                dgv_Vendedores.DataSource = Aerolinea.Vendedores;
-                LimpiarPanelVendedor();
-            }
-            else
+                    foreach (Vendedor ven in Aerolinea.Vendedores)
+                    {
+                        if (txt_UsuarioVendedor.Text == ven.Usuario)
+                        {
+                            throw new Exception("Ya existe es nombre de usuario");
+                        }
+                    }
+
+                    Aerolinea.Vendedores.Add(new Vendedor(txt_NombreVendedor.Text,txt_ApellidoVendedor.Text,txt_UsuarioVendedor.Text,txt_ContraseñaVendedor.Text,admin));
+                    dgv_Vendedores.DataSource = null;
+                    dgv_Vendedores.DataSource = Aerolinea.Vendedores;
+                    LimpiarPanelVendedor();
+                }
+                else
+                {
+                    lbl_ErrorBorrar.Text = "Falta algun dato";
+                }
+            }catch(Exception ex)
             {
-                lbl_ErrorBorrar.Text = "Falta algun dato";
+                lbl_ErrorBorrar.Text = ex.Message;
             }
 
             
@@ -540,23 +554,34 @@ namespace Parcial1_Labo_2
 
         private void pic_ModificarAceptar_Click(object sender, EventArgs e)
         {
-            
-            string tipo;
-            if (chk_Admin.Checked)
-                tipo = "administrador";
-            else 
-                tipo = "usuario";
-           
-            Aerolinea.Vendedores[indiceVendedor].ModificarVendedor(txt_NombreVendedor.Text, txt_ApellidoVendedor.Text, txt_UsuarioVendedor.Text, txt_ContraseñaVendedor.Text, tipo);
-            lbl_TituloABM.Text = "Agregar usuario";
-            pic_AgregarVendedor.Visible = true;
-            lbl_InfoVendedor.Visible = false;
-            dgv_Vendedores.DataSource = null;
-            dgv_Vendedores.DataSource = Aerolinea.Vendedores;
-            chk_Admin.Enabled = true;
-            pic_Borrar.Visible = true;
-            pic_ModificarAceptar.Visible = false;
-            LimpiarPanelVendedor();
+            try
+            {
+                string tipo;
+                if (chk_Admin.Checked)
+                    tipo = "administrador";
+                else 
+                    tipo = "usuario";
+                foreach(Vendedor ven in Aerolinea.Vendedores)
+                {
+                    if(txt_UsuarioVendedor.Text== ven.Usuario && ven.Usuario != Aerolinea.Vendedores[indiceVendedor].Usuario)
+                    {
+                        throw new Exception("Ya existe es nombre de usuario");
+                    }
+                }
+                Aerolinea.Vendedores[indiceVendedor].ModificarVendedor(txt_NombreVendedor.Text, txt_ApellidoVendedor.Text, txt_UsuarioVendedor.Text, txt_ContraseñaVendedor.Text, tipo);
+                lbl_TituloABM.Text = "Agregar usuario";
+                pic_AgregarVendedor.Visible = true;
+                lbl_InfoVendedor.Visible = false;
+                dgv_Vendedores.DataSource = null;
+                dgv_Vendedores.DataSource = Aerolinea.Vendedores;
+                chk_Admin.Enabled = true;
+                pic_Borrar.Visible = true;
+                pic_ModificarAceptar.Visible = false;
+                LimpiarPanelVendedor();
+            }catch(Exception ex)
+            {
+                lbl_ErrorBorrar.Text=ex.Message;
+            } 
         
         }
 
@@ -621,6 +646,7 @@ namespace Parcial1_Labo_2
                 txt_ContraseñaVendedor.ForeColor = Color.White;
                 pic_AgregarVendedor.Image = Resources.agregar_blanco_84x24;
                 chk_Admin.ForeColor = Color.White;
+                
 
             }
             else

@@ -382,6 +382,8 @@ namespace Parcial1_Labo_2
                 pic_Aceptar.Image = Resources.Aceptar_84x24_blanco;
                 pic_AgregarCliente.Image = Resources.agregar_blanco_84x24;
                 pic_AceptarCliente.Image = Resources.Aceptar_84x24_blanco;
+                dgv_Clientes.DefaultCellStyle.BackColor = Color.FromArgb(34, 34, 34);
+                dgv_Clientes.DefaultCellStyle.ForeColor = Color.White;
 
 
             }
@@ -427,6 +429,9 @@ namespace Parcial1_Labo_2
                 pic_Aceptar.Image = Resources.Aceptar_84x24_negro;
                 pic_AgregarCliente.Image = Resources.agregar_negro_84x24;
                 pic_AceptarCliente.Image = Resources.Aceptar_84x24_negro;
+                
+                dgv_Clientes.DefaultCellStyle.BackColor = Color.White;
+                dgv_Clientes.DefaultCellStyle.ForeColor = Color.Black;
 
             }
         }

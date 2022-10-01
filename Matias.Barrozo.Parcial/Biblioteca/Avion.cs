@@ -14,11 +14,11 @@ namespace Biblioteca
         private int bodega;
         private bool comida;
         private bool wifi;
-        private bool disponible;
+        //private bool disponible;
         private int horasVuelo;
 
         
-        public Avion(string matricula, int cantidadAsientos, int cantidadBaños, int bodega, bool comida, bool wifi, bool estado) { 
+        public Avion(string matricula, int cantidadAsientos, int cantidadBaños, int bodega, bool comida, bool wifi) { 
 
             this.matricula = matricula;
             this.cantidadAsientos = cantidadAsientos;
@@ -26,7 +26,7 @@ namespace Biblioteca
             this.bodega = bodega;
             this.comida = comida;
             this.wifi = wifi;
-            this.disponible = estado;
+            //this.disponible = estado;
             this.horasVuelo = 0;
         }
 
@@ -66,18 +66,21 @@ namespace Biblioteca
             get { return wifi; }
         }
 
-
-        public bool Disponible
-        {
-            get { return disponible; }
-            set { disponible = value; }
-        }
-
         public override string ToString()
         {
             return "Matricula: " + Matricula + "\nCantidad de asientos: " + cantidadAsientos 
-                + "\nCantidad de Baños: " + CantidadBaños + "\nHoras de vuelo: " + HorasVuelo + "\nDisponible? " + Disponible + 
+                + "\nCantidad de Baños: " + CantidadBaños + "\nHoras de vuelo: " + HorasVuelo + 
                  "\nWifi? " + Wifi +  "\nBodega: " + Bodega + "\nTiene comida? " + Comida+ "\n";
+        }
+
+        public override bool Equals(object? obj)
+        {
+            Avion? avion = obj as Avion;
+            if (avion is not null)
+            {
+                return  this.matricula == avion.Matricula;
+            }
+            return false;
         }
 
     }

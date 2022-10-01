@@ -114,7 +114,7 @@
             this.pic_Salir.Image = global::Parcial1_Labo_2.Properties.Resources.salir_negro_84x24;
             this.pic_Salir.Location = new System.Drawing.Point(681, 398);
             this.pic_Salir.Name = "pic_Salir";
-            this.pic_Salir.Size = new System.Drawing.Size(82, 25);
+            this.pic_Salir.Size = new System.Drawing.Size(86, 25);
             this.pic_Salir.TabIndex = 1;
             this.pic_Salir.TabStop = false;
             this.tip_Ayuda.SetToolTip(this.pic_Salir, "Vuelve al menu principal");
@@ -131,7 +131,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "frm_pasajeros";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "frm_pasajeros";
+            this.Text = " ";
             this.Load += new System.EventHandler(this.frm_pasajeros_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Pasajeros)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pasajeroBindingSource)).EndInit();

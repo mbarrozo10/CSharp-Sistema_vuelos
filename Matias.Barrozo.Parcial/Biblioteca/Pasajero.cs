@@ -43,7 +43,7 @@ namespace Biblioteca
 
         public override string ToString()
         {
-            return Nombre + " " + Apellido;
+            return Nombre + " " + Apellido + "\nPremium? " + Premium + "\nBolso de mano? " + bolsoMano + "\n" ;
         }
 
 
