@@ -4,7 +4,7 @@
 
 
 
-### Resumen
+## Resumen
 
 
 La funcionalidad de la aplicacion depende del tipo de usuario con el que inicies, si el tipo de usuario es "usuario" solo podras ver estadisticas historicas, vuelos disponibles (ver su informacion y pasajeros) y vender un pasaje a estos vuelos.
