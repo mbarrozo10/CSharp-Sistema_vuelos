@@ -32,6 +32,7 @@ El boton historico lleva a distintas estadisticas que se puede ver en el combo b
 *Vendedores: si es un usuario normal, muestra cierta informacion sobre los demas vendedores, si es un usuario administrador tambien permite hacer ABM de los mismos.
 
 
+
 ###Diagrama
 
 
