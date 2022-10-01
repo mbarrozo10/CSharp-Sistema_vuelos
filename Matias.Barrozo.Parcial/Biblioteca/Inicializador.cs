@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Biblioteca
 {
-    public class Inicializador
+    public static class Inicializador
     {
         public static List<Vendedor> InicializarVendedores()
         {

@@ -83,5 +83,18 @@ namespace Biblioteca
             return false;
         }
 
+        public static int ConseguirIndex(string matricula)
+        {
+            for (int i = 0; i < Aerolinea.aviones.Count; i++)
+            {
+                if (matricula == Aerolinea.aviones[i].Matricula)
+                {
+                    return i;
+                }
+            }
+            return -1;
+        }
+
+
     }
 }

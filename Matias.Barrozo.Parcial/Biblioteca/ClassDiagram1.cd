@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Biblioteca.Aerolinea" Collapsed="true">
+    <Position X="9.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAgAAAAAAAAAIAAAAAAAAgBEAAAAAAAAYAA=</HashCode>
+      <FileName>Aerolinea.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Biblioteca.Avion" Collapsed="true">
+    <Position X="7.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQQAAAEGAQAAAkgAAAAIAAAAACCAAAAgiAAAAAgAA=</HashCode>
+      <FileName>Avion.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Biblioteca.Cliente" Collapsed="true">
+    <Position X="4.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAEAAAABAAAAAAAEgCAAAAAgAAAAAoAAAAIAAAAAAAA=</HashCode>
+      <FileName>Cliente.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Biblioteca.Inicializador" Collapsed="true">
+    <Position X="9.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAEAAAAAAAIAAAAAAAAAAwAAAA=</HashCode>
+      <FileName>Inicializador.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Biblioteca.Pasajero" Collapsed="true">
+    <Position X="4.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAIAAAAAAAEAAAAAAAAEAAAAAAAAAEAAAABAAA=</HashCode>
+      <FileName>Pasajero.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Biblioteca.Persona" Collapsed="true">
+    <Position X="1.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAQAAACEAAAAgAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Persona.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Biblioteca.Vendedor" Collapsed="true">
+    <Position X="1.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAABAAAAAQAAAIEIAACAAAAAAAAAAQAAAAEAAAAAAQ=</HashCode>
+      <FileName>Vendedor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Biblioteca.Vuelo" Collapsed="true">
+    <Position X="1.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAghCAAQMQAAAAAEAIABgAAAAYABAACSAZCQGgABgBo=</HashCode>
+      <FileName>Vuelo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Biblioteca.Validador" Collapsed="true">
+    <Position X="9.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAAACgAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Validador.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="Biblioteca.EDestino" Collapsed="true">
+    <Position X="1.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAQgAIAAAAAAAIoCEAIQAAAAAIAoggEAAAACEAAAA=</HashCode>
+      <FileName>Vuelo.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Biblioteca.EEstado" Collapsed="true">
+    <Position X="3.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAgAAAADAAAAAAAAAAAAAAAAAAAABAAAAA=</HashCode>
+      <FileName>Vuelo.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

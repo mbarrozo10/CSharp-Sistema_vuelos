@@ -20,11 +20,12 @@ namespace Parcial1_Labo_2
         {
             InitializeComponent();
         }
-        static float precioPremium=0;
+        static float precioPremium = 0;
         static float precioTurista = 0;
         int index;
-        float recaudacion;
         int indexClientes;
+        float totalAPagar=0;
+        List<Pasajero> auxiliar= new List<Pasajero>();
 
         int cantidadPasajerosRestantes;
         public frm_Venta( int index) : this()
@@ -51,7 +52,6 @@ namespace Parcial1_Labo_2
             lbl_PrecioSub.Text += precioTurista.ToString("N2");
             lbl_PrecioFinal.Text += (precioTurista * 1.21f * 1.90f).ToString("N2");
             modoOscuroClaro();
-            recaudacion= Aerolinea.vuelos[index].Recaudacion;
             cantidadPasajerosRestantes = 0;
             rtx_PasajerosAgregados.Text = String.Empty;
             dgv_Clientes.Enabled = true;
@@ -131,8 +131,6 @@ namespace Parcial1_Labo_2
 
         private void btn_Agregar_Click(object sender, EventArgs e)
         {
-            bool salir = false;
-
             if (txt_Apellido.Text != String.Empty && txt_Nombre.Text != String.Empty && txt_Dni.Text != String.Empty && txt_Edad.Text != String.Empty && 
                 ((chk_Premium.Checked && int.Parse(txt_Kg.Text)<=42) || (!chk_Premium.Checked && int.Parse(txt_Kg.Text) <= 25)))
             {
@@ -142,27 +140,9 @@ namespace Parcial1_Labo_2
                     {
                         throw new Exception("No hay mas espacio en cabina");
                     }
-                    Aerolinea.vuelos[index].UltimoAsiento++;
                     Pasajero pasajero = new Pasajero(txt_Nombre.Text, txt_Apellido.Text, int.Parse(txt_Dni.Text), int.Parse(txt_Edad.Text), (int)(nud_CantEquipaje.Value), chk_Premium.Checked, chk_BolsoMano.Checked);
-                    Aerolinea.vuelos[index].Pasajeros.Add(Aerolinea.vuelos[index].UltimoAsiento, pasajero);
+                    auxiliar.Add(pasajero);
                     rtx_PasajerosAgregados.Text += pasajero.ToString() + "\n";
-                    if (nud_CantEquipaje.Value > 0 && txt_Kg.Text != String.Empty)
-                    {
-                        Aerolinea.vuelos[index].BodegaRestante -= int.Parse(txt_Kg.Text);
-                    }
-
-                    if (chk_Premium.Checked)
-                    {
-                        recaudacion += precioPremium * 1.21f;
-                        Aerolinea.vuelos[index].AsientosLibresPremium += 1;
-                    }
-                    else
-                    {
-                        Aerolinea.vuelos[index].AsientosLibresTurista += 1;
-                        recaudacion += precioTurista * 1.21f;
-                    }
-
-
                     cantidadPasajerosRestantes++;
                     prg_CantidadRestante.Value = cantidadPasajerosRestantes;
 
@@ -172,16 +152,26 @@ namespace Parcial1_Labo_2
                     txt_Dni.Clear();
                     txt_Edad.Clear();
                     nud_CantEquipaje.Value = 0;
-                    txt_Kg.Clear();
+                    txt_Kg.Text="0";
 
                     if (cantidadPasajerosRestantes == nud_Cantidad.Value)
-                    {
-                        salir = true;
-                    }
-                    if (salir)
-                    {
-                        Aerolinea.vuelos[index].Recaudacion = recaudacion;
-                        DialogResult = DialogResult.OK;
+                    { 
+                        pnl_ConfirmarCompra.Visible = true;
+                        pic_Aceptar.Enabled = false;
+                        pic_Cancelar.Enabled = false;
+                        foreach(Pasajero pas in auxiliar)
+                        {
+                            rtx_InfoPasajerosFinal.Text += pas.ToString() + "\n";
+                            if (pas.Premium)
+                            {
+                                totalAPagar += precioPremium* 1.90f * 1.21f ;
+                            }
+                            else
+                            {
+                                totalAPagar += precioTurista * 1.90f * 1.21f;
+                            }
+                        }
+                        lbl_TotalPagar.Text ="Total a pagar: " + totalAPagar.ToString("N2");
                     }
                    
 
@@ -194,7 +184,6 @@ namespace Parcial1_Labo_2
             {
                 lbl_Error.Text = "Falta algun dato o algun dato es incorrecto";
             }
-            Aerolinea.clientes[indexClientes].CantPasajesComprados += 1;
             
 
         }
@@ -337,6 +326,29 @@ namespace Parcial1_Labo_2
             }
         }
 
+        private void pic_CancelarCompra_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.Cancel;
+        }
+
+        private void pic_AceptarCompra_Click(object sender, EventArgs e)
+        {
+            int cantidadAgregados=0;
+            foreach (Pasajero pasajero in auxiliar)
+            {
+                Aerolinea.vuelos[index].UltimoAsiento++;
+                Aerolinea.vuelos[index].Pasajeros.Add(Aerolinea.vuelos[index].UltimoAsiento, pasajero);
+                cantidadAgregados++;
+                if (pasajero.Premium)
+                {
+                    Aerolinea.vuelos[index].AsientosLibresPremium--;
+                }else
+                    Aerolinea.vuelos[index].AsientosLibresTurista--;
+            }
+            Aerolinea.clientes[indexClientes].CantPasajesComprados += cantidadAgregados;
+            DialogResult = DialogResult.OK;
+        }
+
         //Modo oscuro
         private void modoOscuroClaro()
         {
@@ -435,5 +447,7 @@ namespace Parcial1_Labo_2
 
             }
         }
+
+       
     }
 }

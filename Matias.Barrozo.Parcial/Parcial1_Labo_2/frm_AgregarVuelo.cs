@@ -71,7 +71,7 @@ namespace Parcial1_Labo_2
                 && dtp_Salida.Text!=String.Empty && cmb_Salida.Text!= String.Empty)
             {
                 int duracion = Vuelo.CalcularDuracion(Enum.Parse<EDestino>(cmb_Destino.Text));
-                int i = Aerolinea.ConseguirIndex(cmb_Avion.Text);
+                int i = Avion.ConseguirIndex(cmb_Avion.Text);
                 DateTime salida = new DateTime();
                 float horaElegida = float.Parse(DateTime.Parse(cmb_Salida.Text).ToString("HH,mm "));
                 if (cmb_Salida.SelectedIndex % 2 == 1)
@@ -187,7 +187,7 @@ namespace Parcial1_Labo_2
 
         private void cmb_Avion_SelectedValueChanged(object sender, EventArgs e)
         {
-            int i = Aerolinea.ConseguirIndex(cmb_Avion.Text);
+            int i = Avion.ConseguirIndex(cmb_Avion.Text);
             lbl_Asientos.Text = "Cantidad de asientos: " + Aerolinea.aviones[i].CantidadAsientos.ToString();
         }
 

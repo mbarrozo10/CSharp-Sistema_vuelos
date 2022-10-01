@@ -22,18 +22,7 @@ namespace Biblioteca
             Aerolinea.aviones = Inicializador.InicializarAviones();
             Aerolinea.vuelos = Inicializador.InicializarVuelos();
         }
-        public static int ConseguirIndex(string matricula)
-        {
-            for (int i = 0; i < aviones.Count; i++)
-            {
-                if (matricula == aviones[i].Matricula)
-                {
-                    return i;
-                }
-            }
-            return -1;
-        }
-
+        
         public static float CalcularRecaudacionTotal()
         {
             float retorno=0;

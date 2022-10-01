@@ -161,7 +161,6 @@ namespace Biblioteca
             get { return salida; }
         }
 
-  
 
         public float CostoDePasaje
         {

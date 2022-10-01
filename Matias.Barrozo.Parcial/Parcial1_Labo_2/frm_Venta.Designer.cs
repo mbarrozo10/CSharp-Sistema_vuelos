@@ -72,6 +72,11 @@
             this.pic_AceptarCliente = new System.Windows.Forms.PictureBox();
             this.pic_Aceptar = new System.Windows.Forms.PictureBox();
             this.lbl_ClienteComprador = new System.Windows.Forms.Label();
+            this.lbl_TotalPagar = new System.Windows.Forms.Label();
+            this.pnl_ConfirmarCompra = new System.Windows.Forms.Panel();
+            this.pic_AceptarCompra = new System.Windows.Forms.PictureBox();
+            this.pic_CancelarCompra = new System.Windows.Forms.PictureBox();
+            this.rtx_InfoPasajerosFinal = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.nud_Cantidad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_CantEquipaje)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Agregar)).BeginInit();
@@ -81,13 +86,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.pic_AgregarCliente)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_AceptarCliente)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Aceptar)).BeginInit();
+            this.pnl_ConfirmarCompra.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_AceptarCompra)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_CancelarCompra)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_PrecioFinal
             // 
             this.lbl_PrecioFinal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_PrecioFinal.AutoSize = true;
-            this.lbl_PrecioFinal.Location = new System.Drawing.Point(1023, 521);
+            this.lbl_PrecioFinal.Location = new System.Drawing.Point(1023, 466);
             this.lbl_PrecioFinal.Name = "lbl_PrecioFinal";
             this.lbl_PrecioFinal.Size = new System.Drawing.Size(71, 15);
             this.lbl_PrecioFinal.TabIndex = 2;
@@ -209,7 +217,7 @@
             // 
             this.lbl_PrecioSub.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_PrecioSub.AutoSize = true;
-            this.lbl_PrecioSub.Location = new System.Drawing.Point(1023, 444);
+            this.lbl_PrecioSub.Location = new System.Drawing.Point(1023, 389);
             this.lbl_PrecioSub.Name = "lbl_PrecioSub";
             this.lbl_PrecioSub.Size = new System.Drawing.Size(90, 15);
             this.lbl_PrecioSub.TabIndex = 16;
@@ -462,7 +470,7 @@
             // lbl_Impuestos
             // 
             this.lbl_Impuestos.AutoSize = true;
-            this.lbl_Impuestos.Location = new System.Drawing.Point(1023, 481);
+            this.lbl_Impuestos.Location = new System.Drawing.Point(1023, 426);
             this.lbl_Impuestos.Name = "lbl_Impuestos";
             this.lbl_Impuestos.Size = new System.Drawing.Size(124, 15);
             this.lbl_Impuestos.TabIndex = 38;
@@ -519,6 +527,57 @@
             this.lbl_ClienteComprador.Size = new System.Drawing.Size(0, 15);
             this.lbl_ClienteComprador.TabIndex = 43;
             // 
+            // lbl_TotalPagar
+            // 
+            this.lbl_TotalPagar.AutoSize = true;
+            this.lbl_TotalPagar.Location = new System.Drawing.Point(374, 35);
+            this.lbl_TotalPagar.Name = "lbl_TotalPagar";
+            this.lbl_TotalPagar.Size = new System.Drawing.Size(0, 15);
+            this.lbl_TotalPagar.TabIndex = 44;
+            // 
+            // pnl_ConfirmarCompra
+            // 
+            this.pnl_ConfirmarCompra.Controls.Add(this.pic_AceptarCompra);
+            this.pnl_ConfirmarCompra.Controls.Add(this.pic_CancelarCompra);
+            this.pnl_ConfirmarCompra.Controls.Add(this.rtx_InfoPasajerosFinal);
+            this.pnl_ConfirmarCompra.Controls.Add(this.lbl_TotalPagar);
+            this.pnl_ConfirmarCompra.Location = new System.Drawing.Point(316, 96);
+            this.pnl_ConfirmarCompra.Name = "pnl_ConfirmarCompra";
+            this.pnl_ConfirmarCompra.Size = new System.Drawing.Size(736, 327);
+            this.pnl_ConfirmarCompra.TabIndex = 45;
+            this.pnl_ConfirmarCompra.Visible = false;
+            // 
+            // pic_AceptarCompra
+            // 
+            this.pic_AceptarCompra.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pic_AceptarCompra.Image = global::Parcial1_Labo_2.Properties.Resources.Aceptar_84x24_negro;
+            this.pic_AceptarCompra.Location = new System.Drawing.Point(405, 275);
+            this.pic_AceptarCompra.Name = "pic_AceptarCompra";
+            this.pic_AceptarCompra.Size = new System.Drawing.Size(88, 26);
+            this.pic_AceptarCompra.TabIndex = 46;
+            this.pic_AceptarCompra.TabStop = false;
+            this.pic_AceptarCompra.Click += new System.EventHandler(this.pic_AceptarCompra_Click);
+            // 
+            // pic_CancelarCompra
+            // 
+            this.pic_CancelarCompra.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pic_CancelarCompra.Image = global::Parcial1_Labo_2.Properties.Resources.cancelar_negro_84x24;
+            this.pic_CancelarCompra.Location = new System.Drawing.Point(531, 275);
+            this.pic_CancelarCompra.Name = "pic_CancelarCompra";
+            this.pic_CancelarCompra.Size = new System.Drawing.Size(86, 29);
+            this.pic_CancelarCompra.TabIndex = 45;
+            this.pic_CancelarCompra.TabStop = false;
+            this.pic_CancelarCompra.Click += new System.EventHandler(this.pic_CancelarCompra_Click);
+            // 
+            // rtx_InfoPasajerosFinal
+            // 
+            this.rtx_InfoPasajerosFinal.Location = new System.Drawing.Point(58, 35);
+            this.rtx_InfoPasajerosFinal.Name = "rtx_InfoPasajerosFinal";
+            this.rtx_InfoPasajerosFinal.ReadOnly = true;
+            this.rtx_InfoPasajerosFinal.Size = new System.Drawing.Size(238, 240);
+            this.rtx_InfoPasajerosFinal.TabIndex = 0;
+            this.rtx_InfoPasajerosFinal.Text = "";
+            // 
             // frm_Venta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -526,6 +585,7 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1290, 655);
             this.ControlBox = false;
+            this.Controls.Add(this.pnl_ConfirmarCompra);
             this.Controls.Add(this.lbl_ClienteComprador);
             this.Controls.Add(this.pic_Aceptar);
             this.Controls.Add(this.pic_AceptarCliente);
@@ -577,6 +637,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pic_AgregarCliente)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_AceptarCliente)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Aceptar)).EndInit();
+            this.pnl_ConfirmarCompra.ResumeLayout(false);
+            this.pnl_ConfirmarCompra.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_AceptarCompra)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_CancelarCompra)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -626,5 +690,10 @@
         private PictureBox pic_AceptarCliente;
         private PictureBox pic_Aceptar;
         private Label lbl_ClienteComprador;
+        private Label lbl_TotalPagar;
+        private Panel pnl_ConfirmarCompra;
+        private PictureBox pic_AceptarCompra;
+        private PictureBox pic_CancelarCompra;
+        private RichTextBox rtx_InfoPasajerosFinal;
     }
 }
