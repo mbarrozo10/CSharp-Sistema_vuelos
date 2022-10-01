@@ -24,12 +24,17 @@ El boton historico lleva a distintas estadisticas que se puede ver en el combo b
 
 
 
-*Destinos: Todos los destinos, total facturado y cantidad de pasajeros que viajaron(ordenado por facturacion de manera descendente).
-*Clientes Frecuentes: Se considera cliente frecuente a todo aquel que haya comprado mas de 2 pasajes.
-*Ganancias Totales: Muestra todos los vuelos que se hicieron, clasificados en cabotaje o internacional segun corresponda.
-*Vuelos Finalizados: Muestra todos los vuelos finalizados.
-*Aviones: Muestra la informacion de todos los aviones.
-*Vendedores: si es un usuario normal, muestra cierta informacion sobre los demas vendedores, si es un usuario administrador tambien permite hacer ABM de los mismos.
+- Destinos: Todos los destinos, total facturado y cantidad de pasajeros que viajaron(ordenado por facturacion de manera descendente).
+
+- Clientes Frecuentes: Se considera cliente frecuente a todo aquel que haya comprado mas de 2 pasajes.
+
+- Ganancias Totales: Muestra todos los vuelos que se hicieron, clasificados en cabotaje o internacional segun corresponda.
+
+- Vuelos Finalizados: Muestra todos los vuelos finalizados.
+
+- Aviones: Muestra la informacion de todos los aviones.
+
+- Vendedores: si es un usuario normal, muestra cierta informacion sobre los demas vendedores, si es un usuario administrador tambien permite hacer ABM de los mismos.
 
 
 
