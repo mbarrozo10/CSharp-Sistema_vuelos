@@ -32,4 +32,4 @@ El boton historico lleva a distintas estadisticas que se puede ver en el combo b
 
 ###Diagrama
 
-!(/Matias.Barrozo.Parcial/diagrama.png)
+![imgen](\Matias.Barrozo.Parcial\diagrama.png)
