@@ -708,6 +708,9 @@ namespace Parcial1_Labo_2
                 txt_Buscador.ForeColor = Color.White;
                 lbl_Buscador.ForeColor = Color.White;
                 lbl_ErrorBusqueda.ForeColor = Color.White;
+                dgv_Historico.DefaultCellStyle.BackColor = Color.FromArgb(34, 34, 34);
+                dgv_Historico.DefaultCellStyle.ForeColor = Color.White;
+
 
             }
             else
@@ -760,6 +763,8 @@ namespace Parcial1_Labo_2
                 txt_Buscador.ForeColor = Color.Black;
                 lbl_Buscador.ForeColor = Color.Black;
                 lbl_ErrorBusqueda.ForeColor = Color.Black;
+                dgv_Historico.DefaultCellStyle.BackColor = Color.White;
+                dgv_Historico.DefaultCellStyle.ForeColor = Color.Black;
 
             }
         }
