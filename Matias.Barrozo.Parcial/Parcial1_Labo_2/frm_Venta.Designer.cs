@@ -77,6 +77,7 @@
             this.pic_AceptarCompra = new System.Windows.Forms.PictureBox();
             this.pic_CancelarCompra = new System.Windows.Forms.PictureBox();
             this.rtx_InfoPasajerosFinal = new System.Windows.Forms.RichTextBox();
+            this.lbl_Buscador = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.nud_Cantidad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_CantEquipaje)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Agregar)).BeginInit();
@@ -450,7 +451,7 @@
             // 
             // txt_Buscador
             // 
-            this.txt_Buscador.Location = new System.Drawing.Point(32, 20);
+            this.txt_Buscador.Location = new System.Drawing.Point(32, 27);
             this.txt_Buscador.Name = "txt_Buscador";
             this.txt_Buscador.Size = new System.Drawing.Size(100, 23);
             this.txt_Buscador.TabIndex = 33;
@@ -556,6 +557,7 @@
             this.pic_AceptarCompra.Size = new System.Drawing.Size(88, 26);
             this.pic_AceptarCompra.TabIndex = 46;
             this.pic_AceptarCompra.TabStop = false;
+            this.tip_Ayuda.SetToolTip(this.pic_AceptarCompra, "Finaliza la compra y carga los pasajeros");
             this.pic_AceptarCompra.Click += new System.EventHandler(this.pic_AceptarCompra_Click);
             // 
             // pic_CancelarCompra
@@ -567,6 +569,7 @@
             this.pic_CancelarCompra.Size = new System.Drawing.Size(86, 29);
             this.pic_CancelarCompra.TabIndex = 45;
             this.pic_CancelarCompra.TabStop = false;
+            this.tip_Ayuda.SetToolTip(this.pic_CancelarCompra, "Cancela la compra");
             this.pic_CancelarCompra.Click += new System.EventHandler(this.pic_CancelarCompra_Click);
             // 
             // rtx_InfoPasajerosFinal
@@ -577,6 +580,17 @@
             this.rtx_InfoPasajerosFinal.Size = new System.Drawing.Size(238, 240);
             this.rtx_InfoPasajerosFinal.TabIndex = 0;
             this.rtx_InfoPasajerosFinal.Text = "";
+            this.tip_Ayuda.SetToolTip(this.rtx_InfoPasajerosFinal, "Muestra la informacion final");
+            // 
+            // lbl_Buscador
+            // 
+            this.lbl_Buscador.AutoSize = true;
+            this.lbl_Buscador.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_Buscador.Location = new System.Drawing.Point(32, 9);
+            this.lbl_Buscador.Name = "lbl_Buscador";
+            this.lbl_Buscador.Size = new System.Drawing.Size(64, 14);
+            this.lbl_Buscador.TabIndex = 46;
+            this.lbl_Buscador.Text = "Buscador";
             // 
             // frm_Venta
             // 
@@ -585,6 +599,7 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1290, 655);
             this.ControlBox = false;
+            this.Controls.Add(this.lbl_Buscador);
             this.Controls.Add(this.pnl_ConfirmarCompra);
             this.Controls.Add(this.lbl_ClienteComprador);
             this.Controls.Add(this.pic_AceptarCantidad);
@@ -695,5 +710,6 @@
         private PictureBox pic_AceptarCompra;
         private PictureBox pic_CancelarCompra;
         private RichTextBox rtx_InfoPasajerosFinal;
+        private Label lbl_Buscador;
     }
 }

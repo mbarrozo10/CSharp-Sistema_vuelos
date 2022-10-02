@@ -102,7 +102,7 @@ namespace Parcial1_Labo_2
 
         private void txt_BuscadorPasajero_TextChanged(object sender, EventArgs e)
         {
-            if(txt_BuscadorPasajero.Text == String.Empty)
+            if (txt_BuscadorPasajero.Text == String.Empty)
             {
                 dgv_Pasajeros.DataSource = null;
                 dgv_Pasajeros.DataSource = Aerolinea.vuelos[Index].Pasajeros.ToArray();

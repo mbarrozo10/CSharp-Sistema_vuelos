@@ -99,8 +99,8 @@
             this.pic_Historico = new System.Windows.Forms.PictureBox();
             this.pic_AgregarCliente = new System.Windows.Forms.PictureBox();
             this.pic_MasInfo = new System.Windows.Forms.PictureBox();
-            this.lbl_Buscador = new System.Windows.Forms.Label();
             this.txt_Buscador = new System.Windows.Forms.TextBox();
+            this.lbl_Buscador = new System.Windows.Forms.Label();
             this.lbl_ErrorBusqueda = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_VuelosActivos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Modo)).BeginInit();
@@ -468,7 +468,7 @@
             this.pnl_Historico.Controls.Add(this.cmb_FiltroHistorico);
             this.pnl_Historico.Controls.Add(this.pic_SalirHistorico);
             this.pnl_Historico.Controls.Add(this.lbl_RecaudacionTotal);
-            this.pnl_Historico.Location = new System.Drawing.Point(68, 515);
+            this.pnl_Historico.Location = new System.Drawing.Point(68, 45);
             this.pnl_Historico.Name = "pnl_Historico";
             this.pnl_Historico.Size = new System.Drawing.Size(1070, 478);
             this.pnl_Historico.TabIndex = 17;
@@ -787,6 +787,16 @@
             this.tip_Ayuda.SetToolTip(this.pic_MasInfo, "Muestra mas informacion del vuelo seleccionado");
             this.pic_MasInfo.Click += new System.EventHandler(this.btn_MasInfo_Click);
             // 
+            // txt_Buscador
+            // 
+            this.txt_Buscador.Location = new System.Drawing.Point(68, 65);
+            this.txt_Buscador.Name = "txt_Buscador";
+            this.txt_Buscador.Size = new System.Drawing.Size(220, 23);
+            this.txt_Buscador.TabIndex = 24;
+            this.tip_Ayuda.SetToolTip(this.txt_Buscador, "Se puede buscar por origen, fecha de salida, avion, y destino\r\n");
+            this.txt_Buscador.TextChanged += new System.EventHandler(this.txt_Buscador_TextChanged);
+            this.txt_Buscador.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Buscador_KeyPress);
+            // 
             // lbl_Buscador
             // 
             this.lbl_Buscador.AutoSize = true;
@@ -796,15 +806,6 @@
             this.lbl_Buscador.Size = new System.Drawing.Size(64, 14);
             this.lbl_Buscador.TabIndex = 23;
             this.lbl_Buscador.Text = "Buscador";
-            // 
-            // txt_Buscador
-            // 
-            this.txt_Buscador.Location = new System.Drawing.Point(68, 65);
-            this.txt_Buscador.Name = "txt_Buscador";
-            this.txt_Buscador.Size = new System.Drawing.Size(220, 23);
-            this.txt_Buscador.TabIndex = 24;
-            this.txt_Buscador.TextChanged += new System.EventHandler(this.txt_Buscador_TextChanged);
-            this.txt_Buscador.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Buscador_KeyPress);
             // 
             // lbl_ErrorBusqueda
             // 

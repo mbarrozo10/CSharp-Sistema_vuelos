@@ -7,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Resources;
 using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
@@ -317,6 +318,35 @@ namespace Parcial1_Labo_2
             DialogResult = DialogResult.OK;
         }
 
+        private void pic_AceptarCantidad_Click(object sender, EventArgs e)
+        {
+
+            if (nud_Cantidad.Value > 0)
+            {
+                if (Aerolinea.vuelos[index].VerificarEspacio((int)(nud_Cantidad.Value)))
+                {
+                    lbl_Error.Text = "Error, no hay espacio";
+                }
+                else
+                {
+                    nud_Cantidad.Enabled = false;
+                    txt_Apellido.Enabled = true;
+                    txt_Nombre.Enabled = true;
+                    txt_Dni.Enabled = true;
+                    txt_Edad.Enabled = true;
+                    nud_CantEquipaje.Enabled = true;
+                    chk_Premium.Enabled = true;
+                    prg_CantidadRestante.Maximum = (int)nud_Cantidad.Value;
+                    pic_Agregar.Enabled = true;
+                    pic_AceptarCantidad.Enabled = false;
+                    chk_BolsoMano.Enabled = true;
+                }
+
+            }
+            else
+                lbl_Error.Text = "Seleccione una cantidad mayor a 0";
+        }
+
         //Modo oscuro
         private void modoOscuroClaro()
         {
@@ -364,7 +394,12 @@ namespace Parcial1_Labo_2
                 pic_AceptarCliente.Image = Resources.Aceptar_84x24_blanco;
                 dgv_Clientes.DefaultCellStyle.BackColor = Color.FromArgb(34, 34, 34);
                 dgv_Clientes.DefaultCellStyle.ForeColor = Color.White;
-
+                lbl_Buscador.ForeColor = Color.White;
+                pic_AceptarCompra.Image= Resources.Aceptar_84x24_blanco;
+                pic_CancelarCompra.Image = Resources.cancelar_blanco_84x24;
+                rtx_InfoPasajerosFinal.BackColor = Color.FromArgb(34, 34, 34);
+                rtx_InfoPasajerosFinal.ForeColor = Color.White;
+                lbl_TotalPagar.ForeColor= Color.White;
 
             }
             else
@@ -409,40 +444,17 @@ namespace Parcial1_Labo_2
                 pic_AceptarCantidad.Image = Resources.Aceptar_84x24_negro;
                 pic_AgregarCliente.Image = Resources.agregar_negro_84x24;
                 pic_AceptarCliente.Image = Resources.Aceptar_84x24_negro;
-                
+                lbl_Buscador.ForeColor = Color.Black;
                 dgv_Clientes.DefaultCellStyle.BackColor = Color.White;
                 dgv_Clientes.DefaultCellStyle.ForeColor = Color.Black;
-
+                pic_AceptarCompra.Image = Resources.Aceptar_84x24_negro;
+                pic_CancelarCompra.Image = Resources.Aceptar_84x24_blanco;
+                rtx_InfoPasajerosFinal.BackColor = Color.White;
+                rtx_InfoPasajerosFinal.ForeColor = Color.Black;
+                lbl_TotalPagar.ForeColor = Color.Black;
             }
         }
 
-        private void pic_AceptarCantidad_Click(object sender, EventArgs e)
-        {
-
-            if (nud_Cantidad.Value > 0)
-            {
-                if (Aerolinea.vuelosFinalizados[index].VerificarEspacio((int)(nud_Cantidad.Value)))
-                {
-                    lbl_Error.Text = "Error, no hay espacio";
-                }
-                else
-                {
-                    nud_Cantidad.Enabled = false;
-                    txt_Apellido.Enabled = true;
-                    txt_Nombre.Enabled = true;
-                    txt_Dni.Enabled = true;
-                    txt_Edad.Enabled = true;
-                    nud_CantEquipaje.Enabled = true;
-                    chk_Premium.Enabled = true;
-                    prg_CantidadRestante.Maximum = (int)nud_Cantidad.Value;
-                    pic_Agregar.Enabled = true;
-                    pic_AceptarCantidad.Enabled = false;
-                    chk_BolsoMano.Enabled = true;
-                }
-
-            }
-            else
-                lbl_Error.Text = "Seleccione una cantidad mayor a 0";
-        }
+        
     }
 }
