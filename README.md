@@ -1,5 +1,5 @@
 
-# Airline Management Console Lite Version 3.5 (AMCLV) 
+# Super Airline Management Console Lite Experience 3.5 (SAMCLE) Desktop Version
 
 
 
