@@ -23,7 +23,6 @@ namespace Parcial1_Labo_2
         public frm_pasajeros(int index): this()
         {
                 Index = index;
-        
         }
 
           private void frm_pasajeros_Load(object sender, EventArgs e)

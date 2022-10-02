@@ -159,9 +159,12 @@ namespace Parcial1_Labo_2
                         pnl_ConfirmarCompra.Visible = true;
                         pic_Aceptar.Enabled = false;
                         pic_Cancelar.Enabled = false;
-                        foreach(Pasajero pas in auxiliar)
+                        KeyValuePair<int,Pasajero> aux = Aerolinea.vuelos[index].Pasajeros.Last();
+                        int asiento = aux.Key ;
+                        foreach (Pasajero pas in auxiliar)
                         {
-                            rtx_InfoPasajerosFinal.Text += pas.ToString() + "\n";
+                            asiento++;
+                            rtx_InfoPasajerosFinal.Text += pas.ToString() + "\nAsiento: " +asiento +"\n" ;
                             if (pas.Premium)
                             {
                                 totalAPagar += precioPremium* 1.90f * 1.21f ;
@@ -170,6 +173,7 @@ namespace Parcial1_Labo_2
                             {
                                 totalAPagar += precioTurista * 1.90f * 1.21f;
                             }
+                            
                         }
                         lbl_TotalPagar.Text ="Total a pagar: " + totalAPagar.ToString("N2");
                     }
@@ -224,16 +228,13 @@ namespace Parcial1_Labo_2
         }
 
        
-        private bool VerificarEspacio(int cantidadPedida)
-        {
-            return (Aerolinea.vuelos[index].Pasajeros.Count+cantidadPedida) > Aerolinea.vuelos[index].Avion.CantidadAsientos;
-        }
+       
 
         private void aceptarCantidad_Click(object sender, EventArgs e)
         {
             if (nud_Cantidad.Value > 0)
             {
-                if (VerificarEspacio((int)nud_Cantidad.Value))
+                if (Aerolinea.vuelosFinalizados[index].VerificarEspacio((int)(nud_Cantidad.Value)))
                 {
                     lbl_Error.Text = "Error, no hay espacio";
                 }
@@ -305,10 +306,8 @@ namespace Parcial1_Labo_2
                      Aerolinea.clientes[i].Apellido.ToLower().Contains(txt_Buscador.Text.ToLower()) ||
                      Aerolinea.clientes[i].GetHashCode().ToString().Contains(txt_Buscador.Text))
                 {
-
                     filtrada.Add(Aerolinea.clientes[i]);
                     Encontro = true;
-
                 }
 
             }

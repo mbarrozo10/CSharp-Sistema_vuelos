@@ -442,11 +442,11 @@ namespace Parcial1_Labo_2
             horaPrincipal = DateTime.Now;
             lbl_Fecha.Text = horaPrincipal.ToString("dd/MM/yyyy HH:mm:ss");
 
-            RevisarVuelo();
+            ActualizarVuelosDataGrid();
         }
 
 
-        private void RevisarVuelo()
+        private void ActualizarVuelosDataGrid()
         {
             foreach(Vuelo vuelo in Aerolinea.vuelos)
             {
@@ -461,7 +461,7 @@ namespace Parcial1_Labo_2
                     vuelo.Estado = Biblioteca.EEstado.Finalizado;
                     vuelo.Avion.HorasVuelo += vuelo.Duracion;
                     //vuelo.Avion.Disponible = true;
-                    BorrarVuelo(vuelo);
+                    Aerolinea.BorrarVuelo(vuelo);
                     CargarDatagrid();
                     break;
                 }
@@ -469,12 +469,7 @@ namespace Parcial1_Labo_2
             
         }
 
-        private void BorrarVuelo(Vuelo vuelo)
-        {
-            
-            Aerolinea.vuelosFinalizados.Add(vuelo);
-            Aerolinea.vuelos.Remove(vuelo);
-        }
+      
 
         private void dgv_Vendedores_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {

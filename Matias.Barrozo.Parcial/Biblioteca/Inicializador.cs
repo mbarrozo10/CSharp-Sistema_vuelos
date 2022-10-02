@@ -133,19 +133,19 @@ namespace Biblioteca
         {
             List<Vuelo> vuelos = new List<Vuelo>();
             //cargar mas vuelos
-            vuelos.Add(new Vuelo(Aerolinea.aviones[2], 10, 1000, EDestino.Miami, EEstado.Disponible, EDestino.Buenos_Aires, DateTime.Parse("2022/10/28 19:58:00"), InicializarPasajeros(),"A20394", DateTime.Parse("2022/9/28 20:14:00"),15,87241,14,55,69));
-            vuelos.Add(new Vuelo(Aerolinea.aviones[0], 4, 200, EDestino.Mendoza, EEstado.Disponible, EDestino.Buenos_Aires, DateTime.Parse("2022/11/8 14:30:00"), InicializarPasajeros(),"BMD93", DateTime.Parse("2022/11/8 18:30:00"),1330,17448,14,55,69));
-            vuelos.Add(new Vuelo(Aerolinea.aviones[1], 4, 200, EDestino.Neuquén, EEstado.Disponible, EDestino.Buenos_Aires, DateTime.Parse("2022/10/15 18:00:00"), InicializarPasajeros(),"N93J4FG", DateTime.Parse("2022/9/28 22:00:00"),3570,17448,14,55, 69));
-            vuelos.Add(new Vuelo(Aerolinea.aviones[1], 4, 200, EDestino.Neuquén, EEstado.Disponible, EDestino.Buenos_Aires, DateTime.Parse("2022/9/15 18:00:00"), InicializarPasajeros(),"INASIN2", DateTime.Parse("2022/9/28 22:00:00"),3570,17448,14,55, 69));
+            vuelos.Add(new Vuelo(Aerolinea.aviones[2], 10, EDestino.Miami, EEstado.Disponible, EDestino.Buenos_Aires, DateTime.Parse("2022/10/1 19:51:00"), InicializarPasajeros(),"A20394",10.30f,15,87241,14,55,69));
+            vuelos.Add(new Vuelo(Aerolinea.aviones[0], 4, EDestino.Mendoza, EEstado.Disponible, EDestino.Buenos_Aires, DateTime.Parse("2022/11/8 14:30:00"), InicializarPasajeros(),"BMD93", 03.00f,1330,17448,14,55,69));
+            vuelos.Add(new Vuelo(Aerolinea.aviones[1], 4, EDestino.Neuquén, EEstado.Disponible, EDestino.Buenos_Aires, DateTime.Parse("2022/10/15 18:00:00"), InicializarPasajeros(),"N93J4FG", 10.00f,3570,17448,14,55, 69));
+            vuelos.Add(new Vuelo(Aerolinea.aviones[1], 4, EDestino.Neuquén, EEstado.Disponible, EDestino.Buenos_Aires, DateTime.Parse("2022/9/15 18:00:00"), InicializarPasajeros(),"INASIN2", 11.00f,3570,17448,14,55, 69));
             //Aerolinea.aviones[0].Disponible = false;
             //Aerolinea.aviones[1].Disponible = false;
             //Aerolinea.aviones[2].Disponible = false;
            
 
-            Aerolinea.vuelosFinalizados.Add(new Vuelo(Aerolinea.aviones[2], 10, 1000, EDestino.Miami, EEstado.Finalizado, EDestino.Buenos_Aires, DateTime.Parse("2022/9/28 19:58:00"), InicializarPasajeros(), "A20394", DateTime.Parse("2022/9/28 20:14:00"), 15, 87241, 14, 55, 69));
-            Aerolinea.vuelosFinalizados.Add(new Vuelo(Aerolinea.aviones[0], 4, 200, EDestino.Mendoza, EEstado.Finalizado, EDestino.Buenos_Aires, DateTime.Parse("2022/11/8 14:30:00"), InicializarPasajeros(), "BMD93", DateTime.Parse("2022/11/8 18:30:00"), 1330, 17448, 14, 55, 69));
-            Aerolinea.vuelosFinalizados.Add(new Vuelo(Aerolinea.aviones[1], 4, 200, EDestino.Neuquén, EEstado.Finalizado, EDestino.Buenos_Aires, DateTime.Parse("2022/9/15 18:00:00"), InicializarPasajeros(), "N93J4FG", DateTime.Parse("2022/9/28 22:00:00"), 3570, 17448, 14, 55, 69));
-            Aerolinea.vuelosFinalizados.Add(new Vuelo(Aerolinea.aviones[1], 4, 200, EDestino.Neuquén, EEstado.Finalizado, EDestino.Buenos_Aires, DateTime.Parse("2022/9/15 18:00:00"), InicializarPasajeros(), "INASIN2", DateTime.Parse("2022/9/28 22:00:00"), 3570, 17448, 14, 55, 69));
+            Aerolinea.vuelosFinalizados.Add(new Vuelo(Aerolinea.aviones[2], 10, EDestino.Miami, EEstado.Finalizado, EDestino.Buenos_Aires, DateTime.Parse("2022/9/28 19:58:00"), InicializarPasajeros(), "A20394", 10.30f, 15, 87241, 14, 55, 69));
+            Aerolinea.vuelosFinalizados.Add(new Vuelo(Aerolinea.aviones[0], 4, EDestino.Mendoza, EEstado.Finalizado, EDestino.Buenos_Aires, DateTime.Parse("2022/11/8 14:30:00"), InicializarPasajeros(), "BMD93", 10.00f, 1330, 17448, 14, 55, 69));
+            Aerolinea.vuelosFinalizados.Add(new Vuelo(Aerolinea.aviones[1], 4, EDestino.Neuquén, EEstado.Finalizado, EDestino.Buenos_Aires, DateTime.Parse("2022/9/15 18:00:00"), InicializarPasajeros(), "N93J4FG", 10.00f, 3570, 17448, 14, 55, 69));
+            Aerolinea.vuelosFinalizados.Add(new Vuelo(Aerolinea.aviones[1], 4, EDestino.Neuquén, EEstado.Finalizado, EDestino.Buenos_Aires, DateTime.Parse("2022/9/15 18:00:00"), InicializarPasajeros(), "INASIN2", 10.00f, 3570, 17448, 14, 55, 69));
             Aerolinea.aviones[0].HorasVuelo += 4;
             Aerolinea.aviones[1].HorasVuelo += 8;
             Aerolinea.aviones[2].HorasVuelo += 10;

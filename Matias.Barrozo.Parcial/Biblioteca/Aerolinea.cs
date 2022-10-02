@@ -44,5 +44,11 @@ namespace Biblioteca
             return retorno;
         }
 
+        public static void BorrarVuelo(Vuelo vuelo)
+        {
+            Aerolinea.vuelosFinalizados.Add(vuelo);
+            Aerolinea.vuelos.Remove(vuelo);
+        }
+
     }
 }

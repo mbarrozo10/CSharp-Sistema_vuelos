@@ -1,15 +1,5 @@
 ﻿using Biblioteca;
 using Parcial1_Labo_2.Properties;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace Parcial1_Labo_2
 {
@@ -23,7 +13,6 @@ namespace Parcial1_Labo_2
         static DateTime llegada;
         private void frm_AgregarVuelo_Load(object sender, EventArgs e)
         {
-            //cambiar por filtro de fecha
             dtp_Salida.MinDate = DateTime.Now.AddDays(1);
             DateTime salida = new DateTime();
             
@@ -70,8 +59,7 @@ namespace Parcial1_Labo_2
             if(cmb_Avion.Text != String.Empty && cmb_Destino.Text != String.Empty && txt_Codigo.Text != String.Empty && cmb_Origen.Text != String.Empty
                 && dtp_Salida.Text!=String.Empty && cmb_Salida.Text!= String.Empty)
             {
-                int duracion = Vuelo.CalcularDuracion(Enum.Parse<EDestino>(cmb_Destino.Text));
-                int i = Avion.ConseguirIndex(cmb_Avion.Text);
+                int indiceAvion = Avion.ConseguirIndex(cmb_Avion.Text);
                 DateTime salida = new DateTime();
                 float horaElegida = float.Parse(DateTime.Parse(cmb_Salida.Text).ToString("HH,mm "));
                 if (cmb_Salida.SelectedIndex % 2 == 1)
@@ -80,17 +68,10 @@ namespace Parcial1_Labo_2
                 }
                 salida = DateTime.Parse(dtp_Salida.Text);
                 salida = salida.AddHours(horaElegida);
-                if (duracion + horaElegida >= 24)
-                {
-                    llegada = salida.AddDays(1);
-                }
-                llegada = salida.AddHours(duracion);
-                float costo = Vuelo.CalcularCosto(Enum.Parse<EDestino>(cmb_Destino.Text), duracion);
-                vuelo=  new Vuelo (Aerolinea.aviones[i], duracion,costo, Enum.Parse<EDestino>(cmb_Destino.Text), EEstado.Disponible
-                                    ,Enum.Parse<EDestino>(cmb_Origen.Text), salida, new Dictionary<int,Pasajero>(), txt_Codigo.Text, llegada, 
-                                    Aerolinea.aviones[i].Bodega, 0, 0, 0);
-                Aerolinea.vuelos.Add(vuelo);
-               
+                vuelo=  new Vuelo (Aerolinea.aviones[indiceAvion], Enum.Parse<EDestino>(cmb_Destino.Text), EEstado.Disponible
+                                    ,Enum.Parse<EDestino>(cmb_Origen.Text), salida, new Dictionary<int,Pasajero>(), txt_Codigo.Text, horaElegida,
+                                    Aerolinea.aviones[indiceAvion].Bodega, 0, 0, 0);
+                Aerolinea.vuelos.Add(vuelo); 
             }
             else
             {
@@ -120,9 +101,36 @@ namespace Parcial1_Labo_2
             }
         }
 
-        
+      
 
+        private void cmb_Avion_SelectedValueChanged(object sender, EventArgs e)
+        {
+            int i = Avion.ConseguirIndex(cmb_Avion.Text);
+            lbl_Asientos.Text = "Cantidad de asientos: " + Aerolinea.aviones[i].CantidadAsientos.ToString();
+        }
 
+        private void dtp_Salida_ValueChanged(object sender, EventArgs e)
+        {
+            cmb_Avion.Items.Clear();
+            
+            foreach (Avion avion in Aerolinea.aviones)
+            {
+                foreach (Vuelo vuelo in Aerolinea.vuelos)
+                {   
+                    if (avion.Equals(vuelo.Avion) && dtp_Salida.Value.ToString("dd/MM/yyyy") == vuelo.Salida.ToString("dd/MM/yyyy"))
+                    { 
+                        cmb_Avion.Items.Remove(avion.Matricula);
+                        break;
+                    }
+                    else
+                    {
+                        if (!cmb_Avion.Items.Contains(avion.Matricula))
+                        cmb_Avion.Items.Add(avion.Matricula);
+                    }
+                }
+            }
+
+        }
 
         private void ModoOscuro()
         {
@@ -142,7 +150,7 @@ namespace Parcial1_Labo_2
                 cmb_Avion.ForeColor = Color.White;
                 cmb_Avion.BackColor = Color.FromArgb(34, 34, 34);
                 txt_Codigo.BackColor = Color.FromArgb(34, 34, 34);
-                txt_Codigo.ForeColor= Color.White;
+                txt_Codigo.ForeColor = Color.White;
                 cmb_Destino.ForeColor = Color.White;
                 cmb_Destino.BackColor = Color.FromArgb(34, 34, 34);
                 cmb_Origen.BackColor = Color.FromArgb(34, 34, 34);
@@ -150,7 +158,7 @@ namespace Parcial1_Labo_2
                 cmb_Salida.ForeColor = Color.White;
                 cmb_Salida.BackColor = Color.FromArgb(34, 34, 34);
                 dtp_Salida.CalendarForeColor = Color.White;
-                dtp_Salida.CalendarMonthBackground = Color.FromArgb(34, 34, 34); 
+                dtp_Salida.CalendarMonthBackground = Color.FromArgb(34, 34, 34);
                 dtp_Salida.CalendarTitleBackColor = Color.FromArgb(34, 34, 34);
                 dtp_Salida.CalendarTitleForeColor = Color.White;
             }
@@ -183,35 +191,6 @@ namespace Parcial1_Labo_2
                 dtp_Salida.CalendarTitleBackColor = Color.White;
                 dtp_Salida.CalendarTitleForeColor = Color.Black;
             }
-        }
-
-        private void cmb_Avion_SelectedValueChanged(object sender, EventArgs e)
-        {
-            int i = Avion.ConseguirIndex(cmb_Avion.Text);
-            lbl_Asientos.Text = "Cantidad de asientos: " + Aerolinea.aviones[i].CantidadAsientos.ToString();
-        }
-
-        private void dtp_Salida_ValueChanged(object sender, EventArgs e)
-        {
-            cmb_Avion.Items.Clear();
-            
-            foreach (Avion avion in Aerolinea.aviones)
-            {
-                foreach (Vuelo vuelo in Aerolinea.vuelos)
-                {   
-                    if (avion.Equals(vuelo.Avion) && dtp_Salida.Value.ToString("dd/MM/yyyy") == vuelo.Salida.ToString("dd/MM/yyyy"))
-                    { 
-                        cmb_Avion.Items.Remove(avion.Matricula);
-                        break;
-                    }
-                    else
-                    {
-                        if (!cmb_Avion.Items.Contains(avion.Matricula))
-                        cmb_Avion.Items.Add(avion.Matricula);
-                    }
-                }
-            }
-
         }
     }
 }

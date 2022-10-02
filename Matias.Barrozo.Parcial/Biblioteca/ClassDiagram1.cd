@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="Biblioteca.Aerolinea" Collapsed="true">
+  <Class Name="Biblioteca.Aerolinea">
     <Position X="9.75" Y="2" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAACAAAAgAAAAAAAAAIAAAAAAAAgBEAAAAAAAAYAA=</HashCode>
+      <HashCode>AAAAACAAAAgAAAAAAAAAIAAAAAAAAgBEEAAAAAAAYAA=</HashCode>
       <FileName>Aerolinea.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Biblioteca.Avion" Collapsed="true">
+  <Class Name="Biblioteca.Avion">
     <Position X="7.25" Y="2" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAQQAAAEGAQAAAkgAAAAIAAAAACCAAAAgiAAAAAgAA=</HashCode>
@@ -21,8 +21,8 @@
       <FileName>Cliente.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Biblioteca.Inicializador" Collapsed="true">
-    <Position X="9.75" Y="3.5" Width="1.5" />
+  <Class Name="Biblioteca.Inicializador">
+    <Position X="13" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAACAAAAAAAAEAAAAAAAIAAAAAAAAAAwAAAA=</HashCode>
       <FileName>Inicializador.cs</FileName>
@@ -35,28 +35,28 @@
       <FileName>Pasajero.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Biblioteca.Persona" Collapsed="true">
+  <Class Name="Biblioteca.Persona">
     <Position X="1.5" Y="2" Width="1.5" />
     <TypeIdentifier>
       <HashCode>EAAAAAAAAAQAAACEAAAAgAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Persona.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Biblioteca.Vendedor" Collapsed="true">
-    <Position X="1.5" Y="3.5" Width="1.5" />
+  <Class Name="Biblioteca.Vendedor">
+    <Position X="0.5" Y="4.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>EAAABAAAAAQAAAIEIAACAAAAAAAAAAQAAAAEAAAAAAQ=</HashCode>
       <FileName>Vendedor.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Biblioteca.Vuelo" Collapsed="true">
-    <Position X="1.5" Y="5" Width="1.5" />
+  <Class Name="Biblioteca.Vuelo">
+    <Position X="5" Y="5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAghCAAQMQAAAAAEAIABgAAAAYABAACSAZCQGgABgBo=</HashCode>
+      <HashCode>AAghCAAQMQAgAAAEAIABgAAAAYABAACSAZCQGgABgBo=</HashCode>
       <FileName>Vuelo.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Biblioteca.Validador" Collapsed="true">
+  <Class Name="Biblioteca.Validador">
     <Position X="9.75" Y="5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAAACgAAAAAAAAAAAAAA=</HashCode>

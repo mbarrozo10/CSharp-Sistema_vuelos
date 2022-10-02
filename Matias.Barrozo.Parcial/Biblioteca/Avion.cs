@@ -14,7 +14,6 @@ namespace Biblioteca
         private int bodega;
         private bool comida;
         private bool wifi;
-        //private bool disponible;
         private int horasVuelo;
 
         

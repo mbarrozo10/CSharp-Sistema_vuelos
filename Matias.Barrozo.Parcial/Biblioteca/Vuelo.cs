@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -71,28 +72,33 @@ namespace Biblioteca
         }
 
 
-        public Vuelo(Avion avion, int duracion, float costoDePasaje, EDestino destino, EEstado estado, EDestino origen, DateTime salida, Dictionary<int,Pasajero> pasajeros, string codigo, DateTime llegada, int bodega, float recaudacion, int asientosPremium, int asientosTurista)
+        public Vuelo(Avion avion, EDestino destino, EEstado estado, EDestino origen, DateTime salida, Dictionary<int,Pasajero> pasajeros, string codigo, float horarioElegido, int bodega, float recaudacion, int asientosPremium, int asientosTurista)
         {
             this.avion = avion;
-            this.Duracion = duracion;
-            this.costoDePasaje = costoDePasaje;
+            this.Duracion = this.CalcularDuracion(destino);
             this.destino = destino;
+            this.costoDePasaje = this.CalcularCosto(destino,duracion);
             this.estado = estado;
             this.salida = salida;
             this.origen = origen;
             this.pasajeros = pasajeros;
             this.codigo = codigo.ToUpper();
             this.AsientosLibresTurista = asientosTurista;
-            this.llegada = llegada;
+            this.llegada = CalcularLlegada(horarioElegido);
             this.Recaudacion = recaudacion ;
             this.bodegaRestante = bodega;
             this.AsientosLibresPremium =asientosPremium;
             this.ultimoAsiento = 1;
         }
         
-        public Vuelo(Avion avion, int duracion, float costoDePasaje, EDestino destino, EEstado estado, EDestino origen, DateTime salida, Dictionary<int,Pasajero> pasajeros, string codigo, DateTime llegada, int bodega, float recaudacion, int asientosPremium, int asientosTurista, int ultimoAsiento):this(avion,duracion,costoDePasaje,destino,estado,origen,salida,pasajeros,codigo,llegada,bodega,recaudacion,asientosPremium,asientosTurista)
+        public Vuelo(Avion avion, int duracion, EDestino destino, EEstado estado, EDestino origen, DateTime salida, Dictionary<int,Pasajero> pasajeros, string codigo, float horarioElegido, int bodega, float recaudacion, int asientosPremium, int asientosTurista, int ultimoAsiento):this(avion,destino,estado,origen,salida,pasajeros,codigo,horarioElegido,bodega,recaudacion,asientosPremium,asientosTurista)
         {
             this.ultimoAsiento = ultimoAsiento;
+            this.duracion = duracion;
+            this.salida = salida;
+            this.llegada= CalcularLlegada(horarioElegido);
+            this.costoDePasaje = CalcularCosto(destino, duracion);
+           
         }
 
         public int BodegaRestante
@@ -174,7 +180,7 @@ namespace Biblioteca
             set { estado = value; }
         }
 
-        public static float CalcularCosto(EDestino destino, int duracion)
+        private float CalcularCosto(EDestino destino, int duracion)
         {
             if (((int)destino) > 14)
             {
@@ -202,6 +208,17 @@ namespace Biblioteca
             }
         }
 
+        private DateTime CalcularLlegada(float horaElegida)
+        {
+             if (duracion + horaElegida >= 24)
+            {
+                llegada = Salida.AddDays(1);
+            }
+            llegada = salida.AddHours(duracion);
+                
+             return llegada;
+        }
+
         public EDestino Origen
         {
             get { return origen; }
@@ -214,7 +231,7 @@ namespace Biblioteca
         }
         
 
-        public static int CalcularDuracion(EDestino destino)
+        public  int CalcularDuracion(EDestino destino)
         {
             Random rnd = new Random();
 
@@ -232,6 +249,11 @@ namespace Biblioteca
         public static int CalcularAsientos(int asientos, float porcentaje)
         {
             return (int)(asientos * porcentaje);
+        }
+
+        public bool VerificarEspacio(int cantidadPedida)
+        {
+            return (this.pasajeros.Count + cantidadPedida) > this.Avion.CantidadAsientos;
         }
 
         
