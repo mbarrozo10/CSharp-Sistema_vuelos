@@ -23,15 +23,15 @@ namespace Parcial1_Labo_2
         }
         static float precioPremium = 0;
         static float precioTurista = 0;
-        int index;
-        int indexClientes;
+        int indiceVuelo;
+        int indiceClientes;
         float totalAPagar=0;
         List<Pasajero> auxiliar= new List<Pasajero>();
 
         int cantidadPasajerosRestantes;
         public frm_Venta( int index) : this()
         {
-            this.index = index;
+            this.indiceVuelo = index;
         }
 
 
@@ -44,12 +44,12 @@ namespace Parcial1_Labo_2
         {
             dgv_Clientes.DataSource = null;
             dgv_Clientes.DataSource = Aerolinea.clientes;
-            lbl_Codigo.Text += Aerolinea.vuelos[index].Codigo;
-            lbl_Destino.Text += Aerolinea.vuelos[index].Destino.ToString();
-            lbl_Duracion.Text += Aerolinea.vuelos[index].Duracion;
-            lbl_Origen.Text+= Aerolinea.vuelos[index].Origen.ToString();
-            precioPremium=(float) (Aerolinea.vuelos[index].CostoDePasaje * 1.15f);
-            precioTurista=(float)(Aerolinea.vuelos[index].CostoDePasaje );
+            lbl_Codigo.Text += Aerolinea.vuelos[indiceVuelo].Codigo;
+            lbl_Destino.Text += Aerolinea.vuelos[indiceVuelo].Destino.ToString();
+            lbl_Duracion.Text += Aerolinea.vuelos[indiceVuelo].Duracion;
+            lbl_Origen.Text+= Aerolinea.vuelos[indiceVuelo].Origen.ToString();
+            precioPremium=(float) (Aerolinea.vuelos[indiceVuelo].CostoDePasaje * 1.15f);
+            precioTurista=(float)(Aerolinea.vuelos[indiceVuelo].CostoDePasaje );
             lbl_PrecioSub.Text += precioTurista.ToString("N2");
             lbl_PrecioFinal.Text += (precioTurista * 1.21f * 1.90f).ToString("N2");
             modoOscuroClaro();
@@ -104,7 +104,7 @@ namespace Parcial1_Labo_2
 
         private void chk_Premium_CheckedChanged(object sender, EventArgs e)
         {
-            if (Aerolinea.vuelos[index].AsientosLibresPremium==Vuelo.CalcularAsientos(Aerolinea.vuelos[index].Avion.CantidadAsientos,0.20f))
+            if (Aerolinea.vuelos[indiceVuelo].AsientosLibresPremium==Vuelo.CalcularAsientos(Aerolinea.vuelos[indiceVuelo].Avion.CantidadAsientos,0.20f))
             {
                 lbl_Error.Text = "Error, ya no queda expacio premium";
                 chk_Premium.Checked = false;
@@ -116,7 +116,7 @@ namespace Parcial1_Labo_2
                     nud_CantEquipaje.Maximum = 2;
                     lbl_PrecioSub.Text = "Precio subtotal: " + precioPremium.ToString("N2");
                     lbl_PrecioFinal.Text = "Precio Final: " + (precioPremium * 1.21f * 1.90f).ToString("N2");
-                    lbl_KgMax.Text = "/21 kg";
+                    lbl_KgMax.Text = "/42 kg";
                 }
                 else
                 {
@@ -137,7 +137,7 @@ namespace Parcial1_Labo_2
             {
                 try
                 {
-                    if (txt_Kg.Text != String.Empty && (Aerolinea.vuelos[index].BodegaRestante - int.Parse(txt_Kg.Text)) < 0)
+                    if (txt_Kg.Text != String.Empty && (Aerolinea.vuelos[indiceVuelo].BodegaRestante - int.Parse(txt_Kg.Text)) < 0)
                     {
                         throw new Exception("No hay mas espacio en cabina");
                     }
@@ -153,6 +153,7 @@ namespace Parcial1_Labo_2
                     txt_Dni.Clear();
                     txt_Edad.Clear();
                     nud_CantEquipaje.Value = 0;
+                    chk_BolsoMano.Checked = false;
                     txt_Kg.Text="0";
 
                     if (cantidadPasajerosRestantes == nud_Cantidad.Value)
@@ -160,7 +161,7 @@ namespace Parcial1_Labo_2
                         pnl_ConfirmarCompra.Visible = true;
                         pic_AceptarCantidad.Enabled = false;
                         pic_Cancelar.Enabled = false;
-                        KeyValuePair<int,Pasajero> aux = Aerolinea.vuelos[index].Pasajeros.Last();
+                        KeyValuePair<int,Pasajero> aux = Aerolinea.vuelos[indiceVuelo].Pasajeros.Last();
                         int asiento = aux.Key ;
                         foreach (Pasajero pas in auxiliar)
                         {
@@ -232,7 +233,7 @@ namespace Parcial1_Labo_2
 
         private void dgv_Clientes_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            indexClientes=e.RowIndex;
+            indiceClientes=e.RowIndex;
         }
 
         private void txt_Buscador_TextChanged(object sender, EventArgs e)
@@ -251,7 +252,7 @@ namespace Parcial1_Labo_2
             txt_Buscador.Enabled = false;
             pic_AceptarCliente.Enabled = false;
             pic_AgregarCliente.Enabled = false;
-            lbl_ClienteComprador.Text = "Comprador: " + Aerolinea.clientes[indexClientes].ToString();
+            lbl_ClienteComprador.Text = "Comprador: " + Aerolinea.clientes[indiceClientes].ToString();
         }
 
         private void btn_Agregar_Click_1(object sender, EventArgs e)
@@ -305,16 +306,16 @@ namespace Parcial1_Labo_2
             int cantidadAgregados=0;
             foreach (Pasajero pasajero in auxiliar)
             {
-                Aerolinea.vuelos[index].UltimoAsiento++;
-                Aerolinea.vuelos[index].Pasajeros.Add(Aerolinea.vuelos[index].UltimoAsiento, pasajero);
+                Aerolinea.vuelos[indiceVuelo].UltimoAsiento++;
+                Aerolinea.vuelos[indiceVuelo].Pasajeros.Add(Aerolinea.vuelos[indiceVuelo].UltimoAsiento, pasajero);
                 cantidadAgregados++;
                 if (pasajero.Premium)
                 {
-                    Aerolinea.vuelos[index].AsientosLibresPremium--;
+                    Aerolinea.vuelos[indiceVuelo].AsientosLibresPremium--;
                 }else
-                    Aerolinea.vuelos[index].AsientosLibresTurista--;
+                    Aerolinea.vuelos[indiceVuelo].AsientosLibresTurista--;
             }
-            Aerolinea.clientes[indexClientes].CantPasajesComprados += cantidadAgregados;
+            Aerolinea.clientes[indiceClientes].CantPasajesComprados += cantidadAgregados;
             DialogResult = DialogResult.OK;
         }
 
@@ -323,7 +324,7 @@ namespace Parcial1_Labo_2
 
             if (nud_Cantidad.Value > 0)
             {
-                if (Aerolinea.vuelos[index].VerificarEspacio((int)(nud_Cantidad.Value)))
+                if (Aerolinea.vuelos[indiceVuelo].VerificarEspacio((int)(nud_Cantidad.Value)))
                 {
                     lbl_Error.Text = "Error, no hay espacio";
                 }
@@ -448,7 +449,7 @@ namespace Parcial1_Labo_2
                 dgv_Clientes.DefaultCellStyle.BackColor = Color.White;
                 dgv_Clientes.DefaultCellStyle.ForeColor = Color.Black;
                 pic_AceptarCompra.Image = Resources.Aceptar_84x24_negro;
-                pic_CancelarCompra.Image = Resources.Aceptar_84x24_blanco;
+                pic_CancelarCompra.Image = Resources.cancelar_negro_84x24;
                 rtx_InfoPasajerosFinal.BackColor = Color.White;
                 rtx_InfoPasajerosFinal.ForeColor = Color.Black;
                 lbl_TotalPagar.ForeColor = Color.Black;

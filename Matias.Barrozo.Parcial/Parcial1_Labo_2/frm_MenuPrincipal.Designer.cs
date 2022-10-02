@@ -79,11 +79,6 @@
             this.txt_NombreVendedor = new System.Windows.Forms.TextBox();
             this.lbl_ErrorBorrar = new System.Windows.Forms.Label();
             this.dgv_Vendedores = new System.Windows.Forms.DataGridView();
-            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.apellidoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.usuarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tipoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.contraseñaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vendedorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pic_Borrar = new System.Windows.Forms.PictureBox();
             this.rtx_InfoAvion = new System.Windows.Forms.RichTextBox();
@@ -102,6 +97,10 @@
             this.txt_Buscador = new System.Windows.Forms.TextBox();
             this.lbl_Buscador = new System.Windows.Forms.Label();
             this.lbl_ErrorBusqueda = new System.Windows.Forms.Label();
+            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.apellidoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.usuarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_VuelosActivos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Modo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Vender)).BeginInit();
@@ -606,8 +605,7 @@
             this.nombreDataGridViewTextBoxColumn,
             this.apellidoDataGridViewTextBoxColumn,
             this.usuarioDataGridViewTextBoxColumn,
-            this.tipoDataGridViewTextBoxColumn,
-            this.contraseñaDataGridViewTextBoxColumn});
+            this.tipoDataGridViewTextBoxColumn});
             this.dgv_Vendedores.DataSource = this.vendedorBindingSource;
             this.dgv_Vendedores.Location = new System.Drawing.Point(62, 111);
             this.dgv_Vendedores.Name = "dgv_Vendedores";
@@ -617,38 +615,6 @@
             this.tip_Ayuda.SetToolTip(this.dgv_Vendedores, "Muestra los empleados y permite borrarlos y modificarlos");
             this.dgv_Vendedores.Visible = false;
             this.dgv_Vendedores.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgv_Vendedores_RowHeaderMouseClick);
-            // 
-            // nombreDataGridViewTextBoxColumn
-            // 
-            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
-            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
-            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
-            // 
-            // apellidoDataGridViewTextBoxColumn
-            // 
-            this.apellidoDataGridViewTextBoxColumn.DataPropertyName = "Apellido";
-            this.apellidoDataGridViewTextBoxColumn.HeaderText = "Apellido";
-            this.apellidoDataGridViewTextBoxColumn.Name = "apellidoDataGridViewTextBoxColumn";
-            // 
-            // usuarioDataGridViewTextBoxColumn
-            // 
-            this.usuarioDataGridViewTextBoxColumn.DataPropertyName = "Usuario";
-            this.usuarioDataGridViewTextBoxColumn.HeaderText = "Usuario";
-            this.usuarioDataGridViewTextBoxColumn.Name = "usuarioDataGridViewTextBoxColumn";
-            this.usuarioDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // tipoDataGridViewTextBoxColumn
-            // 
-            this.tipoDataGridViewTextBoxColumn.DataPropertyName = "Tipo";
-            this.tipoDataGridViewTextBoxColumn.HeaderText = "Tipo";
-            this.tipoDataGridViewTextBoxColumn.Name = "tipoDataGridViewTextBoxColumn";
-            // 
-            // contraseñaDataGridViewTextBoxColumn
-            // 
-            this.contraseñaDataGridViewTextBoxColumn.DataPropertyName = "Contraseña";
-            this.contraseñaDataGridViewTextBoxColumn.HeaderText = "Contraseña";
-            this.contraseñaDataGridViewTextBoxColumn.Name = "contraseñaDataGridViewTextBoxColumn";
-            this.contraseñaDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // vendedorBindingSource
             // 
@@ -708,6 +674,7 @@
             // 
             // cmb_FiltroHistorico
             // 
+            this.cmb_FiltroHistorico.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_FiltroHistorico.FormattingEnabled = true;
             this.cmb_FiltroHistorico.Location = new System.Drawing.Point(62, 52);
             this.cmb_FiltroHistorico.Name = "cmb_FiltroHistorico";
@@ -816,6 +783,31 @@
             this.lbl_ErrorBusqueda.Size = new System.Drawing.Size(0, 14);
             this.lbl_ErrorBusqueda.TabIndex = 25;
             // 
+            // nombreDataGridViewTextBoxColumn
+            // 
+            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            // 
+            // apellidoDataGridViewTextBoxColumn
+            // 
+            this.apellidoDataGridViewTextBoxColumn.DataPropertyName = "Apellido";
+            this.apellidoDataGridViewTextBoxColumn.HeaderText = "Apellido";
+            this.apellidoDataGridViewTextBoxColumn.Name = "apellidoDataGridViewTextBoxColumn";
+            // 
+            // usuarioDataGridViewTextBoxColumn
+            // 
+            this.usuarioDataGridViewTextBoxColumn.DataPropertyName = "Usuario";
+            this.usuarioDataGridViewTextBoxColumn.HeaderText = "Usuario";
+            this.usuarioDataGridViewTextBoxColumn.Name = "usuarioDataGridViewTextBoxColumn";
+            this.usuarioDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // tipoDataGridViewTextBoxColumn
+            // 
+            this.tipoDataGridViewTextBoxColumn.DataPropertyName = "Tipo";
+            this.tipoDataGridViewTextBoxColumn.HeaderText = "Tipo";
+            this.tipoDataGridViewTextBoxColumn.Name = "tipoDataGridViewTextBoxColumn";
+            // 
             // frm_MenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -824,8 +816,6 @@
             this.ClientSize = new System.Drawing.Size(1207, 600);
             this.ControlBox = false;
             this.Controls.Add(this.lbl_ErrorBusqueda);
-            this.Controls.Add(this.txt_Buscador);
-            this.Controls.Add(this.lbl_Buscador);
             this.Controls.Add(this.pnl_Historico);
             this.Controls.Add(this.pic_MasInfo);
             this.Controls.Add(this.pic_AgregarCliente);
@@ -839,8 +829,11 @@
             this.Controls.Add(this.pic_Modo);
             this.Controls.Add(this.dgv_VuelosActivos);
             this.Controls.Add(this.lbl_Bienvenido);
+            this.Controls.Add(this.txt_Buscador);
+            this.Controls.Add(this.lbl_Buscador);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.HelpButton = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frm_MenuPrincipal";
@@ -925,13 +918,12 @@
         private Label lbl_TituloABM;
         private PictureBox pic_Modificar;
         private Label lbl_InfoVendedor;
+        private Label lbl_Buscador;
+        private TextBox txt_Buscador;
+        private Label lbl_ErrorBusqueda;
         private DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn apellidoDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn usuarioDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn tipoDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn contraseñaDataGridViewTextBoxColumn;
-        private Label lbl_Buscador;
-        private TextBox txt_Buscador;
-        private Label lbl_ErrorBusqueda;
     }
 }

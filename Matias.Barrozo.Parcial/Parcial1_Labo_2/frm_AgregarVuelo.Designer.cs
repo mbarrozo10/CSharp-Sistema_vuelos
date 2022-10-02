@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_AgregarVuelo));
             this.lbl_Avion = new System.Windows.Forms.Label();
             this.lbl_destino = new System.Windows.Forms.Label();
             this.lbl_Salida = new System.Windows.Forms.Label();
@@ -53,6 +54,7 @@
             // lbl_Avion
             // 
             this.lbl_Avion.AutoSize = true;
+            this.lbl_Avion.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_Avion.Location = new System.Drawing.Point(353, 68);
             this.lbl_Avion.Name = "lbl_Avion";
             this.lbl_Avion.Size = new System.Drawing.Size(72, 15);
@@ -106,6 +108,7 @@
             // 
             // cmb_Avion
             // 
+            this.cmb_Avion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_Avion.FormattingEnabled = true;
             this.cmb_Avion.Location = new System.Drawing.Point(353, 98);
             this.cmb_Avion.Name = "cmb_Avion";
@@ -116,6 +119,7 @@
             // 
             // cmb_Destino
             // 
+            this.cmb_Destino.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_Destino.FormattingEnabled = true;
             this.cmb_Destino.Location = new System.Drawing.Point(624, 306);
             this.cmb_Destino.Name = "cmb_Destino";
@@ -127,6 +131,7 @@
             // txt_Codigo
             // 
             this.txt_Codigo.Location = new System.Drawing.Point(353, 187);
+            this.txt_Codigo.MaxLength = 5;
             this.txt_Codigo.Name = "txt_Codigo";
             this.txt_Codigo.Size = new System.Drawing.Size(100, 23);
             this.txt_Codigo.TabIndex = 13;
@@ -158,6 +163,7 @@
             // 
             // cmb_Origen
             // 
+            this.cmb_Origen.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_Origen.FormattingEnabled = true;
             this.cmb_Origen.Location = new System.Drawing.Point(58, 306);
             this.cmb_Origen.Name = "cmb_Origen";
@@ -169,6 +175,7 @@
             // 
             // cmb_Salida
             // 
+            this.cmb_Salida.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_Salida.FormattingEnabled = true;
             this.cmb_Salida.Location = new System.Drawing.Point(58, 187);
             this.cmb_Salida.Name = "cmb_Salida";
@@ -233,6 +240,7 @@
             this.Controls.Add(this.lbl_destino);
             this.Controls.Add(this.lbl_Avion);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "frm_AgregarVuelo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

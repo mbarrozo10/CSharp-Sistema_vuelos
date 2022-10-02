@@ -11,7 +11,7 @@ namespace Parcial1_Labo_2
             InitializeComponent();
         }
       
-        private void Form1_Load(object sender, EventArgs e)
+        private void frm_Login_Load(object sender, EventArgs e)
         {
             Aerolinea.CargarDatos();
         }
@@ -26,6 +26,7 @@ namespace Parcial1_Labo_2
                 menu.ShowDialog();
                 modoOscuroClaro();
                 this.Show();
+                lbl_Error.Text = String.Empty;
                 txt_Usuario.Clear();
                 txt_Contraseña.Clear();
 

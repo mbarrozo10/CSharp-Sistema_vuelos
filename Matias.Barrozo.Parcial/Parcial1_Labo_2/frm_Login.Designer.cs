@@ -96,7 +96,7 @@
             // 
             this.lbl_Error.AutoSize = true;
             this.lbl_Error.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.lbl_Error.Location = new System.Drawing.Point(137, 73);
+            this.lbl_Error.Location = new System.Drawing.Point(138, 321);
             this.lbl_Error.Name = "lbl_Error";
             this.lbl_Error.Size = new System.Drawing.Size(0, 15);
             this.lbl_Error.TabIndex = 7;
@@ -179,7 +179,7 @@
             this.Name = "frm_Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Load += new System.EventHandler(this.frm_Login_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pic_Modo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Ingresar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Salir)).EndInit();

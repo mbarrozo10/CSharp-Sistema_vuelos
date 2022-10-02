@@ -33,7 +33,7 @@ namespace Biblioteca
             get { return this.GetHashCode(); }
             set
             {
-                if (Validador.ValidarNumeroEnRango(value.ToString(), 10000000, 100000000))
+                if (Validador.ValidarNumeroEnRango(value.ToString(), 4000000, 100000000))
                 {
                     dni = value;
                 }

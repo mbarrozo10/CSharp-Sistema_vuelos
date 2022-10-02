@@ -16,7 +16,7 @@ namespace Parcial1_Labo_2
     public partial class frm_MenuPrincipal : Form
     {
 
-        private static int Index;
+        private static int indiceVuelo;
         private DateTime horaPrincipal;
         private float recaudacionCabotaje = 0;
         private float recaudacionInternacional = 0;
@@ -62,13 +62,13 @@ namespace Parcial1_Labo_2
 
         private void dgv_VuelosActivos_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            Index = e.RowIndex;
-            if (Aerolinea.vuelos[Index].Estado == Biblioteca.EEstado.Disponible && Aerolinea.vuelos[Index].Pasajeros.Count < Aerolinea.vuelos[Index].Avion.CantidadAsientos)
+            indiceVuelo = e.RowIndex;
+            if (Aerolinea.vuelos[indiceVuelo].Estado == Biblioteca.EEstado.Disponible && Aerolinea.vuelos[indiceVuelo].Pasajeros.Count < Aerolinea.vuelos[indiceVuelo].Avion.CantidadAsientos)
             {
                pic_Vender.Visible = true;
                pic_Pasajeros.Visible = true;
             }
-            else if (Aerolinea.vuelos[Index].Estado == Biblioteca.EEstado.EnVuelo || (Aerolinea.vuelos[Index].Estado == Biblioteca.EEstado.Lleno || Aerolinea.vuelos[Index].Estado== Biblioteca.EEstado.EnVuelo))
+            else if (Aerolinea.vuelos[indiceVuelo].Estado == Biblioteca.EEstado.EnVuelo || (Aerolinea.vuelos[indiceVuelo].Estado == Biblioteca.EEstado.Lleno || Aerolinea.vuelos[indiceVuelo].Estado== Biblioteca.EEstado.EnVuelo))
             {
                 pic_Pasajeros.Visible = true;
                 pic_Vender.Visible = false;
@@ -85,7 +85,7 @@ namespace Parcial1_Labo_2
 
         private void btn_Pasajeros_Click(object sender, EventArgs e)
         {
-            frm_pasajeros pj = new frm_pasajeros(Index);
+            frm_pasajeros pj = new frm_pasajeros(indiceVuelo);
             pj.ShowDialog();
         }
 
@@ -126,12 +126,12 @@ namespace Parcial1_Labo_2
 
         private void btn_Vender_Click(object sender, EventArgs e)
         {
-            frm_Venta venta = new frm_Venta(Index);
+            frm_Venta venta = new frm_Venta(indiceVuelo);
             if (venta.ShowDialog() == DialogResult.OK)
             {
-                if (Aerolinea.vuelos[Index].Pasajeros.Count == Aerolinea.vuelos[Index].Avion.CantidadAsientos)
+                if (Aerolinea.vuelos[indiceVuelo].Pasajeros.Count == Aerolinea.vuelos[indiceVuelo].Avion.CantidadAsientos)
                 {
-                    Aerolinea.vuelos[Index].Estado = Biblioteca.EEstado.Lleno;
+                    Aerolinea.vuelos[indiceVuelo].Estado = Biblioteca.EEstado.Lleno;
                 }
                 CargarDatagrid(Aerolinea.vuelos);
             }
@@ -149,7 +149,7 @@ namespace Parcial1_Labo_2
             CargarCerrarPaneles(false);
             dgv_VuelosActivos.Visible = true;
 
-            rtx_InfoVuelo.Text = Aerolinea.vuelos[Index].ToString();
+            rtx_InfoVuelo.Text = Aerolinea.vuelos[indiceVuelo].ToString();
         }
 
         private void pic_SalirPanelInfo_Click(object sender, EventArgs e)
@@ -160,11 +160,12 @@ namespace Parcial1_Labo_2
 
         private void pic_CancelarVuelo_Click(object sender, EventArgs e)
         {
-            Aerolinea.vuelos[Index].Estado = Biblioteca.EEstado.Cancelado;
-            Aerolinea.vuelos.Remove(Aerolinea.vuelos[Index]);
+            Aerolinea.vuelos[indiceVuelo].Estado = Biblioteca.EEstado.Cancelado;
+            Aerolinea.vuelos.Remove(Aerolinea.vuelos[indiceVuelo]);
             CargarCerrarPaneles(true);
             CargarDatagrid(Aerolinea.vuelos);
-            Index = 0;
+            indiceVuelo = -1;
+            pnl_Informacion.Visible = false;
 
         }
 
@@ -460,7 +461,6 @@ namespace Parcial1_Labo_2
                 {
                     vuelo.Estado = Biblioteca.EEstado.Finalizado;
                     vuelo.Avion.HorasVuelo += vuelo.Duracion;
-                    //vuelo.Avion.Disponible = true;
                     Aerolinea.BorrarVuelo(vuelo);
                     CargarDatagrid(Aerolinea.vuelos);
                     break;
@@ -537,6 +537,7 @@ namespace Parcial1_Labo_2
                 pic_ModificarAceptar.Visible = true;
                 lbl_InfoVendedor.Visible = true;
                 pic_Borrar.Visible = false;
+                pic_Modificar.Visible = false;
                 lbl_InfoVendedor.Text ="Vendedor a modificar: \n"+ Aerolinea.Vendedores[indiceVendedor].MostrarInformacion();
                 lbl_TituloABM.Text = "Ingrese el campo que quiera modificar";
                 if (Aerolinea.Vendedores[indiceVendedor]== vendedorActivo)
@@ -572,6 +573,7 @@ namespace Parcial1_Labo_2
                 chk_Admin.Enabled = true;
                 pic_Borrar.Visible = true;
                 pic_ModificarAceptar.Visible = false;
+                pic_Modificar.Visible = true;
                 LimpiarPanelVendedor();
             }catch(Exception ex)
             {

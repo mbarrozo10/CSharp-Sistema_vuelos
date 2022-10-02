@@ -25,12 +25,12 @@ namespace Biblioteca
             List<Avion> aviones = new List<Avion>();
 
             aviones.Add(new Avion("A213012B", 100, 4, 2800, true, false));
-            aviones.Add(new Avion("A133QEA", 200, 6, 5040, true, true ));
-            aviones.Add(new Avion("A1924FA", 70, 2, 1764, false, false));
+            aviones.Add(new Avion("A133QEA7", 200, 6, 5040, true, true ));
+            aviones.Add(new Avion("A1924FA8", 70, 2, 1764, false, false));
             aviones.Add(new Avion("AISNF393", 500, 8, 12600, true, true));
-            aviones.Add(new Avion("BEW9B3", 700, 6, 17640, true, false));
+            aviones.Add(new Avion("BEW9B300", 700, 6, 17640, true, false));
             aviones.Add(new Avion("ANV3UIN9", 200, 4, 5040, true, true));
-            aviones.Add(new Avion("ASIMFIVE9", 400, 6, 10080, true, false));
+            aviones.Add(new Avion("ASIMF8VE", 400, 6, 10080, true, false));
 
             return aviones;
         } 
