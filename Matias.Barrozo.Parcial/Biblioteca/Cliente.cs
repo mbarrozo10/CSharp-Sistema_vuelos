@@ -86,13 +86,15 @@ namespace Biblioteca
             return dni;
         }
 
+      
         public override string ToString()
         {
             return Nombre +" "+ Apellido;
         }
+
         public override string MostrarInformacion()
         {
-            return "Nombre: " + Nombre + "\nApellido: " + Apellido + "\nDni: " + Dni + "\nEdad: " + Edad;
+            return "Nombre: " + Nombre + "\nApellido: " + Apellido + "\nDni: " + this.GetHashCode() + "\nEdad: " + Edad;
         }
 
 

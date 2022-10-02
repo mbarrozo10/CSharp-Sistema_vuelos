@@ -70,7 +70,7 @@
             this.tip_Ayuda = new System.Windows.Forms.ToolTip(this.components);
             this.pic_AgregarCliente = new System.Windows.Forms.PictureBox();
             this.pic_AceptarCliente = new System.Windows.Forms.PictureBox();
-            this.pic_Aceptar = new System.Windows.Forms.PictureBox();
+            this.pic_AceptarCantidad = new System.Windows.Forms.PictureBox();
             this.lbl_ClienteComprador = new System.Windows.Forms.Label();
             this.lbl_TotalPagar = new System.Windows.Forms.Label();
             this.pnl_ConfirmarCompra = new System.Windows.Forms.Panel();
@@ -85,7 +85,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_AgregarCliente)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_AceptarCliente)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_Aceptar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_AceptarCantidad)).BeginInit();
             this.pnl_ConfirmarCompra.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_AceptarCompra)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_CancelarCompra)).BeginInit();
@@ -508,16 +508,16 @@
             this.pic_AceptarCliente.TabStop = false;
             this.pic_AceptarCliente.Click += new System.EventHandler(this.btn_AceptarCliente_Click);
             // 
-            // pic_Aceptar
+            // pic_AceptarCantidad
             // 
-            this.pic_Aceptar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pic_Aceptar.Image = global::Parcial1_Labo_2.Properties.Resources.Aceptar_84x24_negro;
-            this.pic_Aceptar.Location = new System.Drawing.Point(662, 41);
-            this.pic_Aceptar.Name = "pic_Aceptar";
-            this.pic_Aceptar.Size = new System.Drawing.Size(86, 26);
-            this.pic_Aceptar.TabIndex = 42;
-            this.pic_Aceptar.TabStop = false;
-            this.pic_Aceptar.Click += new System.EventHandler(this.aceptarCantidad_Click);
+            this.pic_AceptarCantidad.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pic_AceptarCantidad.Image = global::Parcial1_Labo_2.Properties.Resources.Aceptar_84x24_negro;
+            this.pic_AceptarCantidad.Location = new System.Drawing.Point(662, 41);
+            this.pic_AceptarCantidad.Name = "pic_AceptarCantidad";
+            this.pic_AceptarCantidad.Size = new System.Drawing.Size(86, 26);
+            this.pic_AceptarCantidad.TabIndex = 42;
+            this.pic_AceptarCantidad.TabStop = false;
+            this.pic_AceptarCantidad.Click += new System.EventHandler(this.pic_AceptarCantidad_Click);
             // 
             // lbl_ClienteComprador
             // 
@@ -587,7 +587,7 @@
             this.ControlBox = false;
             this.Controls.Add(this.pnl_ConfirmarCompra);
             this.Controls.Add(this.lbl_ClienteComprador);
-            this.Controls.Add(this.pic_Aceptar);
+            this.Controls.Add(this.pic_AceptarCantidad);
             this.Controls.Add(this.pic_AceptarCliente);
             this.Controls.Add(this.pic_AgregarCliente);
             this.Controls.Add(this.rtx_PasajerosAgregados);
@@ -636,7 +636,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_AgregarCliente)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_AceptarCliente)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_Aceptar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_AceptarCantidad)).EndInit();
             this.pnl_ConfirmarCompra.ResumeLayout(false);
             this.pnl_ConfirmarCompra.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_AceptarCompra)).EndInit();
@@ -688,7 +688,7 @@
         private ToolTip tip_Ayuda;
         private PictureBox pic_AgregarCliente;
         private PictureBox pic_AceptarCliente;
-        private PictureBox pic_Aceptar;
+        private PictureBox pic_AceptarCantidad;
         private Label lbl_ClienteComprador;
         private Label lbl_TotalPagar;
         private Panel pnl_ConfirmarCompra;

@@ -72,6 +72,8 @@ namespace Parcial1_Labo_2
                 txt_Usuario.ForeColor = Color.White;
                 txt_Contraseña.ForeColor = Color.White;
                 Aerolinea.modoOscuro = true;
+                pic_Logo.Image = Resources.icono_blanco__1_;
+                lbl_Login.ForeColor = Color.White;
             }
             else
             {
@@ -86,6 +88,8 @@ namespace Parcial1_Labo_2
                 txt_Contraseña.ForeColor = Color.Black;
                 txt_Usuario.BackColor = Color.White;
                 Aerolinea.modoOscuro = false;
+                pic_Logo.Image = Resources.icono_negro;
+                lbl_Login.ForeColor = Color.Black;
             }
         }
 

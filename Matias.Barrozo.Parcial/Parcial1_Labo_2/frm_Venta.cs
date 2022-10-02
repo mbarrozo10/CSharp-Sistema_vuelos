@@ -157,7 +157,7 @@ namespace Parcial1_Labo_2
                     if (cantidadPasajerosRestantes == nud_Cantidad.Value)
                     { 
                         pnl_ConfirmarCompra.Visible = true;
-                        pic_Aceptar.Enabled = false;
+                        pic_AceptarCantidad.Enabled = false;
                         pic_Cancelar.Enabled = false;
                         KeyValuePair<int,Pasajero> aux = Aerolinea.vuelos[index].Pasajeros.Last();
                         int asiento = aux.Key ;
@@ -196,7 +196,7 @@ namespace Parcial1_Labo_2
         {
             if (nud_Cantidad.Value != 0)
             {
-                pic_Aceptar.Enabled = true;
+                pic_AceptarCantidad.Enabled = true;
             }
             else
             {
@@ -227,38 +227,7 @@ namespace Parcial1_Labo_2
             }
         }
 
-       
-       
-
-        private void aceptarCantidad_Click(object sender, EventArgs e)
-        {
-            if (nud_Cantidad.Value > 0)
-            {
-                if (Aerolinea.vuelosFinalizados[index].VerificarEspacio((int)(nud_Cantidad.Value)))
-                {
-                    lbl_Error.Text = "Error, no hay espacio";
-                }
-                else
-                {
-                    nud_Cantidad.Enabled = false;
-                    txt_Apellido.Enabled = true;
-                    txt_Nombre.Enabled = true;
-                    txt_Dni.Enabled = true;
-                    txt_Edad.Enabled = true;
-                    nud_CantEquipaje.Enabled = true;
-                    chk_Premium.Enabled = true;
-                    prg_CantidadRestante.Maximum = (int)nud_Cantidad.Value;
-                    pic_Agregar.Enabled = true;
-                    pic_Aceptar.Enabled = false;
-                    chk_BolsoMano.Enabled = true;
-                }
-
-            }
-            else
-                lbl_Error.Text = "Seleccione una cantidad mayor a 0"; 
-        }
-
-       
+    
 
         private void dgv_Clientes_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
@@ -320,7 +289,7 @@ namespace Parcial1_Labo_2
             }
             else
             {
-                lbl_ErrorBusqueda.Text = "No se encontro ningun pasajero, quiere agregarlo?";
+                lbl_ErrorBusqueda.Text = "No se encontro ningun cliente, quiere agregarlo?";
 
             }
         }
@@ -390,7 +359,7 @@ namespace Parcial1_Labo_2
                 lbl_ErrorBusqueda.ForeColor = Color.White;
                 lbl_Error.ForeColor = Color.White;
                 lbl_ClienteComprador.ForeColor = Color.White;
-                pic_Aceptar.Image = Resources.Aceptar_84x24_blanco;
+                pic_AceptarCantidad.Image = Resources.Aceptar_84x24_blanco;
                 pic_AgregarCliente.Image = Resources.agregar_blanco_84x24;
                 pic_AceptarCliente.Image = Resources.Aceptar_84x24_blanco;
                 dgv_Clientes.DefaultCellStyle.BackColor = Color.FromArgb(34, 34, 34);
@@ -437,7 +406,7 @@ namespace Parcial1_Labo_2
                 lbl_ErrorBusqueda.ForeColor = Color.Black;
                 lbl_Error.ForeColor = Color.Black;
                 lbl_ClienteComprador.ForeColor = Color.Black;
-                pic_Aceptar.Image = Resources.Aceptar_84x24_negro;
+                pic_AceptarCantidad.Image = Resources.Aceptar_84x24_negro;
                 pic_AgregarCliente.Image = Resources.agregar_negro_84x24;
                 pic_AceptarCliente.Image = Resources.Aceptar_84x24_negro;
                 
@@ -447,6 +416,33 @@ namespace Parcial1_Labo_2
             }
         }
 
-       
+        private void pic_AceptarCantidad_Click(object sender, EventArgs e)
+        {
+
+            if (nud_Cantidad.Value > 0)
+            {
+                if (Aerolinea.vuelosFinalizados[index].VerificarEspacio((int)(nud_Cantidad.Value)))
+                {
+                    lbl_Error.Text = "Error, no hay espacio";
+                }
+                else
+                {
+                    nud_Cantidad.Enabled = false;
+                    txt_Apellido.Enabled = true;
+                    txt_Nombre.Enabled = true;
+                    txt_Dni.Enabled = true;
+                    txt_Edad.Enabled = true;
+                    nud_CantEquipaje.Enabled = true;
+                    chk_Premium.Enabled = true;
+                    prg_CantidadRestante.Maximum = (int)nud_Cantidad.Value;
+                    pic_Agregar.Enabled = true;
+                    pic_AceptarCantidad.Enabled = false;
+                    chk_BolsoMano.Enabled = true;
+                }
+
+            }
+            else
+                lbl_Error.Text = "Seleccione una cantidad mayor a 0";
+        }
     }
 }

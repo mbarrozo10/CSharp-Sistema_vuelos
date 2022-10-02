@@ -45,5 +45,8 @@ namespace Biblioteca
         }
 
         public abstract string MostrarInformacion();
+
+       
     }
+
 }

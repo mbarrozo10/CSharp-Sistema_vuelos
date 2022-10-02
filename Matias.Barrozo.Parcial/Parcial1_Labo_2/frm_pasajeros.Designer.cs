@@ -39,6 +39,9 @@
             this.pasajeroBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pic_Salir = new System.Windows.Forms.PictureBox();
             this.tip_Ayuda = new System.Windows.Forms.ToolTip(this.components);
+            this.lbl_Buscador = new System.Windows.Forms.Label();
+            this.txt_BuscadorPasajero = new System.Windows.Forms.TextBox();
+            this.lbl_Error = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Pasajeros)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pasajeroBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Salir)).BeginInit();
@@ -56,7 +59,7 @@
             this.premiumDataGridViewCheckBoxColumn,
             this.equipajeDataGridViewTextBoxColumn});
             this.dgv_Pasajeros.DataSource = this.pasajeroBindingSource;
-            this.dgv_Pasajeros.Location = new System.Drawing.Point(83, 26);
+            this.dgv_Pasajeros.Location = new System.Drawing.Point(64, 89);
             this.dgv_Pasajeros.Name = "dgv_Pasajeros";
             this.dgv_Pasajeros.RowTemplate.Height = 25;
             this.dgv_Pasajeros.Size = new System.Drawing.Size(576, 334);
@@ -120,12 +123,44 @@
             this.tip_Ayuda.SetToolTip(this.pic_Salir, "Vuelve al menu principal");
             this.pic_Salir.Click += new System.EventHandler(this.btn_Salir_Click);
             // 
+            // lbl_Buscador
+            // 
+            this.lbl_Buscador.AutoSize = true;
+            this.lbl_Buscador.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_Buscador.ForeColor = System.Drawing.Color.Black;
+            this.lbl_Buscador.Location = new System.Drawing.Point(64, 26);
+            this.lbl_Buscador.Name = "lbl_Buscador";
+            this.lbl_Buscador.Size = new System.Drawing.Size(64, 14);
+            this.lbl_Buscador.TabIndex = 2;
+            this.lbl_Buscador.Text = "Buscador";
+            // 
+            // txt_BuscadorPasajero
+            // 
+            this.txt_BuscadorPasajero.Location = new System.Drawing.Point(64, 43);
+            this.txt_BuscadorPasajero.Name = "txt_BuscadorPasajero";
+            this.txt_BuscadorPasajero.Size = new System.Drawing.Size(145, 23);
+            this.txt_BuscadorPasajero.TabIndex = 3;
+            this.txt_BuscadorPasajero.TextChanged += new System.EventHandler(this.txt_BuscadorPasajero_TextChanged);
+            this.txt_BuscadorPasajero.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_BuscadorPasajero_KeyPress);
+            // 
+            // lbl_Error
+            // 
+            this.lbl_Error.AutoSize = true;
+            this.lbl_Error.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_Error.Location = new System.Drawing.Point(234, 47);
+            this.lbl_Error.Name = "lbl_Error";
+            this.lbl_Error.Size = new System.Drawing.Size(0, 14);
+            this.lbl_Error.TabIndex = 4;
+            // 
             // frm_pasajeros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.ControlBox = false;
+            this.Controls.Add(this.lbl_Error);
+            this.Controls.Add(this.txt_BuscadorPasajero);
+            this.Controls.Add(this.lbl_Buscador);
             this.Controls.Add(this.pic_Salir);
             this.Controls.Add(this.dgv_Pasajeros);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -137,6 +172,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pasajeroBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Salir)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -152,5 +188,8 @@
         private DataGridViewTextBoxColumn equipajeDataGridViewTextBoxColumn;
         private ToolTip tip_Ayuda;
         private PictureBox pic_Salir;
+        private Label lbl_Buscador;
+        private TextBox txt_BuscadorPasajero;
+        private Label lbl_Error;
     }
 }

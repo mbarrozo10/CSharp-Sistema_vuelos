@@ -66,7 +66,6 @@ namespace Biblioteca
         {
             return this.Nombre + " "+ this.Apellido  ;
 
-            
         }
 
         public override string MostrarInformacion()

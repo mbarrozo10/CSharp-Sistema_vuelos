@@ -55,8 +55,8 @@ en situaciones en las cuales no iban a requerir de una instancia, o no estan enl
 requiere de una instancia.Con respeco a los namespaces se dividio en 2, uno es todo el entorno grafico y sus metodos, mientras que el otro son las entidades ajenas al apartado grafico.
 
 - Tema Programacion orientada a objetos: 
- * Clases: En el programa se usaron 5 clases de instancia, porque se requeria abstraer atributos y funciones de ciertos objetos de la realidad, por ejemplo avion, pasajero, vuelo.
- * Objetos: Las instancias de las clases del programa se usan a lo largo del mismo, durante la generacion de colecciones, en altas de pasajeros, alta de cliente, alta de vuelos, etc;
+ -- Clases: En el programa se usaron 5 clases de instancia, porque se requeria abstraer atributos y funciones de ciertos objetos de la realidad, por ejemplo avion, pasajero, vuelo.
+ -- Objetos: Las instancias de las clases del programa se usan a lo largo del mismo, durante la generacion de colecciones, en altas de pasajeros, alta de cliente, alta de vuelos, etc;
 
 
 - Tema Encapsulamiento: En todas las clases de instancia, se limito el acceso a sus atributos declarandolos como "private". En casos que es necesario setear, como por ejemplo en vendedores que se puede
@@ -88,7 +88,7 @@ un usuario no puede agregar vuelos mientras que un administrador si, tambien el 
 
 - Buscador: Se agrego un buscador en distintos datagrid que hay a lo largo del programa, estos indican por que valores se puede buscar.
 
-- Modo oscuro: Si bien no le suma nada al programa, lo considero como tal por el trabajo que me llevo hacer que funcione.
+- Modo oscuro: Si bien solo suma para el apartado visual, lo considero como tal por el trabajo que me llevo hacer que funcione.
 
 - Funciona: Con esto me refiero que los vuelos se actualizan segun su hora de salida, tanto los vuelos hardcodeados como los nuevos, van a ir cambiando su estado a medida que va pasando las horas
 es decir que si la hora actual llega a la hora de salida de un determinado vuelo, el estado de este cambiara a en vuelo y si pasa con la llegada cambiara a finalizado y automaticamente pasara

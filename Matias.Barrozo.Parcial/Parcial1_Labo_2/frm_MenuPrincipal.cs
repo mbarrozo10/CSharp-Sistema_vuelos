@@ -38,7 +38,7 @@ namespace Parcial1_Labo_2
         private void MenuPrincipal_Load(object sender, EventArgs e)
         {
             
-            CargarDatagrid();
+            CargarDatagrid(Aerolinea.vuelos);
             modoOscuroClaro();
             cmb_FiltroHistorico.Items.Add("Destinos");
             cmb_FiltroHistorico.Items.Add("Clientes Frecuentes");
@@ -89,30 +89,30 @@ namespace Parcial1_Labo_2
             pj.ShowDialog();
         }
 
-        private void CargarDatagrid()
+        private void CargarDatagrid(List<Vuelo> vuelos)
         {
             dgv_VuelosActivos.DataSource = null;
             dgv_VuelosActivos.Rows.Clear();
-            for (int i = 0; i < Aerolinea.vuelos.Count; i++)
+            foreach (Vuelo vuelo in vuelos)
             {
-                DataGridViewRow filas = new DataGridViewRow();
-               
-                filas.CreateCells(dgv_VuelosActivos);
-              
-                filas.Cells[0].Value = Aerolinea.vuelos[i].Avion.Matricula;
-                filas.Cells[1].Value = Aerolinea.vuelos[i].Duracion;
-                filas.Cells[2].Value = Aerolinea.vuelos[i].Origen;
-                filas.Cells[3].Value = Aerolinea.vuelos[i].Destino;
-                filas.Cells[4].Value = Aerolinea.vuelos[i].Salida;
-                filas.Cells[5].Value = Aerolinea.vuelos[i].Llegada; 
-                filas.Cells[6].Value = Aerolinea.vuelos[i].Estado;
-                filas.Cells[7].Value = Aerolinea.vuelos[i].Avion.CantidadAsientos - Aerolinea.vuelos[i].Pasajeros.Count;
-                filas.Cells[8].Value = Aerolinea.vuelos[i].Avion.Wifi;
-                filas.Cells[9].Value = Aerolinea.vuelos[i].Avion.Comida;
-               
-                dgv_VuelosActivos.Rows.Add(filas);
+                    DataGridViewRow filas = new DataGridViewRow();
 
+                    filas.CreateCells(dgv_VuelosActivos);
+
+                    filas.Cells[0].Value = vuelo.Avion.Matricula;
+                    filas.Cells[1].Value = vuelo.Duracion;
+                    filas.Cells[2].Value = vuelo.Origen;
+                    filas.Cells[3].Value = vuelo.Destino;
+                    filas.Cells[4].Value = vuelo.Salida;
+                    filas.Cells[5].Value = vuelo.Llegada;
+                    filas.Cells[6].Value = vuelo.Estado;
+                    filas.Cells[7].Value = vuelo.Avion.CantidadAsientos - vuelo.Pasajeros.Count;
+                    filas.Cells[8].Value = vuelo.Avion.Wifi;
+                    filas.Cells[9].Value = vuelo.Avion.Comida;
+
+                    dgv_VuelosActivos.Rows.Add(filas);
             }
+            
         }
 
         private void btn_AgregarVuelo_Click(object sender, EventArgs e)
@@ -120,7 +120,7 @@ namespace Parcial1_Labo_2
             frm_AgregarVuelo vuelo = new frm_AgregarVuelo();
             if (vuelo.ShowDialog() == DialogResult.OK)
             {
-                CargarDatagrid();
+                CargarDatagrid(Aerolinea.vuelos);
             }
         }
 
@@ -133,7 +133,7 @@ namespace Parcial1_Labo_2
                 {
                     Aerolinea.vuelos[Index].Estado = Biblioteca.EEstado.Lleno;
                 }
-                CargarDatagrid();
+                CargarDatagrid(Aerolinea.vuelos);
             }
         }
 
@@ -163,7 +163,7 @@ namespace Parcial1_Labo_2
             Aerolinea.vuelos[Index].Estado = Biblioteca.EEstado.Cancelado;
             Aerolinea.vuelos.Remove(Aerolinea.vuelos[Index]);
             CargarCerrarPaneles(true);
-            CargarDatagrid();
+            CargarDatagrid(Aerolinea.vuelos);
             Index = 0;
 
         }
@@ -454,7 +454,7 @@ namespace Parcial1_Labo_2
 
                 {
                     vuelo.Estado = Biblioteca.EEstado.EnVuelo;
-                    CargarDatagrid();
+                    CargarDatagrid(Aerolinea.vuelos);
                 }
                  if(horaPrincipal.CompareTo(vuelo.Llegada) > 0 && vuelo.Estado== Biblioteca.EEstado.EnVuelo)
                 {
@@ -462,7 +462,7 @@ namespace Parcial1_Labo_2
                     vuelo.Avion.HorasVuelo += vuelo.Duracion;
                     //vuelo.Avion.Disponible = true;
                     Aerolinea.BorrarVuelo(vuelo);
-                    CargarDatagrid();
+                    CargarDatagrid(Aerolinea.vuelos);
                     break;
                 }
             }
@@ -590,6 +590,46 @@ namespace Parcial1_Labo_2
 
         }
 
+
+        private void txt_Buscador_TextChanged(object sender, EventArgs e)
+        {
+            if(txt_Buscador.Text == String.Empty)
+            {
+                CargarDatagrid(Aerolinea.vuelos);
+            }
+        }
+
+        private void txt_Buscador_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            bool Encontro = false;
+            List<Vuelo> filtrada = new List<Vuelo>();
+            foreach(Vuelo vuelo in Aerolinea.vuelos)
+
+
+                if (vuelo.Avion.Matricula.ToLower().Contains(txt_Buscador.Text.ToLower()) ||
+                     vuelo.Destino.ToString().ToLower().Contains(txt_Buscador.Text.ToLower()) ||
+                     vuelo.Origen.ToString().ToLower().Contains(txt_Buscador.Text.ToLower())||
+                     vuelo.Salida.ToString().ToLower().Contains(txt_Buscador.Text.ToLower()))
+                {
+                    filtrada.Add(vuelo);
+                    Encontro = true;
+                }
+
+            
+            if (Encontro)
+            {
+                CargarDatagrid(filtrada);
+                lbl_ErrorBusqueda.Text = String.Empty;
+
+            }
+            else
+            {
+                lbl_ErrorBusqueda.Text = "No se encontro ningun vuelo";
+
+            }
+        }
+
+
         //Modo oscuro
 
         private void modoOscuroClaro()
@@ -628,10 +668,10 @@ namespace Parcial1_Labo_2
                 pic_Borrar.Image = Resources.borrar_blanco;
                 lbl_ErrorBorrar.ForeColor = Color.White;
                 lbl_TituloABM.ForeColor = Color.White;
-                lbl_InfoVendedor.ForeColor=Color.White;
+                lbl_InfoVendedor.ForeColor = Color.White;
                 pic_Modificar.Image = Resources.modificar_blanco3;
                 pic_ModificarAceptar.Image = Resources.modificar_blanco3;
-                txt_ApellidoVendedor.BackColor = Color.FromArgb(34,34,34);
+                txt_ApellidoVendedor.BackColor = Color.FromArgb(34, 34, 34);
                 txt_ContraseñaVendedor.BackColor = Color.FromArgb(34, 34, 34);
                 txt_NombreVendedor.BackColor = Color.FromArgb(34, 34, 34);
                 txt_UsuarioVendedor.BackColor = Color.FromArgb(34, 34, 34);
@@ -641,7 +681,10 @@ namespace Parcial1_Labo_2
                 txt_ContraseñaVendedor.ForeColor = Color.White;
                 pic_AgregarVendedor.Image = Resources.agregar_blanco_84x24;
                 chk_Admin.ForeColor = Color.White;
-                
+                txt_Buscador.BackColor = Color.FromArgb(34, 34, 34);
+                txt_Buscador.ForeColor = Color.White;
+                lbl_Buscador.ForeColor = Color.White;
+                lbl_ErrorBusqueda.ForeColor = Color.White;
 
             }
             else
@@ -689,10 +732,13 @@ namespace Parcial1_Labo_2
                 txt_NombreVendedor.ForeColor = Color.Black;
                 txt_ContraseñaVendedor.ForeColor = Color.Black;
                 pic_AgregarVendedor.Image = Resources.agregar_negro_84x24;
-                chk_Admin.ForeColor= Color.Black;
+                chk_Admin.ForeColor = Color.Black;
+                txt_Buscador.BackColor = Color.White;
+                txt_Buscador.ForeColor = Color.Black;
+                lbl_Buscador.ForeColor = Color.Black;
+                lbl_ErrorBusqueda.ForeColor = Color.Black;
 
             }
         }
-
     }
 }

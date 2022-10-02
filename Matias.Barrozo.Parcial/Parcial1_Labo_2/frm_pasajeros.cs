@@ -51,7 +51,10 @@ namespace Parcial1_Labo_2
                 dgv_Pasajeros.RowsDefaultCellStyle.ForeColor = Color.White;
                 pic_Salir.Image = Resources.salir_blanco_84x24;
                 this.BackColor = Color.FromArgb(34, 34, 34);
-
+                lbl_Error.ForeColor = Color.White;
+                txt_BuscadorPasajero.BackColor = Color.FromArgb(34, 34, 34);
+                txt_BuscadorPasajero.ForeColor = Color.White;
+                lbl_Buscador.ForeColor= Color.White;
             }
             else
             {
@@ -63,6 +66,46 @@ namespace Parcial1_Labo_2
                 dgv_Pasajeros.RowsDefaultCellStyle.ForeColor = Color.Black;
                 this.BackColor = Color.White;
                 pic_Salir.Image = Resources.salir_negro_84x24;
+                lbl_Error.ForeColor = Color.Black;
+                txt_BuscadorPasajero.BackColor = Color.White;
+                txt_BuscadorPasajero.ForeColor = Color.Black;
+                lbl_Buscador.ForeColor = Color.Black;
+            }
+        }
+
+        private void txt_BuscadorPasajero_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            bool Encontro = false;
+            List<Pasajero> filtrada = new List<Pasajero>();
+            foreach (KeyValuePair<int,Pasajero> pasajero in Aerolinea.vuelos[Index].Pasajeros) { 
+
+                if (pasajero.Value.Nombre.ToLower().Contains(txt_BuscadorPasajero.Text.ToLower()) ||
+                     pasajero.Value.Apellido.ToLower().Contains(txt_BuscadorPasajero.Text.ToLower()) ||
+                     pasajero.Value.GetHashCode().ToString().Contains(txt_BuscadorPasajero.Text))
+                {
+                    filtrada.Add(pasajero.Value);
+                    Encontro = true;
+                }
+            }
+ 
+            if (Encontro)
+            {
+                dgv_Pasajeros.DataSource = null;
+                dgv_Pasajeros.DataSource = filtrada;
+                lbl_Error.Text = String.Empty;
+            }
+            else
+            {
+                lbl_Error.Text = "No se encontro ningun pasajero";
+            }
+        }
+
+        private void txt_BuscadorPasajero_TextChanged(object sender, EventArgs e)
+        {
+            if(txt_BuscadorPasajero.Text == String.Empty)
+            {
+                dgv_Pasajeros.DataSource = null;
+                dgv_Pasajeros.DataSource = Aerolinea.vuelos[Index].Pasajeros.ToArray();
             }
         }
     }

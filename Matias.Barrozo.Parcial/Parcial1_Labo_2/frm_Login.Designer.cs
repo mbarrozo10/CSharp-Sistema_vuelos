@@ -39,6 +39,7 @@
             this.pic_Ingresar = new System.Windows.Forms.PictureBox();
             this.pic_Salir = new System.Windows.Forms.PictureBox();
             this.pic_Logo = new System.Windows.Forms.PictureBox();
+            this.lbl_Login = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Modo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Ingresar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Salir)).BeginInit();
@@ -48,18 +49,20 @@
             // lbl_Usuario
             // 
             this.lbl_Usuario.AutoSize = true;
-            this.lbl_Usuario.Location = new System.Drawing.Point(216, 206);
+            this.lbl_Usuario.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_Usuario.Location = new System.Drawing.Point(214, 206);
             this.lbl_Usuario.Name = "lbl_Usuario";
-            this.lbl_Usuario.Size = new System.Drawing.Size(47, 15);
+            this.lbl_Usuario.Size = new System.Drawing.Size(55, 14);
             this.lbl_Usuario.TabIndex = 0;
             this.lbl_Usuario.Text = "Usuario";
             // 
             // lbl_Contraseña
             // 
             this.lbl_Contraseña.AutoSize = true;
-            this.lbl_Contraseña.Location = new System.Drawing.Point(207, 270);
+            this.lbl_Contraseña.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_Contraseña.Location = new System.Drawing.Point(204, 270);
             this.lbl_Contraseña.Name = "lbl_Contraseña";
-            this.lbl_Contraseña.Size = new System.Drawing.Size(67, 15);
+            this.lbl_Contraseña.Size = new System.Drawing.Size(77, 14);
             this.lbl_Contraseña.TabIndex = 1;
             this.lbl_Contraseña.Text = "Contraseña";
             // 
@@ -115,9 +118,9 @@
             // 
             this.pic_Ingresar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pic_Ingresar.Image = ((System.Drawing.Image)(resources.GetObject("pic_Ingresar.Image")));
-            this.pic_Ingresar.Location = new System.Drawing.Point(178, 346);
+            this.pic_Ingresar.Location = new System.Drawing.Point(179, 346);
             this.pic_Ingresar.Name = "pic_Ingresar";
-            this.pic_Ingresar.Size = new System.Drawing.Size(125, 42);
+            this.pic_Ingresar.Size = new System.Drawing.Size(126, 42);
             this.pic_Ingresar.TabIndex = 9;
             this.pic_Ingresar.TabStop = false;
             this.pic_Ingresar.Click += new System.EventHandler(this.btn_Ingresar_Click);
@@ -126,9 +129,9 @@
             // 
             this.pic_Salir.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pic_Salir.Image = global::Parcial1_Labo_2.Properties.Resources.Salir_Negro;
-            this.pic_Salir.Location = new System.Drawing.Point(178, 392);
+            this.pic_Salir.Location = new System.Drawing.Point(179, 392);
             this.pic_Salir.Name = "pic_Salir";
-            this.pic_Salir.Size = new System.Drawing.Size(125, 42);
+            this.pic_Salir.Size = new System.Drawing.Size(126, 42);
             this.pic_Salir.TabIndex = 10;
             this.pic_Salir.TabStop = false;
             this.pic_Salir.Click += new System.EventHandler(this.btn_Salir_Click);
@@ -142,6 +145,16 @@
             this.pic_Logo.TabIndex = 11;
             this.pic_Logo.TabStop = false;
             // 
+            // lbl_Login
+            // 
+            this.lbl_Login.AutoSize = true;
+            this.lbl_Login.Font = new System.Drawing.Font("Cooper Black", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_Login.Location = new System.Drawing.Point(193, 165);
+            this.lbl_Login.Name = "lbl_Login";
+            this.lbl_Login.Size = new System.Drawing.Size(96, 34);
+            this.lbl_Login.TabIndex = 12;
+            this.lbl_Login.Text = "Login";
+            // 
             // frm_Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -150,6 +163,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(482, 490);
             this.ControlBox = false;
+            this.Controls.Add(this.lbl_Login);
             this.Controls.Add(this.pic_Logo);
             this.Controls.Add(this.pic_Salir);
             this.Controls.Add(this.pic_Ingresar);
@@ -187,5 +201,6 @@
         private PictureBox pic_Ingresar;
         private PictureBox pic_Salir;
         private PictureBox pic_Logo;
+        private Label lbl_Login;
     }
 }

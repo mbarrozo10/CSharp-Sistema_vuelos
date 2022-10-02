@@ -10,7 +10,6 @@ namespace Parcial1_Labo_2
             InitializeComponent();
         }
         static Vuelo? vuelo;
-        static DateTime llegada;
         private void frm_AgregarVuelo_Load(object sender, EventArgs e)
         {
             dtp_Salida.MinDate = DateTime.Now.AddDays(1);

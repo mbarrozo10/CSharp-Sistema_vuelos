@@ -99,6 +99,9 @@
             this.pic_Historico = new System.Windows.Forms.PictureBox();
             this.pic_AgregarCliente = new System.Windows.Forms.PictureBox();
             this.pic_MasInfo = new System.Windows.Forms.PictureBox();
+            this.lbl_Buscador = new System.Windows.Forms.Label();
+            this.txt_Buscador = new System.Windows.Forms.TextBox();
+            this.lbl_ErrorBusqueda = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_VuelosActivos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Modo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Vender)).BeginInit();
@@ -125,9 +128,10 @@
             // lbl_Bienvenido
             // 
             this.lbl_Bienvenido.AutoSize = true;
+            this.lbl_Bienvenido.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_Bienvenido.Location = new System.Drawing.Point(96, 12);
             this.lbl_Bienvenido.Name = "lbl_Bienvenido";
-            this.lbl_Bienvenido.Size = new System.Drawing.Size(0, 15);
+            this.lbl_Bienvenido.Size = new System.Drawing.Size(0, 14);
             this.lbl_Bienvenido.TabIndex = 0;
             // 
             // dgv_VuelosActivos
@@ -171,7 +175,7 @@
             dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgv_VuelosActivos.DefaultCellStyle = dataGridViewCellStyle13;
             this.dgv_VuelosActivos.EnableHeadersVisualStyles = false;
-            this.dgv_VuelosActivos.Location = new System.Drawing.Point(68, 61);
+            this.dgv_VuelosActivos.Location = new System.Drawing.Point(68, 97);
             this.dgv_VuelosActivos.Name = "dgv_VuelosActivos";
             this.dgv_VuelosActivos.ReadOnly = true;
             dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -402,7 +406,7 @@
             this.pnl_Informacion.Controls.Add(this.rtx_InfoVuelo);
             this.pnl_Informacion.Controls.Add(this.pic_Cancelar);
             this.pnl_Informacion.Controls.Add(this.pic_SalirPanelInfo);
-            this.pnl_Informacion.Location = new System.Drawing.Point(220, 134);
+            this.pnl_Informacion.Location = new System.Drawing.Point(206, 174);
             this.pnl_Informacion.Name = "pnl_Informacion";
             this.pnl_Informacion.Size = new System.Drawing.Size(772, 288);
             this.pnl_Informacion.TabIndex = 15;
@@ -464,7 +468,7 @@
             this.pnl_Historico.Controls.Add(this.cmb_FiltroHistorico);
             this.pnl_Historico.Controls.Add(this.pic_SalirHistorico);
             this.pnl_Historico.Controls.Add(this.lbl_RecaudacionTotal);
-            this.pnl_Historico.Location = new System.Drawing.Point(68, 49);
+            this.pnl_Historico.Location = new System.Drawing.Point(68, 515);
             this.pnl_Historico.Name = "pnl_Historico";
             this.pnl_Historico.Size = new System.Drawing.Size(1070, 478);
             this.pnl_Historico.TabIndex = 17;
@@ -482,9 +486,10 @@
             // lbl_TituloABM
             // 
             this.lbl_TituloABM.AutoSize = true;
+            this.lbl_TituloABM.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_TituloABM.Location = new System.Drawing.Point(678, 130);
             this.lbl_TituloABM.Name = "lbl_TituloABM";
-            this.lbl_TituloABM.Size = new System.Drawing.Size(91, 15);
+            this.lbl_TituloABM.Size = new System.Drawing.Size(105, 14);
             this.lbl_TituloABM.TabIndex = 19;
             this.lbl_TituloABM.Text = "Agregar usuario";
             this.lbl_TituloABM.Visible = false;
@@ -519,9 +524,10 @@
             // chk_Admin
             // 
             this.chk_Admin.AutoSize = true;
+            this.chk_Admin.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.chk_Admin.Location = new System.Drawing.Point(678, 354);
             this.chk_Admin.Name = "chk_Admin";
-            this.chk_Admin.Size = new System.Drawing.Size(102, 19);
+            this.chk_Admin.Size = new System.Drawing.Size(118, 18);
             this.chk_Admin.TabIndex = 16;
             this.chk_Admin.Text = "Administrador";
             this.tip_Ayuda.SetToolTip(this.chk_Admin, "Check para usuario administrador");
@@ -584,9 +590,10 @@
             // lbl_ErrorBorrar
             // 
             this.lbl_ErrorBorrar.AutoSize = true;
+            this.lbl_ErrorBorrar.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_ErrorBorrar.Location = new System.Drawing.Point(454, 329);
             this.lbl_ErrorBorrar.Name = "lbl_ErrorBorrar";
-            this.lbl_ErrorBorrar.Size = new System.Drawing.Size(0, 15);
+            this.lbl_ErrorBorrar.Size = new System.Drawing.Size(0, 14);
             this.lbl_ErrorBorrar.TabIndex = 10;
             // 
             // dgv_Vendedores
@@ -672,17 +679,19 @@
             // lbl_RecaudacionInternacional
             // 
             this.lbl_RecaudacionInternacional.AutoSize = true;
+            this.lbl_RecaudacionInternacional.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_RecaudacionInternacional.Location = new System.Drawing.Point(62, 391);
             this.lbl_RecaudacionInternacional.Name = "lbl_RecaudacionInternacional";
-            this.lbl_RecaudacionInternacional.Size = new System.Drawing.Size(0, 15);
+            this.lbl_RecaudacionInternacional.Size = new System.Drawing.Size(0, 14);
             this.lbl_RecaudacionInternacional.TabIndex = 6;
             // 
             // lbl_RecaudacionCabotaje
             // 
             this.lbl_RecaudacionCabotaje.AutoSize = true;
+            this.lbl_RecaudacionCabotaje.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_RecaudacionCabotaje.Location = new System.Drawing.Point(62, 410);
             this.lbl_RecaudacionCabotaje.Name = "lbl_RecaudacionCabotaje";
-            this.lbl_RecaudacionCabotaje.Size = new System.Drawing.Size(0, 15);
+            this.lbl_RecaudacionCabotaje.Size = new System.Drawing.Size(0, 14);
             this.lbl_RecaudacionCabotaje.TabIndex = 5;
             // 
             // dgv_Historico
@@ -721,18 +730,20 @@
             // lbl_RecaudacionTotal
             // 
             this.lbl_RecaudacionTotal.AutoSize = true;
+            this.lbl_RecaudacionTotal.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_RecaudacionTotal.Location = new System.Drawing.Point(62, 431);
             this.lbl_RecaudacionTotal.Name = "lbl_RecaudacionTotal";
-            this.lbl_RecaudacionTotal.Size = new System.Drawing.Size(78, 15);
+            this.lbl_RecaudacionTotal.Size = new System.Drawing.Size(87, 14);
             this.lbl_RecaudacionTotal.TabIndex = 1;
             this.lbl_RecaudacionTotal.Text = "Recaudacion:";
             // 
             // lbl_Fecha
             // 
             this.lbl_Fecha.AutoSize = true;
+            this.lbl_Fecha.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_Fecha.Location = new System.Drawing.Point(616, 12);
             this.lbl_Fecha.Name = "lbl_Fecha";
-            this.lbl_Fecha.Size = new System.Drawing.Size(0, 15);
+            this.lbl_Fecha.Size = new System.Drawing.Size(0, 14);
             this.lbl_Fecha.TabIndex = 19;
             // 
             // tmr_Hora
@@ -776,6 +787,34 @@
             this.tip_Ayuda.SetToolTip(this.pic_MasInfo, "Muestra mas informacion del vuelo seleccionado");
             this.pic_MasInfo.Click += new System.EventHandler(this.btn_MasInfo_Click);
             // 
+            // lbl_Buscador
+            // 
+            this.lbl_Buscador.AutoSize = true;
+            this.lbl_Buscador.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_Buscador.Location = new System.Drawing.Point(68, 48);
+            this.lbl_Buscador.Name = "lbl_Buscador";
+            this.lbl_Buscador.Size = new System.Drawing.Size(64, 14);
+            this.lbl_Buscador.TabIndex = 23;
+            this.lbl_Buscador.Text = "Buscador";
+            // 
+            // txt_Buscador
+            // 
+            this.txt_Buscador.Location = new System.Drawing.Point(68, 65);
+            this.txt_Buscador.Name = "txt_Buscador";
+            this.txt_Buscador.Size = new System.Drawing.Size(220, 23);
+            this.txt_Buscador.TabIndex = 24;
+            this.txt_Buscador.TextChanged += new System.EventHandler(this.txt_Buscador_TextChanged);
+            this.txt_Buscador.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Buscador_KeyPress);
+            // 
+            // lbl_ErrorBusqueda
+            // 
+            this.lbl_ErrorBusqueda.AutoSize = true;
+            this.lbl_ErrorBusqueda.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_ErrorBusqueda.Location = new System.Drawing.Point(306, 69);
+            this.lbl_ErrorBusqueda.Name = "lbl_ErrorBusqueda";
+            this.lbl_ErrorBusqueda.Size = new System.Drawing.Size(0, 14);
+            this.lbl_ErrorBusqueda.TabIndex = 25;
+            // 
             // frm_MenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -783,6 +822,9 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1207, 600);
             this.ControlBox = false;
+            this.Controls.Add(this.lbl_ErrorBusqueda);
+            this.Controls.Add(this.txt_Buscador);
+            this.Controls.Add(this.lbl_Buscador);
             this.Controls.Add(this.pnl_Historico);
             this.Controls.Add(this.pic_MasInfo);
             this.Controls.Add(this.pic_AgregarCliente);
@@ -887,5 +929,8 @@
         private DataGridViewTextBoxColumn usuarioDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn tipoDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn contraseñaDataGridViewTextBoxColumn;
+        private Label lbl_Buscador;
+        private TextBox txt_Buscador;
+        private Label lbl_ErrorBusqueda;
     }
 }
