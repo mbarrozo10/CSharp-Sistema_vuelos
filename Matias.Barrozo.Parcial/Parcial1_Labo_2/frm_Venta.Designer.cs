@@ -202,8 +202,7 @@
             this.nud_Cantidad.Name = "nud_Cantidad";
             this.nud_Cantidad.Size = new System.Drawing.Size(38, 23);
             this.nud_Cantidad.TabIndex = 14;
-            this.tip_Ayuda.SetToolTip(this.nud_Cantidad, "Selector de cantidad de pasajeros, maximo hasta 4, comprueba que haya espacio al " +
-        "momento de aceptar");
+            this.tip_Ayuda.SetToolTip(this.nud_Cantidad, "Selector de cantidad de pasajeros, maximo hasta 4\r\n");
             this.nud_Cantidad.ValueChanged += new System.EventHandler(this.nud_Cantidad_ValueChanged);
             // 
             // lbl_Cantidad
@@ -531,6 +530,7 @@
             this.pic_AgregarCliente.Size = new System.Drawing.Size(85, 28);
             this.pic_AgregarCliente.TabIndex = 40;
             this.pic_AgregarCliente.TabStop = false;
+            this.tip_Ayuda.SetToolTip(this.pic_AgregarCliente, "Agrega un cliente");
             this.pic_AgregarCliente.Click += new System.EventHandler(this.btn_Agregar_Click_1);
             // 
             // pic_AceptarCliente
@@ -542,6 +542,7 @@
             this.pic_AceptarCliente.Size = new System.Drawing.Size(86, 26);
             this.pic_AceptarCliente.TabIndex = 41;
             this.pic_AceptarCliente.TabStop = false;
+            this.tip_Ayuda.SetToolTip(this.pic_AceptarCliente, "Confirma el comprador seleccionado");
             this.pic_AceptarCliente.Click += new System.EventHandler(this.btn_AceptarCliente_Click);
             // 
             // pic_AceptarCantidad
@@ -553,6 +554,7 @@
             this.pic_AceptarCantidad.Size = new System.Drawing.Size(86, 26);
             this.pic_AceptarCantidad.TabIndex = 42;
             this.pic_AceptarCantidad.TabStop = false;
+            this.tip_Ayuda.SetToolTip(this.pic_AceptarCantidad, "Confirma los pasajes a comprar, verifica que haya espacio");
             this.pic_AceptarCantidad.Click += new System.EventHandler(this.pic_AceptarCantidad_Click);
             // 
             // lbl_ClienteComprador

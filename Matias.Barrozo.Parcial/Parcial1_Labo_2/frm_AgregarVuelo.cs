@@ -15,16 +15,18 @@ namespace Parcial1_Labo_2
             dtp_Salida.MinDate = DateTime.Now.AddDays(1);
             DateTime salida = new DateTime();
             
-
+            //cargo los Destinos
             for (int i = 0; i < 20; i++) {
                 string? s =Enum.GetName(typeof(EDestino),i);
                 cmb_Destino.Items.Add(s);
             }
+            //cargo los origenes
             for (int i = 0; i < 20; i++)
             {
                 string? s = Enum.GetName(typeof(EDestino), i);
                 cmb_Origen.Items.Add(s);
             }
+            //cargo los horarios
             for(int i = 0; i < 48; i++)
             {
                 cmb_Salida.Items.Add(salida.ToString("HH:mm"));
@@ -43,8 +45,7 @@ namespace Parcial1_Labo_2
         {
             try
             {
-                AgregarVuelo();
-               
+                AgregarVuelo();  
                 DialogResult = DialogResult.OK;
             }
             catch(Exception excep)
@@ -99,8 +100,6 @@ namespace Parcial1_Labo_2
                 } 
             }
         }
-
-      
 
         private void cmb_Avion_SelectedValueChanged(object sender, EventArgs e)
         {
@@ -166,7 +165,6 @@ namespace Parcial1_Labo_2
                 this.BackColor = Color.White;
                 pic_Agregar.Image = Resources.agregar_negro_84x24;
                 pic_Salir.Image = Resources.salir_negro_84x24;
-
                 lbl_Asientos.ForeColor = Color.Black;
                 lbl_Avion.ForeColor = Color.Black;
                 lbl_Codigo.ForeColor = Color.Black;

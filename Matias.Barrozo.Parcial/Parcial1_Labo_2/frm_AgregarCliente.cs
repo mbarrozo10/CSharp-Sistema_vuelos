@@ -1,14 +1,5 @@
 ﻿using Biblioteca;
 using Parcial1_Labo_2.Properties;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace Parcial1_Labo_2
 {
@@ -32,7 +23,7 @@ namespace Parcial1_Labo_2
             DialogResult = DialogResult.OK;
         }
 
-        private void AgregarCliente(Cliente nuevo)
+        private void VerificarClienteExistente(Cliente nuevo)
         {
             foreach (Cliente cliente in Aerolinea.clientes)
             {
@@ -75,7 +66,7 @@ namespace Parcial1_Labo_2
                 try
                 {
                     nuevo = new Cliente(txt_Nombre.Text, txt_Apellido.Text, int.Parse(txt_Dni.Text), int.Parse(txt_Edad.Text));
-                    AgregarCliente(nuevo);
+                    VerificarClienteExistente(nuevo);
                     pic_Agregar.Visible = true;
                     lbl_Info.Text = nuevo.MostrarInformacion();
                     lbl_Error.Text = String.Empty;

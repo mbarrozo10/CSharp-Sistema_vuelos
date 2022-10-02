@@ -39,40 +39,6 @@ namespace Parcial1_Labo_2
         }
 
 
-        private  void ModoOscuro()
-        {
-            if (!Aerolinea.modoOscuro)
-            {
-                dgv_Pasajeros.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(34, 34, 34);
-                dgv_Pasajeros.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-                dgv_Pasajeros.RowHeadersDefaultCellStyle.BackColor = Color.FromArgb(34, 34, 34);
-                dgv_Pasajeros.RowHeadersDefaultCellStyle.ForeColor = Color.White;
-                dgv_Pasajeros.RowsDefaultCellStyle.BackColor = Color.FromArgb(34, 34, 34);
-                dgv_Pasajeros.RowsDefaultCellStyle.ForeColor = Color.White;
-                pic_Salir.Image = Resources.salir_blanco_84x24;
-                this.BackColor = Color.FromArgb(34, 34, 34);
-                lbl_Error.ForeColor = Color.White;
-                txt_BuscadorPasajero.BackColor = Color.FromArgb(34, 34, 34);
-                txt_BuscadorPasajero.ForeColor = Color.White;
-                lbl_Buscador.ForeColor= Color.White;
-            }
-            else
-            {
-                dgv_Pasajeros.ColumnHeadersDefaultCellStyle.BackColor = Color.White;
-                dgv_Pasajeros.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
-                dgv_Pasajeros.RowHeadersDefaultCellStyle.BackColor = Color.White;
-                dgv_Pasajeros.RowHeadersDefaultCellStyle.ForeColor = Color.Black;
-                dgv_Pasajeros.RowsDefaultCellStyle.BackColor = Color.White;
-                dgv_Pasajeros.RowsDefaultCellStyle.ForeColor = Color.Black;
-                this.BackColor = Color.White;
-                pic_Salir.Image = Resources.salir_negro_84x24;
-                lbl_Error.ForeColor = Color.Black;
-                txt_BuscadorPasajero.BackColor = Color.White;
-                txt_BuscadorPasajero.ForeColor = Color.Black;
-                lbl_Buscador.ForeColor = Color.Black;
-            }
-        }
-
         private void txt_BuscadorPasajero_KeyPress(object sender, KeyPressEventArgs e)
         {
             bool Encontro = false;
@@ -106,6 +72,40 @@ namespace Parcial1_Labo_2
             {
                 dgv_Pasajeros.DataSource = null;
                 dgv_Pasajeros.DataSource = Aerolinea.vuelos[Index].Pasajeros.ToArray();
+            }
+        }
+
+        private void ModoOscuro()
+        {
+            if (!Aerolinea.modoOscuro)
+            {
+                dgv_Pasajeros.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(34, 34, 34);
+                dgv_Pasajeros.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+                dgv_Pasajeros.RowHeadersDefaultCellStyle.BackColor = Color.FromArgb(34, 34, 34);
+                dgv_Pasajeros.RowHeadersDefaultCellStyle.ForeColor = Color.White;
+                dgv_Pasajeros.RowsDefaultCellStyle.BackColor = Color.FromArgb(34, 34, 34);
+                dgv_Pasajeros.RowsDefaultCellStyle.ForeColor = Color.White;
+                pic_Salir.Image = Resources.salir_blanco_84x24;
+                this.BackColor = Color.FromArgb(34, 34, 34);
+                lbl_Error.ForeColor = Color.White;
+                txt_BuscadorPasajero.BackColor = Color.FromArgb(34, 34, 34);
+                txt_BuscadorPasajero.ForeColor = Color.White;
+                lbl_Buscador.ForeColor = Color.White;
+            }
+            else
+            {
+                dgv_Pasajeros.ColumnHeadersDefaultCellStyle.BackColor = Color.White;
+                dgv_Pasajeros.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
+                dgv_Pasajeros.RowHeadersDefaultCellStyle.BackColor = Color.White;
+                dgv_Pasajeros.RowHeadersDefaultCellStyle.ForeColor = Color.Black;
+                dgv_Pasajeros.RowsDefaultCellStyle.BackColor = Color.White;
+                dgv_Pasajeros.RowsDefaultCellStyle.ForeColor = Color.Black;
+                this.BackColor = Color.White;
+                pic_Salir.Image = Resources.salir_negro_84x24;
+                lbl_Error.ForeColor = Color.Black;
+                txt_BuscadorPasajero.BackColor = Color.White;
+                txt_BuscadorPasajero.ForeColor = Color.Black;
+                lbl_Buscador.ForeColor = Color.Black;
             }
         }
     }

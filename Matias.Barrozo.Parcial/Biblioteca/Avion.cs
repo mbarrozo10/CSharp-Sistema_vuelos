@@ -25,7 +25,6 @@ namespace Biblioteca
             this.bodega = bodega;
             this.comida = comida;
             this.wifi = wifi;
-            //this.disponible = estado;
             this.horasVuelo = 0;
         }
 

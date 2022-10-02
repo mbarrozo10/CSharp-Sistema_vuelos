@@ -125,14 +125,12 @@ namespace Biblioteca
             pasajeros.Add(new Cliente("Morena", "Escudero", 10818963, 21, 10));
             pasajeros.Add(new Cliente("Nicolas", "Gil", 97386786, 32, 10));
             pasajeros.Add(new Cliente("Lucas", "Gaggino", 39266527, 25, 10));
-           // pasajeros.Add(new Cliente("Nicolas", "Gil", 55333135, 32));
 
             return pasajeros;
         }
         public static List<Vuelo> InicializarVuelos()
         {
             List<Vuelo> vuelos = new List<Vuelo>();
-            //cargar mas vuelos
             vuelos.Add(new Vuelo(Aerolinea.aviones[2], 10, EDestino.Miami, EEstado.Disponible, EDestino.Buenos_Aires, DateTime.Parse("2022/10/1 19:51:00"), InicializarPasajeros(),"A20394",10.30f,15,87241,14,55,69));
             vuelos.Add(new Vuelo(Aerolinea.aviones[0], 4, EDestino.Mendoza, EEstado.Disponible, EDestino.Buenos_Aires, DateTime.Parse("2022/11/8 14:30:00"), InicializarPasajeros(),"BMD93", 03.00f,1330,17448,14,55,69));
             vuelos.Add(new Vuelo(Aerolinea.aviones[1], 4, EDestino.Neuquén, EEstado.Disponible, EDestino.Buenos_Aires, DateTime.Parse("2022/10/15 18:00:00"), InicializarPasajeros(),"N93J4FG", 10.00f,3570,17448,14,55, 69));

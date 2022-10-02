@@ -89,6 +89,12 @@ namespace Parcial1_Labo_2
             pj.ShowDialog();
         }
 
+        /// <summary>
+        /// Genera las filas de un datagrid y las carga con la lista de vuelo que se le pase
+        /// Las columnas estan generadas directamente desde las propiedades del datagrid
+        /// Principalmente se usa de "refresh"
+        /// </summary>
+        /// <param name="vuelos"></param>
         private void CargarDatagrid(List<Vuelo> vuelos)
         {
             dgv_VuelosActivos.DataSource = null;
@@ -148,7 +154,6 @@ namespace Parcial1_Labo_2
             pnl_Informacion.Enabled = true;
             CargarCerrarPaneles(false);
             dgv_VuelosActivos.Visible = true;
-
             rtx_InfoVuelo.Text = Aerolinea.vuelos[indiceVuelo].ToString();
         }
 
@@ -168,7 +173,10 @@ namespace Parcial1_Labo_2
             pnl_Informacion.Visible = false;
 
         }
-
+        /// <summary>
+        /// Esconde o muestra distintos elementos del menu principal.
+        /// </summary>
+        /// <param name="estado"></param>
         private void CargarCerrarPaneles(bool estado)
         {
             pic_Agregar.Visible = estado;
@@ -197,11 +205,7 @@ namespace Parcial1_Labo_2
         private void pic_SalirHistorico_Click_1(object sender, EventArgs e)
         {
             pnl_Historico.Hide();
-            if (vendedorActivo.Tipo == "administrador")
-            {
-                pic_Agregar.Visible = true;
-
-            }
+            
             CargarCerrarPaneles(true);
             cmb_FiltroHistorico.Text = String.Empty;
             dgv_Historico.DataSource = null;
@@ -209,9 +213,16 @@ namespace Parcial1_Labo_2
             LimpiarHistorico();
             dgv_Historico.DataSource = null;
             dgv_Historico.Visible = false;
+            if (vendedorActivo.Tipo != "administrador")
+            {
+                pic_Agregar.Visible = false;
+
+            }
 
         }
-
+        /// <summary>
+        /// Limpia el panel historico cada vez que se necesite
+        /// </summary>
         private void LimpiarHistorico()
         {
             pic_ModificarAceptar.Visible = false;
@@ -351,8 +362,6 @@ namespace Parcial1_Labo_2
             }
         }
 
-      
-
         private void btn_AgregarCliente_Click(object sender, EventArgs e)
         {
             
@@ -360,7 +369,10 @@ namespace Parcial1_Labo_2
             frm.ShowDialog();
         }
 
-
+        /// <summary>
+        /// Recorre los vuelos que recibe por parametro y carga el datagrid de destinos
+        /// </summary>
+        /// <param name="vuelos"></param>
         private void RecorrerVuelos(List<Vuelo> vuelos)
         {
             
@@ -396,6 +408,9 @@ namespace Parcial1_Labo_2
 
         }
 
+        /// <summary>
+        /// Recorre los vuelos finalizados y disponibles y calcula la recaudacion total
+        /// </summary>
         private void RecorrerVuelos()
         {
             int count = Enum.GetValues(typeof(EDestino)).Length;
@@ -446,7 +461,10 @@ namespace Parcial1_Labo_2
             ActualizarVuelosDataGrid();
         }
 
-
+        /// <summary>
+        /// Verifica los horarios de salida y llegada segun el actual
+        /// Cambia el estado si cumple con la condicion
+        /// </summary>
         private void ActualizarVuelosDataGrid()
         {
             foreach(Vuelo vuelo in Aerolinea.vuelos)
@@ -582,6 +600,9 @@ namespace Parcial1_Labo_2
         
         }
 
+        /// <summary>
+        /// Limpia el panel de vendedores que solo puede ver los administradores
+        /// </summary>
         private void LimpiarPanelVendedor()
         {
             txt_ApellidoVendedor.Clear();

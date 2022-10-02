@@ -141,6 +141,7 @@
             this.txt_BuscadorPasajero.Name = "txt_BuscadorPasajero";
             this.txt_BuscadorPasajero.Size = new System.Drawing.Size(145, 23);
             this.txt_BuscadorPasajero.TabIndex = 3;
+            this.tip_Ayuda.SetToolTip(this.txt_BuscadorPasajero, "Permite buscar pasajeros por nombre/apellido/dni");
             this.txt_BuscadorPasajero.TextChanged += new System.EventHandler(this.txt_BuscadorPasajero_TextChanged);
             this.txt_BuscadorPasajero.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_BuscadorPasajero_KeyPress);
             // 

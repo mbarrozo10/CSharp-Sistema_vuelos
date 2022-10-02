@@ -197,6 +197,7 @@
             this.Name = "frm_AgregarCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "  ";
+            this.tip_Ayuda.SetToolTip(this, "Carga los datos y los muestra");
             this.Load += new System.EventHandler(this.frm_AgregarCliente_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pic_Agregar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Cancelar)).EndInit();
