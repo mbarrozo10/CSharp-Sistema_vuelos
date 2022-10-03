@@ -1,16 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
 
 namespace Biblioteca
 {
     public class Vendedor : Persona
     {
         
-        private string usuario;
-        private string contraseña;
+        private string? usuario;
+        private string? contraseña;
         private string? tipo;
         
         
@@ -43,18 +45,12 @@ namespace Biblioteca
             set { usuario = value; }
         }
 
-        public string Contraseña
-        {
-            get { return contraseña; }
-            set { contraseña = value; }
-        }
-
         public static Vendedor VerificarLogin(string usuario, string contraseña, List <Vendedor> vendedores)
         {
         
             foreach (Vendedor vendedor in vendedores)
             {
-                if (vendedor.Usuario==usuario && vendedor.Contraseña == contraseña)
+                if (vendedor.Usuario==usuario && vendedor.contraseña == contraseña)
                 {
                     return vendedor;
                 }
@@ -73,7 +69,7 @@ namespace Biblioteca
             return this.ToString() + "\nUsuario: " + Usuario + "\nTipo de usuario: " + Tipo;
         }
 
-        public void ModificarVendedor(string nombre, string apellido, string usuario, string contraseña,string tipo)
+        public void ModificarVendedor(string nombre, string apellido, string usuario, string contraseñaNueva,string tipo)
         {
             if(nombre!= String.Empty)
             {
@@ -87,26 +83,17 @@ namespace Biblioteca
             {
                 Usuario = usuario;
             }
-            if(contraseña!= String.Empty)
+            if(contraseñaNueva!= String.Empty)
             {
-                Contraseña = contraseña;
+                contraseña = contraseñaNueva;
             }
             Tipo = tipo;
         }
 
-        public static int EncontrarAdmin()
+        public static KeyValuePair<string,string> vendedorRandom(int posicion)
         {
-            int contador=0;
-            foreach (Vendedor ven in Aerolinea.Vendedores)
-            {
-                if (ven.tipo == "administrador")
-                {
-                     contador++;
-                    
-                }
-            }
-
-            return contador;
+            KeyValuePair<string, string> vendedor = new KeyValuePair<string,string>(Aerolinea.Vendedores[posicion].Usuario, Aerolinea.Vendedores[posicion].contraseña);
+            return vendedor;
         }
     }
 }

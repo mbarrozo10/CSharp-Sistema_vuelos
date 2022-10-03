@@ -116,7 +116,7 @@ namespace Parcial1_Labo_2
                     nud_CantEquipaje.Maximum = 2;
                     lbl_PrecioSub.Text = "Precio subtotal: " + precioPremium.ToString("N2");
                     lbl_PrecioFinal.Text = "Precio Final: " + (precioPremium * 1.21f * 1.90f).ToString("N2");
-                    lbl_KgMax.Text = "/42 kg";
+                    //lbl_KgMax.Text = "/42 kg";
                 }
                 else
                 {
@@ -124,7 +124,7 @@ namespace Parcial1_Labo_2
                     lbl_PrecioSub.Text = "Precio subtotal: " + precioTurista.ToString("N2");
                     lbl_PrecioFinal.Text = "Precio Final: " + (precioTurista *1.21f * 1.90f).ToString("N2");
                     nud_CantEquipaje.Maximum = 1;
-                    lbl_KgMax.Text = "/25 kg";
+                    //lbl_KgMax.Text = "/25 kg";
 
                 }
             }
@@ -226,6 +226,14 @@ namespace Parcial1_Labo_2
             else
             {
                 txt_Kg.Enabled = false;
+            }
+            if(nud_CantEquipaje.Value==2)
+            {
+                lbl_KgMax.Text = "/42 Kg";
+            }
+            else
+            {
+                lbl_KgMax.Text = "/25 Kg";
             }
         }
 

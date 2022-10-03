@@ -46,9 +46,9 @@ namespace Parcial1_Labo_2
         private void btn_Autocompletar_Click(object sender, EventArgs e)
         {
             Random rnd = new Random();
-            int i = rnd.Next(0, Aerolinea.Vendedores.Count);
-            txt_Usuario.Text = Aerolinea.Vendedores[i].Usuario;
-            txt_Contraseña.Text = Aerolinea.Vendedores[i].Contraseña;
+            KeyValuePair<string,string> vendedor= Vendedor.vendedorRandom(rnd.Next(0, Aerolinea.Vendedores.Count));
+            txt_Usuario.Text = vendedor.Key;
+            txt_Contraseña.Text = vendedor.Value;
         }
 
         private void pic_Modo_Click(object sender, EventArgs e)
