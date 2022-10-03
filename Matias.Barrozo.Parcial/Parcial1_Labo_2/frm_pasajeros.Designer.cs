@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_pasajeros));
             this.dgv_Pasajeros = new System.Windows.Forms.DataGridView();
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -40,8 +42,8 @@
             this.pasajeroBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pic_Salir = new System.Windows.Forms.PictureBox();
             this.tip_Ayuda = new System.Windows.Forms.ToolTip(this.components);
-            this.lbl_Buscador = new System.Windows.Forms.Label();
             this.txt_BuscadorPasajero = new System.Windows.Forms.TextBox();
+            this.lbl_Buscador = new System.Windows.Forms.Label();
             this.lbl_Error = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Pasajeros)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pasajeroBindingSource)).BeginInit();
@@ -51,6 +53,14 @@
             // dgv_Pasajeros
             // 
             this.dgv_Pasajeros.AutoGenerateColumns = false;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_Pasajeros.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_Pasajeros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Pasajeros.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nombreDataGridViewTextBoxColumn,
@@ -60,6 +70,14 @@
             this.premiumDataGridViewCheckBoxColumn,
             this.equipajeDataGridViewTextBoxColumn});
             this.dgv_Pasajeros.DataSource = this.pasajeroBindingSource;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_Pasajeros.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_Pasajeros.Location = new System.Drawing.Point(64, 89);
             this.dgv_Pasajeros.Name = "dgv_Pasajeros";
             this.dgv_Pasajeros.RowTemplate.Height = 25;
@@ -124,6 +142,17 @@
             this.tip_Ayuda.SetToolTip(this.pic_Salir, "Vuelve al menu principal");
             this.pic_Salir.Click += new System.EventHandler(this.btn_Salir_Click);
             // 
+            // txt_BuscadorPasajero
+            // 
+            this.txt_BuscadorPasajero.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txt_BuscadorPasajero.Location = new System.Drawing.Point(64, 43);
+            this.txt_BuscadorPasajero.Name = "txt_BuscadorPasajero";
+            this.txt_BuscadorPasajero.Size = new System.Drawing.Size(145, 21);
+            this.txt_BuscadorPasajero.TabIndex = 3;
+            this.tip_Ayuda.SetToolTip(this.txt_BuscadorPasajero, "Permite buscar pasajeros por nombre/apellido/dni");
+            this.txt_BuscadorPasajero.TextChanged += new System.EventHandler(this.txt_BuscadorPasajero_TextChanged);
+            this.txt_BuscadorPasajero.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_BuscadorPasajero_KeyPress);
+            // 
             // lbl_Buscador
             // 
             this.lbl_Buscador.AutoSize = true;
@@ -134,16 +163,6 @@
             this.lbl_Buscador.Size = new System.Drawing.Size(64, 14);
             this.lbl_Buscador.TabIndex = 2;
             this.lbl_Buscador.Text = "Buscador";
-            // 
-            // txt_BuscadorPasajero
-            // 
-            this.txt_BuscadorPasajero.Location = new System.Drawing.Point(64, 43);
-            this.txt_BuscadorPasajero.Name = "txt_BuscadorPasajero";
-            this.txt_BuscadorPasajero.Size = new System.Drawing.Size(145, 23);
-            this.txt_BuscadorPasajero.TabIndex = 3;
-            this.tip_Ayuda.SetToolTip(this.txt_BuscadorPasajero, "Permite buscar pasajeros por nombre/apellido/dni");
-            this.txt_BuscadorPasajero.TextChanged += new System.EventHandler(this.txt_BuscadorPasajero_TextChanged);
-            this.txt_BuscadorPasajero.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_BuscadorPasajero_KeyPress);
             // 
             // lbl_Error
             // 

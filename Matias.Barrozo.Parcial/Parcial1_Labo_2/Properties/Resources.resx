@@ -133,9 +133,6 @@
   <data name="Salir Negro" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Salir Negro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="button" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="modificar blanco" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\modificar blanco.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -150,9 +147,6 @@
   </data>
   <data name="Ingresar Negro" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Ingresar Negro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="night" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\night.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="historico 84x24 negro" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\historico 84x24 negro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -222,9 +216,6 @@
   </data>
   <data name="Salir blanco" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Salir blanco.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="button (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\button (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="alta y baja blanco" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\alta y baja blanco.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

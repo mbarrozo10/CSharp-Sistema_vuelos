@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Venta));
             this.lbl_PrecioFinal = new System.Windows.Forms.Label();
             this.lbl_Edad = new System.Windows.Forms.Label();
@@ -97,9 +99,10 @@
             // 
             this.lbl_PrecioFinal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_PrecioFinal.AutoSize = true;
+            this.lbl_PrecioFinal.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_PrecioFinal.Location = new System.Drawing.Point(1023, 466);
             this.lbl_PrecioFinal.Name = "lbl_PrecioFinal";
-            this.lbl_PrecioFinal.Size = new System.Drawing.Size(71, 15);
+            this.lbl_PrecioFinal.Size = new System.Drawing.Size(82, 14);
             this.lbl_PrecioFinal.TabIndex = 2;
             this.lbl_PrecioFinal.Text = "Precio Final:";
             this.tip_Ayuda.SetToolTip(this.lbl_PrecioFinal, "Precio del pasaje con impuestos");
@@ -108,9 +111,10 @@
             // 
             this.lbl_Edad.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_Edad.AutoSize = true;
+            this.lbl_Edad.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_Edad.Location = new System.Drawing.Point(803, 289);
             this.lbl_Edad.Name = "lbl_Edad";
-            this.lbl_Edad.Size = new System.Drawing.Size(33, 15);
+            this.lbl_Edad.Size = new System.Drawing.Size(38, 14);
             this.lbl_Edad.TabIndex = 4;
             this.lbl_Edad.Text = "Edad";
             // 
@@ -118,9 +122,10 @@
             // 
             this.lbl_Dni.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_Dni.AutoSize = true;
+            this.lbl_Dni.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_Dni.Location = new System.Drawing.Point(803, 204);
             this.lbl_Dni.Name = "lbl_Dni";
-            this.lbl_Dni.Size = new System.Drawing.Size(27, 15);
+            this.lbl_Dni.Size = new System.Drawing.Size(32, 14);
             this.lbl_Dni.TabIndex = 5;
             this.lbl_Dni.Text = "DNI";
             // 
@@ -128,9 +133,10 @@
             // 
             this.lbl_Apellido.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_Apellido.AutoSize = true;
+            this.lbl_Apellido.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_Apellido.Location = new System.Drawing.Point(803, 131);
             this.lbl_Apellido.Name = "lbl_Apellido";
-            this.lbl_Apellido.Size = new System.Drawing.Size(51, 15);
+            this.lbl_Apellido.Size = new System.Drawing.Size(58, 14);
             this.lbl_Apellido.TabIndex = 6;
             this.lbl_Apellido.Text = "Apellido";
             // 
@@ -138,9 +144,10 @@
             // 
             this.lbl_Nombre.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_Nombre.AutoSize = true;
+            this.lbl_Nombre.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_Nombre.Location = new System.Drawing.Point(803, 56);
             this.lbl_Nombre.Name = "lbl_Nombre";
-            this.lbl_Nombre.Size = new System.Drawing.Size(54, 15);
+            this.lbl_Nombre.Size = new System.Drawing.Size(60, 14);
             this.lbl_Nombre.TabIndex = 7;
             this.lbl_Nombre.Text = "Nombre:";
             // 
@@ -157,42 +164,47 @@
             // lbl_Codigo
             // 
             this.lbl_Codigo.AutoSize = true;
+            this.lbl_Codigo.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_Codigo.Location = new System.Drawing.Point(83, 454);
             this.lbl_Codigo.Name = "lbl_Codigo";
-            this.lbl_Codigo.Size = new System.Drawing.Size(100, 15);
+            this.lbl_Codigo.Size = new System.Drawing.Size(109, 14);
             this.lbl_Codigo.TabIndex = 13;
             this.lbl_Codigo.Text = "Codigo de vuelo: ";
             // 
             // lbl_Origen
             // 
             this.lbl_Origen.AutoSize = true;
+            this.lbl_Origen.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_Origen.Location = new System.Drawing.Point(83, 487);
             this.lbl_Origen.Name = "lbl_Origen";
-            this.lbl_Origen.Size = new System.Drawing.Size(49, 15);
+            this.lbl_Origen.Size = new System.Drawing.Size(54, 14);
             this.lbl_Origen.TabIndex = 12;
             this.lbl_Origen.Text = "Origen: ";
             // 
             // lbl_Duracion
             // 
             this.lbl_Duracion.AutoSize = true;
+            this.lbl_Duracion.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_Duracion.Location = new System.Drawing.Point(83, 521);
             this.lbl_Duracion.Name = "lbl_Duracion";
-            this.lbl_Duracion.Size = new System.Drawing.Size(112, 15);
+            this.lbl_Duracion.Size = new System.Drawing.Size(127, 14);
             this.lbl_Duracion.TabIndex = 11;
             this.lbl_Duracion.Text = "Duracion del vuelo: ";
             // 
             // lbl_Destino
             // 
             this.lbl_Destino.AutoSize = true;
+            this.lbl_Destino.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_Destino.Location = new System.Drawing.Point(83, 551);
             this.lbl_Destino.Name = "lbl_Destino";
-            this.lbl_Destino.Size = new System.Drawing.Size(53, 15);
+            this.lbl_Destino.Size = new System.Drawing.Size(61, 14);
             this.lbl_Destino.TabIndex = 10;
             this.lbl_Destino.Text = "Destino: ";
             // 
             // nud_Cantidad
             // 
             this.nud_Cantidad.Enabled = false;
+            this.nud_Cantidad.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.nud_Cantidad.Location = new System.Drawing.Point(604, 42);
             this.nud_Cantidad.Maximum = new decimal(new int[] {
             4,
@@ -200,7 +212,7 @@
             0,
             0});
             this.nud_Cantidad.Name = "nud_Cantidad";
-            this.nud_Cantidad.Size = new System.Drawing.Size(38, 23);
+            this.nud_Cantidad.Size = new System.Drawing.Size(38, 21);
             this.nud_Cantidad.TabIndex = 14;
             this.tip_Ayuda.SetToolTip(this.nud_Cantidad, "Selector de cantidad de pasajeros, maximo hasta 4\r\n");
             this.nud_Cantidad.ValueChanged += new System.EventHandler(this.nud_Cantidad_ValueChanged);
@@ -208,9 +220,10 @@
             // lbl_Cantidad
             // 
             this.lbl_Cantidad.AutoSize = true;
-            this.lbl_Cantidad.Location = new System.Drawing.Point(463, 50);
+            this.lbl_Cantidad.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_Cantidad.Location = new System.Drawing.Point(453, 45);
             this.lbl_Cantidad.Name = "lbl_Cantidad";
-            this.lbl_Cantidad.Size = new System.Drawing.Size(126, 15);
+            this.lbl_Cantidad.Size = new System.Drawing.Size(145, 14);
             this.lbl_Cantidad.TabIndex = 15;
             this.lbl_Cantidad.Text = "Cantidad de pasajeros:";
             // 
@@ -218,9 +231,10 @@
             // 
             this.lbl_PrecioSub.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_PrecioSub.AutoSize = true;
+            this.lbl_PrecioSub.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_PrecioSub.Location = new System.Drawing.Point(1023, 389);
             this.lbl_PrecioSub.Name = "lbl_PrecioSub";
-            this.lbl_PrecioSub.Size = new System.Drawing.Size(90, 15);
+            this.lbl_PrecioSub.Size = new System.Drawing.Size(105, 14);
             this.lbl_PrecioSub.TabIndex = 16;
             this.lbl_PrecioSub.Text = "Precio Subtotal:";
             this.tip_Ayuda.SetToolTip(this.lbl_PrecioSub, "Precio del pasaje sin impuesto");
@@ -230,9 +244,10 @@
             this.chk_Premium.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.chk_Premium.AutoSize = true;
             this.chk_Premium.Enabled = false;
-            this.chk_Premium.Location = new System.Drawing.Point(1000, 78);
+            this.chk_Premium.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.chk_Premium.Location = new System.Drawing.Point(993, 78);
             this.chk_Premium.Name = "chk_Premium";
-            this.chk_Premium.Size = new System.Drawing.Size(75, 19);
+            this.chk_Premium.Size = new System.Drawing.Size(82, 18);
             this.chk_Premium.TabIndex = 17;
             this.chk_Premium.Text = "Premium";
             this.tip_Ayuda.SetToolTip(this.chk_Premium, "Check de premium, si esta activado amplia la cantidad (a 2) de equipaje y su peso" +
@@ -244,9 +259,10 @@
             // 
             this.txt_Nombre.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_Nombre.Enabled = false;
+            this.txt_Nombre.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txt_Nombre.Location = new System.Drawing.Point(803, 74);
             this.txt_Nombre.Name = "txt_Nombre";
-            this.txt_Nombre.Size = new System.Drawing.Size(100, 23);
+            this.txt_Nombre.Size = new System.Drawing.Size(100, 21);
             this.txt_Nombre.TabIndex = 18;
             this.tip_Ayuda.SetToolTip(this.txt_Nombre, "Ingreso del nombre, solo acepta letras");
             this.txt_Nombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Nombre_KeyPress);
@@ -255,9 +271,10 @@
             // 
             this.txt_Apellido.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_Apellido.Enabled = false;
+            this.txt_Apellido.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txt_Apellido.Location = new System.Drawing.Point(803, 158);
             this.txt_Apellido.Name = "txt_Apellido";
-            this.txt_Apellido.Size = new System.Drawing.Size(100, 23);
+            this.txt_Apellido.Size = new System.Drawing.Size(100, 21);
             this.txt_Apellido.TabIndex = 19;
             this.tip_Ayuda.SetToolTip(this.txt_Apellido, "Ingreso del apellido, solo acepta letras");
             this.txt_Apellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Apellido_KeyPress);
@@ -266,9 +283,10 @@
             // 
             this.txt_Dni.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_Dni.Enabled = false;
+            this.txt_Dni.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txt_Dni.Location = new System.Drawing.Point(803, 235);
             this.txt_Dni.Name = "txt_Dni";
-            this.txt_Dni.Size = new System.Drawing.Size(100, 23);
+            this.txt_Dni.Size = new System.Drawing.Size(100, 21);
             this.txt_Dni.TabIndex = 20;
             this.tip_Ayuda.SetToolTip(this.txt_Dni, "Ingreso de dni, solo acepta numeros en un rango");
             this.txt_Dni.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Dni_KeyPress);
@@ -277,9 +295,10 @@
             // 
             this.txt_Edad.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_Edad.Enabled = false;
+            this.txt_Edad.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txt_Edad.Location = new System.Drawing.Point(803, 321);
             this.txt_Edad.Name = "txt_Edad";
-            this.txt_Edad.Size = new System.Drawing.Size(100, 23);
+            this.txt_Edad.Size = new System.Drawing.Size(100, 21);
             this.txt_Edad.TabIndex = 21;
             this.tip_Ayuda.SetToolTip(this.txt_Edad, "Ingreso de edad, solo acepta numeros en un rango");
             this.txt_Edad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Edad_KeyPress);
@@ -288,9 +307,10 @@
             // 
             this.lbl_Equipaje.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_Equipaje.AutoSize = true;
+            this.lbl_Equipaje.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_Equipaje.Location = new System.Drawing.Point(1000, 131);
             this.lbl_Equipaje.Name = "lbl_Equipaje";
-            this.lbl_Equipaje.Size = new System.Drawing.Size(52, 15);
+            this.lbl_Equipaje.Size = new System.Drawing.Size(60, 14);
             this.lbl_Equipaje.TabIndex = 22;
             this.lbl_Equipaje.Text = "Equipaje";
             // 
@@ -298,9 +318,10 @@
             // 
             this.lbl_Kg.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_Kg.AutoSize = true;
+            this.lbl_Kg.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_Kg.Location = new System.Drawing.Point(1095, 131);
             this.lbl_Kg.Name = "lbl_Kg";
-            this.lbl_Kg.Size = new System.Drawing.Size(21, 15);
+            this.lbl_Kg.Size = new System.Drawing.Size(24, 14);
             this.lbl_Kg.TabIndex = 23;
             this.lbl_Kg.Text = "Kg";
             // 
@@ -308,10 +329,11 @@
             // 
             this.txt_Kg.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_Kg.Enabled = false;
+            this.txt_Kg.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txt_Kg.Location = new System.Drawing.Point(1095, 158);
             this.txt_Kg.MaxLength = 2;
             this.txt_Kg.Name = "txt_Kg";
-            this.txt_Kg.Size = new System.Drawing.Size(34, 23);
+            this.txt_Kg.Size = new System.Drawing.Size(34, 21);
             this.txt_Kg.TabIndex = 24;
             this.txt_Kg.Text = "0";
             this.tip_Ayuda.SetToolTip(this.txt_Kg, "Ingreso del peso del equipaje, si es premium llega hasta 42, sino hasta 25\r\nSi no" +
@@ -323,6 +345,7 @@
             this.nud_CantEquipaje.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.nud_CantEquipaje.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.nud_CantEquipaje.Enabled = false;
+            this.nud_CantEquipaje.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.nud_CantEquipaje.Location = new System.Drawing.Point(1014, 158);
             this.nud_CantEquipaje.Maximum = new decimal(new int[] {
             1,
@@ -330,7 +353,7 @@
             0,
             0});
             this.nud_CantEquipaje.Name = "nud_CantEquipaje";
-            this.nud_CantEquipaje.Size = new System.Drawing.Size(38, 23);
+            this.nud_CantEquipaje.Size = new System.Drawing.Size(38, 21);
             this.nud_CantEquipaje.TabIndex = 25;
             this.tip_Ayuda.SetToolTip(this.nud_CantEquipaje, "Selector de cantidad de equipaje, si no es premium solo es 1");
             this.nud_CantEquipaje.ValueChanged += new System.EventHandler(this.nud_CantEquipaje_ValueChanged);
@@ -375,15 +398,24 @@
             // lbl_KgMax
             // 
             this.lbl_KgMax.AutoSize = true;
+            this.lbl_KgMax.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_KgMax.Location = new System.Drawing.Point(1135, 161);
             this.lbl_KgMax.Name = "lbl_KgMax";
-            this.lbl_KgMax.Size = new System.Drawing.Size(40, 15);
+            this.lbl_KgMax.Size = new System.Drawing.Size(46, 14);
             this.lbl_KgMax.TabIndex = 30;
             this.lbl_KgMax.Text = "/25 kg";
             // 
             // dgv_Clientes
             // 
             this.dgv_Clientes.AutoGenerateColumns = false;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_Clientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_Clientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Clientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nombreDataGridViewTextBoxColumn,
@@ -392,6 +424,14 @@
             this.edadDataGridViewTextBoxColumn,
             this.cantPasajesCompradosDataGridViewTextBoxColumn});
             this.dgv_Clientes.DataSource = this.clienteBindingSource;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_Clientes.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_Clientes.Location = new System.Drawing.Point(32, 56);
             this.dgv_Clientes.Name = "dgv_Clientes";
             this.dgv_Clientes.RowTemplate.Height = 25;
@@ -441,9 +481,10 @@
             // 
             this.chk_BolsoMano.AutoSize = true;
             this.chk_BolsoMano.Enabled = false;
+            this.chk_BolsoMano.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.chk_BolsoMano.Location = new System.Drawing.Point(1000, 239);
             this.chk_BolsoMano.Name = "chk_BolsoMano";
-            this.chk_BolsoMano.Size = new System.Drawing.Size(105, 19);
+            this.chk_BolsoMano.Size = new System.Drawing.Size(113, 18);
             this.chk_BolsoMano.TabIndex = 32;
             this.chk_BolsoMano.Text = "Bolso de mano";
             this.tip_Ayuda.SetToolTip(this.chk_BolsoMano, "Check de bolso de mano");
@@ -451,9 +492,10 @@
             // 
             // txt_Buscador
             // 
+            this.txt_Buscador.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txt_Buscador.Location = new System.Drawing.Point(32, 27);
             this.txt_Buscador.Name = "txt_Buscador";
-            this.txt_Buscador.Size = new System.Drawing.Size(100, 23);
+            this.txt_Buscador.Size = new System.Drawing.Size(100, 21);
             this.txt_Buscador.TabIndex = 33;
             this.tip_Ayuda.SetToolTip(this.txt_Buscador, "Busca segun nombre,apellido y dni si no lo encuentra se informa y se puede agrega" +
         "r\r\n\r\n");
@@ -463,22 +505,25 @@
             // lbl_ErrorBusqueda
             // 
             this.lbl_ErrorBusqueda.AutoSize = true;
+            this.lbl_ErrorBusqueda.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_ErrorBusqueda.Location = new System.Drawing.Point(158, 23);
             this.lbl_ErrorBusqueda.Name = "lbl_ErrorBusqueda";
-            this.lbl_ErrorBusqueda.Size = new System.Drawing.Size(0, 15);
+            this.lbl_ErrorBusqueda.Size = new System.Drawing.Size(0, 14);
             this.lbl_ErrorBusqueda.TabIndex = 37;
             // 
             // lbl_Impuestos
             // 
             this.lbl_Impuestos.AutoSize = true;
+            this.lbl_Impuestos.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_Impuestos.Location = new System.Drawing.Point(1023, 426);
             this.lbl_Impuestos.Name = "lbl_Impuestos";
-            this.lbl_Impuestos.Size = new System.Drawing.Size(124, 15);
+            this.lbl_Impuestos.Size = new System.Drawing.Size(143, 14);
             this.lbl_Impuestos.TabIndex = 38;
             this.lbl_Impuestos.Text = "Impuestos: 90%  + IVA";
             // 
             // rtx_PasajerosAgregados
             // 
+            this.rtx_PasajerosAgregados.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.rtx_PasajerosAgregados.Location = new System.Drawing.Point(522, 161);
             this.rtx_PasajerosAgregados.Name = "rtx_PasajerosAgregados";
             this.rtx_PasajerosAgregados.ReadOnly = true;
@@ -513,6 +558,7 @@
             // 
             // rtx_InfoPasajerosFinal
             // 
+            this.rtx_InfoPasajerosFinal.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.rtx_InfoPasajerosFinal.Location = new System.Drawing.Point(58, 35);
             this.rtx_InfoPasajerosFinal.Name = "rtx_InfoPasajerosFinal";
             this.rtx_InfoPasajerosFinal.ReadOnly = true;
@@ -560,17 +606,19 @@
             // lbl_ClienteComprador
             // 
             this.lbl_ClienteComprador.AutoSize = true;
+            this.lbl_ClienteComprador.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_ClienteComprador.Location = new System.Drawing.Point(522, 131);
             this.lbl_ClienteComprador.Name = "lbl_ClienteComprador";
-            this.lbl_ClienteComprador.Size = new System.Drawing.Size(0, 15);
+            this.lbl_ClienteComprador.Size = new System.Drawing.Size(0, 14);
             this.lbl_ClienteComprador.TabIndex = 43;
             // 
             // lbl_TotalPagar
             // 
             this.lbl_TotalPagar.AutoSize = true;
+            this.lbl_TotalPagar.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_TotalPagar.Location = new System.Drawing.Point(374, 35);
             this.lbl_TotalPagar.Name = "lbl_TotalPagar";
-            this.lbl_TotalPagar.Size = new System.Drawing.Size(0, 15);
+            this.lbl_TotalPagar.Size = new System.Drawing.Size(0, 14);
             this.lbl_TotalPagar.TabIndex = 44;
             // 
             // pnl_ConfirmarCompra
@@ -579,7 +627,8 @@
             this.pnl_ConfirmarCompra.Controls.Add(this.pic_CancelarCompra);
             this.pnl_ConfirmarCompra.Controls.Add(this.rtx_InfoPasajerosFinal);
             this.pnl_ConfirmarCompra.Controls.Add(this.lbl_TotalPagar);
-            this.pnl_ConfirmarCompra.Location = new System.Drawing.Point(316, 77);
+            this.pnl_ConfirmarCompra.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.pnl_ConfirmarCompra.Location = new System.Drawing.Point(324, 113);
             this.pnl_ConfirmarCompra.Name = "pnl_ConfirmarCompra";
             this.pnl_ConfirmarCompra.Size = new System.Drawing.Size(736, 327);
             this.pnl_ConfirmarCompra.TabIndex = 45;

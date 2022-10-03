@@ -76,36 +76,40 @@
             // 
             // txt_Edad
             // 
+            this.txt_Edad.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txt_Edad.Location = new System.Drawing.Point(293, 173);
             this.txt_Edad.Name = "txt_Edad";
-            this.txt_Edad.Size = new System.Drawing.Size(100, 23);
+            this.txt_Edad.Size = new System.Drawing.Size(100, 21);
             this.txt_Edad.TabIndex = 2;
             this.tip_Ayuda.SetToolTip(this.txt_Edad, "Toma el valor para la edad, no acepta letras y acepta el valor en rango");
             this.txt_Edad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Edad_KeyPress);
             // 
             // txt_Apellido
             // 
+            this.txt_Apellido.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txt_Apellido.Location = new System.Drawing.Point(293, 47);
             this.txt_Apellido.Name = "txt_Apellido";
-            this.txt_Apellido.Size = new System.Drawing.Size(100, 23);
+            this.txt_Apellido.Size = new System.Drawing.Size(100, 21);
             this.txt_Apellido.TabIndex = 3;
             this.tip_Ayuda.SetToolTip(this.txt_Apellido, "Toma el ingreso para apellido, no acepta numeros");
             this.txt_Apellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Apellido_KeyPress);
             // 
             // txt_Dni
             // 
+            this.txt_Dni.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txt_Dni.Location = new System.Drawing.Point(69, 173);
             this.txt_Dni.Name = "txt_Dni";
-            this.txt_Dni.Size = new System.Drawing.Size(100, 23);
+            this.txt_Dni.Size = new System.Drawing.Size(100, 21);
             this.txt_Dni.TabIndex = 4;
             this.tip_Ayuda.SetToolTip(this.txt_Dni, "Toma el valor para dni, no acepta letras y tiene un rango determinado");
             this.txt_Dni.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Dni_KeyPress);
             // 
             // txt_Nombre
             // 
+            this.txt_Nombre.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txt_Nombre.Location = new System.Drawing.Point(69, 47);
             this.txt_Nombre.Name = "txt_Nombre";
-            this.txt_Nombre.Size = new System.Drawing.Size(100, 23);
+            this.txt_Nombre.Size = new System.Drawing.Size(100, 21);
             this.txt_Nombre.TabIndex = 5;
             this.tip_Ayuda.SetToolTip(this.txt_Nombre, "Toma el ingreso del nombre, no acepta numeros");
             this.txt_Nombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Nombre_KeyPress);
@@ -113,53 +117,59 @@
             // lbl_Nombre
             // 
             this.lbl_Nombre.AutoSize = true;
+            this.lbl_Nombre.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_Nombre.Location = new System.Drawing.Point(69, 29);
             this.lbl_Nombre.Name = "lbl_Nombre";
-            this.lbl_Nombre.Size = new System.Drawing.Size(51, 15);
+            this.lbl_Nombre.Size = new System.Drawing.Size(56, 14);
             this.lbl_Nombre.TabIndex = 6;
             this.lbl_Nombre.Text = "Nombre";
             // 
             // lbl_Error
             // 
             this.lbl_Error.AutoSize = true;
+            this.lbl_Error.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_Error.Location = new System.Drawing.Point(514, 181);
             this.lbl_Error.Name = "lbl_Error";
-            this.lbl_Error.Size = new System.Drawing.Size(0, 15);
+            this.lbl_Error.Size = new System.Drawing.Size(0, 14);
             this.lbl_Error.TabIndex = 7;
             // 
             // lbl_Edad
             // 
             this.lbl_Edad.AutoSize = true;
+            this.lbl_Edad.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_Edad.Location = new System.Drawing.Point(293, 155);
             this.lbl_Edad.Name = "lbl_Edad";
-            this.lbl_Edad.Size = new System.Drawing.Size(33, 15);
+            this.lbl_Edad.Size = new System.Drawing.Size(38, 14);
             this.lbl_Edad.TabIndex = 8;
             this.lbl_Edad.Text = "Edad";
             // 
             // lbl_Apellido
             // 
             this.lbl_Apellido.AutoSize = true;
+            this.lbl_Apellido.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_Apellido.Location = new System.Drawing.Point(293, 29);
             this.lbl_Apellido.Name = "lbl_Apellido";
-            this.lbl_Apellido.Size = new System.Drawing.Size(51, 15);
+            this.lbl_Apellido.Size = new System.Drawing.Size(58, 14);
             this.lbl_Apellido.TabIndex = 9;
             this.lbl_Apellido.Text = "Apellido";
             // 
             // lbl_Dni
             // 
             this.lbl_Dni.AutoSize = true;
+            this.lbl_Dni.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_Dni.Location = new System.Drawing.Point(69, 155);
             this.lbl_Dni.Name = "lbl_Dni";
-            this.lbl_Dni.Size = new System.Drawing.Size(25, 15);
+            this.lbl_Dni.Size = new System.Drawing.Size(29, 14);
             this.lbl_Dni.TabIndex = 10;
             this.lbl_Dni.Text = "Dni";
             // 
             // lbl_Info
             // 
             this.lbl_Info.AutoSize = true;
+            this.lbl_Info.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_Info.Location = new System.Drawing.Point(505, 47);
             this.lbl_Info.Name = "lbl_Info";
-            this.lbl_Info.Size = new System.Drawing.Size(0, 15);
+            this.lbl_Info.Size = new System.Drawing.Size(0, 14);
             this.lbl_Info.TabIndex = 11;
             this.tip_Ayuda.SetToolTip(this.lbl_Info, "Muestra los datos que se van a agregar como cliente");
             // 

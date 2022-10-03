@@ -79,17 +79,19 @@
             // 
             // txt_Contraseña
             // 
+            this.txt_Contraseña.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txt_Contraseña.Location = new System.Drawing.Point(192, 288);
             this.txt_Contraseña.Name = "txt_Contraseña";
             this.txt_Contraseña.PasswordChar = '*';
-            this.txt_Contraseña.Size = new System.Drawing.Size(100, 23);
+            this.txt_Contraseña.Size = new System.Drawing.Size(100, 21);
             this.txt_Contraseña.TabIndex = 5;
             // 
             // txt_Usuario
             // 
+            this.txt_Usuario.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txt_Usuario.Location = new System.Drawing.Point(192, 224);
             this.txt_Usuario.Name = "txt_Usuario";
-            this.txt_Usuario.Size = new System.Drawing.Size(100, 23);
+            this.txt_Usuario.Size = new System.Drawing.Size(100, 21);
             this.txt_Usuario.TabIndex = 6;
             // 
             // lbl_Error

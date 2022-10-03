@@ -165,28 +165,28 @@ namespace Parcial1_Labo_2
                 this.BackColor = Color.White;
                 pic_Agregar.Image = Resources.agregar_negro_84x24;
                 pic_Salir.Image = Resources.salir_negro_84x24;
-                lbl_Asientos.ForeColor = Color.Black;
-                lbl_Avion.ForeColor = Color.Black;
-                lbl_Codigo.ForeColor = Color.Black;
-                lbl_destino.ForeColor = Color.Black;
-                lbl_error.ForeColor = Color.Black;
-                lbl_HoraSalida.ForeColor = Color.Black;
-                lbl_Origen.ForeColor = Color.Black;
-                lbl_Salida.ForeColor = Color.Black;
-                cmb_Avion.ForeColor = Color.Black;
+                lbl_Asientos.ForeColor = Color.FromArgb(64,64,64);
+                lbl_Avion.ForeColor = Color.FromArgb(64, 64, 64);
+                lbl_Codigo.ForeColor = Color.FromArgb(64, 64, 64);
+                lbl_destino.ForeColor = Color.FromArgb(64, 64, 64);
+                lbl_error.ForeColor = Color.FromArgb(64, 64, 64);
+                lbl_HoraSalida.ForeColor = Color.FromArgb(64, 64, 64);
+                lbl_Origen.ForeColor = Color.FromArgb(64, 64, 64);
+                lbl_Salida.ForeColor = Color.FromArgb(64, 64, 64);
+                cmb_Avion.ForeColor = Color.FromArgb(64, 64, 64);
                 cmb_Avion.BackColor = Color.White;
                 txt_Codigo.BackColor = Color.White;
-                txt_Codigo.ForeColor = Color.Black;
-                cmb_Destino.ForeColor = Color.Black;
+                txt_Codigo.ForeColor = Color.FromArgb(64, 64, 64);
+                cmb_Destino.ForeColor = Color.FromArgb(64, 64, 64);
                 cmb_Destino.BackColor = Color.White;
                 cmb_Origen.BackColor = Color.White;
-                cmb_Origen.ForeColor = Color.Black;
-                cmb_Salida.ForeColor = Color.Black;
+                cmb_Origen.ForeColor = Color.FromArgb(64, 64, 64);
+                cmb_Salida.ForeColor = Color.FromArgb(64, 64, 64);
                 cmb_Salida.BackColor = Color.White;
-                dtp_Salida.CalendarForeColor = Color.Black;
+                dtp_Salida.CalendarForeColor = Color.FromArgb(64, 64, 64);
                 dtp_Salida.CalendarMonthBackground = Color.White;
                 dtp_Salida.CalendarTitleBackColor = Color.White;
-                dtp_Salida.CalendarTitleForeColor = Color.Black;
+                dtp_Salida.CalendarTitleForeColor = Color.FromArgb(64, 64, 64);
             }
         }
     }

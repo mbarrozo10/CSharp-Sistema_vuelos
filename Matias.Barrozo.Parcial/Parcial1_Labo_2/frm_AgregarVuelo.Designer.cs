@@ -54,61 +54,81 @@
             // lbl_Avion
             // 
             this.lbl_Avion.AutoSize = true;
-            this.lbl_Avion.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_Avion.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_Avion.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_Avion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lbl_Avion.Location = new System.Drawing.Point(353, 68);
             this.lbl_Avion.Name = "lbl_Avion";
-            this.lbl_Avion.Size = new System.Drawing.Size(72, 15);
+            this.lbl_Avion.Size = new System.Drawing.Size(84, 14);
             this.lbl_Avion.TabIndex = 0;
             this.lbl_Avion.Text = "Elija el avion";
             // 
             // lbl_destino
             // 
             this.lbl_destino.AutoSize = true;
-            this.lbl_destino.Location = new System.Drawing.Point(624, 275);
+            this.lbl_destino.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_destino.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_destino.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lbl_destino.Location = new System.Drawing.Point(353, 275);
             this.lbl_destino.Name = "lbl_destino";
-            this.lbl_destino.Size = new System.Drawing.Size(47, 15);
+            this.lbl_destino.Size = new System.Drawing.Size(54, 14);
             this.lbl_destino.TabIndex = 1;
             this.lbl_destino.Text = "Destino";
             // 
             // lbl_Salida
             // 
             this.lbl_Salida.AutoSize = true;
+            this.lbl_Salida.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_Salida.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_Salida.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lbl_Salida.Location = new System.Drawing.Point(58, 68);
             this.lbl_Salida.Name = "lbl_Salida";
-            this.lbl_Salida.Size = new System.Drawing.Size(87, 15);
+            this.lbl_Salida.Size = new System.Drawing.Size(98, 14);
             this.lbl_Salida.TabIndex = 2;
             this.lbl_Salida.Text = "Fecha de salida";
             // 
             // lbl_Origen
             // 
             this.lbl_Origen.AutoSize = true;
+            this.lbl_Origen.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_Origen.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_Origen.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lbl_Origen.Location = new System.Drawing.Point(58, 275);
             this.lbl_Origen.Name = "lbl_Origen";
-            this.lbl_Origen.Size = new System.Drawing.Size(43, 15);
+            this.lbl_Origen.Size = new System.Drawing.Size(47, 14);
             this.lbl_Origen.TabIndex = 4;
             this.lbl_Origen.Text = "Origen";
             // 
             // lbl_Codigo
             // 
             this.lbl_Codigo.AutoSize = true;
+            this.lbl_Codigo.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_Codigo.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_Codigo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lbl_Codigo.Location = new System.Drawing.Point(353, 156);
             this.lbl_Codigo.Name = "lbl_Codigo";
-            this.lbl_Codigo.Size = new System.Drawing.Size(94, 15);
+            this.lbl_Codigo.Size = new System.Drawing.Size(102, 14);
             this.lbl_Codigo.TabIndex = 5;
             this.lbl_Codigo.Text = "Codigo de vuelo";
             // 
             // lbl_Asientos
             // 
             this.lbl_Asientos.AutoSize = true;
-            this.lbl_Asientos.Location = new System.Drawing.Point(353, 247);
+            this.lbl_Asientos.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_Asientos.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_Asientos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lbl_Asientos.Location = new System.Drawing.Point(517, 68);
             this.lbl_Asientos.Name = "lbl_Asientos";
-            this.lbl_Asientos.Size = new System.Drawing.Size(123, 15);
+            this.lbl_Asientos.Size = new System.Drawing.Size(141, 14);
             this.lbl_Asientos.TabIndex = 6;
             this.lbl_Asientos.Text = "Cantidad de asientos: ";
             // 
             // cmb_Avion
             // 
+            this.cmb_Avion.BackColor = System.Drawing.Color.White;
             this.cmb_Avion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_Avion.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cmb_Avion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.cmb_Avion.FormattingEnabled = true;
             this.cmb_Avion.Location = new System.Drawing.Point(353, 98);
             this.cmb_Avion.Name = "cmb_Avion";
@@ -119,9 +139,12 @@
             // 
             // cmb_Destino
             // 
+            this.cmb_Destino.BackColor = System.Drawing.Color.White;
             this.cmb_Destino.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_Destino.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cmb_Destino.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.cmb_Destino.FormattingEnabled = true;
-            this.cmb_Destino.Location = new System.Drawing.Point(624, 306);
+            this.cmb_Destino.Location = new System.Drawing.Point(353, 306);
             this.cmb_Destino.Name = "cmb_Destino";
             this.cmb_Destino.Size = new System.Drawing.Size(121, 23);
             this.cmb_Destino.TabIndex = 11;
@@ -130,6 +153,9 @@
             // 
             // txt_Codigo
             // 
+            this.txt_Codigo.BackColor = System.Drawing.Color.White;
+            this.txt_Codigo.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txt_Codigo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txt_Codigo.Location = new System.Drawing.Point(353, 187);
             this.txt_Codigo.MaxLength = 5;
             this.txt_Codigo.Name = "txt_Codigo";
@@ -140,17 +166,21 @@
             // lbl_error
             // 
             this.lbl_error.AutoSize = true;
+            this.lbl_error.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_error.Location = new System.Drawing.Point(788, 306);
             this.lbl_error.Name = "lbl_error";
-            this.lbl_error.Size = new System.Drawing.Size(0, 15);
+            this.lbl_error.Size = new System.Drawing.Size(0, 14);
             this.lbl_error.TabIndex = 17;
             // 
             // dtp_Salida
             // 
-            this.dtp_Salida.CalendarMonthBackground = System.Drawing.SystemColors.InactiveCaptionText;
-            this.dtp_Salida.CalendarTitleBackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.dtp_Salida.CalendarTrailingForeColor = System.Drawing.SystemColors.ControlText;
+            this.dtp_Salida.CalendarForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.dtp_Salida.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.dtp_Salida.CalendarTitleBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.dtp_Salida.CalendarTitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.dtp_Salida.CalendarTrailingForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.dtp_Salida.CustomFormat = "hh:mm";
+            this.dtp_Salida.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.dtp_Salida.Location = new System.Drawing.Point(58, 98);
             this.dtp_Salida.MaxDate = new System.DateTime(2024, 12, 31, 0, 0, 0, 0);
             this.dtp_Salida.MinDate = new System.DateTime(2022, 9, 15, 0, 0, 0, 0);
@@ -163,7 +193,10 @@
             // 
             // cmb_Origen
             // 
+            this.cmb_Origen.BackColor = System.Drawing.Color.White;
             this.cmb_Origen.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_Origen.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cmb_Origen.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.cmb_Origen.FormattingEnabled = true;
             this.cmb_Origen.Location = new System.Drawing.Point(58, 306);
             this.cmb_Origen.Name = "cmb_Origen";
@@ -175,7 +208,10 @@
             // 
             // cmb_Salida
             // 
+            this.cmb_Salida.BackColor = System.Drawing.Color.White;
             this.cmb_Salida.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_Salida.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cmb_Salida.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.cmb_Salida.FormattingEnabled = true;
             this.cmb_Salida.Location = new System.Drawing.Point(58, 187);
             this.cmb_Salida.Name = "cmb_Salida";
@@ -186,9 +222,12 @@
             // lbl_HoraSalida
             // 
             this.lbl_HoraSalida.AutoSize = true;
+            this.lbl_HoraSalida.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_HoraSalida.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_HoraSalida.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lbl_HoraSalida.Location = new System.Drawing.Point(58, 156);
             this.lbl_HoraSalida.Name = "lbl_HoraSalida";
-            this.lbl_HoraSalida.Size = new System.Drawing.Size(96, 15);
+            this.lbl_HoraSalida.Size = new System.Drawing.Size(110, 14);
             this.lbl_HoraSalida.TabIndex = 22;
             this.lbl_HoraSalida.Text = "Horario de salida";
             // 

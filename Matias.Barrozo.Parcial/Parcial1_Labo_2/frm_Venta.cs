@@ -401,6 +401,8 @@ namespace Parcial1_Labo_2
                 rtx_InfoPasajerosFinal.BackColor = Color.FromArgb(34, 34, 34);
                 rtx_InfoPasajerosFinal.ForeColor = Color.White;
                 lbl_TotalPagar.ForeColor= Color.White;
+                rtx_PasajerosAgregados.ForeColor = Color.White;
+                rtx_PasajerosAgregados.BackColor = Color.FromArgb(34, 34, 34);
 
             }
             else
@@ -453,6 +455,9 @@ namespace Parcial1_Labo_2
                 rtx_InfoPasajerosFinal.BackColor = Color.White;
                 rtx_InfoPasajerosFinal.ForeColor = Color.Black;
                 lbl_TotalPagar.ForeColor = Color.Black;
+                rtx_PasajerosAgregados.ForeColor = Color.Black;
+                rtx_PasajerosAgregados.BackColor = Color.White;
+
             }
         }
 

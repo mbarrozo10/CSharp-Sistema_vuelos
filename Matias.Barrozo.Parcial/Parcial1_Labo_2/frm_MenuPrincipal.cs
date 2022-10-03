@@ -37,7 +37,6 @@ namespace Parcial1_Labo_2
 
         private void MenuPrincipal_Load(object sender, EventArgs e)
         {
-            
             CargarDatagrid(Aerolinea.vuelos);
             modoOscuroClaro();
             cmb_FiltroHistorico.Items.Add("Destinos");
@@ -673,6 +672,8 @@ namespace Parcial1_Labo_2
                 dgv_VuelosActivos.RowHeadersDefaultCellStyle.ForeColor = Color.White;
                 dgv_VuelosActivos.RowsDefaultCellStyle.BackColor = Color.FromArgb(34, 34, 34);
                 dgv_VuelosActivos.RowsDefaultCellStyle.ForeColor = Color.White;
+                dgv_VuelosActivos.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(34, 34, 34);
+                dgv_VuelosActivos.AlternatingRowsDefaultCellStyle.ForeColor = Color.White;
                 lbl_Fecha.ForeColor = Color.White;
                 pic_SalirHistorico.Image = Resources.salir_blanco_84x24;
                 pic_Cancelar.Image = Resources.cancelar_blanco_84x24;
@@ -710,6 +711,9 @@ namespace Parcial1_Labo_2
                 lbl_ErrorBusqueda.ForeColor = Color.White;
                 dgv_Historico.DefaultCellStyle.BackColor = Color.FromArgb(34, 34, 34);
                 dgv_Historico.DefaultCellStyle.ForeColor = Color.White;
+                rtx_InfoAvion.ForeColor= Color.White;
+                rtx_InfoAvion.BackColor = Color.FromArgb(34, 34, 34);
+               
 
 
             }
@@ -719,6 +723,8 @@ namespace Parcial1_Labo_2
                 dgv_VuelosActivos.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
                 dgv_VuelosActivos.RowHeadersDefaultCellStyle.BackColor = Color.White;
                 dgv_VuelosActivos.RowHeadersDefaultCellStyle.ForeColor = Color.Black;
+                dgv_VuelosActivos.AlternatingRowsDefaultCellStyle.BackColor = Color.White;
+                dgv_VuelosActivos.AlternatingRowsDefaultCellStyle.ForeColor = Color.Black;
                 pic_Modo.Image = Resources.night_mode1;
                 this.BackColor = Color.White;
                 Aerolinea.modoOscuro = true;
@@ -765,8 +771,12 @@ namespace Parcial1_Labo_2
                 lbl_ErrorBusqueda.ForeColor = Color.Black;
                 dgv_Historico.DefaultCellStyle.BackColor = Color.White;
                 dgv_Historico.DefaultCellStyle.ForeColor = Color.Black;
+                rtx_InfoAvion.ForeColor = Color.Black;
+                rtx_InfoAvion.BackColor = Color.White;
+               
 
             }
         }
+
     }
 }

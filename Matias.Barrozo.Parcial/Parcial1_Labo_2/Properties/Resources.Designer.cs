@@ -183,26 +183,6 @@ namespace Parcial1_Labo_2.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap button {
-            get {
-                object obj = ResourceManager.GetObject("button", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap button__1_ {
-            get {
-                object obj = ResourceManager.GetObject("button (1)", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap cancelar_blanco_84x24 {
             get {
                 object obj = ResourceManager.GetObject("cancelar blanco 84x24", resourceCulture);
@@ -396,16 +376,6 @@ namespace Parcial1_Labo_2.Properties {
         internal static System.Drawing.Bitmap modificar_negro3 {
             get {
                 object obj = ResourceManager.GetObject("modificar negro3", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap night {
-            get {
-                object obj = ResourceManager.GetObject("night", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

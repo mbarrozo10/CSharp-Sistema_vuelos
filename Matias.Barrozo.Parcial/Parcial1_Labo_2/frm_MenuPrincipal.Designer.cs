@@ -45,6 +45,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_MenuPrincipal));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lbl_Bienvenido = new System.Windows.Forms.Label();
             this.dgv_VuelosActivos = new System.Windows.Forms.DataGridView();
             this.Avion = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -127,6 +129,7 @@
             // lbl_Bienvenido
             // 
             this.lbl_Bienvenido.AutoSize = true;
+            this.lbl_Bienvenido.BackColor = System.Drawing.Color.Transparent;
             this.lbl_Bienvenido.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_Bienvenido.Location = new System.Drawing.Point(96, 12);
             this.lbl_Bienvenido.Name = "lbl_Bienvenido";
@@ -137,8 +140,8 @@
             // 
             this.dgv_VuelosActivos.AllowUserToAddRows = false;
             this.dgv_VuelosActivos.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.RoyalBlue;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
             this.dgv_VuelosActivos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
@@ -147,7 +150,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.RoyalBlue;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
@@ -174,7 +177,7 @@
             dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgv_VuelosActivos.DefaultCellStyle = dataGridViewCellStyle13;
             this.dgv_VuelosActivos.EnableHeadersVisualStyles = false;
-            this.dgv_VuelosActivos.Location = new System.Drawing.Point(68, 97);
+            this.dgv_VuelosActivos.Location = new System.Drawing.Point(68, 98);
             this.dgv_VuelosActivos.Name = "dgv_VuelosActivos";
             this.dgv_VuelosActivos.ReadOnly = true;
             dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -200,6 +203,7 @@
             // 
             this.Avion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Cooper Black", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.RoyalBlue;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
@@ -207,12 +211,13 @@
             this.Avion.HeaderText = "Avion";
             this.Avion.Name = "Avion";
             this.Avion.ReadOnly = true;
-            this.Avion.Width = 63;
+            this.Avion.Width = 69;
             // 
             // Duracion
             // 
             this.Duracion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Cooper Black", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.RoyalBlue;
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
@@ -220,12 +225,13 @@
             this.Duracion.HeaderText = "Duracion";
             this.Duracion.Name = "Duracion";
             this.Duracion.ReadOnly = true;
-            this.Duracion.Width = 80;
+            this.Duracion.Width = 88;
             // 
             // Origen
             // 
             this.Origen.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Cooper Black", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.RoyalBlue;
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
@@ -233,12 +239,13 @@
             this.Origen.HeaderText = "Origen";
             this.Origen.Name = "Origen";
             this.Origen.ReadOnly = true;
-            this.Origen.Width = 68;
+            this.Origen.Width = 72;
             // 
             // Destino
             // 
             this.Destino.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Cooper Black", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.RoyalBlue;
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
@@ -246,12 +253,13 @@
             this.Destino.HeaderText = "Destino";
             this.Destino.Name = "Destino";
             this.Destino.ReadOnly = true;
-            this.Destino.Width = 72;
+            this.Destino.Width = 79;
             // 
             // Hora
             // 
             this.Hora.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Cooper Black", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.RoyalBlue;
             dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black;
@@ -264,6 +272,7 @@
             // 
             this.Llegada.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Cooper Black", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.RoyalBlue;
             dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black;
@@ -276,6 +285,7 @@
             // 
             this.Estado.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Cooper Black", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             dataGridViewCellStyle9.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.RoyalBlue;
             dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black;
@@ -283,12 +293,13 @@
             this.Estado.HeaderText = "Estado";
             this.Estado.Name = "Estado";
             this.Estado.ReadOnly = true;
-            this.Estado.Width = 67;
+            this.Estado.Width = 74;
             // 
             // Asientos
             // 
             this.Asientos.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Cooper Black", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             dataGridViewCellStyle10.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.RoyalBlue;
             dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.Black;
@@ -296,7 +307,7 @@
             this.Asientos.HeaderText = "Asientos Restantes";
             this.Asientos.Name = "Asientos";
             this.Asientos.ReadOnly = true;
-            this.Asientos.Width = 119;
+            this.Asientos.Width = 135;
             // 
             // Wifi
             // 
@@ -313,7 +324,7 @@
             this.Wifi.ReadOnly = true;
             this.Wifi.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Wifi.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Wifi.Width = 53;
+            this.Wifi.Width = 57;
             // 
             // Comida
             // 
@@ -330,7 +341,7 @@
             this.Comida.ReadOnly = true;
             this.Comida.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Comida.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Comida.Width = 74;
+            this.Comida.Width = 79;
             // 
             // pic_Modo
             // 
@@ -351,7 +362,7 @@
             this.pic_Vender.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.pic_Vender.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pic_Vender.Image = ((System.Drawing.Image)(resources.GetObject("pic_Vender.Image")));
-            this.pic_Vender.Location = new System.Drawing.Point(68, 533);
+            this.pic_Vender.Location = new System.Drawing.Point(68, 532);
             this.pic_Vender.Name = "pic_Vender";
             this.pic_Vender.Size = new System.Drawing.Size(85, 27);
             this.pic_Vender.TabIndex = 10;
@@ -365,7 +376,7 @@
             this.pic_Pasajeros.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.pic_Pasajeros.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pic_Pasajeros.Image = global::Parcial1_Labo_2.Properties.Resources.pasajeros_negro_84x24;
-            this.pic_Pasajeros.Location = new System.Drawing.Point(185, 533);
+            this.pic_Pasajeros.Location = new System.Drawing.Point(185, 532);
             this.pic_Pasajeros.Name = "pic_Pasajeros";
             this.pic_Pasajeros.Size = new System.Drawing.Size(85, 27);
             this.pic_Pasajeros.TabIndex = 11;
@@ -379,7 +390,7 @@
             this.pic_Agregar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pic_Agregar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pic_Agregar.Image = global::Parcial1_Labo_2.Properties.Resources.agregar_negro;
-            this.pic_Agregar.Location = new System.Drawing.Point(881, 533);
+            this.pic_Agregar.Location = new System.Drawing.Point(881, 532);
             this.pic_Agregar.Name = "pic_Agregar";
             this.pic_Agregar.Size = new System.Drawing.Size(122, 27);
             this.pic_Agregar.TabIndex = 12;
@@ -392,7 +403,7 @@
             this.pic_Salir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pic_Salir.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pic_Salir.Image = global::Parcial1_Labo_2.Properties.Resources.salir_negro_84x24;
-            this.pic_Salir.Location = new System.Drawing.Point(1054, 533);
+            this.pic_Salir.Location = new System.Drawing.Point(1054, 532);
             this.pic_Salir.Name = "pic_Salir";
             this.pic_Salir.Size = new System.Drawing.Size(93, 27);
             this.pic_Salir.TabIndex = 13;
@@ -413,6 +424,7 @@
             // 
             // rtx_InfoVuelo
             // 
+            this.rtx_InfoVuelo.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.rtx_InfoVuelo.Location = new System.Drawing.Point(52, 35);
             this.rtx_InfoVuelo.Name = "rtx_InfoVuelo";
             this.rtx_InfoVuelo.ReadOnly = true;
@@ -467,7 +479,7 @@
             this.pnl_Historico.Controls.Add(this.cmb_FiltroHistorico);
             this.pnl_Historico.Controls.Add(this.pic_SalirHistorico);
             this.pnl_Historico.Controls.Add(this.lbl_RecaudacionTotal);
-            this.pnl_Historico.Location = new System.Drawing.Point(68, 45);
+            this.pnl_Historico.Location = new System.Drawing.Point(68, 46);
             this.pnl_Historico.Name = "pnl_Historico";
             this.pnl_Historico.Size = new System.Drawing.Size(1070, 478);
             this.pnl_Historico.TabIndex = 17;
@@ -476,9 +488,10 @@
             // lbl_InfoVendedor
             // 
             this.lbl_InfoVendedor.AutoSize = true;
+            this.lbl_InfoVendedor.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_InfoVendedor.Location = new System.Drawing.Point(488, 144);
             this.lbl_InfoVendedor.Name = "lbl_InfoVendedor";
-            this.lbl_InfoVendedor.Size = new System.Drawing.Size(0, 15);
+            this.lbl_InfoVendedor.Size = new System.Drawing.Size(0, 14);
             this.lbl_InfoVendedor.TabIndex = 20;
             this.lbl_InfoVendedor.Visible = false;
             // 
@@ -548,40 +561,44 @@
             // 
             // txt_ContraseñaVendedor
             // 
+            this.txt_ContraseñaVendedor.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txt_ContraseñaVendedor.Location = new System.Drawing.Point(820, 276);
             this.txt_ContraseñaVendedor.Name = "txt_ContraseñaVendedor";
             this.txt_ContraseñaVendedor.PlaceholderText = "Contraseña";
-            this.txt_ContraseñaVendedor.Size = new System.Drawing.Size(100, 23);
+            this.txt_ContraseñaVendedor.Size = new System.Drawing.Size(100, 21);
             this.txt_ContraseñaVendedor.TabIndex = 14;
             this.tip_Ayuda.SetToolTip(this.txt_ContraseñaVendedor, "Contraseña del usuario");
             this.txt_ContraseñaVendedor.Visible = false;
             // 
             // txt_UsuarioVendedor
             // 
+            this.txt_UsuarioVendedor.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txt_UsuarioVendedor.Location = new System.Drawing.Point(678, 276);
             this.txt_UsuarioVendedor.Name = "txt_UsuarioVendedor";
             this.txt_UsuarioVendedor.PlaceholderText = "Usuario";
-            this.txt_UsuarioVendedor.Size = new System.Drawing.Size(100, 23);
+            this.txt_UsuarioVendedor.Size = new System.Drawing.Size(100, 21);
             this.txt_UsuarioVendedor.TabIndex = 13;
             this.tip_Ayuda.SetToolTip(this.txt_UsuarioVendedor, "Nombre de usuario");
             this.txt_UsuarioVendedor.Visible = false;
             // 
             // txt_ApellidoVendedor
             // 
+            this.txt_ApellidoVendedor.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txt_ApellidoVendedor.Location = new System.Drawing.Point(820, 158);
             this.txt_ApellidoVendedor.Name = "txt_ApellidoVendedor";
             this.txt_ApellidoVendedor.PlaceholderText = "Apellido";
-            this.txt_ApellidoVendedor.Size = new System.Drawing.Size(100, 23);
+            this.txt_ApellidoVendedor.Size = new System.Drawing.Size(100, 21);
             this.txt_ApellidoVendedor.TabIndex = 12;
             this.tip_Ayuda.SetToolTip(this.txt_ApellidoVendedor, "Apellido del usuario");
             this.txt_ApellidoVendedor.Visible = false;
             // 
             // txt_NombreVendedor
             // 
+            this.txt_NombreVendedor.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txt_NombreVendedor.Location = new System.Drawing.Point(678, 158);
             this.txt_NombreVendedor.Name = "txt_NombreVendedor";
             this.txt_NombreVendedor.PlaceholderText = "Nombre";
-            this.txt_NombreVendedor.Size = new System.Drawing.Size(100, 23);
+            this.txt_NombreVendedor.Size = new System.Drawing.Size(100, 21);
             this.txt_NombreVendedor.TabIndex = 11;
             this.tip_Ayuda.SetToolTip(this.txt_NombreVendedor, "Nombre del usuario");
             this.txt_NombreVendedor.Visible = false;
@@ -590,7 +607,7 @@
             // 
             this.lbl_ErrorBorrar.AutoSize = true;
             this.lbl_ErrorBorrar.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_ErrorBorrar.Location = new System.Drawing.Point(454, 329);
+            this.lbl_ErrorBorrar.Location = new System.Drawing.Point(463, 192);
             this.lbl_ErrorBorrar.Name = "lbl_ErrorBorrar";
             this.lbl_ErrorBorrar.Size = new System.Drawing.Size(0, 14);
             this.lbl_ErrorBorrar.TabIndex = 10;
@@ -600,6 +617,14 @@
             this.dgv_Vendedores.AllowUserToAddRows = false;
             this.dgv_Vendedores.AllowUserToDeleteRows = false;
             this.dgv_Vendedores.AutoGenerateColumns = false;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_Vendedores.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle16;
             this.dgv_Vendedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Vendedores.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nombreDataGridViewTextBoxColumn,
@@ -607,10 +632,18 @@
             this.usuarioDataGridViewTextBoxColumn,
             this.tipoDataGridViewTextBoxColumn});
             this.dgv_Vendedores.DataSource = this.vendedorBindingSource;
-            this.dgv_Vendedores.Location = new System.Drawing.Point(62, 111);
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_Vendedores.DefaultCellStyle = dataGridViewCellStyle17;
+            this.dgv_Vendedores.Location = new System.Drawing.Point(62, 106);
             this.dgv_Vendedores.Name = "dgv_Vendedores";
             this.dgv_Vendedores.RowTemplate.Height = 25;
-            this.dgv_Vendedores.Size = new System.Drawing.Size(386, 277);
+            this.dgv_Vendedores.Size = new System.Drawing.Size(386, 282);
             this.dgv_Vendedores.TabIndex = 9;
             this.tip_Ayuda.SetToolTip(this.dgv_Vendedores, "Muestra los empleados y permite borrarlos y modificarlos");
             this.dgv_Vendedores.Visible = false;
@@ -660,10 +693,11 @@
             // 
             // rtx_InfoAvion
             // 
+            this.rtx_InfoAvion.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.rtx_InfoAvion.Location = new System.Drawing.Point(62, 111);
             this.rtx_InfoAvion.Name = "rtx_InfoAvion";
             this.rtx_InfoAvion.ReadOnly = true;
-            this.rtx_InfoAvion.Size = new System.Drawing.Size(322, 277);
+            this.rtx_InfoAvion.Size = new System.Drawing.Size(322, 282);
             this.rtx_InfoAvion.TabIndex = 7;
             this.rtx_InfoAvion.Text = "";
             // 
@@ -690,20 +724,21 @@
             this.dgv_Historico.AllowUserToAddRows = false;
             this.dgv_Historico.AllowUserToDeleteRows = false;
             this.dgv_Historico.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_Historico.Location = new System.Drawing.Point(62, 111);
+            this.dgv_Historico.Location = new System.Drawing.Point(62, 106);
             this.dgv_Historico.Name = "dgv_Historico";
             this.dgv_Historico.ReadOnly = true;
             this.dgv_Historico.RowTemplate.Height = 25;
-            this.dgv_Historico.Size = new System.Drawing.Size(945, 277);
+            this.dgv_Historico.Size = new System.Drawing.Size(945, 282);
             this.dgv_Historico.TabIndex = 0;
             // 
             // cmb_FiltroHistorico
             // 
             this.cmb_FiltroHistorico.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_FiltroHistorico.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cmb_FiltroHistorico.FormattingEnabled = true;
             this.cmb_FiltroHistorico.Location = new System.Drawing.Point(62, 52);
             this.cmb_FiltroHistorico.Name = "cmb_FiltroHistorico";
-            this.cmb_FiltroHistorico.Size = new System.Drawing.Size(121, 23);
+            this.cmb_FiltroHistorico.Size = new System.Drawing.Size(121, 22);
             this.cmb_FiltroHistorico.TabIndex = 3;
             this.tip_Ayuda.SetToolTip(this.cmb_FiltroHistorico, "Selector de historial");
             this.cmb_FiltroHistorico.SelectedValueChanged += new System.EventHandler(this.cmb_FiltroHistorico_SelectedValueChanged);
@@ -712,9 +747,9 @@
             // 
             this.pic_SalirHistorico.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pic_SalirHistorico.Image = global::Parcial1_Labo_2.Properties.Resources.salir_negro_84x24;
-            this.pic_SalirHistorico.Location = new System.Drawing.Point(957, 431);
+            this.pic_SalirHistorico.Location = new System.Drawing.Point(957, 432);
             this.pic_SalirHistorico.Name = "pic_SalirHistorico";
-            this.pic_SalirHistorico.Size = new System.Drawing.Size(87, 26);
+            this.pic_SalirHistorico.Size = new System.Drawing.Size(87, 27);
             this.pic_SalirHistorico.TabIndex = 2;
             this.pic_SalirHistorico.TabStop = false;
             this.tip_Ayuda.SetToolTip(this.pic_SalirHistorico, "Cierras las estadisticas");
@@ -724,7 +759,7 @@
             // 
             this.lbl_RecaudacionTotal.AutoSize = true;
             this.lbl_RecaudacionTotal.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_RecaudacionTotal.Location = new System.Drawing.Point(62, 431);
+            this.lbl_RecaudacionTotal.Location = new System.Drawing.Point(62, 432);
             this.lbl_RecaudacionTotal.Name = "lbl_RecaudacionTotal";
             this.lbl_RecaudacionTotal.Size = new System.Drawing.Size(87, 14);
             this.lbl_RecaudacionTotal.TabIndex = 1;
@@ -733,6 +768,7 @@
             // lbl_Fecha
             // 
             this.lbl_Fecha.AutoSize = true;
+            this.lbl_Fecha.BackColor = System.Drawing.Color.Transparent;
             this.lbl_Fecha.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_Fecha.Location = new System.Drawing.Point(616, 12);
             this.lbl_Fecha.Name = "lbl_Fecha";
@@ -748,7 +784,7 @@
             // 
             this.pic_Historico.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pic_Historico.Image = global::Parcial1_Labo_2.Properties.Resources.historico_84x24_negro;
-            this.pic_Historico.Location = new System.Drawing.Point(426, 533);
+            this.pic_Historico.Location = new System.Drawing.Point(426, 532);
             this.pic_Historico.Name = "pic_Historico";
             this.pic_Historico.Size = new System.Drawing.Size(90, 31);
             this.pic_Historico.TabIndex = 20;
@@ -760,7 +796,7 @@
             // 
             this.pic_AgregarCliente.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pic_AgregarCliente.Image = global::Parcial1_Labo_2.Properties.Resources.agregar_cliente_negro;
-            this.pic_AgregarCliente.Location = new System.Drawing.Point(548, 533);
+            this.pic_AgregarCliente.Location = new System.Drawing.Point(548, 532);
             this.pic_AgregarCliente.Name = "pic_AgregarCliente";
             this.pic_AgregarCliente.Size = new System.Drawing.Size(127, 31);
             this.pic_AgregarCliente.TabIndex = 21;
@@ -772,7 +808,7 @@
             // 
             this.pic_MasInfo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pic_MasInfo.Image = global::Parcial1_Labo_2.Properties.Resources.info_negro;
-            this.pic_MasInfo.Location = new System.Drawing.Point(714, 533);
+            this.pic_MasInfo.Location = new System.Drawing.Point(714, 532);
             this.pic_MasInfo.Name = "pic_MasInfo";
             this.pic_MasInfo.Size = new System.Drawing.Size(132, 28);
             this.pic_MasInfo.TabIndex = 22;
@@ -782,9 +818,10 @@
             // 
             // txt_Buscador
             // 
+            this.txt_Buscador.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txt_Buscador.Location = new System.Drawing.Point(68, 65);
             this.txt_Buscador.Name = "txt_Buscador";
-            this.txt_Buscador.Size = new System.Drawing.Size(220, 23);
+            this.txt_Buscador.Size = new System.Drawing.Size(220, 21);
             this.txt_Buscador.TabIndex = 24;
             this.tip_Ayuda.SetToolTip(this.txt_Buscador, "Se puede buscar por origen, fecha de salida, avion, y destino\r\n");
             this.txt_Buscador.TextChanged += new System.EventHandler(this.txt_Buscador_TextChanged);
@@ -793,6 +830,7 @@
             // lbl_Buscador
             // 
             this.lbl_Buscador.AutoSize = true;
+            this.lbl_Buscador.BackColor = System.Drawing.Color.Transparent;
             this.lbl_Buscador.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_Buscador.Location = new System.Drawing.Point(68, 48);
             this.lbl_Buscador.Name = "lbl_Buscador";
@@ -885,16 +923,6 @@
         private Label lbl_RecaudacionTotal;
         private ComboBox cmb_FiltroHistorico;
         private RichTextBox rtx_InfoVuelo;
-        private DataGridViewTextBoxColumn Avion;
-        private DataGridViewTextBoxColumn Duracion;
-        private DataGridViewTextBoxColumn Origen;
-        private DataGridViewTextBoxColumn Destino;
-        private DataGridViewTextBoxColumn Hora;
-        private DataGridViewTextBoxColumn Llegada;
-        private DataGridViewTextBoxColumn Estado;
-        private DataGridViewTextBoxColumn Asientos;
-        private DataGridViewCheckBoxColumn Wifi;
-        private DataGridViewCheckBoxColumn Comida;
         private Label lbl_Fecha;
         private System.Windows.Forms.Timer tmr_Hora;
         private ToolTip tip_Ayuda;
@@ -926,5 +954,15 @@
         private DataGridViewTextBoxColumn apellidoDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn usuarioDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn tipoDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn Avion;
+        private DataGridViewTextBoxColumn Duracion;
+        private DataGridViewTextBoxColumn Origen;
+        private DataGridViewTextBoxColumn Destino;
+        private DataGridViewTextBoxColumn Hora;
+        private DataGridViewTextBoxColumn Llegada;
+        private DataGridViewTextBoxColumn Estado;
+        private DataGridViewTextBoxColumn Asientos;
+        private DataGridViewCheckBoxColumn Wifi;
+        private DataGridViewCheckBoxColumn Comida;
     }
 }
