@@ -4,7 +4,7 @@
 <img align="right" width="480" height="480" src="Matias.Barrozo.Parcial/logo.png">
 
 
-## Sobre Mi##
+## Sobre Mi
 
 
 Soy Matias Barrozo, tengo 23 años y estoy actualmente estoy cursando la tecnicatura en programacion. Estuve haciendo este programa por casi 1 mes, y el programa
