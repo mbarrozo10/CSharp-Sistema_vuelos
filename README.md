@@ -2,7 +2,7 @@
 # Super Airline Management Console Lite Experience Service System 3.5 (SAMCLESS) Desktop Version
 
 ![imagen](Matias.Barrozo.Parcial/logo.png)
-<img align="right" width="120" height="120" src="Matias.Barrozo.Parcial/logo.png">
+<img align="center" width="520" height="520" src="Matias.Barrozo.Parcial/logo.png">
 
 
 ## Sobre Mi##
