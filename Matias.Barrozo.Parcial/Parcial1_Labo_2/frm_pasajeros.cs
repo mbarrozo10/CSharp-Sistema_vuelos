@@ -14,22 +14,22 @@ namespace Parcial1_Labo_2
 {
     public partial class frm_pasajeros : Form
     {
-        private static int Index;
+        private Vuelo vueloElegido;
         public frm_pasajeros()
         {
             InitializeComponent();
 
         }
-        public frm_pasajeros(int index): this()
+        public frm_pasajeros(Vuelo vuelo): this()
         {
-                Index = index;
+                vueloElegido = vuelo;
         }
 
           private void frm_pasajeros_Load(object sender, EventArgs e)
         {
             ModoOscuro();
             dgv_Pasajeros.DataSource = null;
-            dgv_Pasajeros.DataSource = Aerolinea.vuelos[Index].Pasajeros.Values.ToList();
+            dgv_Pasajeros.DataSource = vueloElegido.Pasajeros.Values.ToList();
 
         }
 
@@ -43,7 +43,7 @@ namespace Parcial1_Labo_2
         {
             bool Encontro = false;
             List<Pasajero> filtrada = new List<Pasajero>();
-            foreach (KeyValuePair<int,Pasajero> pasajero in Aerolinea.vuelos[Index].Pasajeros) { 
+            foreach (KeyValuePair<int,Pasajero> pasajero in vueloElegido.Pasajeros) { 
 
                 if (pasajero.Value.Nombre.ToLower().Contains(txt_BuscadorPasajero.Text.ToLower()) ||
                      pasajero.Value.Apellido.ToLower().Contains(txt_BuscadorPasajero.Text.ToLower()) ||
@@ -71,7 +71,7 @@ namespace Parcial1_Labo_2
             if (txt_BuscadorPasajero.Text == String.Empty)
             {
                 dgv_Pasajeros.DataSource = null;
-                dgv_Pasajeros.DataSource = Aerolinea.vuelos[Index].Pasajeros.ToArray();
+                dgv_Pasajeros.DataSource = vueloElegido.Pasajeros.Values.ToArray();
             }
         }
 

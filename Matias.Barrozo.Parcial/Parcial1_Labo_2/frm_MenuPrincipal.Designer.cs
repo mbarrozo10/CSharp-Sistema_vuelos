@@ -47,6 +47,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_MenuPrincipal));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lbl_Bienvenido = new System.Windows.Forms.Label();
             this.dgv_VuelosActivos = new System.Windows.Forms.DataGridView();
             this.Avion = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -69,6 +71,7 @@
             this.pic_Cancelar = new System.Windows.Forms.PictureBox();
             this.pic_SalirPanelInfo = new System.Windows.Forms.PictureBox();
             this.pnl_Historico = new System.Windows.Forms.Panel();
+            this.pic_PasajerosHistorico = new System.Windows.Forms.PictureBox();
             this.lbl_InfoVendedor = new System.Windows.Forms.Label();
             this.lbl_TituloABM = new System.Windows.Forms.Label();
             this.pic_Modificar = new System.Windows.Forms.PictureBox();
@@ -103,6 +106,8 @@
             this.txt_Buscador = new System.Windows.Forms.TextBox();
             this.lbl_Buscador = new System.Windows.Forms.Label();
             this.lbl_ErrorBusqueda = new System.Windows.Forms.Label();
+            this.pic_Logo = new System.Windows.Forms.PictureBox();
+            this.lbl_Titulo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_VuelosActivos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Modo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Vender)).BeginInit();
@@ -113,6 +118,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pic_Cancelar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_SalirPanelInfo)).BeginInit();
             this.pnl_Historico.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_PasajerosHistorico)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Modificar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_ModificarAceptar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_AgregarVendedor)).BeginInit();
@@ -124,6 +130,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pic_Historico)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_AgregarCliente)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_MasInfo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_Logo)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_Bienvenido
@@ -131,7 +138,7 @@
             this.lbl_Bienvenido.AutoSize = true;
             this.lbl_Bienvenido.BackColor = System.Drawing.Color.Transparent;
             this.lbl_Bienvenido.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_Bienvenido.Location = new System.Drawing.Point(96, 12);
+            this.lbl_Bienvenido.Location = new System.Drawing.Point(600, 118);
             this.lbl_Bienvenido.Name = "lbl_Bienvenido";
             this.lbl_Bienvenido.Size = new System.Drawing.Size(0, 14);
             this.lbl_Bienvenido.TabIndex = 0;
@@ -177,7 +184,7 @@
             dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgv_VuelosActivos.DefaultCellStyle = dataGridViewCellStyle13;
             this.dgv_VuelosActivos.EnableHeadersVisualStyles = false;
-            this.dgv_VuelosActivos.Location = new System.Drawing.Point(68, 98);
+            this.dgv_VuelosActivos.Location = new System.Drawing.Point(68, 142);
             this.dgv_VuelosActivos.Name = "dgv_VuelosActivos";
             this.dgv_VuelosActivos.ReadOnly = true;
             dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -195,7 +202,7 @@
             this.dgv_VuelosActivos.RowsDefaultCellStyle = dataGridViewCellStyle15;
             this.dgv_VuelosActivos.RowTemplate.Height = 25;
             this.dgv_VuelosActivos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_VuelosActivos.Size = new System.Drawing.Size(1070, 426);
+            this.dgv_VuelosActivos.Size = new System.Drawing.Size(1070, 382);
             this.dgv_VuelosActivos.TabIndex = 2;
             this.dgv_VuelosActivos.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgv_VuelosActivos_RowHeaderMouseClick);
             // 
@@ -459,6 +466,7 @@
             // 
             // pnl_Historico
             // 
+            this.pnl_Historico.Controls.Add(this.pic_PasajerosHistorico);
             this.pnl_Historico.Controls.Add(this.lbl_InfoVendedor);
             this.pnl_Historico.Controls.Add(this.lbl_TituloABM);
             this.pnl_Historico.Controls.Add(this.pic_Modificar);
@@ -479,11 +487,24 @@
             this.pnl_Historico.Controls.Add(this.cmb_FiltroHistorico);
             this.pnl_Historico.Controls.Add(this.pic_SalirHistorico);
             this.pnl_Historico.Controls.Add(this.lbl_RecaudacionTotal);
-            this.pnl_Historico.Location = new System.Drawing.Point(68, 46);
+            this.pnl_Historico.Location = new System.Drawing.Point(68, 60);
             this.pnl_Historico.Name = "pnl_Historico";
             this.pnl_Historico.Size = new System.Drawing.Size(1070, 478);
             this.pnl_Historico.TabIndex = 17;
             this.pnl_Historico.Visible = false;
+            // 
+            // pic_PasajerosHistorico
+            // 
+            this.pic_PasajerosHistorico.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pic_PasajerosHistorico.Image = global::Parcial1_Labo_2.Properties.Resources.pasajeros_negro_84x24;
+            this.pic_PasajerosHistorico.Location = new System.Drawing.Point(866, 432);
+            this.pic_PasajerosHistorico.Name = "pic_PasajerosHistorico";
+            this.pic_PasajerosHistorico.Size = new System.Drawing.Size(85, 28);
+            this.pic_PasajerosHistorico.TabIndex = 21;
+            this.pic_PasajerosHistorico.TabStop = false;
+            this.tip_Ayuda.SetToolTip(this.pic_PasajerosHistorico, "Muestra los pasajeros del vuelo finalizado");
+            this.pic_PasajerosHistorico.Visible = false;
+            this.pic_PasajerosHistorico.Click += new System.EventHandler(this.pic_PasajerosHistorico_Click);
             // 
             // lbl_InfoVendedor
             // 
@@ -723,13 +744,30 @@
             // 
             this.dgv_Historico.AllowUserToAddRows = false;
             this.dgv_Historico.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_Historico.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle18;
             this.dgv_Historico.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_Historico.DefaultCellStyle = dataGridViewCellStyle19;
             this.dgv_Historico.Location = new System.Drawing.Point(62, 106);
             this.dgv_Historico.Name = "dgv_Historico";
             this.dgv_Historico.ReadOnly = true;
             this.dgv_Historico.RowTemplate.Height = 25;
             this.dgv_Historico.Size = new System.Drawing.Size(945, 282);
             this.dgv_Historico.TabIndex = 0;
+            this.dgv_Historico.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgv_Historico_RowHeaderMouseClick);
             // 
             // cmb_FiltroHistorico
             // 
@@ -770,7 +808,7 @@
             this.lbl_Fecha.AutoSize = true;
             this.lbl_Fecha.BackColor = System.Drawing.Color.Transparent;
             this.lbl_Fecha.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_Fecha.Location = new System.Drawing.Point(616, 12);
+            this.lbl_Fecha.Location = new System.Drawing.Point(997, 118);
             this.lbl_Fecha.Name = "lbl_Fecha";
             this.lbl_Fecha.Size = new System.Drawing.Size(0, 14);
             this.lbl_Fecha.TabIndex = 19;
@@ -819,7 +857,7 @@
             // txt_Buscador
             // 
             this.txt_Buscador.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txt_Buscador.Location = new System.Drawing.Point(68, 65);
+            this.txt_Buscador.Location = new System.Drawing.Point(68, 115);
             this.txt_Buscador.Name = "txt_Buscador";
             this.txt_Buscador.Size = new System.Drawing.Size(220, 21);
             this.txt_Buscador.TabIndex = 24;
@@ -832,7 +870,7 @@
             this.lbl_Buscador.AutoSize = true;
             this.lbl_Buscador.BackColor = System.Drawing.Color.Transparent;
             this.lbl_Buscador.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_Buscador.Location = new System.Drawing.Point(68, 48);
+            this.lbl_Buscador.Location = new System.Drawing.Point(68, 98);
             this.lbl_Buscador.Name = "lbl_Buscador";
             this.lbl_Buscador.Size = new System.Drawing.Size(64, 14);
             this.lbl_Buscador.TabIndex = 23;
@@ -842,10 +880,31 @@
             // 
             this.lbl_ErrorBusqueda.AutoSize = true;
             this.lbl_ErrorBusqueda.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_ErrorBusqueda.Location = new System.Drawing.Point(306, 69);
+            this.lbl_ErrorBusqueda.Location = new System.Drawing.Point(306, 118);
             this.lbl_ErrorBusqueda.Name = "lbl_ErrorBusqueda";
             this.lbl_ErrorBusqueda.Size = new System.Drawing.Size(0, 14);
             this.lbl_ErrorBusqueda.TabIndex = 25;
+            // 
+            // pic_Logo
+            // 
+            this.pic_Logo.Image = global::Parcial1_Labo_2.Properties.Resources.icono_negro;
+            this.pic_Logo.InitialImage = null;
+            this.pic_Logo.Location = new System.Drawing.Point(68, 12);
+            this.pic_Logo.Name = "pic_Logo";
+            this.pic_Logo.Size = new System.Drawing.Size(54, 50);
+            this.pic_Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pic_Logo.TabIndex = 26;
+            this.pic_Logo.TabStop = false;
+            // 
+            // lbl_Titulo
+            // 
+            this.lbl_Titulo.AutoSize = true;
+            this.lbl_Titulo.Font = new System.Drawing.Font("Cooper Black", 26.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.lbl_Titulo.Location = new System.Drawing.Point(114, 17);
+            this.lbl_Titulo.Name = "lbl_Titulo";
+            this.lbl_Titulo.Size = new System.Drawing.Size(217, 40);
+            this.lbl_Titulo.TabIndex = 27;
+            this.lbl_Titulo.Text = "SAMCLESS";
             // 
             // frm_MenuPrincipal
             // 
@@ -854,6 +913,7 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1207, 600);
             this.ControlBox = false;
+            this.Controls.Add(this.pic_Logo);
             this.Controls.Add(this.lbl_ErrorBusqueda);
             this.Controls.Add(this.pnl_Historico);
             this.Controls.Add(this.pic_MasInfo);
@@ -870,6 +930,7 @@
             this.Controls.Add(this.lbl_Bienvenido);
             this.Controls.Add(this.txt_Buscador);
             this.Controls.Add(this.lbl_Buscador);
+            this.Controls.Add(this.lbl_Titulo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.HelpButton = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -890,6 +951,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pic_SalirPanelInfo)).EndInit();
             this.pnl_Historico.ResumeLayout(false);
             this.pnl_Historico.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_PasajerosHistorico)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Modificar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_ModificarAceptar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_AgregarVendedor)).EndInit();
@@ -901,6 +963,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pic_Historico)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_AgregarCliente)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_MasInfo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_Logo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -964,5 +1027,8 @@
         private DataGridViewTextBoxColumn Asientos;
         private DataGridViewCheckBoxColumn Wifi;
         private DataGridViewCheckBoxColumn Comida;
+        private PictureBox pic_Logo;
+        private Label lbl_Titulo;
+        private PictureBox pic_PasajerosHistorico;
     }
 }

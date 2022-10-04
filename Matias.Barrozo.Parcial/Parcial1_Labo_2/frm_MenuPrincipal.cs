@@ -22,11 +22,10 @@ namespace Parcial1_Labo_2
         private float recaudacionInternacional = 0;
         private int indiceVendedor;
         private Vendedor vendedorActivo = new Vendedor();
-
+        private int indiceFinalizado;
         public frm_MenuPrincipal()
         {
             InitializeComponent();
-
         }
 
         public frm_MenuPrincipal(Vendedor vendedor) : this()
@@ -84,7 +83,7 @@ namespace Parcial1_Labo_2
 
         private void btn_Pasajeros_Click(object sender, EventArgs e)
         {
-            frm_pasajeros pj = new frm_pasajeros(indiceVuelo);
+            frm_pasajeros pj = new frm_pasajeros(Aerolinea.vuelosFinalizados[indiceFinalizado]);
             pj.ShowDialog();
         }
 
@@ -197,6 +196,7 @@ namespace Parcial1_Labo_2
             lbl_RecaudacionTotal.Text = "Recaudacion total: " + Aerolinea.CalcularRecaudacionTotal().ToString();
             pic_Pasajeros.Visible = false;
             rtx_InfoAvion.Visible = false;
+            pic_PasajerosHistorico.Visible = false;
 
         }
 
@@ -206,7 +206,6 @@ namespace Parcial1_Labo_2
             pnl_Historico.Hide();
             
             CargarCerrarPaneles(true);
-            cmb_FiltroHistorico.Text = String.Empty;
             dgv_Historico.DataSource = null;
             pic_AgregarCliente.Visible = true;
             LimpiarHistorico();
@@ -246,6 +245,7 @@ namespace Parcial1_Labo_2
             lbl_RecaudacionInternacional.Text=String.Empty;
             lbl_RecaudacionCabotaje.Text = String.Empty;
             dgv_Historico.Visible = true;
+            pic_PasajerosHistorico.Visible = false;
             lbl_ErrorBorrar.Text = String.Empty;
             LimpiarHistorico();
        
@@ -258,7 +258,7 @@ namespace Parcial1_Labo_2
                     dgv_Historico.Columns.Add("CantidadViajes", "Cantidad de viajes");
                     dgv_Historico.Columns.Add("TotalRecaudado", "TotalRecaudado");
                     dgv_Historico.Columns.Add("CantidadPasajeros", "Cantidad de pasajeros");
-                    RecorrerVuelos();
+                    RecorrerVuelosYListarDgv();
                     dgv_Historico.Sort(dgv_Historico.Columns[2], ListSortDirection.Descending);
                     break;
                 case "Clientes Frecuentes":
@@ -281,13 +281,14 @@ namespace Parcial1_Labo_2
                     dgv_Historico.Columns.Add("Destino", "Destino");
                     dgv_Historico.Columns.Add("Ganancia", "Ganancia del vuelo");
                     dgv_Historico.Columns.Add("TipoServicio", "Tipo de servicio");
-                    RecorrerVuelos(Aerolinea.vuelos);
-                    RecorrerVuelos(Aerolinea.vuelosFinalizados);                 
+                    RecorrerVuelosYListarDgv(Aerolinea.vuelos);
+                    RecorrerVuelosYListarDgv(Aerolinea.vuelosFinalizados);                 
                     break;
                 case "Vuelos finalizados":
                     dgv_Historico.DataSource = null;
                     dgv_Historico.Columns.Clear();
                     dgv_Historico.DataSource = null;
+                    pic_PasajerosHistorico.Visible = true;
                     dgv_Historico.Columns.Add("Avion", "Avion");
                     dgv_Historico.Columns.Add("Codigo", "Codigo");
                     dgv_Historico.Columns.Add("Duracion", "Duracion");
@@ -372,7 +373,7 @@ namespace Parcial1_Labo_2
         /// Recorre los vuelos que recibe por parametro y carga el datagrid de destinos
         /// </summary>
         /// <param name="vuelos"></param>
-        private void RecorrerVuelos(List<Vuelo> vuelos)
+        private void RecorrerVuelosYListarDgv(List<Vuelo> vuelos)
         {
             
             for (int i = 0; i < vuelos.Count; i++)
@@ -410,7 +411,7 @@ namespace Parcial1_Labo_2
         /// <summary>
         /// Recorre los vuelos finalizados y disponibles y calcula la recaudacion total
         /// </summary>
-        private void RecorrerVuelos()
+        private void RecorrerVuelosYListarDgv()
         {
             int count = Enum.GetValues(typeof(EDestino)).Length;
             for (int i = 0; i < count; i++)
@@ -652,6 +653,17 @@ namespace Parcial1_Labo_2
         }
 
 
+        private void dgv_Historico_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            indiceFinalizado = e.RowIndex;
+        }
+
+        private void pic_PasajerosHistorico_Click(object sender, EventArgs e)
+        {
+            frm_pasajeros pasajeros = new frm_pasajeros(Aerolinea.vuelos[indiceVuelo]);
+            pasajeros.ShowDialog();
+            
+        }
         //Modo oscuro
 
         private void modoOscuroClaro()
@@ -713,7 +725,9 @@ namespace Parcial1_Labo_2
                 dgv_Historico.DefaultCellStyle.ForeColor = Color.White;
                 rtx_InfoAvion.ForeColor= Color.White;
                 rtx_InfoAvion.BackColor = Color.FromArgb(34, 34, 34);
-               
+                lbl_Titulo.ForeColor = Color.White;
+                pic_Logo.Image = Resources.icono_blanco__1_;
+                pic_PasajerosHistorico.Image= Resources.pasajeros_blanco_84x24;
 
 
             }
@@ -773,7 +787,9 @@ namespace Parcial1_Labo_2
                 dgv_Historico.DefaultCellStyle.ForeColor = Color.Black;
                 rtx_InfoAvion.ForeColor = Color.Black;
                 rtx_InfoAvion.BackColor = Color.White;
-               
+                lbl_Titulo.ForeColor = Color.Black;
+                pic_Logo.Image = Resources.icono_negro;
+                pic_PasajerosHistorico.Image = Resources.pasajeros_negro_84x24;
 
             }
         }

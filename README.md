@@ -1,6 +1,13 @@
 
 # Super Airline Management Console Lite Experience Service System 3.5 (SAMCLESS) Desktop Version
 
+## Sobre Mi##
+
+
+Soy Matias Barrozo, tengo 23 años y estoy actualmente estoy cursando la tecnicatura en programacion. Estuve haciendo este programa por casi 1 mes, y el programa
+paso por mas de 1 diseño y muchas funcionalidades descartadas, pero estoy bastante contento con el resultado final. El mayor inconveniente fue el apartado grafico
+ya que una vez que arranque a modificar un poco no pare de modificarlo hasta que este lo mas perfecto posible y esto consumio mucho tiempo. Durante este proyecto
+aprendi mucho manejo de  forms, principalmente el uso de datagridview que se puede notar el uso por lo largo del programa.
 
 
 
@@ -9,6 +16,7 @@
 
 La funcionalidad de la aplicacion depende del tipo de usuario con el que inicies, si el tipo de usuario es "usuario" solo podras ver estadisticas historicas, vuelos disponibles (ver su informacion y pasajeros) y vender un pasaje a estos vuelos.
 El usuario administrador puede hacer lo mismo que un usuario mas la posibilidad de programar vuelos y hacer ABM de usuarios.
+Se puede observar la funcion de cada uno de las distintas herramientas apoyando el mouse encima, esto da una pequeña descripcion de la funcionalidad del mismo.
 
 
 Para acceder al programa se puede usar el boton de autocompletar que te trae un usuario aleatorio (si se quiere acceder con el administrador, el usuario es "pepe" y la contraseña "pepe").

@@ -29,7 +29,7 @@ namespace Biblioteca
 
         }
         
-        public int Equipaje
+        public  int Equipaje
         {
             get { return equipaje; }
             set

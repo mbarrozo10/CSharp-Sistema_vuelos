@@ -33,19 +33,21 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_pasajeros));
             this.dgv_Pasajeros = new System.Windows.Forms.DataGridView();
-            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.apellidoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dniDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.edadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.premiumDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.equipajeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pasajeroBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.pasajeroBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pic_Salir = new System.Windows.Forms.PictureBox();
             this.tip_Ayuda = new System.Windows.Forms.ToolTip(this.components);
             this.txt_BuscadorPasajero = new System.Windows.Forms.TextBox();
             this.lbl_Buscador = new System.Windows.Forms.Label();
             this.lbl_Error = new System.Windows.Forms.Label();
+            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.apellidoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dniDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.premiumDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.edadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.equipajeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Pasajeros)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pasajeroBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pasajeroBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Salir)).BeginInit();
             this.SuspendLayout();
@@ -66,10 +68,10 @@
             this.nombreDataGridViewTextBoxColumn,
             this.apellidoDataGridViewTextBoxColumn,
             this.dniDataGridViewTextBoxColumn,
-            this.edadDataGridViewTextBoxColumn,
             this.premiumDataGridViewCheckBoxColumn,
+            this.edadDataGridViewTextBoxColumn,
             this.equipajeDataGridViewTextBoxColumn});
-            this.dgv_Pasajeros.DataSource = this.pasajeroBindingSource;
+            this.dgv_Pasajeros.DataSource = this.pasajeroBindingSource1;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -84,47 +86,9 @@
             this.dgv_Pasajeros.Size = new System.Drawing.Size(576, 334);
             this.dgv_Pasajeros.TabIndex = 0;
             // 
-            // nombreDataGridViewTextBoxColumn
+            // pasajeroBindingSource1
             // 
-            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
-            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
-            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
-            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // apellidoDataGridViewTextBoxColumn
-            // 
-            this.apellidoDataGridViewTextBoxColumn.DataPropertyName = "Apellido";
-            this.apellidoDataGridViewTextBoxColumn.HeaderText = "Apellido";
-            this.apellidoDataGridViewTextBoxColumn.Name = "apellidoDataGridViewTextBoxColumn";
-            this.apellidoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // dniDataGridViewTextBoxColumn
-            // 
-            this.dniDataGridViewTextBoxColumn.DataPropertyName = "Dni";
-            this.dniDataGridViewTextBoxColumn.HeaderText = "Dni";
-            this.dniDataGridViewTextBoxColumn.Name = "dniDataGridViewTextBoxColumn";
-            this.dniDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // edadDataGridViewTextBoxColumn
-            // 
-            this.edadDataGridViewTextBoxColumn.DataPropertyName = "Edad";
-            this.edadDataGridViewTextBoxColumn.HeaderText = "Edad";
-            this.edadDataGridViewTextBoxColumn.Name = "edadDataGridViewTextBoxColumn";
-            this.edadDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // premiumDataGridViewCheckBoxColumn
-            // 
-            this.premiumDataGridViewCheckBoxColumn.DataPropertyName = "Premium";
-            this.premiumDataGridViewCheckBoxColumn.HeaderText = "Premium";
-            this.premiumDataGridViewCheckBoxColumn.Name = "premiumDataGridViewCheckBoxColumn";
-            this.premiumDataGridViewCheckBoxColumn.ReadOnly = true;
-            // 
-            // equipajeDataGridViewTextBoxColumn
-            // 
-            this.equipajeDataGridViewTextBoxColumn.DataPropertyName = "Equipaje";
-            this.equipajeDataGridViewTextBoxColumn.HeaderText = "Equipaje";
-            this.equipajeDataGridViewTextBoxColumn.Name = "equipajeDataGridViewTextBoxColumn";
-            this.equipajeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.pasajeroBindingSource1.DataSource = typeof(Biblioteca.Pasajero);
             // 
             // pasajeroBindingSource
             // 
@@ -173,6 +137,43 @@
             this.lbl_Error.Size = new System.Drawing.Size(0, 14);
             this.lbl_Error.TabIndex = 4;
             // 
+            // nombreDataGridViewTextBoxColumn
+            // 
+            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            // 
+            // apellidoDataGridViewTextBoxColumn
+            // 
+            this.apellidoDataGridViewTextBoxColumn.DataPropertyName = "Apellido";
+            this.apellidoDataGridViewTextBoxColumn.HeaderText = "Apellido";
+            this.apellidoDataGridViewTextBoxColumn.Name = "apellidoDataGridViewTextBoxColumn";
+            // 
+            // dniDataGridViewTextBoxColumn
+            // 
+            this.dniDataGridViewTextBoxColumn.DataPropertyName = "Dni";
+            this.dniDataGridViewTextBoxColumn.HeaderText = "Dni";
+            this.dniDataGridViewTextBoxColumn.Name = "dniDataGridViewTextBoxColumn";
+            // 
+            // premiumDataGridViewCheckBoxColumn
+            // 
+            this.premiumDataGridViewCheckBoxColumn.DataPropertyName = "Premium";
+            this.premiumDataGridViewCheckBoxColumn.HeaderText = "Premium";
+            this.premiumDataGridViewCheckBoxColumn.Name = "premiumDataGridViewCheckBoxColumn";
+            this.premiumDataGridViewCheckBoxColumn.ReadOnly = true;
+            // 
+            // edadDataGridViewTextBoxColumn
+            // 
+            this.edadDataGridViewTextBoxColumn.DataPropertyName = "Edad";
+            this.edadDataGridViewTextBoxColumn.HeaderText = "Edad";
+            this.edadDataGridViewTextBoxColumn.Name = "edadDataGridViewTextBoxColumn";
+            // 
+            // equipajeDataGridViewTextBoxColumn
+            // 
+            this.equipajeDataGridViewTextBoxColumn.DataPropertyName = "Equipaje";
+            this.equipajeDataGridViewTextBoxColumn.HeaderText = "Equipaje";
+            this.equipajeDataGridViewTextBoxColumn.Name = "equipajeDataGridViewTextBoxColumn";
+            // 
             // frm_pasajeros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -191,6 +192,7 @@
             this.Text = " ";
             this.Load += new System.EventHandler(this.frm_pasajeros_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Pasajeros)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pasajeroBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pasajeroBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Salir)).EndInit();
             this.ResumeLayout(false);
@@ -202,16 +204,17 @@
 
         private DataGridView dgv_Pasajeros;
         private BindingSource pasajeroBindingSource;
-        private DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn apellidoDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn dniDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn edadDataGridViewTextBoxColumn;
-        private DataGridViewCheckBoxColumn premiumDataGridViewCheckBoxColumn;
-        private DataGridViewTextBoxColumn equipajeDataGridViewTextBoxColumn;
         private ToolTip tip_Ayuda;
         private PictureBox pic_Salir;
         private Label lbl_Buscador;
         private TextBox txt_BuscadorPasajero;
         private Label lbl_Error;
+        private BindingSource pasajeroBindingSource1;
+        private DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn apellidoDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn dniDataGridViewTextBoxColumn;
+        private DataGridViewCheckBoxColumn premiumDataGridViewCheckBoxColumn;
+        private DataGridViewTextBoxColumn edadDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn equipajeDataGridViewTextBoxColumn;
     }
 }

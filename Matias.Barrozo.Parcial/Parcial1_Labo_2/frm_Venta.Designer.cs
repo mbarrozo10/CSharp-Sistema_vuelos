@@ -361,9 +361,10 @@
             // lbl_Error
             // 
             this.lbl_Error.AutoSize = true;
+            this.lbl_Error.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_Error.Location = new System.Drawing.Point(663, 20);
             this.lbl_Error.Name = "lbl_Error";
-            this.lbl_Error.Size = new System.Drawing.Size(0, 15);
+            this.lbl_Error.Size = new System.Drawing.Size(0, 14);
             this.lbl_Error.TabIndex = 26;
             // 
             // pic_Agregar

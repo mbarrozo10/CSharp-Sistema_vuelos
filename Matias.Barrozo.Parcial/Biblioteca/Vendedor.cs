@@ -10,19 +10,19 @@ namespace Biblioteca
 {
     public class Vendedor : Persona
     {
-        
-        private string? usuario;
-        private string? contraseña;
-        private string? tipo;
-        
-        
-        public Vendedor():base()
+
+        private string usuario;
+        private string contraseña;
+        private string tipo;
+
+
+        public Vendedor() : base()
         {
 
         }
-        public Vendedor(string nombre, string apellido, string usuario, string contraseña, string tipo):base(nombre,apellido)
+        public Vendedor(string nombre, string apellido, string usuario, string contraseña, string tipo) : base(nombre, apellido)
         {
-           
+
             this.usuario = usuario;
             this.contraseña = contraseña;
             this.Tipo = tipo;
@@ -45,12 +45,12 @@ namespace Biblioteca
             set { usuario = value; }
         }
 
-        public static Vendedor VerificarLogin(string usuario, string contraseña, List <Vendedor> vendedores)
+        public static Vendedor VerificarLogin(string usuario, string contraseña, List<Vendedor> vendedores)
         {
-        
+
             foreach (Vendedor vendedor in vendedores)
             {
-                if (vendedor.Usuario==usuario && vendedor.contraseña == contraseña)
+                if (vendedor.Usuario == usuario && vendedor.contraseña == contraseña)
                 {
                     return vendedor;
                 }
@@ -60,7 +60,7 @@ namespace Biblioteca
 
         public override string ToString()
         {
-            return this.Nombre + " "+ this.Apellido  ;
+            return this.Nombre + " " + this.Apellido;
 
         }
 
@@ -69,31 +69,33 @@ namespace Biblioteca
             return this.ToString() + "\nUsuario: " + Usuario + "\nTipo de usuario: " + Tipo;
         }
 
-        public void ModificarVendedor(string nombre, string apellido, string usuario, string contraseñaNueva,string tipo)
+        public void ModificarVendedor(string nombre, string apellido, string usuario, string contraseñaNueva, string tipo)
         {
-            if(nombre!= String.Empty)
+            if (nombre != String.Empty)
             {
                 Nombre = nombre;
             }
-            if(apellido!= String.Empty)
+            if (apellido != String.Empty)
             {
                 Apellido = apellido;
             }
-            if(usuario!= String.Empty)
+            if (usuario != String.Empty)
             {
                 Usuario = usuario;
             }
-            if(contraseñaNueva!= String.Empty)
+            if (contraseñaNueva != String.Empty)
             {
                 contraseña = contraseñaNueva;
             }
             Tipo = tipo;
         }
 
-        public static KeyValuePair<string,string> vendedorRandom(int posicion)
+        public static KeyValuePair<string, string> vendedorRandom(int posicion)
         {
-            KeyValuePair<string, string> vendedor = new KeyValuePair<string,string>(Aerolinea.Vendedores[posicion].Usuario, Aerolinea.Vendedores[posicion].contraseña);
+            KeyValuePair<string, string> vendedor = new KeyValuePair<string, string>(Aerolinea.Vendedores[posicion].Usuario, Aerolinea.Vendedores[posicion].contraseña);
             return vendedor;
         }
+
+      
     }
 }
